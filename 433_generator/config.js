@@ -481,40 +481,21 @@ $('<div>').append(
 				},
 			},
 		},
-		'YCT-102': {
-			extends: 'kaku_remote_old',
-			name: 'devices.YCT-102.name',
+		'APA3-1500R': {
+			extends: 'kaku_remote',
+			name: 'devices.APA3-1500R.name',
 			images: {
-				large: './assets/YCT-102/images/large.png',
-				small: './assets/YCT-102/images/small.png',
+				large: './assets/APA3-1500R/images/large.jpg',
+				small: './assets/APA3-1500R/images/small.jpg',
 			},
-			icon: './assets/YCT-102/icon.svg',
+			icon: './assets/APA3-1500R/icon.svg',
 			pair: {
 				viewOptions: {
 					generic_imitate: {
-						svg: './assets/YCT-102/pair.svg',
+						svg: './assets/APA3-1500R/pair.svg',
 					},
 					generic_test_remote: {
-						svg: './assets/YCT-102/test.svg',
-					},
-				},
-			},
-		},
-		'PA3-1000R': {
-			extends: 'kaku_remote_old',
-			name: 'devices.PA3-1000R.name',
-			images: {
-				large: './assets/PA3-1000R/images/large.jpg',
-				small: './assets/PA3-1000R/images/small.jpg',
-			},
-			icon: './assets/PA3-1000R/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/PA3-1000R/pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/PA3-1000R/test.svg',
+						svg: './assets/APA3-1500R/test.svg',
 					},
 				},
 			},
@@ -530,6 +511,7 @@ $('<div>').append(
 								{ id: '00', label: '433_generator.generic.buttons.1' },
 								{ id: '01', label: '433_generator.generic.buttons.2' },
 								{ id: '10', label: '433_generator.generic.buttons.3' },
+								{ id: 'g', label: '433_generator.generic.buttons.G' },
 							],
 						},
 						{
@@ -544,64 +526,6 @@ $('<div>').append(
 				},
 			],
 		},
-		'AKCT-510': {
-			extends: ['kaku', 'tiny_remote'],
-			name: 'devices.AKCT-510.name',
-			images: {
-				large: './assets/AKCT-510/images/large.jpg',
-				small: './assets/AKCT-510/images/small.jpg',
-			},
-			icon: './assets/AKCT-510/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/AKCT-510/pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/AKCT-510/test.svg',
-					},
-				},
-			},
-		},
-		'KCT-510': {
-			extends: ['kaku_old', 'tiny_remote'],
-			name: 'devices.KCT-510.name',
-			images: {
-				large: './assets/KCT-510/images/large.jpg',
-				small: './assets/KCT-510/images/small.jpg',
-			},
-			icon: './assets/KCT-510/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/KCT-510/pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/KCT-510/test.svg',
-					},
-				},
-			},
-		},
-		// TODO enable when homey client device selector ui is fixed
-		// 'KCT-101': {
-		// 	extends: ['tiny_remote', 'kaku_old'],
-		// 	name: 'devices.KCT-101.name',
-		// 	images: {
-		// 		large: './assets/KCT-101/images/large.png',
-		// 		small: './assets/KCT-101/images/small.png',
-		// 	},
-		// 	icon: './assets/KCT-101/icon.svg',
-		// 	pair: {
-		// 		viewOptions: {
-		// 			generic_imitate: {
-		// 				svg: './assets/KCT-101/pair.svg',
-		// 			},
-		// 			generic_test_remote: {
-		// 				svg: './assets/KCT-101/test.svg',
-		// 			},
-		// 		},
-		// 	},
-		// },
 		'APA2-2300R': {
 			extends: 'kaku_remote',
 			driver: './drivers/kaku/remote_valueline',
@@ -661,80 +585,21 @@ $('<div>').append(
 				},
 			],
 		},
-		'APA3-1500R': {
-			extends: 'kaku_remote',
-			name: 'devices.APA3-1500R.name',
+		'AKCT-510': {
+			extends: ['kaku', 'tiny_remote'],
+			name: 'devices.AKCT-510.name',
 			images: {
-				large: './assets/APA3-1500R/images/large.jpg',
-				small: './assets/APA3-1500R/images/small.jpg',
+				large: './assets/AKCT-510/images/large.jpg',
+				small: './assets/AKCT-510/images/small.jpg',
 			},
-			icon: './assets/APA3-1500R/icon.svg',
+			icon: './assets/AKCT-510/icon.svg',
 			pair: {
 				viewOptions: {
 					generic_imitate: {
-						svg: './assets/APA3-1500R/pair.svg',
+						svg: './assets/AKCT-510/pair.svg',
 					},
 					generic_test_remote: {
-						svg: './assets/APA3-1500R/test.svg',
-					},
-				},
-			},
-			triggers: [
-				{
-					id: 'received',
-					title: '433_generator.generic.button_pressed',
-					args: [
-						{
-							name: 'unit',
-							type: 'dropdown',
-							values: [
-								{ id: '00', label: '433_generator.generic.buttons.1' },
-								{ id: '01', label: '433_generator.generic.buttons.2' },
-								{ id: '10', label: '433_generator.generic.buttons.3' },
-								{ id: 'g', label: '433_generator.generic.buttons.G' },
-							],
-						},
-						{
-							name: 'state',
-							type: 'dropdown',
-							values: [
-								{ id: '1', label: '433_generator.generic.on' },
-								{ id: '0', label: '433_generator.generic.off' },
-							],
-						},
-					],
-				},
-			],
-		},
-		'APA3-1500RS': {
-			extends: ['simple_socket'],
-			name: 'devices.APA3-1500RS.name',
-			images: {
-				large: './assets/APA3-1500RS/images/large.jpg',
-				small: './assets/APA3-1500RS/images/small.jpg',
-			},
-			icon: './assets/APA3-1500RS/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/APA3-1500R/icon.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/APA3-1500RS/icon.svg',
-							},
-						],
-					},
-					generic_imitate: {
-						svg: './assets/APA3-1500R/pair.svg',
-					},
-					generic_program: {
-						svg: './assets/APA3-1500RS/pair.svg',
+						svg: './assets/AKCT-510/test.svg',
 					},
 				},
 			},
@@ -773,158 +638,6 @@ $('<div>').append(
 					},
 					generic_test_remote: {
 						svg: './assets/AWST-8800/switch.svg',
-					},
-				},
-			},
-		},
-		'WST-8700': {
-			extends: 'wall_switch_single_old',
-			name: 'devices.WST-8700.name',
-			images: {
-				large: './assets/WST-8700/images/large.jpg',
-				small: './assets/WST-8700/images/small.jpg',
-			},
-			icon: './assets/WST-8700/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/WST-8700/switch_pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/WST-8700/switch.svg',
-					},
-				},
-			},
-		},
-		'WST-8800': {
-			extends: 'wall_switch_single_old',
-			name: 'devices.WST-8800.name',
-			images: {
-				large: './assets/WST-8800/images/large.png',
-				small: './assets/WST-8800/images/small.png',
-			},
-			icon: './assets/WST-8800/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/WST-8800/switch_pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/WST-8800/switch.svg',
-					},
-				},
-			},
-		},
-		'ACD-200': {
-			extends: 'dimmer',
-			name: 'devices.ACD-200.name',
-			images: {
-				large: './assets/ACD-200/images/large.png',
-				small: './assets/ACD-200/images/small.png',
-			},
-			icon: './assets/ACD-200/socket.svg',
-			pair: {
-				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/AYCT-102/remote.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/ACD-200/socket.svg',
-							},
-						],
-					},
-					generic_imitate: {
-						svg: './assets/AYCT-102/remote_pair.svg',
-					},
-					generic_program: {
-						svg: './assets/ACD-200/socket.svg',
-					},
-				},
-			},
-		},
-		// TODO needs new pair ui
-		// 'PAR-1000': {
-		//
-		// }
-		'AGDR-300': {
-			extends: 'dimmer',
-			name: 'devices.AGDR-300.name',
-			images: {
-				large: './assets/AGDR-300/images/large.jpg',
-				small: './assets/AGDR-300/images/small.jpg',
-			},
-			icon: './assets/AGDR-300/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/AYCT-102/remote.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/AGDR-300/icon.svg',
-							},
-						],
-					},
-					generic_imitate: {
-						svg: './assets/AYCT-102/remote_pair.svg',
-					},
-					generic_program: {
-						svg: './assets/AGDR-300/pair.svg',
-					},
-				},
-			},
-		},
-		'AFR-100': {
-			extends: ['dimmer', 'generic_switch'],
-			name: 'devices.AFR-100.name',
-			capabilities: ['onoff', 'dim'],
-			images: {
-				large: './assets/AFR-100/images/large.jpg',
-				small: './assets/AFR-100/images/small.jpg',
-			},
-			class: 'light',
-			icon: './assets/AFR-100/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/AYCT-102/remote.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/AFR-100/pair.svg',
-							},
-						],
-					},
-					generic_imitate: {
-						svg: './assets/AYCT-102/remote_pair.svg',
-						body: 'devices.AFR-100.views.generic_imitate.body',
-					},
-					generic_program: {
-						svg: './assets/AFR-100/pair.svg',
-						body: 'devices.AFR-100.views.generic_program.body',
-					},
-					generic_test_switch: {
-						title: 'devices.AFR-100.views.generic_test_switch.title',
-						body: 'devices.AFR-100.views.generic_test_switch.body',
-					},
-					generic_test_switch_2: {
-						body: 'devices.AFR-100.views.generic_test_switch_2.body',
 					},
 				},
 			},
@@ -1009,71 +722,79 @@ $('<div>').append(
 				},
 			},
 		},
-		'AC-300': {
-			extends: ['socket', 'kaku_old'],
-			name: 'devices.AC-300.name',
+		'AWST-6000': {
+			extends: 'ABST-604',
+			name: 'devices.AWST-6000.name',
 			images: {
-				large: './assets/AC-300/images/large.png',
-				small: './assets/AC-300/images/small.png',
+				large: './assets/AWST-6000/images/large.png',
+				small: './assets/AWST-6000/images/small.png',
 			},
-			icon: './assets/ACD-200/socket.svg',
+			icon: './assets/AWST-6000/icon.svg',
+			capabilities: ['alarm_motion'],
 			pair: {
 				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/YCT-102/icon.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/ACD-200/socket.svg',
-							},
-						],
-					},
 					generic_imitate: {
-						svg: './assets/YCT-102/pair.svg',
+						svg: './assets/AWST-6000/pair.svg',
+						title: 'devices.AWST-6000.views.generic_imitate.title',
 					},
-					generic_program: {
-						svg: './assets/ACD-200/socket.svg',
+					generic_test_remote: {
+						svg: './assets/AWST-6000/test.svg',
+						title: 'devices.AWST-6000.views.generic_test_remote.title',
+					},
+				},
+			},
+			conditions: [
+				{
+					id: 'state',
+					title: 'devices.AWST-6000.conditions.state.title',
+				},
+			],
+		},
+		'APIR-2150': {
+			extends: 'AWST-6000',
+			name: 'devices.APIR-2150.name',
+			images: {
+				large: './assets/APIR-2150/images/large.png',
+				small: './assets/APIR-2150/images/small.png',
+			},
+			icon: './assets/APIR-2150/icon.svg',
+			capabilities: ['alarm_motion'],
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/AWST-6000/pair.svg',
+						title: 'devices.AWST-6000.views.generic_imitate.title',
 					},
 				},
 			},
 		},
-		'APA2-2300RS': {
-			extends: 'socket',
-			name: 'devices.APA2-2300RS.name',
+		'ABST-604': {
+			extends: 'sensor',
+			name: 'devices.ABST-604.name',
 			images: {
-				large: './assets/APA2-2300RS/images/large.jpg',
-				small: './assets/APA2-2300RS/images/small.jpg',
+				large: './assets/ABST-604/images/large.png',
+				small: './assets/ABST-604/images/small.png',
 			},
-			icon: './assets/ACD-200/socket.svg',
+			icon: './assets/ABST-604/icon.svg',
+			capabilities: ['alarm_night'],
 			pair: {
 				viewOptions: {
-					generic_choice: {
-						buttons: [
-							{
-								name: 'views.generic_choice.buttons.copy',
-								view: 'generic_imitate',
-								svg: './assets/APA2-2300R/icon.svg',
-							},
-							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/ACD-200/socket.svg',
-							},
-						],
-					},
 					generic_imitate: {
-						svg: './assets/APA2-2300R/pair.svg',
+						svg: './assets/ABST-604/pair.svg',
+						title: 'devices.ABST-604.views.generic_imitate.title',
 					},
-					generic_program: {
-						svg: './assets/ACD-200/socket.svg',
+					generic_test_remote: {
+						svg: './assets/ABST-604/test.svg',
+						title: 'devices.ABST-604.views.generic_test_remote.title',
 					},
 				},
 			},
+			conditions: [
+				{
+					id: 'state',
+					title: 'devices.ABST-604.conditions.state.title',
+				},
+			],
 		},
 		'AMST-606': {
 			extends: 'sensor',
@@ -1128,76 +849,211 @@ $('<div>').append(
 				},
 			},
 		},
-		'ABST-604': {
-			extends: 'sensor',
-			name: 'devices.ABST-604.name',
+		'AC-300': {
+			extends: ['socket', 'kaku_old'],
+			name: 'devices.AC-300.name',
 			images: {
-				large: './assets/ABST-604/images/large.png',
-				small: './assets/ABST-604/images/small.png',
+				large: './assets/AC-300/images/large.png',
+				small: './assets/AC-300/images/small.png',
 			},
-			icon: './assets/ABST-604/icon.svg',
-			capabilities: ['alarm_night'],
+			icon: './assets/ACD-200/socket.svg',
 			pair: {
 				viewOptions: {
-					generic_imitate: {
-						svg: './assets/ABST-604/pair.svg',
-						title: 'devices.ABST-604.views.generic_imitate.title',
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/YCT-102/icon.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACD-200/socket.svg',
+							},
+						],
 					},
-					generic_test_remote: {
-						svg: './assets/ABST-604/test.svg',
-						title: 'devices.ABST-604.views.generic_test_remote.title',
+					generic_imitate: {
+						svg: './assets/YCT-102/pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACD-200/socket.svg',
 					},
 				},
 			},
-			conditions: [
-				{
-					id: 'state',
-					title: 'devices.ABST-604.conditions.state.title',
-				},
-			],
 		},
-		'AWST-6000': {
-			extends: 'ABST-604',
-			name: 'devices.AWST-6000.name',
+		'ACD-200': {
+			extends: 'dimmer',
+			name: 'devices.ACD-200.name',
 			images: {
-				large: './assets/AWST-6000/images/large.png',
-				small: './assets/AWST-6000/images/small.png',
+				large: './assets/ACD-200/images/large.png',
+				small: './assets/ACD-200/images/small.png',
 			},
-			icon: './assets/AWST-6000/icon.svg',
-			capabilities: ['alarm_motion'],
+			icon: './assets/ACD-200/socket.svg',
 			pair: {
 				viewOptions: {
-					generic_imitate: {
-						svg: './assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACD-200/socket.svg',
+							},
+						],
 					},
-					generic_test_remote: {
-						svg: './assets/AWST-6000/test.svg',
-						title: 'devices.AWST-6000.views.generic_test_remote.title',
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACD-200/socket.svg',
 					},
 				},
 			},
-			conditions: [
-				{
-					id: 'state',
-					title: 'devices.AWST-6000.conditions.state.title',
-				},
-			],
 		},
-		'APIR-2150': {
-			extends: 'AWST-6000',
-			name: 'devices.APIR-2150.name',
+		'AGDR-300': {
+			extends: 'dimmer',
+			name: 'devices.AGDR-300.name',
 			images: {
-				large: './assets/APIR-2150/images/large.png',
-				small: './assets/APIR-2150/images/small.png',
+				large: './assets/AGDR-300/images/large.jpg',
+				small: './assets/AGDR-300/images/small.jpg',
 			},
-			icon: './assets/APIR-2150/icon.svg',
-			capabilities: ['alarm_motion'],
+			icon: './assets/AGDR-300/icon.svg',
 			pair: {
 				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AGDR-300/icon.svg',
+							},
+						],
+					},
 					generic_imitate: {
-						svg: './assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AGDR-300/pair.svg',
+					},
+				},
+			},
+		},
+		'APA3-1500RS': {
+			extends: ['simple_socket'],
+			name: 'devices.APA3-1500RS.name',
+			images: {
+				large: './assets/APA3-1500RS/images/large.jpg',
+				small: './assets/APA3-1500RS/images/small.jpg',
+			},
+			icon: './assets/APA3-1500RS/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/APA3-1500R/icon.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/APA3-1500RS/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/APA3-1500R/pair.svg',
+					},
+					generic_program: {
+						svg: './assets/APA3-1500RS/pair.svg',
+					},
+				},
+			},
+		},
+		'APA2-2300RS': {
+			extends: 'socket',
+			name: 'devices.APA2-2300RS.name',
+			images: {
+				large: './assets/APA2-2300RS/images/large.jpg',
+				small: './assets/APA2-2300RS/images/small.jpg',
+			},
+			icon: './assets/ACD-200/socket.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/APA2-2300R/icon.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACD-200/socket.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/APA2-2300R/pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACD-200/socket.svg',
+					},
+				},
+			},
+		},
+		'AFR-100': {
+			extends: ['dimmer', 'generic_switch'],
+			name: 'devices.AFR-100.name',
+			capabilities: ['onoff', 'dim'],
+			images: {
+				large: './assets/AFR-100/images/large.jpg',
+				small: './assets/AFR-100/images/small.jpg',
+			},
+			class: 'light',
+			icon: './assets/AFR-100/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AFR-100/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+						body: 'devices.AFR-100.views.generic_imitate.body',
+					},
+					generic_program: {
+						svg: './assets/AFR-100/pair.svg',
+						body: 'devices.AFR-100.views.generic_program.body',
+					},
+					generic_test_switch: {
+						title: 'devices.AFR-100.views.generic_test_switch.title',
+						body: 'devices.AFR-100.views.generic_test_switch.body',
+					},
+					generic_test_switch_2: {
+						body: 'devices.AFR-100.views.generic_test_switch_2.body',
 					},
 				},
 			},
@@ -1243,6 +1099,150 @@ $('<div>').append(
 				},
 			},
 		},
+		'YCT-102': {
+			extends: 'kaku_remote_old',
+			name: 'devices.YCT-102.name',
+			images: {
+				large: './assets/YCT-102/images/large.png',
+				small: './assets/YCT-102/images/small.png',
+			},
+			icon: './assets/YCT-102/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/YCT-102/pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/YCT-102/test.svg',
+					},
+				},
+			},
+		},
+		'PA3-1000R': {
+			extends: 'kaku_remote_old',
+			name: 'devices.PA3-1000R.name',
+			images: {
+				large: './assets/PA3-1000R/images/large.jpg',
+				small: './assets/PA3-1000R/images/small.jpg',
+			},
+			icon: './assets/PA3-1000R/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/PA3-1000R/pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/PA3-1000R/test.svg',
+					},
+				},
+			},
+			triggers: [
+				{
+					id: 'received',
+					title: '433_generator.generic.button_pressed',
+					args: [
+						{
+							name: 'unit',
+							type: 'dropdown',
+							values: [
+								{ id: '00', label: '433_generator.generic.buttons.1' },
+								{ id: '01', label: '433_generator.generic.buttons.2' },
+								{ id: '10', label: '433_generator.generic.buttons.3' },
+							],
+						},
+						{
+							name: 'state',
+							type: 'dropdown',
+							values: [
+								{ id: '1', label: '433_generator.generic.on' },
+								{ id: '0', label: '433_generator.generic.off' },
+							],
+						},
+					],
+				},
+			],
+		},
+		'KCT-510': {
+			extends: ['kaku_old', 'tiny_remote'],
+			name: 'devices.KCT-510.name',
+			images: {
+				large: './assets/KCT-510/images/large.jpg',
+				small: './assets/KCT-510/images/small.jpg',
+			},
+			icon: './assets/KCT-510/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/KCT-510/pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/KCT-510/test.svg',
+					},
+				},
+			},
+		},
+		'WST-8700': {
+			extends: 'wall_switch_single_old',
+			name: 'devices.WST-8700.name',
+			images: {
+				large: './assets/WST-8700/images/large.jpg',
+				small: './assets/WST-8700/images/small.jpg',
+			},
+			icon: './assets/WST-8700/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/WST-8700/switch_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/WST-8700/switch.svg',
+					},
+				},
+			},
+		},
+		'WST-8800': {
+			extends: 'wall_switch_single_old',
+			name: 'devices.WST-8800.name',
+			images: {
+				large: './assets/WST-8800/images/large.png',
+				small: './assets/WST-8800/images/small.png',
+			},
+			icon: './assets/WST-8800/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/WST-8800/switch_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/WST-8800/switch.svg',
+					},
+				},
+			},
+		},
+		// TODO enable when homey client device selector ui is fixed
+		// 'KCT-101': {
+		// 	extends: ['tiny_remote', 'kaku_old'],
+		// 	name: 'devices.KCT-101.name',
+		// 	images: {
+		// 		large: './assets/KCT-101/images/large.png',
+		// 		small: './assets/KCT-101/images/small.png',
+		// 	},
+		// 	icon: './assets/KCT-101/icon.svg',
+		// 	pair: {
+		// 		viewOptions: {
+		// 			generic_imitate: {
+		// 				svg: './assets/KCT-101/pair.svg',
+		// 			},
+		// 			generic_test_remote: {
+		// 				svg: './assets/KCT-101/test.svg',
+		// 			},
+		// 		},
+		// 	},
+		// },
+		// TODO needs new pair ui
+		// 'PAR-1000': {
+		//
+		// }
 	},
 	// TODO remove these deprecated old drivers
 	drivers: [

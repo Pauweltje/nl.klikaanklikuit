@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "compatibility": ">=0.8.30",
   "category": [
     "appliances",
@@ -123,6 +123,60 @@
         ]
       },
       {
+        "id": "AWST-8802:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left Button\u0000",
+                  "nl": "Linker Knop\u0000"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Right Button\u0000",
+                  "nl": "Rechter Knop\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AWST-8802"
+          }
+        ]
+      },
+      {
         "id": "YCT-102:received",
         "title": {
           "en": "Button is pressed\u0000",
@@ -228,60 +282,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=YCT-102"
-          }
-        ]
-      },
-      {
-        "id": "AWST-8802:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "10",
-                "label": {
-                  "en": "Left Button\u0000",
-                  "nl": "Linker Knop\u0000"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Right Button\u0000",
-                  "nl": "Rechter Knop\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=AWST-8802"
           }
         ]
       },
@@ -525,40 +525,6 @@
         ]
       },
       {
-        "id": "KCT-510:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=KCT-510"
-          }
-        ]
-      },
-      {
         "id": "APA2-2300R:received",
         "title": {
           "en": "Button is pressed\u0000",
@@ -616,6 +582,40 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=APA2-2300R"
+          }
+        ]
+      },
+      {
+        "id": "KCT-510:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=KCT-510"
           }
         ]
       },
@@ -1191,82 +1191,15 @@
   },
   "drivers": [
     {
-      "id": "AWST-8800",
+      "id": "AYCT-102",
       "name": {
-        "en": "AWST-8800"
+        "en": "AYCT-102"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/AWST-8800/images/large.png",
-        "small": "./433_generator/assets/AWST-8800/images/small.png"
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "rotated",
-              "type": "radio",
-              "value": "0",
-              "label": {
-                "en": "Rotate wall switch",
-                "nl": "Roteer wandschakelaar"
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Right Side Up",
-                    "nl": "Rechtop"
-                  }
-                },
-                {
-                  "id": "180",
-                  "label": {
-                    "en": "Upside Down",
-                    "nl": "Ondersteboven"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AWST-6000",
-      "name": {
-        "en": "AWST-6000"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AWST-6000/images/large.png",
-        "small": "./433_generator/assets/AWST-6000/images/small.png"
+        "large": "./433_generator/assets/AYCT-102/images/large.jpg",
+        "small": "./433_generator/assets/AYCT-102/images/small.jpg"
       },
       "pair": [
         {
@@ -1287,15 +1220,15 @@
       ]
     },
     {
-      "id": "PA3-1000R",
+      "id": "APA3-1500R",
       "name": {
-        "en": "PA3-1000R"
+        "en": "APA3-1500R"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/PA3-1000R/images/large.jpg",
-        "small": "./433_generator/assets/PA3-1000R/images/small.jpg"
+        "large": "./433_generator/assets/APA3-1500R/images/large.jpg",
+        "small": "./433_generator/assets/APA3-1500R/images/small.jpg"
       },
       "pair": [
         {
@@ -1316,65 +1249,27 @@
       ]
     },
     {
-      "id": "APA2-2300RS",
+      "id": "APA2-2300R",
       "name": {
         "en": "APA2-2300R"
       },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
+      "class": "other",
+      "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/APA2-2300RS/images/large.jpg",
-        "small": "./433_generator/assets/APA2-2300RS/images/small.jpg"
+        "large": "./433_generator/assets/APA2-2300R/images/large.jpg",
+        "small": "./433_generator/assets/APA2-2300R/images/small.jpg"
       },
       "pair": [
         {
-          "id": "generic_choice",
+          "id": "generic_imitate",
           "navigation": {}
         },
         {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
+          "id": "generic_test_remote",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
             "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
           }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
         },
         {
           "id": "generic_done",
@@ -1383,15 +1278,15 @@
       ]
     },
     {
-      "id": "YCT-102",
+      "id": "AKCT-510",
       "name": {
-        "en": "YCT-102"
+        "en": "AKCT-510"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/YCT-102/images/large.png",
-        "small": "./433_generator/assets/YCT-102/images/small.png"
+        "large": "./433_generator/assets/AKCT-510/images/large.jpg",
+        "small": "./433_generator/assets/AKCT-510/images/small.jpg"
       },
       "pair": [
         {
@@ -1477,15 +1372,15 @@
       ]
     },
     {
-      "id": "WST-8700",
+      "id": "AWST-8800",
       "name": {
-        "en": "WST-8700"
+        "en": "AWST-8800"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/WST-8700/images/large.jpg",
-        "small": "./433_generator/assets/WST-8700/images/small.jpg"
+        "large": "./433_generator/assets/AWST-8800/images/large.png",
+        "small": "./433_generator/assets/AWST-8800/images/small.png"
       },
       "settings": [
         {
@@ -1532,138 +1427,6 @@
           "id": "generic_test_remote",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AYCT-102",
-      "name": {
-        "en": "AYCT-102"
-      },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/AYCT-102/images/large.jpg",
-        "small": "./433_generator/assets/AYCT-102/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ASUN-650",
-      "name": {
-        "en": "ASUN-650"
-      },
-      "class": "windowcoverings",
-      "capabilities": [
-        "windowcoverings_state"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ASUN-650/images/large.png",
-        "small": "./433_generator/assets/ASUN-650/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AFR-100",
-      "name": {
-        "en": "AFR-100"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AFR-100/images/large.jpg",
-        "small": "./433_generator/assets/AFR-100/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
             "next": "generic_done"
           }
         },
@@ -1725,73 +1488,6 @@
       ]
     },
     {
-      "id": "APA3-1500RS",
-      "name": {
-        "en": "APA3-1500RS"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/APA3-1500RS/images/large.jpg",
-        "small": "./433_generator/assets/APA3-1500RS/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
       "id": "ACDB-6600",
       "name": {
         "en": "ACDB-6600"
@@ -1843,15 +1539,17 @@
       ]
     },
     {
-      "id": "APA3-1500R",
+      "id": "AWST-6000",
       "name": {
-        "en": "APA3-1500R"
+        "en": "AWST-6000"
       },
-      "class": "other",
-      "capabilities": [],
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion"
+      ],
       "images": {
-        "large": "./433_generator/assets/APA3-1500R/images/large.jpg",
-        "small": "./433_generator/assets/APA3-1500R/images/small.jpg"
+        "large": "./433_generator/assets/AWST-6000/images/large.png",
+        "small": "./433_generator/assets/AWST-6000/images/small.png"
       },
       "pair": [
         {
@@ -1872,65 +1570,29 @@
       ]
     },
     {
-      "id": "AGDR-300",
+      "id": "APIR-2150",
       "name": {
-        "en": "AGDR-XXX"
+        "en": "APIR-2150"
       },
-      "class": "socket",
+      "class": "sensor",
       "capabilities": [
-        "onoff"
+        "alarm_motion"
       ],
       "images": {
-        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
-        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+        "large": "./433_generator/assets/APIR-2150/images/large.png",
+        "small": "./433_generator/assets/APIR-2150/images/small.png"
       },
       "pair": [
         {
-          "id": "generic_choice",
+          "id": "generic_imitate",
           "navigation": {}
         },
         {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
+          "id": "generic_test_remote",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
             "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
           }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
         },
         {
           "id": "generic_done",
@@ -2032,116 +1694,65 @@
       ]
     },
     {
-      "id": "KCT-510",
+      "id": "AC-300",
       "name": {
-        "en": "KCT-510"
+        "en": "AC-XXX"
       },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/KCT-510/images/large.jpg",
-        "small": "./433_generator/assets/KCT-510/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "APA2-2300R",
-      "name": {
-        "en": "APA2-2300R"
-      },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/APA2-2300R/images/large.jpg",
-        "small": "./433_generator/assets/APA2-2300R/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "APIR-2150",
-      "name": {
-        "en": "APIR-2150"
-      },
-      "class": "sensor",
+      "class": "socket",
       "capabilities": [
-        "alarm_motion"
+        "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/APIR-2150/images/large.png",
-        "small": "./433_generator/assets/APIR-2150/images/small.png"
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
       },
       "pair": [
         {
-          "id": "generic_imitate",
+          "id": "generic_choice",
           "navigation": {}
         },
         {
-          "id": "generic_test_remote",
+          "id": "generic_imitate",
           "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
+            "prev": "generic_choice"
           }
         },
         {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AKCT-510",
-      "name": {
-        "en": "AKCT-510"
-      },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/AKCT-510/images/large.jpg",
-        "small": "./433_generator/assets/AKCT-510/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
+          "id": "generic_test_switch_2",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_done"
+            "next": "generic_choose_slave_2"
           }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
         },
         {
           "id": "generic_done",
@@ -2217,6 +1828,462 @@
       ]
     },
     {
+      "id": "AGDR-300",
+      "name": {
+        "en": "AGDR-XXX"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "APA3-1500RS",
+      "name": {
+        "en": "APA3-1500RS"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/APA3-1500RS/images/large.jpg",
+        "small": "./433_generator/assets/APA3-1500RS/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "APA2-2300RS",
+      "name": {
+        "en": "APA2-2300R"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/APA2-2300RS/images/large.jpg",
+        "small": "./433_generator/assets/APA2-2300RS/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AFR-100",
+      "name": {
+        "en": "AFR-100"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AFR-100/images/large.jpg",
+        "small": "./433_generator/assets/AFR-100/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ASUN-650",
+      "name": {
+        "en": "ASUN-650"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ASUN-650/images/large.png",
+        "small": "./433_generator/assets/ASUN-650/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "YCT-102",
+      "name": {
+        "en": "YCT-102"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/YCT-102/images/large.png",
+        "small": "./433_generator/assets/YCT-102/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "PA3-1000R",
+      "name": {
+        "en": "PA3-1000R"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/PA3-1000R/images/large.jpg",
+        "small": "./433_generator/assets/PA3-1000R/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "KCT-510",
+      "name": {
+        "en": "KCT-510"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/KCT-510/images/large.jpg",
+        "small": "./433_generator/assets/KCT-510/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "WST-8700",
+      "name": {
+        "en": "WST-8700"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/WST-8700/images/large.jpg",
+        "small": "./433_generator/assets/WST-8700/images/small.jpg"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Rotate wall switch",
+                "nl": "Roteer wandschakelaar"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Right Side Up",
+                    "nl": "Rechtop"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Upside Down",
+                    "nl": "Ondersteboven"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "WST-8800",
       "name": {
         "en": "WST-8800"
@@ -2274,73 +2341,6 @@
             "prev": "generic_imitate",
             "next": "generic_done"
           }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AC-300",
-      "name": {
-        "en": "AC-XXX"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AC-300/images/large.png",
-        "small": "./433_generator/assets/AC-300/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
         },
         {
           "id": "generic_done",
