@@ -185,7 +185,8 @@ const config = {
 		}]
 	}],
 	name: 'devices.ACDB-7000C.name',
-	icon: '../../433_generator/assets/ACDB-7000C/icon.svg'
+	icon: '../../433_generator/assets/ACDB-7000C/icon.svg',
+	debounceTimeout: 3000
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

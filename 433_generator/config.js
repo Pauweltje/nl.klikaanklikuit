@@ -937,6 +937,7 @@ $('<div>').append(
 				small: './assets/ACDB-7000C/images/small.png',
 			},
 			icon: './assets/ACDB-7000C/icon.svg',
+			debounceTimeout: 3000,
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -976,6 +977,7 @@ $('<div>').append(
 				small: './assets/ACDB-6600/images/small.jpg',
 			},
 			icon: './assets/ACDB-6600/icon.svg',
+			debounceTimeout: 3000,
 			pair: {
 				viewOptions: {
 					generic_choice: {

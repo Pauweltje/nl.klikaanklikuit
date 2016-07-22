@@ -1531,7 +1531,8 @@ module.exports = {
 				}]
 			}],
 			name: 'devices.ACDB-7000C.name',
-			icon: '../433_generator/assets/ACDB-7000C/icon.svg'
+			icon: '../433_generator/assets/ACDB-7000C/icon.svg',
+			debounceTimeout: 3000
 		},
 		'APA3-1500RS': {
 			capabilities: ['onoff'],
@@ -1903,7 +1904,8 @@ module.exports = {
 				}]
 			}],
 			name: 'devices.ACDB-6600.name',
-			icon: '../433_generator/assets/ACDB-6600/icon.svg'
+			icon: '../433_generator/assets/ACDB-6600/icon.svg',
+			debounceTimeout: 3000
 		},
 		'APA3-1500R': {
 			class: 'other',
