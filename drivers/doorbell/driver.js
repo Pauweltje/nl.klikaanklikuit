@@ -1,5 +1,5 @@
-var flow = require('../depricated/flows.js');
-var deviceList = require('../depricated/deviceList.js');
+var flow = require('../deprecated/flows.js');
+var deviceList = require('../deprecated/deviceList.js');
 var wireless = require('./wireless.js');
 var events = require('events');
 

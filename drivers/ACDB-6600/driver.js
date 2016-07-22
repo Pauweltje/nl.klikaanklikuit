@@ -185,7 +185,8 @@ const config = {
 		}]
 	}],
 	name: 'devices.ACDB-6600.name',
-	icon: '../../433_generator/assets/ACDB-6600/icon.svg'
+	icon: '../../433_generator/assets/ACDB-6600/icon.svg',
+	debounceTimeout: 3000
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

@@ -1244,17 +1244,17 @@ $('<div>').append(
 			},
 		},
 	},
-	// TODO remove these depricated old drivers
+	// TODO remove these deprecated old drivers
 	drivers: [
 		{
 			id: 'switch',
 			name: {
-				en: '[Depricated] Socket',
+				en: '[Deprecated] Socket',
 				nl: '[Verouderd] Stopcontact',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'socket',
 			capabilities: ['onoff'],
@@ -1262,12 +1262,12 @@ $('<div>').append(
 		{
 			id: 'dimmer',
 			name: {
-				en: '[Depricated] Dimmer',
+				en: '[Deprecated] Dimmer',
 				nl: '[Verouderd] Dimmer',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'socket',
 			capabilities: ['onoff', 'dim'],
@@ -1275,12 +1275,12 @@ $('<div>').append(
 		{
 			id: 'blinds',
 			name: {
-				en: '[Depricated] Blinds',
+				en: '[Deprecated] Blinds',
 				nl: '[Verouderd] Zonwering',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'windowcoverings',
 			capabilities: ['windowcoverings_state'],
@@ -1298,12 +1298,12 @@ $('<div>').append(
 		{
 			id: 'remote',
 			name: {
-				en: '[Depricated] Remote',
+				en: '[Deprecated] Remote',
 				nl: '[Verouderd] Afstandbediening',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'other',
 			capabilities: [],
@@ -1311,12 +1311,12 @@ $('<div>').append(
 		{
 			id: 'wallSwitch',
 			name: {
-				en: '[Depricated] Wallswitch',
+				en: '[Deprecated] Wallswitch',
 				nl: '[Verouderd] Muurschakelaar',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'other',
 			capabilities: [],
@@ -1324,12 +1324,12 @@ $('<div>').append(
 		{
 			id: 'doorbell',
 			name: {
-				en: '[Depricated] Doorbell',
+				en: '[Deprecated] Doorbell',
 				nl: '[Verouderd] Deurbel',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'other',
 			capabilities: [],
@@ -1337,12 +1337,12 @@ $('<div>').append(
 		{
 			id: 'nightSensor',
 			name: {
-				en: '[Depricated] Night sensor',
+				en: '[Deprecated] Night sensor',
 				nl: '[Verouderd] Nacht sensor',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'sensor',
 			capabilities: ['alarm_night'],
@@ -1350,12 +1350,12 @@ $('<div>').append(
 		{
 			id: 'motionSensor',
 			name: {
-				en: '[Depricated] Motion sensor',
+				en: '[Deprecated] Motion sensor',
 				nl: '[Verouderd] Bewegings sensor',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'sensor',
 			capabilities: ['alarm_motion'],
@@ -1363,12 +1363,12 @@ $('<div>').append(
 		{
 			id: 'contactSensor',
 			name: {
-				en: '[Depricated] Contact sensor',
+				en: '[Deprecated] Contact sensor',
 				nl: '[Verouderd] Contact sensor',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'sensor',
 			capabilities: ['alarm_contact'],
@@ -1376,12 +1376,12 @@ $('<div>').append(
 		{
 			id: 'kakuOldSwitch',
 			name: {
-				en: '[Depricated] Old socket',
+				en: '[Deprecated] Old socket',
 				nl: '[Verouderd] Oud stopcontact',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'socket',
 			capabilities: ['onoff'],
@@ -1389,12 +1389,12 @@ $('<div>').append(
 		{
 			id: 'kakuOldRemote',
 			name: {
-				en: '[Depricated] Old remote',
+				en: '[Deprecated] Old remote',
 				nl: '[Verouderd] Oude afstandbediening',
 			},
 			images: {
-				large: './assets/depricated/images/large.png',
-				small: './assets/depricated/images/small.png',
+				large: './assets/deprecated/images/large.png',
+				small: './assets/deprecated/images/small.png',
 			},
 			class: 'remote',
 			capabilities: ['onoff'],
@@ -1404,7 +1404,7 @@ $('<div>').append(
 		{
 			id: 'remote',
 			title: {
-				en: '[Depricated] The following button is being pressed:',
+				en: '[Deprecated] The following button is being pressed:',
 				nl: '[Verouderd] De volgende knop wordt ingedrukt:',
 			},
 			args: [
@@ -1448,7 +1448,7 @@ $('<div>').append(
 		{
 			id: 'doorbell',
 			title: {
-				en: '[Depricated] The doorbell is pressed',
+				en: '[Deprecated] The doorbell is pressed',
 				nl: '[Verouderd] De deurbel wordt ingedrukt',
 			},
 			args: [
@@ -1463,7 +1463,7 @@ $('<div>').append(
 		{
 			id: 'wallSwitch',
 			title: {
-				en: '[Depricated] Wallswitch is switched on',
+				en: '[Deprecated] Wallswitch is switched on',
 			},
 			args: [
 				{
@@ -1494,7 +1494,7 @@ $('<div>').append(
 		{
 			id: 'oldRemote',
 			title: {
-				en: '[Depricated] The following button is being pressed:',
+				en: '[Deprecated] The following button is being pressed:',
 				nl: '[Verouderd] De volgende knop wordt ingedrukt:',
 			},
 			args: [
@@ -1540,7 +1540,7 @@ $('<div>').append(
 		{
 			id: 'motionSensorOn',
 			title: {
-				en: '[Depricated] !{{Motion|No motion}} detected',
+				en: '[Deprecated] !{{Motion|No motion}} detected',
 				nl: '[Verouderd] !{{Beweging|Geen beweging}} gedetecteerd',
 			},
 			args: [
@@ -1555,7 +1555,7 @@ $('<div>').append(
 		{
 			id: 'nightSensorOn',
 			title: {
-				en: '[Depricated] !{{Darkness|Light}} detected',
+				en: '[Deprecated] !{{Darkness|Light}} detected',
 				nl: '[Verouderd] !{{Geen licht|Licht}} gedetecteerd',
 			},
 			args: [
@@ -1570,7 +1570,7 @@ $('<div>').append(
 		{
 			id: 'contactSensorOn',
 			title: {
-				en: '[Depricated] Contact sensor !{{open|closed}}',
+				en: '[Deprecated] Contact sensor !{{open|closed}}',
 				nl: '[Verouderd] Contakt sensor !{{geopend|gesloten}}',
 			},
 			args: [
@@ -1587,7 +1587,7 @@ $('<div>').append(
 		{
 			id: 'windowcoveringUp',
 			title: {
-				en: '[Depricated] Open the blinds',
+				en: '[Deprecated] Open the blinds',
 				nl: '[Verouderd] Open het zonnescherm',
 			},
 			args: [
@@ -1602,7 +1602,7 @@ $('<div>').append(
 		{
 			id: 'windowcoveringDown',
 			title: {
-				en: '[Depricated] Close the blinds',
+				en: '[Deprecated] Close the blinds',
 				nl: '[Verouderd] Sluit het zonnescherm',
 			},
 			args: [

@@ -1,3 +1,3 @@
 "use strict";
-var KaKu = require('../depricated/KaKu.js');
+var KaKu = require('../deprecated/KaKu.js');
 module.exports = KaKu.createDriver('remote');

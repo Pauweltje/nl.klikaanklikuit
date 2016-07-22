@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "compatibility": ">=0.8.30",
   "category": [
     "appliances",
@@ -690,7 +690,7 @@
       {
         "id": "remote",
         "title": {
-          "en": "[Depricated] The following button is being pressed:",
+          "en": "[Deprecated] The following button is being pressed:",
           "nl": "[Verouderd] De volgende knop wordt ingedrukt:"
         },
         "args": [
@@ -803,7 +803,7 @@
       {
         "id": "doorbell",
         "title": {
-          "en": "[Depricated] The doorbell is pressed",
+          "en": "[Deprecated] The doorbell is pressed",
           "nl": "[Verouderd] De deurbel wordt ingedrukt"
         },
         "args": [
@@ -821,7 +821,7 @@
       {
         "id": "wallSwitch",
         "title": {
-          "en": "[Depricated] Wallswitch is switched on"
+          "en": "[Deprecated] Wallswitch is switched on"
         },
         "args": [
           {
@@ -885,7 +885,7 @@
       {
         "id": "oldRemote",
         "title": {
-          "en": "[Depricated] The following button is being pressed:",
+          "en": "[Deprecated] The following button is being pressed:",
           "nl": "[Verouderd] De volgende knop wordt ingedrukt:"
         },
         "args": [
@@ -1070,7 +1070,7 @@
       {
         "id": "motionSensorOn",
         "title": {
-          "en": "[Depricated] !{{Motion|No motion}} detected",
+          "en": "[Deprecated] !{{Motion|No motion}} detected",
           "nl": "[Verouderd] !{{Beweging|Geen beweging}} gedetecteerd"
         },
         "args": [
@@ -1088,7 +1088,7 @@
       {
         "id": "nightSensorOn",
         "title": {
-          "en": "[Depricated] !{{Darkness|Light}} detected",
+          "en": "[Deprecated] !{{Darkness|Light}} detected",
           "nl": "[Verouderd] !{{Geen licht|Licht}} gedetecteerd"
         },
         "args": [
@@ -1106,7 +1106,7 @@
       {
         "id": "contactSensorOn",
         "title": {
-          "en": "[Depricated] Contact sensor !{{open|closed}}",
+          "en": "[Deprecated] Contact sensor !{{open|closed}}",
           "nl": "[Verouderd] Contakt sensor !{{geopend|gesloten}}"
         },
         "args": [
@@ -1154,7 +1154,7 @@
       {
         "id": "windowcoveringUp",
         "title": {
-          "en": "[Depricated] Open the blinds",
+          "en": "[Deprecated] Open the blinds",
           "nl": "[Verouderd] Open het zonnescherm"
         },
         "args": [
@@ -1172,7 +1172,7 @@
       {
         "id": "windowcoveringDown",
         "title": {
-          "en": "[Depricated] Close the blinds",
+          "en": "[Deprecated] Close the blinds",
           "nl": "[Verouderd] Sluit het zonnescherm"
         },
         "args": [
@@ -2351,12 +2351,12 @@
     {
       "id": "switch",
       "name": {
-        "en": "[Depricated] Socket",
+        "en": "[Deprecated] Socket",
         "nl": "[Verouderd] Stopcontact"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -2366,12 +2366,12 @@
     {
       "id": "dimmer",
       "name": {
-        "en": "[Depricated] Dimmer",
+        "en": "[Deprecated] Dimmer",
         "nl": "[Verouderd] Dimmer"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -2382,12 +2382,12 @@
     {
       "id": "blinds",
       "name": {
-        "en": "[Depricated] Blinds",
+        "en": "[Deprecated] Blinds",
         "nl": "[Verouderd] Zonwering"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -2407,12 +2407,12 @@
     {
       "id": "remote",
       "name": {
-        "en": "[Depricated] Remote",
+        "en": "[Deprecated] Remote",
         "nl": "[Verouderd] Afstandbediening"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "other",
       "capabilities": []
@@ -2420,12 +2420,12 @@
     {
       "id": "wallSwitch",
       "name": {
-        "en": "[Depricated] Wallswitch",
+        "en": "[Deprecated] Wallswitch",
         "nl": "[Verouderd] Muurschakelaar"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "other",
       "capabilities": []
@@ -2433,12 +2433,12 @@
     {
       "id": "doorbell",
       "name": {
-        "en": "[Depricated] Doorbell",
+        "en": "[Deprecated] Doorbell",
         "nl": "[Verouderd] Deurbel"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "other",
       "capabilities": []
@@ -2446,12 +2446,12 @@
     {
       "id": "nightSensor",
       "name": {
-        "en": "[Depricated] Night sensor",
+        "en": "[Deprecated] Night sensor",
         "nl": "[Verouderd] Nacht sensor"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "sensor",
       "capabilities": [
@@ -2461,12 +2461,12 @@
     {
       "id": "motionSensor",
       "name": {
-        "en": "[Depricated] Motion sensor",
+        "en": "[Deprecated] Motion sensor",
         "nl": "[Verouderd] Bewegings sensor"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "sensor",
       "capabilities": [
@@ -2476,12 +2476,12 @@
     {
       "id": "contactSensor",
       "name": {
-        "en": "[Depricated] Contact sensor",
+        "en": "[Deprecated] Contact sensor",
         "nl": "[Verouderd] Contact sensor"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "sensor",
       "capabilities": [
@@ -2491,12 +2491,12 @@
     {
       "id": "kakuOldSwitch",
       "name": {
-        "en": "[Depricated] Old socket",
+        "en": "[Deprecated] Old socket",
         "nl": "[Verouderd] Oud stopcontact"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -2506,12 +2506,12 @@
     {
       "id": "kakuOldRemote",
       "name": {
-        "en": "[Depricated] Old remote",
+        "en": "[Deprecated] Old remote",
         "nl": "[Verouderd] Oude afstandbediening"
       },
       "images": {
-        "large": "./433_generator/assets/depricated/images/large.png",
-        "small": "./433_generator/assets/depricated/images/small.png"
+        "large": "./433_generator/assets/deprecated/images/large.png",
+        "small": "./433_generator/assets/deprecated/images/small.png"
       },
       "class": "remote",
       "capabilities": [

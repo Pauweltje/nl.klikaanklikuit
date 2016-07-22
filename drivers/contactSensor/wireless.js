@@ -14,7 +14,7 @@ var signal = new Homey.wireless('433').Signal({
     maximalLength: 36
 });	
 
-var Debouncer = require('../depricated/debouncer.js');
+var Debouncer = require('../deprecated/debouncer.js');
 
 module.exports = {
 	init: function(kakuJS){
