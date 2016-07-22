@@ -1,0 +1,22 @@
+<div class="centered-container">
+	<div id="image-container"></div>
+	<div id="body"><span class="content"></span></div>
+	<div class="foundAnimation" id="foundBackground" style="display:none;"></div>
+	<i class="fa fa-check-circle foundAnimation" id="found" style="display:none;" aria-hidden="true"></i>
+</div>
+
+<script>
+	var idPrefix = '[data-id="' + options.id + '"] ';
+	$(idPrefix + '#body > span').html(__(options.body));
+	var $imageContainer = $(idPrefix + '#image-container');
+	$imageContainer.css('width', options.svgWidth).css('height', options.svgHeight);
+
+	$imageContainer.html(options.svg);
+	$imageContainer.highlight();
+
+	Homey.emit('program', function(err, device){
+		window.selected_devices = [ device.data.id ];
+		window.found_devices = {};
+		window.found_devices[device.data.id] = device;
+	});
+</script>

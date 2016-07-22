@@ -1,0 +1,35 @@
+'use strict';
+
+const Kaku = require('./kaku');
+
+module.exports = class Remote extends Kaku {
+	payloadToData(payload) { // Convert received data to usable variables
+		const data = super.payloadToData(payload);
+		if (!data) return data;
+
+		data.id = data.address;
+		return data;
+	}
+
+	onTriggerReceived(callback, args, state) {
+		if (args.unit === 'g') {
+			args.channel = '00';
+			args.unit = '00';
+			args.group = 1;
+		} else {
+			args.group = 0;
+		}
+		super.onTriggerReceived(callback, args, state);
+	}
+
+	onActionSend(callback, args) {
+		if (args.unit === 'g') {
+			args.channel = '00';
+			args.unit = '00';
+			args.group = 1;
+		} else {
+			args.group = 0;
+		}
+		super.onActionSend(callback, args);
+	}
+};

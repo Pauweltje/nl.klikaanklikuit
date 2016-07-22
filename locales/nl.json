@@ -1,0 +1,343 @@
+{
+	"deviceClasses": {
+		"generic_remote": {
+			"views": {
+				"generic_imitate": {
+					"title": "Identificeer je afstandsbediening\u0000",
+					"body": "Klik op een willekeurige knop op je afstandsbediening om hem te koppelen.\u0000"
+				}
+			}
+		},
+		"generic_wall_switch": {
+			"views": {
+				"generic_test_remote": {
+					"title": "Test je wandschakelaar\u0000",
+					"body": "Druk op een willekeurige knop op je wandschakelaar of op de knoppen in het bovenstaande plaatje om het signaal te testen. Klik op volgende om verder te gaan\u0000"
+				}
+			}
+		},
+		"wall_switch": {
+			"settings": {
+				"groups": {
+					"general": "Algemene instellingen"
+				},
+				"rotated": {
+					"0": "Rechtop",
+					"180": "Ondersteboven",
+					"label": "Roteer wandschakelaar"
+				}
+			}
+		},
+		"sensor": {
+			"views": {
+				"generic_imitate": {
+					"body": "Schuif de LEARN knop naar DEL en terug naar SET."
+				},
+				"generic_test_remote": {
+					"body": "Laat de sensor handmatig afgaan of gebruik de LEARN knop om het signaal te testen. Klik op volgende om verder te gaan."
+				}
+			},
+			"conditions": {
+				"state": {
+					"title": "Sensor gaat !{{af|niet af}}"
+				}
+			}
+		},
+		"generic_switch": {
+			"views": {
+				"generic_choice": {
+					"title": "Kopieer je afstansbediening of programmeer met Homey\u0000",
+					"body": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je het apparaat wil programmeren met een nieuw signaal van Homey.\u0000"
+				}
+			}
+		},
+		"generic_socket": {
+			"views": {
+				"generic_imitate": {
+					"title": "Kopieer het signaal van je afstandsbediening\u0000",
+					"body": "Druk op de knop van de afstandsbediening waarmee het apparaat gekoppeld is.\u0000"
+				},
+				"generic_test_switch": {
+					"title": "Test je contactdoos\u0000",
+					"body": "Gebruik de bovenstaande knop om je contactdoos te testen. Klik op volgende om verder te gaan.\u0000"
+				},
+				"generic_test_switch_2": {
+					"body": "Gebruik je afstandsbediening of de bovenstaande knop om je contactdoos te testen. Klik op volgende om verder te gaan.\u0000"
+				},
+				"generic_program": {
+					"title": "Zet de contactdoos in programmeer modus\u0000"
+				}
+			}
+		},
+		"socket": {
+			"views": {
+				"generic_program": {
+					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden, het lampje op de contactdoos moet gaan knipperen wanneer de knop losgelaten wordt. Klik daarna op volgende."
+				}
+			}
+		},
+		"blinds": {
+			"views": {
+				"generic_imitate": {
+					"body": "Druk op de omhoog/omlaag knop van de afstandsbediening die met de zonnewering gekoppeld is."
+				},
+				"generic_test_switch": {
+					"title": "Test de zonnewering",
+					"body": "Gebruik de bovenstaande knoppen om de zonnewering te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_test_switch_2": {
+					"body": "Gebruik je afstandsbediening of de bovenstaande knoppen om de zonnewering te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_program": {
+					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende."
+				}
+			}
+		},
+		"doorbell": {
+			"views": {
+				"generic_choice": {
+					"body": "Kies of je het signaal van je deurbel wil kopiëren of dat je de deurbel wil programmeren met een nieuw signaal van Homey."
+				},
+				"generic_imitate": {
+					"body": "Druk op de deurbel knop."
+				},
+				"generic_test_button": {
+					"title": "Test de deurbel",
+					"body": "Gebruik de bovenstaande knop om de deurbel te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_test_button_2": {
+					"body": "Gebruik de knop van de deurbel of de bovenstaande knop om de deurbel te testen."
+				}
+			},
+			"triggers": {
+				"received": {
+					"title": "Deurbel gaat af"
+				},
+				"send": {
+					"title": "Laat deurbel afgaan"
+				}
+			}
+		},
+		"simple_socket": {
+			"views": {
+				"generic_program": {
+					"body": "Haal de contactdoos uit het stopcontact voor een aantal seconden en plaats hem terug in het stopcontact. Het rode lampje zou nu moeten knipperen. Wanneer het apparaat in koppelmodus is klik op volgende."
+				}
+			}
+		}
+	},
+	"views": {
+		"generic_done": {
+			"title": "Apparaat wordt toegevoegd!\u0000"
+		},
+		"generic_test_remote": {
+			"title": "Test je apparaat\u0000",
+			"body": "Druk op een willekeurige knop op je afstandsbediening of op de knoppen in het bovenstaande plaatje om het signaal te testen. Klik op volgende om verder te gaan.\u0000"
+		},
+		"generic_choice": {
+			"buttons": {
+				"copy": "Kopieer afstandsbediening\u0000",
+				"generate": "Genereer signaal\u0000"
+			}
+		},
+		"generic_imitate": {
+			"title": "Kopieer het signaal van je afstandsbediening\u0000"
+		},
+		"generic_program": {
+			"title": "Programmeer je apparaat met Homey\u0000"
+		}
+	},
+	"433_generator": {
+		"generic": {
+			"button_pressed": "Knop is ingedrukt\u0000",
+			"on": "Aan\u0000",
+			"off": "Uit\u0000",
+			"buttons": {
+				"1": "Knop 1\u0000",
+				"2": "Knop 2\u0000",
+				"3": "Knop 3\u0000",
+				"4": "Knop 4\u0000",
+				"5": "Knop 5\u0000",
+				"G": "Groep Knop\u0000",
+				"left": "Linker Knop\u0000",
+				"right": "Rechter Knop\u0000",
+				"A": "Knop A\u0000",
+				"B": "Knop B\u0000",
+				"C": "Knop C\u0000",
+				"D": "Knop D\u0000",
+				"E": "Knop E\u0000",
+				"all": "All Knop\u0000",
+				"bright": "Fel Knop\u0000",
+				"dim": "Gedimt Knop\u0000",
+				"middle": "Middelste Knop\u0000"
+			},
+			"channels": {
+				"1": "Kanaal 1\u0000",
+				"2": "Kanaal 2\u0000",
+				"3": "Kanaal 3\u0000",
+				"4": "Kanaal 4\u0000",
+				"5": "Kanaal 5\u0000",
+				"I": "Kanaal I\u0000",
+				"II": "Kanaal II\u0000",
+				"III": "Kanaal III\u0000",
+				"IV": "Kanaal IV\u0000",
+				"V": "Kanaal V\u0000",
+				"A": "Kanaal A\u0000",
+				"B": "Kanaal B\u0000",
+				"C": "Kanaal C\u0000",
+				"D": "Kanaal D\u0000",
+				"E": "Kanaal E\u0000"
+			},
+			"left": "Links\u0000",
+			"middle": "Midden\u0000",
+			"right": "Rechts\u0000",
+			"up": "Up\u0000",
+			"down": "Down\u0000"
+		},
+		"error": {
+			"device_exists": "Apparaat is al gekoppeld met Homey.\u0000",
+			"no_device": "Er is geen apparaat ingesteld. Sluit de pairing wizard en probeer opnieuw.\u0000",
+			"no_settings": "Geen instelling object. Probeer aub opnieuw.\u0000"
+		}
+	},
+	"devices": {
+		"AWST-8800": {
+			"name": null
+		},
+		"AWST-6000": {
+			"views": {
+				"generic_imitate": {
+					"title": "Koppel de bewegingssensor"
+				},
+				"generic_test_remote": {
+					"title": "Test de bewegingssensor"
+				}
+			},
+			"conditions": {
+				"state": {
+					"title": "Sensor detecteert !{{beweging|geen beweging}}"
+				}
+			},
+			"name": null
+		},
+		"PA3-1000R": {
+			"name": null
+		},
+		"APA2-2300RS": {
+			"name": null
+		},
+		"YCT-102": {
+			"name": null
+		},
+		"AWST-8802": {
+			"name": null
+		},
+		"WST-8700": {
+			"name": null
+		},
+		"AYCT-102": {
+			"name": null
+		},
+		"ASUN-650": {
+			"name": null
+		},
+		"AFR-100": {
+			"views": {
+				"generic_imitate": {
+					"body": "Druk op de knop die gekoppeld is met de fitting."
+				},
+				"generic_program": {
+					"body": "Houd de programmeer knop van de fitting ingedrukt voor een paar seconden. Het lampje op de fitting hoort te gaan knipperen wanneer het knopje losgelaten wordt. Klik op volgende wanneer de fitting in programmeer modus zit."
+				},
+				"generic_test_switch": {
+					"title": "Test de fitting",
+					"body": "Gebruik de bovenstaande schakelaar om de fitting te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_test_switch_2": {
+					"body": "Gebruik de afstandsbediening of de bovenstaande schakelaar om de fitting te testen. Klik op volgende om verder te gaan."
+				}
+			},
+			"name": null
+		},
+		"ACDB-6600": {
+			"views": {
+				"generic_choice": {
+					"buttons": {
+						"generic_imitate": "Kopieer deurbel signaal"
+					}
+				}
+			},
+			"name": null
+		},
+		"ACDB-7000C": {
+			"name": null
+		},
+		"APA3-1500RS": {
+			"name": null
+		},
+		"APA3-1500R": {
+			"name": null
+		},
+		"AGDR-300": {
+			"name": null
+		},
+		"ABST-604": {
+			"views": {
+				"generic_imitate": {
+					"title": "Koppel de nachtsensor"
+				},
+				"generic_test_remote": {
+					"title": "Test de nachtsensor"
+				}
+			},
+			"conditions": {
+				"state": {
+					"title": "Sensor detecteert !{{nacht|dag}}"
+				}
+			},
+			"name": null
+		},
+		"AMST-606": {
+			"views": {
+				"generic_imitate": {
+					"body": "Koppel de contactsensor",
+					"title": "Houd beide delen van de contactsensor bij elkaar en haal deze weer van elkaar af."
+				},
+				"generic_test_remote": {
+					"body": "Test de contactsensor",
+					"title": "Gebruik de contactsensor om het signaal te testen. Klik op volgende om verder te gaan."
+				}
+			},
+			"conditions": {
+				"state": {
+					"title": "Sensor heeft {{geen contact|contact}}"
+				}
+			},
+			"name": null
+		},
+		"ALMST-2000": {
+			"name": null
+		},
+		"KCT-510": {
+			"name": null
+		},
+		"APA2-2300R": {
+			"name": null
+		},
+		"APIR-2150": {
+			"name": null
+		},
+		"AKCT-510": {
+			"name": null
+		},
+		"ACD-200": {
+			"name": null
+		},
+		"WST-8800": {
+			"name": null
+		},
+		"AC-300": {
+			"name": null
+		}
+	}
+}
