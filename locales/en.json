@@ -95,6 +95,13 @@
 				"generic_test_switch_2": {
 					"body": "Use your remote or the buttons above to test your blinds. Press next to continue."
 				}
+			},
+			"settings": {
+				"rotated": {
+					"0": "No",
+					"180": "Yes",
+					"label": "Invert up/down signal"
+				}
 			}
 		},
 		"doorbell": {

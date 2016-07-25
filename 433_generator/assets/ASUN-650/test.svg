@@ -2,9 +2,23 @@
 <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="229px" height="174.314px" viewBox="14 0 198.781 174.314" enable-background="new 0 0 198.781 174.314"
-	 xmlns:animation="-" animation:down="up" xmlns:onclick="-" xmlns:down="-" xml:space="preserve">
+	 width="239px" height="174.314px" viewBox="14 0 208.781 174.314" enable-background="new 0 0 198.781 174.314"
+	 xmlns:animation="-" animation:down="up" xmlns:onclick="-" xmlns:down="-" xml:space="preserve" animation:flip="noflip" xmlns:flip="-" animation:invert="" xmlns:invert="-">
 	<style><![CDATA[
+	svg .invert.up {
+        -moz-animation: down 1.5s steps(10, end) forwards;
+        -webkit-animation: down 1.5s steps(10, end) forwards;
+        -ms-animation: down 1.5s steps(10, end) forwards;
+        animation: down 1.5s steps(10, end) forwards;
+      }
+
+     svg .invert.down {
+        -moz-animation: up 1.5s steps(10, end) forwards;
+        -webkit-animation: up 1.5s steps(10, end) forwards;
+        -ms-animation: up 1.5s steps(10, end) forwards;
+        animation: up 1.5s steps(10, end) forwards;
+      }
+
      svg .down {
         -moz-animation: down 1.5s steps(10, end) forwards;
         -webkit-animation: down 1.5s steps(10, end) forwards;
@@ -54,6 +68,56 @@
      		height: 26px;
      	}
       }
+      svg .noflip {
+		transform-origin: 50% 50%;
+        -moz-animation: noflip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        -webkit-animation: noflip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        -ms-animation: noflip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        animation: noflip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+      }
+     svg .flip {
+		transform-origin: 50% 50%;
+        -moz-animation: flip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        -webkit-animation: flip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        -ms-animation: flip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+        animation: flip 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+      }
+
+     @-webkit-keyframes flip {
+          from {
+			transform: rotate(0);
+          }
+          to {
+			transform: rotate(180deg);
+          }
+      }
+
+      @keyframes flip {
+          from {
+			transform: rotate(0);
+          }
+          to {
+			transform: rotate(180deg);
+          }
+      }
+
+     @-webkit-keyframes noflip {
+          from {
+			transform: rotate(180deg);
+          }
+          to {
+			transform: rotate(0);
+          }
+      }
+
+      @keyframes noflip {
+          from {
+			transform: rotate(180deg);
+          }
+          to {
+			transform: rotate(0);
+          }
+      }
    ]]></style><rect
      x="6.813"
      y="0.25"
@@ -90,6 +154,7 @@
      height="14.719"
      id="rect6894" />
 	<foreignObject
+	 invert:rotated="180"
      down:state="0"
      width="190"><svg
        width="190"
@@ -297,6 +362,7 @@
      width="4.875"
      height="14.719"
      id="rect6906" />
+	<g flip:rotated="180">
 	<g onclick:send='{ "state": 1 }'>
 		<rect
      style="fill:#2b2a29;fill-opacity:1"
@@ -324,5 +390,6 @@
      id="path7471-0"
      d="m 218.50982,60.652327 4.43071,7.561145 4.43072,7.561143 -8.7635,0.05654 -8.7635,0.05654 4.33278,-7.617684 z"
      transform="matrix(-0.94412739,0,0,-0.73860805,423.05536,152.35382)" />
+	</g>
 	</g>
 </svg>

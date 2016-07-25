@@ -39,8 +39,8 @@ module.exports = class Driver extends EventEmitter {
 
 		this.signal.on('error', this.emit.bind(this, 'signal_error'));
 		this.signal.on('data', (frame) => {
-			this.emit('frame', frame);
 			this.received(frame);
+			this.emit('frame', frame);
 		});
 		this.signal.on('payload_send', payload => {
 			const frame = this.payloadToData(payload);

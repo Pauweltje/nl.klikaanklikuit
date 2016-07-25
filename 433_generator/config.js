@@ -452,13 +452,63 @@ $('<div>').append(
 					generic_test_switch: {
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch.body',
+						append: {
+							scripts: `
+$('<div>').append(
+	$('<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">')
+		.on('change', function(){ 
+			Homey.emit('set_settings', { rotated: this.checked ? '180' : '0'}, function(){
+				Homey.emit('settings_change');
+			})
+		}),
+	$('<label for="invert-checkbox" style="padding: 0 1em;">')
+		.html(__('deviceClasses.blinds.settings.rotated.label'))
+).insertAfter('[data-id="generic_test_switch"] .centered-container > #image-container')`,
+						},
 					},
 					generic_test_switch_2: {
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch_2.body',
+						append: {
+							scripts: `
+$('<div>').append(
+	$('<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">')
+		.on('change', function(){ 
+			Homey.emit('set_settings', { rotated: this.checked ? '180' : '0'}, function(){
+				Homey.emit('settings_change');
+			})
+		}),
+	$('<label for="invert-checkbox" style="padding: 0 1em;">')
+		.html(__('deviceClasses.blinds.settings.rotated.label'))
+).insertAfter('[data-id="generic_test_switch_2"] .centered-container > #image-container')`,
+						},
 					},
 				},
 			},
+			settings: [
+				{
+					type: 'group',
+					label: 'deviceClasses.wall_switch.settings.groups.general',
+					children: [
+						{
+							id: 'rotated',
+							type: 'radio',
+							value: '0',
+							label: 'deviceClasses.blinds.settings.rotated.label',
+							values: [
+								{
+									id: '0',
+									label: 'deviceClasses.blinds.settings.rotated.0',
+								},
+								{
+									id: '180',
+									label: 'deviceClasses.blinds.settings.rotated.180',
+								},
+							],
+						},
+					],
+				},
+			],
 		},
 	},
 	devices: {

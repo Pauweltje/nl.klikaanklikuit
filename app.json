@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "compatibility": ">=0.8.30",
   "category": [
     "appliances",
@@ -1897,7 +1897,7 @@
     {
       "id": "APA3-1500RS",
       "name": {
-        "en": "APA3-1500RS"
+        "en": "APA3-1500R"
       },
       "class": "socket",
       "capabilities": [
@@ -2093,6 +2093,42 @@
         "large": "./433_generator/assets/ASUN-650/images/large.png",
         "small": "./433_generator/assets/ASUN-650/images/small.png"
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Invert up/down signal",
+                "nl": "Inverteer omhoog/omlaag signaal"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No",
+                    "nl": "Nee"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Yes",
+                    "nl": "Ja"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "pair": [
         {
           "id": "generic_choice",

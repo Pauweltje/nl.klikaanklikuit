@@ -91,6 +91,13 @@
 				"generic_program": {
 					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende."
 				}
+			},
+			"settings": {
+				"rotated": {
+					"0": "Nee",
+					"180": "Ja",
+					"label": "Inverteer omhoog/omlaag signaal"
+				}
 			}
 		},
 		"doorbell": {
