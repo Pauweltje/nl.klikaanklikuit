@@ -162,7 +162,7 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff'],
+	capabilities: ['onoff', 'dim'],
 	id: 'AGDR-300',
 	signal: {
 		sof: [210, 2724],

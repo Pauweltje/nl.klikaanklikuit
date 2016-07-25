@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "compatibility": ">=0.8.30",
   "category": [
     "appliances",
@@ -1767,7 +1767,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "dim"
       ],
       "images": {
         "large": "./433_generator/assets/ACD-200/images/large.png",
@@ -1834,7 +1835,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "dim"
       ],
       "images": {
         "large": "./433_generator/assets/AGDR-300/images/large.jpg",

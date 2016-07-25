@@ -2467,7 +2467,7 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			capabilities: ['onoff'],
+			capabilities: ['onoff', 'dim'],
 			id: 'AGDR-300',
 			signal: {
 				sof: [210, 2724],
@@ -3059,7 +3059,7 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			capabilities: ['onoff'],
+			capabilities: ['onoff', 'dim'],
 			id: 'ACD-200',
 			signal: {
 				sof: [210, 2724],

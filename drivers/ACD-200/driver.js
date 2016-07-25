@@ -162,7 +162,7 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff'],
+	capabilities: ['onoff', 'dim'],
 	id: 'ACD-200',
 	signal: {
 		sof: [210, 2724],
