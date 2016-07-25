@@ -50,6 +50,7 @@ module.exports = {
 		dimmer: {
 			extends: ['socket'],
 			driver: './drivers/kaku/dimmer.js',
+			capabilities: ['onoff', 'dim'],
 			signal: {
 				sof: [210, 2724], // Start of frame
 				eof: [210], // End of frame
