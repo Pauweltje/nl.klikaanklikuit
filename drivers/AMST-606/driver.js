@@ -61,7 +61,7 @@ const config = {
 		small: '../../433_generator/assets/AMST-606/images/small.png'
 	},
 	id: 'AMST-606',
-	driver: '../../433_generator/drivers/kaku/sensor.js',
+	driver: '../../433_generator/drivers/kaku/contact_sensor.js',
 	signal: {
 		sof: [210, 2724],
 		eof: [210],
@@ -73,7 +73,7 @@ const config = {
 		sensitivity: 0.9,
 		repetitions: 10,
 		minimalLength: 32,
-		maximalLength: 32
+		maximalLength: 36
 	},
 	conditions: [{
 		id: 'AMST-606:state',

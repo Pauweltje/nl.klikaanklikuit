@@ -372,6 +372,7 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	handleReceivedTrigger(device, data) {
+		// if(data.id === device.id) TODO check if performance increase
 		Homey.manager('flow').triggerDevice(`${this.config.id}:received`, null, data, this.getDevice(device), err => {
 			if (err) Homey.error('Trigger error', err);
 		});

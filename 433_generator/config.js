@@ -425,6 +425,23 @@ $('<div>').append(
 				},
 			],
 		},
+		contact_sensor: {
+			extends: 'sensor',
+			driver: './drivers/kaku/contact_sensor.js',
+			signal: {
+				sof: [210, 2724], // Start of frame
+				eof: [210], // End of frame
+				words: [
+					[210, 320, 210, 1320],	// 0
+					[210, 1320, 210, 320],	// 1
+				],
+				interval: 10150, // Time between two messages
+				sensitivity: 0.9,
+				repetitions: 10,
+				minimalLength: 32,
+				maximalLength: 36,
+			},
+		},
 		blinds: {
 			extends: ['generic_switch', 'kaku'],
 			driver: './drivers/kaku/blinds.js',
@@ -848,7 +865,7 @@ $('<div>').append(
 			],
 		},
 		'AMST-606': {
-			extends: 'sensor',
+			extends: 'contact_sensor',
 			name: 'devices.AMST-606.name',
 			images: {
 				large: './assets/AMST-606/images/large.png',
@@ -881,25 +898,26 @@ $('<div>').append(
 				},
 			],
 		},
-		'ALMST-2000': {
-			extends: 'AMST-606',
-			name: 'devices.ALMST-2000.name',
-			images: {
-				large: './assets/ALMST-2000/images/large.jpg',
-				small: './assets/ALMST-2000/images/small.jpg',
-			},
-			icon: './assets/ALMST-2000/icon.svg',
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/ALMST-2000/pair.svg',
-					},
-					generic_test_remote: {
-						svg: './assets/ALMST-2000/test.svg',
-					},
-				},
-			},
-		},
+		// FIXME remove device, mistake, it is an 868 device
+		// 'ALMST-2000': {
+		// 	extends: 'AMST-606',
+		// 	name: 'devices.ALMST-2000.name',
+		// 	images: {
+		// 		large: './assets/ALMST-2000/images/large.jpg',
+		// 		small: './assets/ALMST-2000/images/small.jpg',
+		// 	},
+		// 	icon: './assets/ALMST-2000/icon.svg',
+		// 	pair: {
+		// 		viewOptions: {
+		// 			generic_imitate: {
+		// 				svg: './assets/ALMST-2000/pair.svg',
+		// 			},
+		// 			generic_test_remote: {
+		// 				svg: './assets/ALMST-2000/test.svg',
+		// 			},
+		// 		},
+		// 	},
+		// },
 		'AC-300': {
 			extends: ['socket', 'kaku_old'],
 			name: 'devices.AC-300.name',

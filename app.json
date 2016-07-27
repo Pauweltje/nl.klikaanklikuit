@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "compatibility": ">=0.8.30",
   "category": [
     "appliances",
@@ -1040,20 +1040,6 @@
         ]
       },
       {
-        "id": "ALMST-2000:state",
-        "title": {
-          "en": "Sensor has !{{no contact|contact}}",
-          "nl": "Sensor heeft {{geen contact|contact}}"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=ALMST-2000"
-          }
-        ]
-      },
-      {
         "id": "APIR-2150:state",
         "title": {
           "en": "Sensor detects !{{motion|no motion}}",
@@ -1643,37 +1629,6 @@
       "images": {
         "large": "./433_generator/assets/AMST-606/images/large.png",
         "small": "./433_generator/assets/AMST-606/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALMST-2000",
-      "name": {
-        "en": "ALMST-2000"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_contact"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALMST-2000/images/large.jpg",
-        "small": "./433_generator/assets/ALMST-2000/images/small.jpg"
       },
       "pair": [
         {
