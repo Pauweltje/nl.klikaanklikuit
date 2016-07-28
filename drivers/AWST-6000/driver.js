@@ -58,19 +58,7 @@ const config = {
 		}]
 	},
 	id: 'AWST-6000',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	signal: 'kaku',
 	class: 'sensor',
 	conditions: [{
 		id: 'AWST-6000:state',

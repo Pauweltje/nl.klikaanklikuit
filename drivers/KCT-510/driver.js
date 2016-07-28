@@ -61,20 +61,7 @@ const config = {
 	},
 	id: 'KCT-510',
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
-	signal: {
-		sof: [],
-		eof: [312],
-		words: [
-			[312, 1090, 312, 1090],
-			[312, 1090, 990, 400],
-			[312, 1090, 312, 380]
-		],
-		interval: 11000,
-		repetitions: 20,
-		sensitivity: 0.7,
-		minimalLength: 12,
-		maximalLength: 12
-	},
+	signal: 'kakuold',
 	class: 'other',
 	triggers: [{
 		id: 'KCT-510:received',

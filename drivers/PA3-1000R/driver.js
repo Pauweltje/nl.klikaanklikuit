@@ -94,20 +94,7 @@ const config = {
 		}]
 	}],
 	driver: '../../433_generator/drivers/kakuold/remote',
-	signal: {
-		sof: [],
-		eof: [312],
-		words: [
-			[312, 1090, 312, 1090],
-			[312, 1090, 990, 400],
-			[312, 1090, 312, 380]
-		],
-		interval: 11000,
-		repetitions: 20,
-		sensitivity: 0.7,
-		minimalLength: 12,
-		maximalLength: 12
-	},
+	signal: 'kakuold',
 	name: 'devices.PA3-1000R.name',
 	icon: '../../433_generator/assets/PA3-1000R/icon.svg'
 };

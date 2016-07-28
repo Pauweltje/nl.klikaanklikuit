@@ -65,19 +65,7 @@ module.exports = {
 			},
 			id: 'AWST-8800',
 			driver: '../433_generator/drivers/kaku/wall_switch.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			triggers: [{
 				id: 'AWST-8800:received',
 				title: '433_generator.generic.button_pressed',
@@ -176,19 +164,7 @@ module.exports = {
 				}]
 			},
 			id: 'AWST-6000',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'sensor',
 			conditions: [{
 				id: 'AWST-6000:state',
@@ -375,19 +351,7 @@ module.exports = {
 			id: 'APA2-2300RS',
 			class: 'socket',
 			driver: '../433_generator/drivers/kaku/kaku.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			name: 'devices.APA2-2300RS.name',
 			icon: '../433_generator/assets/ACD-200/socket.svg'
 		},
@@ -485,20 +449,7 @@ module.exports = {
 				}]
 			}],
 			driver: '../433_generator/drivers/kakuold/remote',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			name: 'devices.PA3-1000R.name',
 			icon: '../433_generator/assets/PA3-1000R/icon.svg'
 		},
@@ -565,19 +516,7 @@ module.exports = {
 			},
 			id: 'AWST-8802',
 			driver: '../433_generator/drivers/kaku/wall_switch.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'other',
 			triggers: [{
 				id: 'AWST-8802:received',
@@ -744,20 +683,7 @@ module.exports = {
 				}]
 			}],
 			driver: '../433_generator/drivers/kakuold/remote',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			name: 'devices.YCT-102.name',
 			icon: '../433_generator/assets/YCT-102/icon.svg'
 		},
@@ -824,20 +750,7 @@ module.exports = {
 			},
 			id: 'WST-8700',
 			driver: '../433_generator/drivers/kakuold/wall_switch.js',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			triggers: [{
 				id: 'WST-8700:received',
 				title: '433_generator.generic.button_pressed',
@@ -994,19 +907,7 @@ module.exports = {
 				}]
 			}],
 			driver: '../433_generator/drivers/kaku/remote',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			name: 'devices.AYCT-102.name',
 			icon: '../433_generator/assets/AYCT-102/remote.svg'
 		},
@@ -1158,19 +1059,7 @@ module.exports = {
 			},
 			id: 'ASUN-650',
 			driver: '../433_generator/drivers/kaku/blinds.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'windowcoverings',
 			settings: [{
 				type: 'group',
@@ -1332,38 +1221,13 @@ module.exports = {
 			},
 			capabilities: ['onoff', 'dim'],
 			id: 'AFR-100',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320],
-					[210, 320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 36
-			},
+			signal: 'kakudim',
 			class: 'light',
 			images: {
 				large: '../433_generator/assets/AFR-100/images/large.jpg',
 				small: '../433_generator/assets/AFR-100/images/small.jpg'
 			},
-			alternativeSignal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			alternativeSignal: 'kaku',
 			name: 'devices.AFR-100.name',
 			icon: '../433_generator/assets/AFR-100/icon.svg'
 		},
@@ -1519,19 +1383,7 @@ module.exports = {
 			},
 			id: 'ACDB-7000C',
 			driver: '../433_generator/drivers/kaku/doorbell.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'doorbell',
 			triggers: [{
 				id: 'ACDB-7000C:received',
@@ -1707,19 +1559,7 @@ module.exports = {
 			},
 			id: 'ACDB-6600',
 			driver: '../433_generator/drivers/kaku/doorbell.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'doorbell',
 			triggers: [{
 				id: 'ACDB-6600:received',
@@ -1912,19 +1752,7 @@ module.exports = {
 			id: 'APA3-1500RS',
 			class: 'socket',
 			driver: '../433_generator/drivers/kaku/kaku.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			name: 'devices.APA3-1500RS.name',
 			icon: '../433_generator/assets/APA3-1500RS/icon.svg'
 		},
@@ -2025,19 +1853,7 @@ module.exports = {
 				}]
 			}],
 			driver: '../433_generator/drivers/kaku/remote',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			name: 'devices.APA3-1500R.name',
 			icon: '../433_generator/assets/APA3-1500R/icon.svg'
 		},
@@ -2103,19 +1919,7 @@ module.exports = {
 			},
 			id: 'ABST-604',
 			driver: '../433_generator/drivers/kaku/sensor.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			conditions: [{
 				id: 'ABST-604:state',
 				title: 'devices.ABST-604.conditions.state.title',
@@ -2191,19 +1995,7 @@ module.exports = {
 			},
 			id: 'AMST-606',
 			driver: '../433_generator/drivers/kaku/contact_sensor.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 36
-			},
+			signal: 'kakulong',
 			conditions: [{
 				id: 'AMST-606:state',
 				title: 'devices.AMST-606.conditions.state.title',
@@ -2381,38 +2173,13 @@ module.exports = {
 			},
 			capabilities: ['onoff', 'dim'],
 			id: 'AGDR-300',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320],
-					[210, 320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 36
-			},
+			signal: 'kakudim',
 			class: 'socket',
 			images: {
 				large: '../433_generator/assets/AGDR-300/images/large.jpg',
 				small: '../433_generator/assets/AGDR-300/images/small.jpg'
 			},
-			alternativeSignal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			alternativeSignal: 'kaku',
 			name: 'devices.AGDR-300.name',
 			icon: '../433_generator/assets/AGDR-300/icon.svg'
 		},
@@ -2510,19 +2277,7 @@ module.exports = {
 				}]
 			}],
 			driver: '../433_generator/drivers/kaku/remote_valueline',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			name: 'devices.APA2-2300R.name',
 			icon: '../433_generator/assets/APA2-2300R/icon.svg'
 		},
@@ -2584,19 +2339,7 @@ module.exports = {
 				}]
 			},
 			id: 'APIR-2150',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'sensor',
 			conditions: [{
 				id: 'APIR-2150:state',
@@ -2675,20 +2418,7 @@ module.exports = {
 			},
 			id: 'KCT-510',
 			driver: '../433_generator/drivers/kakuold/kaku.js',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			class: 'other',
 			triggers: [{
 				id: 'KCT-510:received',
@@ -2773,19 +2503,7 @@ module.exports = {
 			},
 			id: 'AKCT-510',
 			driver: '../433_generator/drivers/kaku/kaku.js',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			signal: 'kaku',
 			class: 'other',
 			triggers: [{
 				id: 'AKCT-510:received',
@@ -2973,38 +2691,13 @@ module.exports = {
 			},
 			capabilities: ['onoff', 'dim'],
 			id: 'ACD-200',
-			signal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320],
-					[210, 320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 36
-			},
+			signal: 'kakudim',
 			class: 'socket',
 			images: {
 				large: '../433_generator/assets/ACD-200/images/large.png',
 				small: '../433_generator/assets/ACD-200/images/small.png'
 			},
-			alternativeSignal: {
-				sof: [210, 2724],
-				eof: [210],
-				words: [
-					[210, 320, 210, 1320],
-					[210, 1320, 210, 320]
-				],
-				interval: 10150,
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32
-			},
+			alternativeSignal: 'kaku',
 			name: 'devices.ACD-200.name',
 			icon: '../433_generator/assets/ACD-200/socket.svg'
 		},
@@ -3071,20 +2764,7 @@ module.exports = {
 			},
 			id: 'WST-8800',
 			driver: '../433_generator/drivers/kakuold/wall_switch.js',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			triggers: [{
 				id: 'WST-8800:received',
 				title: '433_generator.generic.button_pressed',
@@ -3294,20 +2974,7 @@ module.exports = {
 			id: 'AC-300',
 			class: 'socket',
 			driver: '../433_generator/drivers/kakuold/kaku.js',
-			signal: {
-				sof: [],
-				eof: [312],
-				words: [
-					[312, 1090, 312, 1090],
-					[312, 1090, 990, 400],
-					[312, 1090, 312, 380]
-				],
-				interval: 11000,
-				repetitions: 20,
-				sensitivity: 0.7,
-				minimalLength: 12,
-				maximalLength: 12
-			},
+			signal: 'kakuold',
 			name: 'devices.AC-300.name',
 			icon: '../433_generator/assets/ACD-200/socket.svg'
 		}

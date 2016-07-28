@@ -63,19 +63,7 @@ const config = {
 	},
 	id: 'AWST-8802',
 	driver: '../../433_generator/drivers/kaku/wall_switch.js',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	signal: 'kaku',
 	class: 'other',
 	triggers: [{
 		id: 'AWST-8802:received',

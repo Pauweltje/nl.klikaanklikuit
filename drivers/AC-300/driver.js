@@ -169,20 +169,7 @@ const config = {
 	id: 'AC-300',
 	class: 'socket',
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
-	signal: {
-		sof: [],
-		eof: [312],
-		words: [
-			[312, 1090, 312, 1090],
-			[312, 1090, 990, 400],
-			[312, 1090, 312, 380]
-		],
-		interval: 11000,
-		repetitions: 20,
-		sensitivity: 0.7,
-		minimalLength: 12,
-		maximalLength: 12
-	},
+	signal: 'kakuold',
 	name: 'devices.AC-300.name',
 	icon: '../../433_generator/assets/ACD-200/socket.svg'
 };

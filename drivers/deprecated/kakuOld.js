@@ -15,24 +15,34 @@ function createDriver(driver) {
 				initFlag = 0;
 				flowInit(self);
 				var Signal = Homey.wireless('433').Signal;
-				signal = new Signal({   
-					sof: [],
-				   	eof: [312],
-					words: [
-						[312, 1090, 312, 1090],	// 0
-						[312, 1090, 990, 400],	// 1
-						[312, 1090, 312, 380]   // 2
-					],
-					interval: 11000,
-					repetitions: 20,
-					sensitivity: 0.7,
-					minimalLength: 12,
-	   				maximalLength: 12
-				});	
+				signal = new Signal('kakuold');
+
+				signal.numberToBitArray = function(number, bit_count) {
+					var result = [];
+					for (var i = 0; i < bit_count; i++)
+						result[i] = (number >> i) & 1;
+					return result;
+				};
+
+				signal.bitArrayToNumber = function(bits) {
+					return parseInt(bits.join(""),2);
+				};
+
+				signal.bitStringToBitArray = function(str) {
+					var result = [];
+					for (var i = 0; i < str.length; i++)
+						result.push(str.charAt(i) == '1' ? 1 : 0);
+					return result;
+				};
+
+				signal.bitArrayToString = function(bits) {
+					return bits.join("");
+				};
+				
 				signal.register(function( err, success ){
 				    if(err != null)	console.log('Kaku old: err', err, 'success', success);
 				});
-				
+
 				//Start receiving
 				signal.on('payload', function(payload, first){
 					if(!first) return;
@@ -63,12 +73,12 @@ function createDriver(driver) {
 			});
 			callback();
 		},
-		
+
 		deleted: function( device_data ) {
 			console.log('Deleting', __(device_data.driver));
 			delete deviceList[deviceList.indexOf(getDeviceById(device_data))];
 		},
-		
+
 		capabilities: {
 			onoff: {
 				get: function( device_data, callback ) {
@@ -79,30 +89,30 @@ function createDriver(driver) {
 					var devices = getDeviceByAddress(device_data);
 					devices.forEach(function(device){
 						updateDevice(self, device, onoff)
-					});	
+					});
 					sendOnOff(devices[0].constant, onoff);
-					callback( null, onoff ? true : false );		
+					callback( null, onoff ? true : false );
 				}
 			}
 		},
-		
+
 		pair: function( socket ) {
 			var tempdata = {};
 
-			socket.on('imitate', function learn( data, callback){ 
-				myEvent.once('newMessage', function(device_data){		
+			socket.on('imitate', function learn( data, callback){
+				myEvent.once('newMessage', function(device_data){
 					tempdata = {
 						address: device_data.address,
 						channel: device_data.channel,
 						unit   : device_data.unit
 					}
 					Homey.manager('settings').set( "" + device_data.address + device_data.channel + device_data.unit + 'onoff', device_data.onoff );
-					socket.emit('remote_found'); //Send signal to front-end	
+					socket.emit('remote_found'); //Send signal to front-end
 				});
 				callback();
 			});
 
-			socket.on('manual', function( data, callback){ 	
+			socket.on('manual', function( data, callback){
 				var temp = {
 					address: numberToBitArray(data.address, 4),
 					channel: numberToBitArray((data.button) >> 2, 2),
@@ -116,14 +126,14 @@ function createDriver(driver) {
 				Homey.manager('settings').set( "" + tempdata.address + tempdata.channel + tempdata.unit + 'onoff', false );
 				callback();
 			});
-			
+
 			socket.on('generate', function( data, callback){
 				// Generate new device data and send on signal
 				tempdata = {
 					address: signal.bitArrayToString(generateArray(4)),
 					channel: signal.bitArrayToString(generateArray(2)),
 					unit   : signal.bitArrayToString(generateArray(2)),
-				}	
+				}
 				Homey.manager('settings').set( "" + tempdata.address + tempdata.channel + tempdata.unit + 'onoff', true );
 				sendOnOff(tempdata, true);
 				callback();
@@ -136,7 +146,7 @@ function createDriver(driver) {
 			        		if(device_data.onoff) socket.emit('received_on');
 							else socket.emit('received_off');
 			        	}
-						socket.emit('received', device_data);		
+						socket.emit('received', device_data);
 					}
 				});
 				callback(null, tempdata);
@@ -148,7 +158,7 @@ function createDriver(driver) {
 				var devices = getDeviceByAddress(tempdata);
 				devices.forEach(function(device){
 					updateDevice(self, device, 'onoff',onoff);
-				});	
+				});
 				callback();
 			});
 
@@ -191,14 +201,14 @@ function getDeviceById(deviceIn) {
 
 function getDeviceByAddress(deviceIn) {
 	var matches = deviceList.filter(function(d){
-		return d.constant.address == deviceIn.address && d.constant.channel == deviceIn.channel && d.constant.unit == deviceIn.unit; 
+		return d.constant.address == deviceIn.address && d.constant.channel == deviceIn.channel && d.constant.unit == deviceIn.unit;
 	});
 	return matches ? matches : null;
 }
 
 function getRemotes(deviceIn) {
 	var matches = deviceList.filter(function(d){
-		return d.constant.address == deviceIn.address; 
+		return d.constant.address == deviceIn.address;
 	});
 	return matches ? matches : null;
 }
@@ -229,8 +239,8 @@ function sendOnOff(device, onoff) {
 }
 
 function parseRXData(data) {
-	return { 
-		address: signal.bitArrayToString(data.slice(0, 4)), 
+	return {
+		address: signal.bitArrayToString(data.slice(0, 4)),
 		unit   : signal.bitArrayToString(data.slice(4, 6)),
 		channel: signal.bitArrayToString(data.slice(6, 8)),
 		onoff  : data.slice(11, 12)[0] ? true : false
@@ -238,10 +248,10 @@ function parseRXData(data) {
 }
 
 function flowInit(self){
-	Homey.manager('flow').on('trigger.oldRemote', function( callback, args, state ){ 
+	Homey.manager('flow').on('trigger.oldRemote', function( callback, args, state ){
 		if(args.unit == "22") args.channel = "22";
-	    if( args.device.address == lastTriggered.address && args.channel == lastTriggered.channel 
-	    	&& args.unit == lastTriggered.unit && args.state == lastTriggered.onoff) callback( null, true ); 
+	    if( args.device.address == lastTriggered.address && args.channel == lastTriggered.channel
+	    	&& args.unit == lastTriggered.unit && args.state == lastTriggered.onoff) callback( null, true );
 		else callback( null, false );
 	});
 }

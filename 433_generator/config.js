@@ -16,6 +16,7 @@ module.exports = {
 			extends: 'defaults',
 			driver: './drivers/kakuold/kaku.js',
 			signal: {
+				id: 'kakuold',
 				sof: [],
 				eof: [312],
 				words: [
@@ -34,6 +35,7 @@ module.exports = {
 			extends: 'defaults',
 			driver: './drivers/kaku/kaku.js',
 			signal: {
+				id: 'kaku',
 				sof: [210, 2724], // Start of frame
 				eof: [210], // End of frame
 				words: [
@@ -52,6 +54,7 @@ module.exports = {
 			driver: './drivers/kaku/dimmer.js',
 			capabilities: ['onoff', 'dim'],
 			signal: {
+				id: 'kakudim',
 				sof: [210, 2724], // Start of frame
 				eof: [210], // End of frame
 				words: [
@@ -65,19 +68,7 @@ module.exports = {
 				minimalLength: 32,
 				maximalLength: 36,
 			},
-			alternativeSignal: {
-				sof: [210, 2724], // Start of frame
-				eof: [210], // End of frame
-				words: [
-					[210, 320, 210, 1320],	// 0
-					[210, 1320, 210, 320],	// 1
-				],
-				interval: 10150, // Time between two messages
-				sensitivity: 0.9,
-				repetitions: 10,
-				minimalLength: 32,
-				maximalLength: 32,
-			},
+			alternativeSignal: 'kaku',
 		},
 		socket: {
 			extends: ['generic_socket', 'kaku'],
@@ -429,6 +420,7 @@ $('<div>').append(
 			extends: 'sensor',
 			driver: './drivers/kaku/contact_sensor.js',
 			signal: {
+				id: 'kakulong',
 				sof: [210, 2724], // Start of frame
 				eof: [210], // End of frame
 				words: [
@@ -1357,6 +1349,7 @@ $('<div>').append(
 				{
 					id: 'invert',
 					type: 'checkbox',
+					value: false,
 					label: {
 						en: 'Invert directions',
 						nl: 'Keer de richtingen om',

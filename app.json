@@ -1,7 +1,7 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.0.6",
-  "compatibility": ">=0.8.30",
+  "version": "2.1.0",
+  "compatibility": ">=0.9",
   "category": [
     "appliances",
     "lights",
@@ -2390,6 +2390,7 @@
         {
           "id": "invert",
           "type": "checkbox",
+          "value": false,
           "label": {
             "en": "Invert directions",
             "nl": "Keer de richtingen om"
@@ -2511,5 +2512,130 @@
         "onoff"
       ]
     }
-  ]
+  ],
+  "signals": {
+    "433": {
+      "kaku": {
+        "sof": [
+          210,
+          2724
+        ],
+        "eof": [
+          210
+        ],
+        "words": [
+          [
+            210,
+            320,
+            210,
+            1320
+          ],
+          [
+            210,
+            1320,
+            210,
+            320
+          ]
+        ],
+        "interval": 10150,
+        "sensitivity": 0.9,
+        "repetitions": 10,
+        "minimalLength": 32,
+        "maximalLength": 32
+      },
+      "kakuold": {
+        "sof": [],
+        "eof": [
+          312
+        ],
+        "words": [
+          [
+            312,
+            1090,
+            312,
+            1090
+          ],
+          [
+            312,
+            1090,
+            990,
+            400
+          ],
+          [
+            312,
+            1090,
+            312,
+            380
+          ]
+        ],
+        "interval": 11000,
+        "repetitions": 20,
+        "sensitivity": 0.7,
+        "minimalLength": 12,
+        "maximalLength": 12
+      },
+      "kakudim": {
+        "sof": [
+          210,
+          2724
+        ],
+        "eof": [
+          210
+        ],
+        "words": [
+          [
+            210,
+            320,
+            210,
+            1320
+          ],
+          [
+            210,
+            1320,
+            210,
+            320
+          ],
+          [
+            210,
+            320,
+            210,
+            320
+          ]
+        ],
+        "interval": 10150,
+        "sensitivity": 0.9,
+        "repetitions": 10,
+        "minimalLength": 32,
+        "maximalLength": 36
+      },
+      "kakulong": {
+        "sof": [
+          210,
+          2724
+        ],
+        "eof": [
+          210
+        ],
+        "words": [
+          [
+            210,
+            320,
+            210,
+            1320
+          ],
+          [
+            210,
+            1320,
+            210,
+            320
+          ]
+        ],
+        "interval": 10150,
+        "sensitivity": 0.9,
+        "repetitions": 10,
+        "minimalLength": 32,
+        "maximalLength": 36
+      }
+    }
+  }
 }

@@ -169,19 +169,7 @@ const config = {
 	id: 'APA3-1500RS',
 	class: 'socket',
 	driver: '../../433_generator/drivers/kaku/kaku.js',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	signal: 'kaku',
 	name: 'devices.APA3-1500RS.name',
 	icon: '../../433_generator/assets/APA3-1500RS/icon.svg'
 };

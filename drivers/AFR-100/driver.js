@@ -140,38 +140,13 @@ const config = {
 	},
 	capabilities: ['onoff', 'dim'],
 	id: 'AFR-100',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320],
-			[210, 320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 36
-	},
+	signal: 'kakudim',
 	class: 'light',
 	images: {
 		large: '../../433_generator/assets/AFR-100/images/large.jpg',
 		small: '../../433_generator/assets/AFR-100/images/small.jpg'
 	},
-	alternativeSignal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	alternativeSignal: 'kaku',
 	name: 'devices.AFR-100.name',
 	icon: '../../433_generator/assets/AFR-100/icon.svg'
 };

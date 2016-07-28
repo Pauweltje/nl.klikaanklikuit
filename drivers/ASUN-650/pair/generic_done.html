@@ -35,8 +35,15 @@ function nextView(){
 
 <script type="text/javascript">
 	Homey.emit('done', function (err, device) {
-		var virtualDeviceClass = $('.deviceclasses-list input[name="deviceClass-' + device.data.id + '"]:checked');
-		if (virtualDeviceClass.length > 0) {
+		const dataKey = JSON.stringify(device.data);
+
+		var virtualDeviceClass;
+		$('.deviceclasses-list input:checked').each(function(){
+			if($(this).attr('name') === ('deviceClass-' + dataKey)){
+				virtualDeviceClass = $(this);
+			}
+		});
+		if (virtualDeviceClass) {
 			device.virtualClass = $(virtualDeviceClass).val();
 			device.virtualCapabilities = $(virtualDeviceClass).data('capabilities').split(',');
 		}

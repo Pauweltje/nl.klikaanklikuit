@@ -1,18 +1,27 @@
 var kaku = {};
-var signal = new Homey.wireless('433').Signal({   
-	sof: [210, 2724], //Start of frame
-   	eof: [210], //End of frame
-   	words: [
-        [210,  320, 210, 1320],	// 0
-       	[210, 1320, 210,  320],	// 1
-       	[210,  320, 210,  320]  // 2 <-- used for dim
-    ],
-    interval: 10150, //Time between two messages
-    sensitivity: 0.9, 
-    repetitions: 10,
-    minimalLength: 32,
-    maximalLength: 36
-});	
+var signal = new (Homey.wireless('433').Signal)('kakudim');
+
+signal.numberToBitArray = function(number, bit_count) {
+	var result = [];
+	for (var i = 0; i < bit_count; i++)
+		result[i] = (number >> i) & 1;
+	return result;
+};
+
+signal.bitArrayToNumber = function(bits) {
+	return parseInt(bits.join(""),2);
+};
+
+signal.bitStringToBitArray = function(str) {
+	var result = [];
+	for (var i = 0; i < str.length; i++)
+		result.push(str.charAt(i) == '1' ? 1 : 0);
+	return result;
+};
+
+signal.bitArrayToString = function(bits) {
+	return bits.join("");
+};
 
 var Debouncer = require('../deprecated/debouncer.js');
 
@@ -24,7 +33,7 @@ module.exports = {
 		signal.register(function( err, success ){ //Register signal
 		    if(err)	console.log('KaKu: ERROR', err); //Print error if there is one
 		});
-		
+
 		//Start receiving
 		signal.on('payload', function(payload, first){ //Start listening to payload event
 			if(debouncer.check(signal.bitArrayToString(payload))) return;
@@ -36,7 +45,7 @@ module.exports = {
 	},
 
 	sendState: function(device, state){
-		var address = signal.bitStringToBitArray(device.address); 
+		var address = signal.bitStringToBitArray(device.address);
 		var group   = [device.group ? 1 : 0];
 		var channel = signal.bitStringToBitArray(device.channel);
 		var unit    = signal.bitStringToBitArray(device.unit);
@@ -48,7 +57,7 @@ module.exports = {
 		}else{
 			var onoff = state ? 1 : 0;
 			var frame = new Buffer(address.concat(group, onoff, channel, unit)); //Make send buffer
-		}	
+		}
 
 		signal.tx( frame, function( err, result ){ //Send the buffer to device
 			if(err)console.log('KaKu: ERROR', err); //Print error if there is one
@@ -56,19 +65,19 @@ module.exports = {
 
 	},
 
-	bitArrayToString    : signal.bitArrayToString, 
+	bitArrayToString    : signal.bitArrayToString,
 	bitArrayToNumber    : signal.bitArrayToNumber,
 	numberToBitArray    : /*signal.*/numberToBitArray,
 	bitStringToBitArray : signal.bitStringToBitArray
 };
 
 function parseRXData(data) { //Convert received data to usable variables
-	if(data.length == 32 || data.length == 36){ 
+	if(data.length == 32 || data.length == 36){
 		if(data.slice(0, 26).indexOf(2) >= 0) return -1;
 		if(data.slice(26, 27)[0] == 2) return -1;
 		if(data.slice(28, 30).indexOf(2) >= 0) return -1;
 		if(data.slice(30, 32).indexOf(2) >= 0) return -1;
-		return { 
+		return {
 			address : address = signal.bitArrayToString(data.slice(0, 26)),
 			group   : group = data.slice(26, 27)[0] ? 1 : 0,
 			channel : channel = signal.bitArrayToString(data.slice(28, 30)),

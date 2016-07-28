@@ -2,7 +2,6 @@
 
 const Kaku = require('./kaku');
 const Signal = require('../../../drivers/lib/signal');
-const SignalManager = Homey.wireless('433').Signal;
 
 module.exports = class Dimmer extends Kaku {
 	constructor(config) {
@@ -22,7 +21,6 @@ module.exports = class Dimmer extends Kaku {
 	}
 
 	payloadToData(payload) { // Convert received data to usable variables
-		// TODO test
 		if (payload && payload.length === 32 && payload.indexOf(2) === -1) {
 			return super.payloadToData(payload);
 		} else if (
@@ -53,18 +51,18 @@ module.exports = class Dimmer extends Kaku {
 			data.address && data.address.length === 26 &&
 			data.channel && data.channel.length === 2 &&
 			data.unit && data.unit.length === 2 &&
-			data.hasOwnProperty('group') &&
+			typeof data.group !== 'undefined' &&
 			(
 				(typeof data.state !== 'undefined' && Number(data.state) !== 2) ||
 				(typeof data.dim !== 'undefined' && Number(data.dim) >= 0 && Number(data.dim) <= 1)
 			)
 		) {
-			const address = SignalManager.bitStringToBitArray(data.address);
-			const channel = SignalManager.bitStringToBitArray(data.channel);
-			const unit = SignalManager.bitStringToBitArray(data.unit);
+			const address = this.bitStringToBitArray(data.address);
+			const channel = this.bitStringToBitArray(data.channel);
+			const unit = this.bitStringToBitArray(data.unit);
 			// Calculate dim value
 			if (data.dim) {
-				const dim = SignalManager.numberToBitArray(Math.round(Math.min(1, Math.max(0, data.dim)) * 15), 4).reverse();
+				const dim = this.numberToBitArray(Math.round(Math.min(1, Math.max(0, data.dim)) * 15), 4).reverse();
 				return address.concat(data.group ? 1 : 0, 2, channel, unit, dim);
 			}
 			return address.concat(Number(data.group), Number(data.state), channel, unit);
@@ -91,7 +89,7 @@ module.exports = class Dimmer extends Kaku {
 				const state = this.getState(device);
 				callback(null, typeof state.dim === 'number' ? state.dim : Number(state.state));
 			},
-			set: (device, state, callback) => this.send(device, { dim: state }, callback),
+			set: (device, state, callback) => this.send(device, { dim: state }, () => callback(null, state)),
 		};
 		return exports;
 	}

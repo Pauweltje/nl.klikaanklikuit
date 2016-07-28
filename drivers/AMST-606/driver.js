@@ -62,19 +62,7 @@ const config = {
 	},
 	id: 'AMST-606',
 	driver: '../../433_generator/drivers/kaku/contact_sensor.js',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 36
-	},
+	signal: 'kakulong',
 	conditions: [{
 		id: 'AMST-606:state',
 		title: 'devices.AMST-606.conditions.state.title',

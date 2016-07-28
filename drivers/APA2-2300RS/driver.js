@@ -169,19 +169,7 @@ const config = {
 	id: 'APA2-2300RS',
 	class: 'socket',
 	driver: '../../433_generator/drivers/kaku/kaku.js',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	signal: 'kaku',
 	name: 'devices.APA2-2300RS.name',
 	icon: '../../433_generator/assets/ACD-200/socket.svg'
 };

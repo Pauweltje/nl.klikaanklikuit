@@ -1,7 +1,6 @@
 'use strict';
 
 const DefaultDriver = require('../../../drivers/lib/driver');
-const SignalManager = Homey.wireless('433').Signal;
 
 module.exports = class Kaku extends DefaultDriver {
 	constructor(config) {
@@ -26,10 +25,10 @@ module.exports = class Kaku extends DefaultDriver {
 	payloadToData(payload) { // Convert received data to usable variables
 		if (payload.length === 32) {
 			const data = {
-				address: SignalManager.bitArrayToString(payload.slice(0, 26)),
+				address: this.bitArrayToString(payload.slice(0, 26)),
 				group: payload[26],
-				channel: SignalManager.bitArrayToString(payload.slice(28, 30)),
-				unit: SignalManager.bitArrayToString(payload.slice(30, 32)),
+				channel: this.bitArrayToString(payload.slice(28, 30)),
+				unit: this.bitArrayToString(payload.slice(30, 32)),
 				state: payload[27],
 			};
 			data.id = `${data.address}:${data.channel}:${data.unit}`;
@@ -47,9 +46,9 @@ module.exports = class Kaku extends DefaultDriver {
 			typeof data.group !== 'undefined' &&
 			typeof data.state !== 'undefined'
 		) {
-			const address = SignalManager.bitStringToBitArray(data.address);
-			const channel = SignalManager.bitStringToBitArray(data.channel);
-			const unit = SignalManager.bitStringToBitArray(data.unit);
+			const address = this.bitStringToBitArray(data.address);
+			const channel = this.bitStringToBitArray(data.channel);
+			const unit = this.bitStringToBitArray(data.unit);
 			return address.concat(Number(data.group), Number(data.state), channel, unit);
 		}
 		return null;
@@ -77,7 +76,7 @@ module.exports = class Kaku extends DefaultDriver {
 		exports.capabilities = exports.capabilities || {};
 		exports.capabilities.onoff = {
 			get: (device, callback) => callback(null, Boolean(Number(this.getState(device).state))),
-			set: (device, state, callback) => this.send(device, { state: state ? 1 : 0 }, callback),
+			set: (device, state, callback) => this.send(device, { state: state ? 1 : 0 }, () => callback(null, state)),
 		};
 		return exports;
 	}

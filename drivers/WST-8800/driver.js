@@ -63,20 +63,7 @@ const config = {
 	},
 	id: 'WST-8800',
 	driver: '../../433_generator/drivers/kakuold/wall_switch.js',
-	signal: {
-		sof: [],
-		eof: [312],
-		words: [
-			[312, 1090, 312, 1090],
-			[312, 1090, 990, 400],
-			[312, 1090, 312, 380]
-		],
-		interval: 11000,
-		repetitions: 20,
-		sensitivity: 0.7,
-		minimalLength: 12,
-		maximalLength: 12
-	},
+	signal: 'kakuold',
 	triggers: [{
 		id: 'WST-8800:received',
 		title: '433_generator.generic.button_pressed',

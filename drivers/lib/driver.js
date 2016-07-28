@@ -186,8 +186,10 @@ module.exports = class Driver extends EventEmitter {
 	send(device, data, callback) {
 		data = Object.assign({}, this.getDevice(device, true) || device.data || device, data);
 		this.emit('before_send', data);
-		const frame = this.dataToPayload(data).map(Number);
-		if (!frame) return callback(true);
+
+		const payload = this.dataToPayload(data);
+		if (!payload) return callback(true);
+		const frame = payload.map(Number);
 		const dataCheck = this.payloadToData(frame);
 		if (
 			frame.find(isNaN) || !dataCheck ||
@@ -196,6 +198,7 @@ module.exports = class Driver extends EventEmitter {
 		) {
 			this.emit('error', `Incorrect frame from dataToPayload(${JSON.stringify(data)}) => ${frame} => ${
 				JSON.stringify(dataCheck)}`);
+			return callback(true);
 		}
 		this.emit('send', data);
 		return this.signal.send(frame).then(result => {

@@ -72,9 +72,10 @@ function nextView(){
 					found = false;
 					return;
 				}
-				window.selected_devices = [device.data.id];
+				const dataKey = JSON.stringify(device.data);
+				window.selected_devices = [ dataKey ];
 				window.found_devices = {};
-				window.found_devices[device.data.id] = device;
+				window.found_devices[dataKey] = device;
 				var $foundElems = $(idPrefix + '.foundAnimation');
 				$foundElems.show();
 				setTimeout(function () {

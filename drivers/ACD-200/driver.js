@@ -164,38 +164,13 @@ const config = {
 	},
 	capabilities: ['onoff', 'dim'],
 	id: 'ACD-200',
-	signal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320],
-			[210, 320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 36
-	},
+	signal: 'kakudim',
 	class: 'socket',
 	images: {
 		large: '../../433_generator/assets/ACD-200/images/large.png',
 		small: '../../433_generator/assets/ACD-200/images/small.png'
 	},
-	alternativeSignal: {
-		sof: [210, 2724],
-		eof: [210],
-		words: [
-			[210, 320, 210, 1320],
-			[210, 1320, 210, 320]
-		],
-		interval: 10150,
-		sensitivity: 0.9,
-		repetitions: 10,
-		minimalLength: 32,
-		maximalLength: 32
-	},
+	alternativeSignal: 'kaku',
 	name: 'devices.ACD-200.name',
 	icon: '../../433_generator/assets/ACD-200/socket.svg'
 };
