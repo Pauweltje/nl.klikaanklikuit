@@ -62,7 +62,7 @@ module.exports = class Dimmer extends Kaku {
 			const unit = this.bitStringToBitArray(data.unit);
 			// Calculate dim value
 			if (data.dim) {
-				const dim = this.numberToBitArray(Math.round(Math.min(1, Math.max(0, data.dim)) * 15), 4).reverse();
+				const dim = this.numberToBitArray(Math.round(Math.min(1, Math.max(0, data.dim)) * 15), 4);
 				return address.concat(data.group ? 1 : 0, 2, channel, unit, dim);
 			}
 			return address.concat(Number(data.group), Number(data.state), channel, unit);
