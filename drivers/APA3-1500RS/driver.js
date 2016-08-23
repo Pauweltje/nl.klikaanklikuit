@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	capabilities: ['onoff'],
+	driver: '../../433_generator/drivers/kaku/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -41,7 +41,7 @@ const config = {
 			template: '../lib/pair/imitate.html',
 			options: {
 				title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-				body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+				body: 'deviceClasses.socket.views.generic_imitate.body',
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/APA3-1500R/pair.svg',
@@ -162,14 +162,14 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	capabilities: ['onoff'],
+	id: 'APA3-1500RS',
+	signal: 'kaku',
+	class: 'socket',
 	images: {
 		large: '../../433_generator/assets/APA3-1500RS/images/large.jpg',
 		small: '../../433_generator/assets/APA3-1500RS/images/small.jpg'
 	},
-	id: 'APA3-1500RS',
-	class: 'socket',
-	driver: '../../433_generator/drivers/kaku/kaku.js',
-	signal: 'kaku',
 	name: 'devices.APA3-1500RS.name',
 	icon: '../../433_generator/assets/APA3-1500RS/icon.svg'
 };

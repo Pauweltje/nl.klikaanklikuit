@@ -7,7 +7,7 @@ const config = {
 			'generic_imitate',
 			'generic_test_switch_2',
 			'generic_choose_slave_2',
-			'generic_program',
+			'generic_codewheel',
 			'generic_test_switch',
 			'generic_choose_slave',
 			'generic_done'
@@ -16,15 +16,15 @@ const config = {
 			template: '../lib/pair/choice.html',
 			options: {
 				title: 'deviceClasses.generic_switch.views.generic_choice.title',
-				body: 'deviceClasses.generic_switch.views.generic_choice.body',
+				body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
 				buttons: [{
 					name: 'views.generic_choice.buttons.copy',
 					view: 'generic_imitate',
 					svg: '../../433_generator/assets/YCT-102/icon.svg'
 				}, {
-					name: 'views.generic_choice.buttons.generate',
-					view: 'generic_program',
-					svg: '../../433_generator/assets/ACD-200/socket.svg'
+					name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+					view: 'generic_codewheel',
+					svg: '../../433_generator/assets/YC-400/icon.svg'
 				}],
 				prepend: [],
 				append: [],
@@ -93,28 +93,43 @@ const config = {
 			append: [],
 			id: 'generic_choose_slave_2'
 		}, {
-			template: '../lib/pair/program.html',
+			template: '../lib/pair/codewheel.html',
 			options: {
 				previous: 'generic_choice',
 				prepend: [],
 				append: [],
-				title: 'deviceClasses.generic_socket.views.generic_program.title',
-				body: 'deviceClasses.socket.views.generic_program.body',
-				svg: '../../433_generator/assets/ACD-200/socket.svg',
-				svgWidth: '80vw',
-				svgHeight: '70vh',
-				initWithDeviceData: false,
+				codewheelList: [{
+					series: ['A',
+						'B',
+						'C',
+						'D',
+						'E',
+						'F',
+						'G',
+						'H',
+						'I',
+						'J',
+						'K',
+						'L',
+						'M',
+						'N',
+						'O',
+						'P'
+					],
+					mapOddToDot: true
+				}, {
+					series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+					mapOddToDot: true
+				}],
+				title: 'views.generic_codewheel.title',
+				body: 'views.generic_codewheel.body',
 				next: true
 			},
-			prepend: ['../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js',
-				'../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js'
+			prepend: ['../../assets/433_generator/css/codewheel.css',
+				'../../assets/433_generator/js/codewheel.js'
 			],
 			append: [],
-			id: 'generic_program'
+			id: 'generic_codewheel'
 		}, {
 			template: '../lib/pair/test_switch.html',
 			options: {
@@ -163,15 +178,15 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/AC-300/images/large.png',
-		small: '../../433_generator/assets/AC-300/images/small.png'
+		large: '../../433_generator/assets/YC-400/images/large.jpg',
+		small: '../../433_generator/assets/YC-400/images/small.jpg'
 	},
 	id: 'AC-300',
 	class: 'socket',
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
 	signal: 'kakuold',
-	name: 'devices.AC-300.name',
-	icon: '../../433_generator/assets/ACD-200/socket.svg'
+	name: 'devices.YC-400.name',
+	icon: '../../433_generator/assets/YC-400/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

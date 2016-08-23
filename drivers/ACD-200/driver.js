@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	driver: '../../433_generator/drivers/kaku/dimmer.js',
+	capabilities: ['onoff', 'dim'],
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -41,7 +41,7 @@ const config = {
 			template: '../lib/pair/imitate.html',
 			options: {
 				title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-				body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+				body: 'deviceClasses.socket.views.generic_imitate.body',
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/AYCT-102/remote_pair.svg',
@@ -162,14 +162,14 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff', 'dim'],
-	id: 'ACD-200',
-	signal: 'kakudim',
-	class: 'socket',
 	images: {
 		large: '../../433_generator/assets/ACD-200/images/large.png',
 		small: '../../433_generator/assets/ACD-200/images/small.png'
 	},
+	id: 'ACD-200',
+	class: 'socket',
+	driver: '../../433_generator/drivers/kaku/dimmer.js',
+	signal: 'kakudim',
 	alternativeSignal: 'kaku',
 	name: 'devices.ACD-200.name',
 	icon: '../../433_generator/assets/ACD-200/socket.svg'

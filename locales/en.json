@@ -69,12 +69,16 @@
 					"body": "Use your remote or the switch above to test your socket. Press next to continue.\u0000"
 				},
 				"generic_program": {
-					"title": "Put the socket in pairing mode\u0000"
+					"title": "Put the socket in pairing mode\u0000",
+					"body": "Press and hold the program button on your socket for a few seconds to put it in pairing mode, then click next.\u0000"
 				}
 			}
 		},
 		"socket": {
 			"views": {
+				"generic_imitate": {
+					"body": "Press the button that is paired to your socket.<p class=\"notice\">(Note. Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
+				},
 				"generic_program": {
 					"body": "Press and hold the program button on your socket for a few seconds, the light on your socket should start blinking when you release the button. When it is in pairing mode click next."
 				}
@@ -82,11 +86,8 @@
 		},
 		"blinds": {
 			"views": {
-				"generic_program": {
-					"body": "Press the program button on your receiver. Then press next."
-				},
 				"generic_imitate": {
-					"body": "Press the up/down button that is paired to your blinds."
+					"body": "Press the up/down button that is paired to your blinds<p class=\"notice\">(Note. For this device Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your blinds",
@@ -94,6 +95,9 @@
 				},
 				"generic_test_switch_2": {
 					"body": "Use your remote or the buttons above to test your blinds. Press next to continue."
+				},
+				"generic_program": {
+					"body": "deviceClasses.blinds.views.generic_program.body"
 				}
 			},
 			"settings": {
@@ -135,6 +139,16 @@
 					"body": "Unplug the socket for a couple of seconds and plug it back in, the light should now be blinking. When it is in pairing mode click next."
 				}
 			}
+		},
+		"generic_codewheel_switch": {
+			"views": {
+				"generic_choice": {
+					"body": "Choose if you want to copy an existing signal from a paired remote or if you want manually set the codewheels to pair this device.\u0000",
+					"buttons": {
+						"generic_codewheel": "Manually set codewheels\u0000"
+					}
+				}
+			}
 		}
 	},
 	"views": {
@@ -155,7 +169,12 @@
 			"title": "Copy your remote signal\u0000"
 		},
 		"generic_program": {
-			"title": "Pair your device with Homey\u0000"
+			"title": "Pair your device with Homey\u0000",
+			"body": "Put your device in pairing mode, then click next to pair your device with Homey.\u0000"
+		},
+		"generic_codewheel": {
+			"title": "Configure your device code\u0000",
+			"body": "Click the characters on the code wheel above or configure the wheels on the device so they match, then click next.\u0000"
 		}
 	},
 	"devices": {
@@ -253,7 +272,7 @@
 			"name": "APA3-1500R"
 		},
 		"AGDR-300": {
-			"name": "AGDR-XXX"
+			"name": "AGDR-300"
 		},
 		"AMST-606": {
 			"name": "AMST-606",
@@ -289,13 +308,55 @@
 			"name": "AKCT-510"
 		},
 		"ACD-200": {
-			"name": "ACD-XXX"
+			"name": "ACD-200"
 		},
 		"WST-8800": {
 			"name": "WST-8800"
 		},
 		"AC-300": {
-			"name": "AC-XXX"
+			"name": "AC-300"
+		},
+		"KCT-101": {
+			"name": "KCT-101"
+		},
+		"YC-400": {
+			"name": "YC-400"
+		},
+		"SUN-650": {
+			"name": "SUN-650"
+		},
+		"ACD-3500": {
+			"name": "ACD-3500"
+		},
+		"AC-3500": {
+			"name": "AC-3500"
+		},
+		"ACD-1000": {
+			"name": "ACD-1000"
+		},
+		"AC-1000": {
+			"name": "AC-1000"
+		},
+		"AGDR-3500": {
+			"name": "AGDR-3500"
+		},
+		"ACD-300": {
+			"name": "ACD-300"
+		},
+		"YC-412": {
+			"name": "YC-412"
+		},
+		"YC-1000": {
+			"name": "YC-1000"
+		},
+		"YC-3500": {
+			"name": "YC-3500"
+		},
+		"PAR-1000": {
+			"name": "PAR-1000"
+		},
+		"AFR-060": {
+			"name": "AFR-060"
 		}
 	},
 	"433_generator": {

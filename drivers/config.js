@@ -2,7 +2,193 @@
 /* eslint-disable */
 module.exports = {
 	devices: {
+		'SUN-650': {
+			capabilities: ['onoff'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/YCT-102/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/ASUN-650/pairbutton.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						body: 'deviceClasses.blinds.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/YCT-102/pair.svg',
+						title: 'views.generic_imitate.title',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: 'generic_done',
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [{
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch_2"] .centered-container > #image-container\')'
+						}],
+						title: 'deviceClasses.blinds.views.generic_test_switch.title',
+						body: 'deviceClasses.blinds.views.generic_test_switch_2.body',
+						svg: '../433_generator/assets/ASUN-650/test.svg',
+						svgHeight: '60vh',
+						svgWidth: '80vw',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: ['A',
+								'B',
+								'C',
+								'D',
+								'E',
+								'F',
+								'G',
+								'H',
+								'I',
+								'J',
+								'K',
+								'L',
+								'M',
+								'N',
+								'O',
+								'P'
+							],
+							mapOddToDot: true
+						}, {
+							series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+							mapOddToDot: true
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.blinds.views.generic_test_switch.title',
+						body: 'deviceClasses.blinds.views.generic_test_switch.body',
+						append: [{
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch"] .centered-container > #image-container\')'
+						}],
+						prepend: [],
+						svg: '../433_generator/assets/ASUN-650/test.svg',
+						svgHeight: '60vh',
+						svgWidth: '80vw',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/SUN-650/images/large.jpg',
+				small: '../433_generator/assets/SUN-650/images/small.jpg'
+			},
+			id: 'SUN-650',
+			driver: '../433_generator/drivers/kakuold/blinds.js',
+			signal: 'kakuold',
+			class: 'windowcoverings',
+			settings: [{
+				type: 'group',
+				label: 'deviceClasses.wall_switch.settings.groups.general',
+				children: [{
+					id: 'rotated',
+					type: 'radio',
+					value: '0',
+					label: 'deviceClasses.blinds.settings.rotated.label',
+					values: [{
+						id: '0',
+						label: 'deviceClasses.blinds.settings.rotated.0'
+					}, {
+						id: '180',
+						label: 'deviceClasses.blinds.settings.rotated.180'
+					}]
+				}]
+			}],
+			name: 'devices.SUN-650.name',
+			icon: '../433_generator/assets/ASUN-650/icon.svg'
+		},
 		'AWST-8800': {
+			driver: '../433_generator/drivers/kaku/wall_switch.js',
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -59,13 +245,12 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
+			id: 'AWST-8800',
+			signal: 'kaku',
 			images: {
 				large: '../433_generator/assets/AWST-8800/images/large.png',
 				small: '../433_generator/assets/AWST-8800/images/small.png'
 			},
-			id: 'AWST-8800',
-			driver: '../433_generator/drivers/kaku/wall_switch.js',
-			signal: 'kaku',
 			triggers: [{
 				id: 'AWST-8800:received',
 				title: '433_generator.generic.button_pressed',
@@ -182,6 +367,194 @@ module.exports = {
 				small: '../433_generator/assets/AWST-6000/images/small.png'
 			}
 		},
+		'YC-412': {
+			icon: '../433_generator/assets/YC-400/icon.svg',
+			driver: '../433_generator/drivers/kakuold/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/YCT-102/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/YC-400/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/YCT-102/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: ['A',
+								'B',
+								'C',
+								'D',
+								'E',
+								'F',
+								'G',
+								'H',
+								'I',
+								'J',
+								'K',
+								'L',
+								'M',
+								'N',
+								'O',
+								'P'
+							],
+							mapOddToDot: true
+						}, {
+							series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+							mapOddToDot: true
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'YC-412',
+			signal: 'kakuold',
+			class: 'socket',
+			name: 'devices.YC-412.name',
+			images: {
+				large: '../433_generator/assets/YC-400/images/large.jpg',
+				small: '../433_generator/assets/YC-400/images/small.jpg'
+			}
+		},
 		'APA2-2300RS': {
 			capabilities: ['onoff'],
 			pair: {
@@ -223,7 +596,7 @@ module.exports = {
 					template: './lib/pair/imitate.html',
 					options: {
 						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/APA2-2300R/pair.svg',
@@ -355,18 +728,55 @@ module.exports = {
 			name: 'devices.APA2-2300RS.name',
 			icon: '../433_generator/assets/ACD-200/socket.svg'
 		},
-		'PA3-1000R': {
-			class: 'other',
+		'ACD-3500': {
+			images: {
+				large: '../433_generator/assets/ACD-200/images/large.png',
+				small: '../433_generator/assets/ACD-200/images/small.png'
+			},
+			driver: '../433_generator/drivers/kaku/kaku.js',
 			pair: {
-				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
 				views: [{
-					template: './lib/pair/imitate.html',
+					template: './lib/pair/choice.html',
 					options: {
-						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
-						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/ACD-200/socket.svg'
+						}],
 						prepend: [],
 						append: [],
-						svg: '../433_generator/assets/PA3-1000R/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -380,25 +790,98 @@ module.exports = {
 					append: [],
 					id: 'generic_imitate'
 				}, {
-					template: './lib/pair/test_remote.html',
+					template: './lib/pair/test_switch.html',
 					options: {
-						svg: '../433_generator/assets/PA3-1000R/test.svg',
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
 						prepend: [],
 						append: [],
-						title: 'views.generic_test_remote.title',
-						body: 'views.generic_test_remote.body',
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
-						previous: true,
-						next: true
+						previous: true
 					},
 					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
 						'./../assets/433_generator/css/svg.css',
 						'./../assets/433_generator/js/svghighlighter.js'
 					],
 					append: [],
-					id: 'generic_test_remote'
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/ACD-200/socket.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
 				}, {
 					template: './lib/pair/done.html',
 					options: {
@@ -411,47 +894,13 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			images: {
-				large: '../433_generator/assets/PA3-1000R/images/large.jpg',
-				small: '../433_generator/assets/PA3-1000R/images/small.jpg'
-			},
-			id: 'PA3-1000R',
-			triggers: [{
-				id: 'PA3-1000R:received',
-				title: '433_generator.generic.button_pressed',
-				args: [{
-					name: 'unit',
-					type: 'dropdown',
-					values: [{
-						id: '00',
-						label: '433_generator.generic.buttons.1'
-					}, {
-						id: '01',
-						label: '433_generator.generic.buttons.2'
-					}, {
-						id: '10',
-						label: '433_generator.generic.buttons.3'
-					}]
-				}, {
-					name: 'state',
-					type: 'dropdown',
-					values: [{
-						id: '1',
-						label: '433_generator.generic.on'
-					}, {
-						id: '0',
-						label: '433_generator.generic.off'
-					}]
-				}, {
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=PA3-1000R'
-				}]
-			}],
-			driver: '../433_generator/drivers/kakuold/remote',
-			signal: 'kakuold',
-			name: 'devices.PA3-1000R.name',
-			icon: '../433_generator/assets/PA3-1000R/icon.svg'
+			capabilities: ['onoff'],
+			id: 'ACD-3500',
+			signal: 'kaku',
+			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.ACD-3500.name',
+			icon: '../433_generator/assets/ACD-200/socket.svg'
 		},
 		'AWST-8802': {
 			pair: {
@@ -517,7 +966,6 @@ module.exports = {
 			id: 'AWST-8802',
 			driver: '../433_generator/drivers/kaku/wall_switch.js',
 			signal: 'kaku',
-			class: 'other',
 			triggers: [{
 				id: 'AWST-8802:received',
 				title: '433_generator.generic.button_pressed',
@@ -547,6 +995,7 @@ module.exports = {
 					filter: 'driver_id=AWST-8802'
 				}]
 			}],
+			class: 'other',
 			settings: [{
 				type: 'group',
 				label: 'deviceClasses.wall_switch.settings.groups.general',
@@ -687,7 +1136,280 @@ module.exports = {
 			name: 'devices.YCT-102.name',
 			icon: '../433_generator/assets/YCT-102/icon.svg'
 		},
+		'PA3-1000R': {
+			class: 'other',
+			pair: {
+				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
+				views: [{
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
+						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/PA3-1000R/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_remote.html',
+					options: {
+						svg: '../433_generator/assets/PA3-1000R/test.svg',
+						prepend: [],
+						append: [],
+						title: 'views.generic_test_remote.title',
+						body: 'views.generic_test_remote.body',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_remote'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/PA3-1000R/images/large.jpg',
+				small: '../433_generator/assets/PA3-1000R/images/small.jpg'
+			},
+			id: 'PA3-1000R',
+			triggers: [{
+				id: 'PA3-1000R:received',
+				title: '433_generator.generic.button_pressed',
+				args: [{
+					name: 'unit',
+					type: 'dropdown',
+					values: [{
+						id: '00',
+						label: '433_generator.generic.buttons.1'
+					}, {
+						id: '01',
+						label: '433_generator.generic.buttons.2'
+					}, {
+						id: '10',
+						label: '433_generator.generic.buttons.3'
+					}]
+				}, {
+					name: 'state',
+					type: 'dropdown',
+					values: [{
+						id: '1',
+						label: '433_generator.generic.on'
+					}, {
+						id: '0',
+						label: '433_generator.generic.off'
+					}]
+				}, {
+					name: 'device',
+					type: 'device',
+					filter: 'driver_id=PA3-1000R'
+				}]
+			}],
+			driver: '../433_generator/drivers/kakuold/remote',
+			signal: 'kakuold',
+			name: 'devices.PA3-1000R.name',
+			icon: '../433_generator/assets/PA3-1000R/icon.svg'
+		},
+		'AC-3500': {
+			icon: '../433_generator/assets/AC-300/icon.svg',
+			driver: '../433_generator/drivers/kaku/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/AC-300/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/AC-300/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'AC-3500',
+			signal: 'kaku',
+			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.AC-3500.name',
+			images: {
+				large: '../433_generator/assets/AC-300/images/large.png',
+				small: '../433_generator/assets/AC-300/images/small.png'
+			}
+		},
 		'WST-8700': {
+			driver: '../433_generator/drivers/kakuold/wall_switch.js',
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -744,13 +1466,12 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
+			id: 'WST-8700',
+			signal: 'kakuold',
 			images: {
 				large: '../433_generator/assets/WST-8700/images/large.jpg',
 				small: '../433_generator/assets/WST-8700/images/small.jpg'
 			},
-			id: 'WST-8700',
-			driver: '../433_generator/drivers/kakuold/wall_switch.js',
-			signal: 'kakuold',
 			triggers: [{
 				id: 'WST-8700:received',
 				title: '433_generator.generic.button_pressed',
@@ -1081,8 +1802,196 @@ module.exports = {
 			name: 'devices.ASUN-650.name',
 			icon: '../433_generator/assets/ASUN-650/icon.svg'
 		},
+		'YC-1000': {
+			icon: '../433_generator/assets/YC-400/icon.svg',
+			driver: '../433_generator/drivers/kakuold/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/YCT-102/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/YC-400/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/YCT-102/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: ['A',
+								'B',
+								'C',
+								'D',
+								'E',
+								'F',
+								'G',
+								'H',
+								'I',
+								'J',
+								'K',
+								'L',
+								'M',
+								'N',
+								'O',
+								'P'
+							],
+							mapOddToDot: true
+						}, {
+							series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+							mapOddToDot: true
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'YC-1000',
+			signal: 'kakuold',
+			class: 'socket',
+			name: 'devices.YC-1000.name',
+			images: {
+				large: '../433_generator/assets/YC-400/images/large.jpg',
+				small: '../433_generator/assets/YC-400/images/small.jpg'
+			}
+		},
 		'AFR-100': {
-			driver: '../433_generator/drivers/kaku/dimmer.js',
+			capabilities: ['onoff', 'dim'],
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -1219,17 +2128,341 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			capabilities: ['onoff', 'dim'],
-			id: 'AFR-100',
-			signal: 'kakudim',
-			class: 'light',
 			images: {
 				large: '../433_generator/assets/AFR-100/images/large.jpg',
 				small: '../433_generator/assets/AFR-100/images/small.jpg'
 			},
+			id: 'AFR-100',
+			class: 'light',
+			driver: '../433_generator/drivers/kaku/dimmer.js',
+			signal: 'kakudim',
 			alternativeSignal: 'kaku',
 			name: 'devices.AFR-100.name',
 			icon: '../433_generator/assets/AFR-100/icon.svg'
+		},
+		'AFR-060': {
+			capabilities: ['onoff'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/AFR-100/pair.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'devices.AFR-100.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: 'generic_done',
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'devices.AFR-100.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'devices.AFR-100.views.generic_program.body',
+						svg: '../433_generator/assets/AFR-100/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'devices.AFR-100.views.generic_test_switch.title',
+						body: 'devices.AFR-100.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/AFR-100/images/large.jpg',
+				small: '../433_generator/assets/AFR-100/images/small.jpg'
+			},
+			id: 'AFR-060',
+			class: 'light',
+			driver: '../433_generator/drivers/kaku/kaku.js',
+			signal: 'kakudim',
+			alternativeSignal: 'kaku',
+			name: 'devices.AFR-060.name',
+			icon: '../433_generator/assets/AFR-100/icon.svg'
+		},
+		'ACD-1000': {
+			icon: '../433_generator/assets/ACD-200/socket.svg',
+			driver: '../433_generator/drivers/kaku/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/ACD-200/socket.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/ACD-200/socket.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'ACD-1000',
+			signal: 'kaku',
+			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.ACD-1000.name',
+			images: {
+				large: '../433_generator/assets/ACD-200/images/large.png',
+				small: '../433_generator/assets/ACD-200/images/small.png'
+			}
 		},
 		'ACDB-7000C': {
 			capabilities: ['alarm_generic'],
@@ -1584,7 +2817,7 @@ module.exports = {
 			debounceTimeout: 3000
 		},
 		'APA3-1500RS': {
-			capabilities: ['onoff'],
+			driver: '../433_generator/drivers/kaku/kaku.js',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -1624,7 +2857,7 @@ module.exports = {
 					template: './lib/pair/imitate.html',
 					options: {
 						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/APA3-1500R/pair.svg',
@@ -1745,16 +2978,190 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
+			capabilities: ['onoff'],
+			id: 'APA3-1500RS',
+			signal: 'kaku',
+			class: 'socket',
 			images: {
 				large: '../433_generator/assets/APA3-1500RS/images/large.jpg',
 				small: '../433_generator/assets/APA3-1500RS/images/small.jpg'
 			},
-			id: 'APA3-1500RS',
-			class: 'socket',
-			driver: '../433_generator/drivers/kaku/kaku.js',
-			signal: 'kaku',
 			name: 'devices.APA3-1500RS.name',
 			icon: '../433_generator/assets/APA3-1500RS/icon.svg'
+		},
+		'AC-1000': {
+			images: {
+				large: '../433_generator/assets/AC-300/images/large.png',
+				small: '../433_generator/assets/AC-300/images/small.png'
+			},
+			driver: '../433_generator/drivers/kaku/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/AC-300/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/AC-300/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'AC-1000',
+			signal: 'kaku',
+			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.AC-1000.name',
+			icon: '../433_generator/assets/AC-300/icon.svg'
 		},
 		'APA3-1500R': {
 			class: 'other',
@@ -1934,7 +3341,7 @@ module.exports = {
 			capabilities: ['alarm_night']
 		},
 		'AMST-606': {
-			class: 'sensor',
+			driver: '../433_generator/drivers/kaku/contact_sensor.js',
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -1989,13 +3396,9 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			images: {
-				large: '../433_generator/assets/AMST-606/images/large.png',
-				small: '../433_generator/assets/AMST-606/images/small.png'
-			},
 			id: 'AMST-606',
-			driver: '../433_generator/drivers/kaku/contact_sensor.js',
 			signal: 'kakulong',
+			class: 'sensor',
 			conditions: [{
 				id: 'AMST-606:state',
 				title: 'devices.AMST-606.conditions.state.title',
@@ -2005,12 +3408,17 @@ module.exports = {
 					filter: 'driver_id=AMST-606'
 				}]
 			}],
+			images: {
+				large: '../433_generator/assets/AMST-606/images/large.png',
+				small: '../433_generator/assets/AMST-606/images/small.png'
+			},
 			name: 'devices.AMST-606.name',
 			icon: '../433_generator/assets/AMST-606/icon.svg',
 			capabilities: ['alarm_contact']
 		},
-		'AGDR-300': {
-			driver: '../433_generator/drivers/kaku/dimmer.js',
+		'AGDR-3500': {
+			icon: '../433_generator/assets/AGDR-300/icon.svg',
+			driver: '../433_generator/drivers/kaku/kaku.js',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -2050,7 +3458,7 @@ module.exports = {
 					template: './lib/pair/imitate.html',
 					options: {
 						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
@@ -2171,14 +3579,375 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			capabilities: ['onoff', 'dim'],
-			id: 'AGDR-300',
-			signal: 'kakudim',
+			capabilities: ['onoff'],
+			id: 'AGDR-3500',
+			signal: 'kaku',
 			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.AGDR-3500.name',
+			images: {
+				large: '../433_generator/assets/AGDR-300/images/large.jpg',
+				small: '../433_generator/assets/AGDR-300/images/small.jpg'
+			}
+		},
+		'YC-3500': {
+			icon: '../433_generator/assets/YC-400/icon.svg',
+			driver: '../433_generator/drivers/kakuold/kaku.js',
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/YCT-102/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/YC-400/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/YCT-102/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: ['A',
+								'B',
+								'C',
+								'D',
+								'E',
+								'F',
+								'G',
+								'H',
+								'I',
+								'J',
+								'K',
+								'L',
+								'M',
+								'N',
+								'O',
+								'P'
+							],
+							mapOddToDot: true
+						}, {
+							series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+							mapOddToDot: true
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			capabilities: ['onoff'],
+			id: 'YC-3500',
+			signal: 'kakuold',
+			class: 'socket',
+			name: 'devices.YC-3500.name',
+			images: {
+				large: '../433_generator/assets/YC-400/images/large.jpg',
+				small: '../433_generator/assets/YC-400/images/small.jpg'
+			}
+		},
+		'AGDR-300': {
+			capabilities: ['onoff', 'dim'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/AGDR-300/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/AGDR-300/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
 			images: {
 				large: '../433_generator/assets/AGDR-300/images/large.jpg',
 				small: '../433_generator/assets/AGDR-300/images/small.jpg'
 			},
+			id: 'AGDR-300',
+			class: 'socket',
+			driver: '../433_generator/drivers/kaku/dimmer.js',
+			signal: 'kakudim',
 			alternativeSignal: 'kaku',
 			name: 'devices.AGDR-300.name',
 			icon: '../433_generator/assets/AGDR-300/icon.svg'
@@ -2357,177 +4126,8 @@ module.exports = {
 				small: '../433_generator/assets/APIR-2150/images/small.png'
 			}
 		},
-		'KCT-510': {
-			pair: {
-				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
-				views: [{
-					template: './lib/pair/imitate.html',
-					options: {
-						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
-						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
-						prepend: [],
-						append: [],
-						svg: '../433_generator/assets/KCT-510/pair.svg',
-						svgWidth: '80vw',
-						svgHeight: '70vh',
-						initWithDeviceData: false,
-						previous: true,
-						next: false
-					},
-					prepend: ['./../assets/433_generator/css/styles.css',
-						'./../assets/433_generator/css/svg.css',
-						'./../assets/433_generator/js/svghighlighter.js'
-					],
-					append: [],
-					id: 'generic_imitate'
-				}, {
-					template: './lib/pair/test_remote.html',
-					options: {
-						svg: '../433_generator/assets/KCT-510/test.svg',
-						prepend: [],
-						append: [],
-						title: 'views.generic_test_remote.title',
-						body: 'views.generic_test_remote.body',
-						svgWidth: '80vw',
-						svgHeight: '70vh',
-						initWithDeviceData: false,
-						previous: true,
-						next: true
-					},
-					prepend: ['./../assets/433_generator/css/styles.css',
-						'./../assets/433_generator/css/svg.css',
-						'./../assets/433_generator/js/svghighlighter.js'
-					],
-					append: [],
-					id: 'generic_test_remote'
-				}, {
-					template: './lib/pair/done.html',
-					options: {
-						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
-					},
-					prepend: [],
-					append: [],
-					id: 'generic_done'
-				}]
-			},
-			images: {
-				large: '../433_generator/assets/KCT-510/images/large.jpg',
-				small: '../433_generator/assets/KCT-510/images/small.jpg'
-			},
-			id: 'KCT-510',
-			driver: '../433_generator/drivers/kakuold/kaku.js',
-			signal: 'kakuold',
-			class: 'other',
-			triggers: [{
-				id: 'KCT-510:received',
-				title: '433_generator.generic.button_pressed',
-				args: [{
-					name: 'state',
-					type: 'dropdown',
-					values: [{
-						id: '1',
-						label: '433_generator.generic.on'
-					}, {
-						id: '0',
-						label: '433_generator.generic.off'
-					}]
-				}, {
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=KCT-510'
-				}]
-			}],
-			name: 'devices.KCT-510.name',
-			icon: '../433_generator/assets/KCT-510/icon.svg'
-		},
-		'AKCT-510': {
-			pair: {
-				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
-				views: [{
-					template: './lib/pair/imitate.html',
-					options: {
-						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
-						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
-						prepend: [],
-						append: [],
-						svg: '../433_generator/assets/AKCT-510/pair.svg',
-						svgWidth: '80vw',
-						svgHeight: '70vh',
-						initWithDeviceData: false,
-						previous: true,
-						next: false
-					},
-					prepend: ['./../assets/433_generator/css/styles.css',
-						'./../assets/433_generator/css/svg.css',
-						'./../assets/433_generator/js/svghighlighter.js'
-					],
-					append: [],
-					id: 'generic_imitate'
-				}, {
-					template: './lib/pair/test_remote.html',
-					options: {
-						svg: '../433_generator/assets/AKCT-510/test.svg',
-						prepend: [],
-						append: [],
-						title: 'views.generic_test_remote.title',
-						body: 'views.generic_test_remote.body',
-						svgWidth: '80vw',
-						svgHeight: '70vh',
-						initWithDeviceData: false,
-						previous: true,
-						next: true
-					},
-					prepend: ['./../assets/433_generator/css/styles.css',
-						'./../assets/433_generator/css/svg.css',
-						'./../assets/433_generator/js/svghighlighter.js'
-					],
-					append: [],
-					id: 'generic_test_remote'
-				}, {
-					template: './lib/pair/done.html',
-					options: {
-						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
-					},
-					prepend: [],
-					append: [],
-					id: 'generic_done'
-				}]
-			},
-			images: {
-				large: '../433_generator/assets/AKCT-510/images/large.jpg',
-				small: '../433_generator/assets/AKCT-510/images/small.jpg'
-			},
-			id: 'AKCT-510',
-			driver: '../433_generator/drivers/kaku/kaku.js',
-			signal: 'kaku',
-			class: 'other',
-			triggers: [{
-				id: 'AKCT-510:received',
-				title: '433_generator.generic.button_pressed',
-				args: [{
-					name: 'state',
-					type: 'dropdown',
-					values: [{
-						id: '1',
-						label: '433_generator.generic.on'
-					}, {
-						id: '0',
-						label: '433_generator.generic.off'
-					}]
-				}, {
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=AKCT-510'
-				}]
-			}],
-			name: 'devices.AKCT-510.name',
-			icon: '../433_generator/assets/AKCT-510/icon.svg'
-		},
-		'ACD-200': {
+		'ACD-300': {
+			icon: '../433_generator/assets/ACD-200/socket.svg',
 			driver: '../433_generator/drivers/kaku/dimmer.js',
 			pair: {
 				viewOrder: ['generic_choice',
@@ -2568,7 +4168,7 @@ module.exports = {
 					template: './lib/pair/imitate.html',
 					options: {
 						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
@@ -2690,18 +4290,17 @@ module.exports = {
 				}]
 			},
 			capabilities: ['onoff', 'dim'],
-			id: 'ACD-200',
+			id: 'ACD-300',
 			signal: 'kakudim',
 			class: 'socket',
+			alternativeSignal: 'kaku',
+			name: 'devices.ACD-300.name',
 			images: {
 				large: '../433_generator/assets/ACD-200/images/large.png',
 				small: '../433_generator/assets/ACD-200/images/small.png'
-			},
-			alternativeSignal: 'kaku',
-			name: 'devices.ACD-200.name',
-			icon: '../433_generator/assets/ACD-200/socket.svg'
+			}
 		},
-		'WST-8800': {
+		'KCT-510': {
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -2711,7 +4310,7 @@ module.exports = {
 						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
 						prepend: [],
 						append: [],
-						svg: '../433_generator/assets/WST-8800/switch_pair.svg',
+						svg: '../433_generator/assets/KCT-510/pair.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -2727,13 +4326,11 @@ module.exports = {
 				}, {
 					template: './lib/pair/test_remote.html',
 					options: {
-						title: 'deviceClasses.generic_wall_switch.views.generic_test_remote.title',
-						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
+						svg: '../433_generator/assets/KCT-510/test.svg',
 						prepend: [],
-						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
-						}],
-						svg: '../433_generator/assets/WST-8800/switch.svg',
+						append: [],
+						title: 'views.generic_test_remote.title',
+						body: 'views.generic_test_remote.body',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -2759,14 +4356,15 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/WST-8800/images/large.png',
-				small: '../433_generator/assets/WST-8800/images/small.png'
+				large: '../433_generator/assets/KCT-510/images/large.jpg',
+				small: '../433_generator/assets/KCT-510/images/small.jpg'
 			},
-			id: 'WST-8800',
-			driver: '../433_generator/drivers/kakuold/wall_switch.js',
+			id: 'KCT-510',
+			driver: '../433_generator/drivers/kakuold/kaku.js',
 			signal: 'kakuold',
+			class: 'other',
 			triggers: [{
-				id: 'WST-8800:received',
+				id: 'KCT-510:received',
 				title: '433_generator.generic.button_pressed',
 				args: [{
 					name: 'state',
@@ -2781,32 +4379,269 @@ module.exports = {
 				}, {
 					name: 'device',
 					type: 'device',
-					filter: 'driver_id=WST-8800'
+					filter: 'driver_id=KCT-510'
 				}]
 			}],
-			class: 'other',
-			settings: [{
-				type: 'group',
-				label: 'deviceClasses.wall_switch.settings.groups.general',
-				children: [{
-					id: 'rotated',
-					type: 'radio',
-					value: '0',
-					label: 'deviceClasses.wall_switch.settings.rotated.label',
-					values: [{
-						id: '0',
-						label: 'deviceClasses.wall_switch.settings.rotated.0'
-					}, {
-						id: '180',
-						label: 'deviceClasses.wall_switch.settings.rotated.180'
-					}]
-				}]
-			}],
-			name: 'devices.WST-8800.name',
-			icon: '../433_generator/assets/WST-8800/icon.svg'
+			name: 'devices.KCT-510.name',
+			icon: '../433_generator/assets/KCT-510/icon.svg'
 		},
-		'AC-300': {
+		'PAR-1000': {
 			capabilities: ['onoff'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/PA3-1000R/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/PAR-1000/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/PA3-1000R/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
+							mapOddToDot: false,
+							quadrants: ['A', 'B', 'C', 'D']
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/PAR-1000/images/large.jpg',
+				small: '../433_generator/assets/PAR-1000/images/small.jpg'
+			},
+			id: 'PAR-1000',
+			class: 'socket',
+			driver: '../433_generator/drivers/kakuold/codewheel.js',
+			signal: 'kakuold',
+			name: 'devices.PAR-1000.name',
+			icon: '../433_generator/assets/PAR-1000/icon.svg'
+		},
+		'AKCT-510': {
+			pair: {
+				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
+				views: [{
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
+						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AKCT-510/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_remote.html',
+					options: {
+						svg: '../433_generator/assets/AKCT-510/test.svg',
+						prepend: [],
+						append: [],
+						title: 'views.generic_test_remote.title',
+						body: 'views.generic_test_remote.body',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_remote'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/AKCT-510/images/large.jpg',
+				small: '../433_generator/assets/AKCT-510/images/small.jpg'
+			},
+			id: 'AKCT-510',
+			driver: '../433_generator/drivers/kaku/kaku.js',
+			signal: 'kaku',
+			class: 'other',
+			triggers: [{
+				id: 'AKCT-510:received',
+				title: '433_generator.generic.button_pressed',
+				args: [{
+					name: 'state',
+					type: 'dropdown',
+					values: [{
+						id: '1',
+						label: '433_generator.generic.on'
+					}, {
+						id: '0',
+						label: '433_generator.generic.off'
+					}]
+				}, {
+					name: 'device',
+					type: 'device',
+					filter: 'driver_id=AKCT-510'
+				}]
+			}],
+			name: 'devices.AKCT-510.name',
+			icon: '../433_generator/assets/AKCT-510/icon.svg'
+		},
+		'ACD-200': {
+			capabilities: ['onoff', 'dim'],
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -2825,7 +4660,7 @@ module.exports = {
 						buttons: [{
 							name: 'views.generic_choice.buttons.copy',
 							view: 'generic_imitate',
-							svg: '../433_generator/assets/YCT-102/icon.svg'
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
 						}, {
 							name: 'views.generic_choice.buttons.generate',
 							view: 'generic_program',
@@ -2846,10 +4681,10 @@ module.exports = {
 					template: './lib/pair/imitate.html',
 					options: {
 						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
 						prepend: [],
 						append: [],
-						svg: '../433_generator/assets/YCT-102/pair.svg',
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -2968,15 +4803,567 @@ module.exports = {
 				}]
 			},
 			images: {
+				large: '../433_generator/assets/ACD-200/images/large.png',
+				small: '../433_generator/assets/ACD-200/images/small.png'
+			},
+			id: 'ACD-200',
+			class: 'socket',
+			driver: '../433_generator/drivers/kaku/dimmer.js',
+			signal: 'kakudim',
+			alternativeSignal: 'kaku',
+			name: 'devices.ACD-200.name',
+			icon: '../433_generator/assets/ACD-200/socket.svg'
+		},
+		'WST-8800': {
+			driver: '../433_generator/drivers/kakuold/wall_switch.js',
+			pair: {
+				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
+				views: [{
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
+						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/WST-8800/switch_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_remote.html',
+					options: {
+						title: 'deviceClasses.generic_wall_switch.views.generic_test_remote.title',
+						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
+						prepend: [],
+						append: [{
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+						}],
+						svg: '../433_generator/assets/WST-8800/switch.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_remote'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			id: 'WST-8800',
+			signal: 'kakuold',
+			images: {
+				large: '../433_generator/assets/WST-8800/images/large.png',
+				small: '../433_generator/assets/WST-8800/images/small.png'
+			},
+			triggers: [{
+				id: 'WST-8800:received',
+				title: '433_generator.generic.button_pressed',
+				args: [{
+					name: 'state',
+					type: 'dropdown',
+					values: [{
+						id: '1',
+						label: '433_generator.generic.on'
+					}, {
+						id: '0',
+						label: '433_generator.generic.off'
+					}]
+				}, {
+					name: 'device',
+					type: 'device',
+					filter: 'driver_id=WST-8800'
+				}]
+			}],
+			class: 'other',
+			settings: [{
+				type: 'group',
+				label: 'deviceClasses.wall_switch.settings.groups.general',
+				children: [{
+					id: 'rotated',
+					type: 'radio',
+					value: '0',
+					label: 'deviceClasses.wall_switch.settings.rotated.label',
+					values: [{
+						id: '0',
+						label: 'deviceClasses.wall_switch.settings.rotated.0'
+					}, {
+						id: '180',
+						label: 'deviceClasses.wall_switch.settings.rotated.180'
+					}]
+				}]
+			}],
+			name: 'devices.WST-8800.name',
+			icon: '../433_generator/assets/WST-8800/icon.svg'
+		},
+		'KCT-101': {
+			class: 'other',
+			pair: {
+				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
+				views: [{
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_remote.views.generic_imitate.title',
+						body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/KCT-101/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_remote.html',
+					options: {
+						svg: '../433_generator/assets/KCT-101/test.svg',
+						prepend: [],
+						append: [],
+						title: 'views.generic_test_remote.title',
+						body: 'views.generic_test_remote.body',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_remote'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/KCT-101/images/large.jpg',
+				small: '../433_generator/assets/KCT-101/images/small.jpg'
+			},
+			id: 'KCT-101',
+			triggers: [{
+				id: 'KCT-101:received',
+				title: '433_generator.generic.button_pressed',
+				args: [{
+					name: 'state',
+					type: 'dropdown',
+					values: [{
+						id: '1',
+						label: '433_generator.generic.on'
+					}, {
+						id: '0',
+						label: '433_generator.generic.off'
+					}]
+				}, {
+					name: 'device',
+					type: 'device',
+					filter: 'driver_id=KCT-101'
+				}]
+			}],
+			driver: '../433_generator/drivers/kakuold/kaku.js',
+			signal: 'kakuold',
+			name: 'devices.KCT-101.name',
+			icon: '../433_generator/assets/KCT-101/icon.svg'
+		},
+		'AC-300N': {
+			capabilities: ['onoff', 'dim'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_program',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/AYCT-102/remote.svg'
+						}, {
+							name: 'views.generic_choice.buttons.generate',
+							view: 'generic_program',
+							svg: '../433_generator/assets/AC-300/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/AYCT-102/remote_pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/program.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_program.title',
+						body: 'deviceClasses.socket.views.generic_program.body',
+						svg: '../433_generator/assets/AC-300/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_program'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
 				large: '../433_generator/assets/AC-300/images/large.png',
 				small: '../433_generator/assets/AC-300/images/small.png'
+			},
+			id: 'AC-300N',
+			class: 'socket',
+			driver: '../433_generator/drivers/kaku/dimmer.js',
+			signal: 'kakudim',
+			alternativeSignal: 'kaku',
+			name: 'devices.AC-300.name',
+			icon: '../433_generator/assets/AC-300/icon.svg'
+		},
+		'AC-300': {
+			capabilities: ['onoff'],
+			pair: {
+				viewOrder: ['generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done'
+				],
+				views: [{
+					template: './lib/pair/choice.html',
+					options: {
+						title: 'deviceClasses.generic_switch.views.generic_choice.title',
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../433_generator/assets/YCT-102/icon.svg'
+						}, {
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../433_generator/assets/YC-400/icon.svg'
+						}],
+						prepend: [],
+						append: [],
+						svgWidth: '80vw',
+						svgHeight: '65vh'
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_choice'
+				}, {
+					template: './lib/pair/imitate.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+						body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+						prepend: [],
+						append: [],
+						svg: '../433_generator/assets/YCT-102/pair.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: false
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_imitate'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						next: true,
+						initWithDeviceData: true,
+						sendToggleOnInit: false,
+						prepend: [],
+						append: [],
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						previous: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch_2'
+				}, {
+					template: 'choose_slave',
+					options: {
+						next: 'generic_done',
+						prepend: [],
+						append: [],
+						previous: true
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave_2'
+				}, {
+					template: './lib/pair/codewheel.html',
+					options: {
+						previous: 'generic_choice',
+						prepend: [],
+						append: [],
+						codewheelList: [{
+							series: ['A',
+								'B',
+								'C',
+								'D',
+								'E',
+								'F',
+								'G',
+								'H',
+								'I',
+								'J',
+								'K',
+								'L',
+								'M',
+								'N',
+								'O',
+								'P'
+							],
+							mapOddToDot: true
+						}, {
+							series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+							mapOddToDot: true
+						}],
+						title: 'views.generic_codewheel.title',
+						body: 'views.generic_codewheel.body',
+						next: true
+					},
+					prepend: ['./../assets/433_generator/css/codewheel.css',
+						'./../assets/433_generator/js/codewheel.js'
+					],
+					append: [],
+					id: 'generic_codewheel'
+				}, {
+					template: './lib/pair/test_switch.html',
+					options: {
+						title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+						body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+						prepend: [],
+						append: [],
+						svg: './../assets/433_generator/images/light.svg',
+						svgWidth: '80vw',
+						svgHeight: '70vh',
+						initWithDeviceData: false,
+						previous: true,
+						next: true,
+						sendToggleOnInit: true
+					},
+					prepend: ['./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js',
+						'./../assets/433_generator/css/styles.css',
+						'./../assets/433_generator/css/svg.css',
+						'./../assets/433_generator/js/svghighlighter.js'
+					],
+					append: [],
+					id: 'generic_test_switch'
+				}, {
+					template: 'choose_slave',
+					options: {
+						previous: true,
+						next: true,
+						prepend: '',
+						append: ''
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_choose_slave'
+				}, {
+					template: './lib/pair/done.html',
+					options: {
+						title: 'views.generic_done.title',
+						prepend: [],
+						append: []
+					},
+					prepend: [],
+					append: [],
+					id: 'generic_done'
+				}]
+			},
+			images: {
+				large: '../433_generator/assets/YC-400/images/large.jpg',
+				small: '../433_generator/assets/YC-400/images/small.jpg'
 			},
 			id: 'AC-300',
 			class: 'socket',
 			driver: '../433_generator/drivers/kakuold/kaku.js',
 			signal: 'kakuold',
-			name: 'devices.AC-300.name',
-			icon: '../433_generator/assets/ACD-200/socket.svg'
+			name: 'devices.YC-400.name',
+			icon: '../433_generator/assets/YC-400/icon.svg'
 		}
 	}
 };

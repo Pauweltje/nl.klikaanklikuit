@@ -43,6 +43,31 @@ module.exports = {
 				next: false,
 			},
 		},
+		generic_codewheel: {
+			template: './pair/codewheel.html',
+			options: {
+				title: {
+					default: 'views.generic_codewheel.title',
+				},
+				body: {
+					default: 'views.generic_codewheel.body',
+				},
+				codewheelList: {
+					default: [
+						{
+							series: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'],
+							mapOddToDot: true,
+						},
+					],
+				},
+				previous: true,
+				next: true,
+			},
+			prepend: [
+				'../../assets/433_generator/css/codewheel.css',
+				'../../assets/433_generator/js/codewheel.js',
+			],
+		},
 		generic_dipswitch: {
 			template: './pair/dipswitch.html',
 			options: {
@@ -380,6 +405,71 @@ module.exports = {
 					generic_info: {
 						title: 'deviceClasses.generic_dipswitch_socket.views.generic_info.title',
 						body: 'deviceClasses.generic_dipswitch_socket.views.generic_info.body',
+						previous: 'generic_choice',
+					},
+				},
+			},
+		},
+		generic_codewheel_switch: {
+			extends: 'generic_switch',
+			pair: {
+				viewOrder: [
+					'generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_done',
+				],
+				viewOptions: {
+					generic_choice: {
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [
+							{
+								name: 'deviceClasses.generic_switch.views.generic_choice.buttons.generic_imitate',
+								view: 'generic_imitate',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+							},
+						],
+					},
+					generic_codewheel: {
+						previous: 'generic_choice',
+					},
+				},
+			},
+		},
+		generic_codewheel_socket: {
+			extends: 'generic_socket',
+			class: 'socket',
+			pair: {
+				viewOrder: [
+					'generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_choose_slave_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_choose_slave',
+					'generic_done',
+				],
+				viewOptions: {
+					generic_choice: {
+						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						buttons: [
+							{
+								name: 'deviceClasses.generic_switch.views.generic_choice.buttons.generic_imitate',
+								view: 'generic_imitate',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+							},
+						],
+					},
+					generic_codewheel: {
 						previous: 'generic_choice',
 					},
 				},

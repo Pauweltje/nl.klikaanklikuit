@@ -64,7 +64,6 @@ const config = {
 	id: 'AWST-8802',
 	driver: '../../433_generator/drivers/kaku/wall_switch.js',
 	signal: 'kaku',
-	class: 'other',
 	triggers: [{
 		id: 'AWST-8802:received',
 		title: '433_generator.generic.button_pressed',
@@ -94,6 +93,7 @@ const config = {
 			filter: 'driver_id=AWST-8802'
 		}]
 	}],
+	class: 'other',
 	settings: [{
 		type: 'group',
 		label: 'deviceClasses.wall_switch.settings.groups.general',

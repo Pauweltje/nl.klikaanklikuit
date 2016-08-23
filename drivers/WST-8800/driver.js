@@ -1,6 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
+	driver: '../../433_generator/drivers/kakuold/wall_switch.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{
@@ -57,13 +58,12 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	id: 'WST-8800',
+	signal: 'kakuold',
 	images: {
 		large: '../../433_generator/assets/WST-8800/images/large.png',
 		small: '../../433_generator/assets/WST-8800/images/small.png'
 	},
-	id: 'WST-8800',
-	driver: '../../433_generator/drivers/kakuold/wall_switch.js',
-	signal: 'kakuold',
 	triggers: [{
 		id: 'WST-8800:received',
 		title: '433_generator.generic.button_pressed',

@@ -72,6 +72,7 @@ module.exports = {
 		},
 		socket: {
 			extends: ['generic_socket', 'kaku'],
+			capabilities: ['onoff'],
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -83,9 +84,11 @@ module.exports = {
 					generic_program: {
 						body: 'deviceClasses.socket.views.generic_program.body',
 					},
+					generic_imitate: {
+						body: 'deviceClasses.socket.views.generic_imitate.body',
+					},
 				},
 			},
-			capabilities: ['onoff'],
 		},
 		simple_socket: {
 			extends: ['socket'],
@@ -520,6 +523,83 @@ $('<div>').append(
 				},
 			],
 		},
+		old_blinds: {
+			extends: ['blinds', 'generic_codewheel_switch', 'kaku_old'],
+			driver: './drivers/kakuold/blinds.js',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'deviceClasses.generic_switch.views.generic_choice.buttons.generic_imitate',
+								view: 'generic_imitate',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+							},
+						],
+					},
+					generic_codewheel: {
+						codewheelList: [
+							{
+								series: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'],
+								mapOddToDot: true,
+							},
+							{
+								series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+								mapOddToDot: true,
+							},
+						],
+					},
+				},
+			},
+		},
+		old_socket: {
+			extends: ['generic_codewheel_socket', 'kaku_old'],
+			capabilities: ['onoff'],
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{ name: 'views.generic_choice.buttons.copy', view: 'generic_imitate' },
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+							},
+						],
+					},
+					generic_codewheel: {
+						codewheelList: [
+							{
+								series: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'],
+								mapOddToDot: true,
+							},
+							{
+								series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+								mapOddToDot: true,
+							},
+						],
+					},
+				},
+			},
+		},
+		simple_codewheel: {
+			driver: './drivers/kakuold/codewheel.js',
+			pair: {
+				viewOptions: {
+					generic_codewheel: {
+						codewheelList: [
+							{
+								series: [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
+								mapOddToDot: false,
+								quadrants: ['A', 'B', 'C', 'D'],
+							},
+						],
+					},
+				},
+			},
+		},
 	},
 	devices: {
 		'AYCT-102': {
@@ -890,34 +970,47 @@ $('<div>').append(
 				},
 			],
 		},
-		// FIXME remove device, mistake, it is an 868 device
-		// 'ALMST-2000': {
-		// 	extends: 'AMST-606',
-		// 	name: 'devices.ALMST-2000.name',
-		// 	images: {
-		// 		large: './assets/ALMST-2000/images/large.jpg',
-		// 		small: './assets/ALMST-2000/images/small.jpg',
-		// 	},
-		// 	icon: './assets/ALMST-2000/icon.svg',
-		// 	pair: {
-		// 		viewOptions: {
-		// 			generic_imitate: {
-		// 				svg: './assets/ALMST-2000/pair.svg',
-		// 			},
-		// 			generic_test_remote: {
-		// 				svg: './assets/ALMST-2000/test.svg',
-		// 			},
-		// 		},
-		// 	},
-		// },
-		'AC-300': {
-			extends: ['socket', 'kaku_old'],
-			name: 'devices.AC-300.name',
+		// TODO new icon
+		// TODO implement dim functionality
+		// This device is mistakingly using the old kaku signal and is therefore reused to be an YC-400
+		'PAR-1000': {
+			extends: ['old_socket', 'simple_codewheel'],
+			name: 'devices.PAR-1000.name',
 			images: {
-				large: './assets/AC-300/images/large.png',
-				small: './assets/AC-300/images/small.png',
+				large: './assets/PAR-1000/images/large.jpg',
+				small: './assets/PAR-1000/images/small.jpg',
 			},
-			icon: './assets/ACD-200/socket.svg',
+			icon: './assets/PAR-1000/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/PA3-1000R/icon.svg',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/PAR-1000/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/PA3-1000R/pair.svg',
+					},
+				},
+			},
+		},
+		'AC-300': {
+			extends: 'old_socket',
+			name: 'devices.YC-400.name',
+			images: {
+				large: './assets/YC-400/images/large.jpg',
+				small: './assets/YC-400/images/small.jpg',
+			},
+			icon: './assets/YC-400/icon.svg',
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -928,20 +1021,29 @@ $('<div>').append(
 								svg: './assets/YCT-102/icon.svg',
 							},
 							{
-								name: 'views.generic_choice.buttons.generate',
-								view: 'generic_program',
-								svg: './assets/ACD-200/socket.svg',
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/YC-400/icon.svg',
 							},
 						],
 					},
 					generic_imitate: {
 						svg: './assets/YCT-102/pair.svg',
 					},
-					generic_program: {
-						svg: './assets/ACD-200/socket.svg',
-					},
 				},
 			},
+		},
+		'YC-412': {
+			extends: 'AC-300',
+			name: 'devices.YC-412.name',
+		},
+		'YC-1000': {
+			extends: 'YC-412',
+			name: 'devices.YC-1000.name',
+		},
+		'YC-3500': {
+			extends: 'YC-412',
+			name: 'devices.YC-3500.name',
 		},
 		'ACD-200': {
 			extends: 'dimmer',
@@ -976,6 +1078,93 @@ $('<div>').append(
 				},
 			},
 		},
+		'ACD-300': {
+			extends: 'ACD-200',
+			name: 'devices.ACD-300.name',
+		},
+		'ACD-1000': {
+			extends: ['ACD-200', 'socket'],
+			name: 'devices.ACD-1000.name',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACD-200/socket.svg',
+							},
+						],
+					},
+				},
+			},
+		},
+		'ACD-3500': {
+			extends: 'ACD-1000',
+			name: 'devices.ACD-3500.name',
+		},
+		// This is the AC-300 implementation using the new kaku signal
+		'AC-300N': {
+			extends: 'ACD-200',
+			name: 'devices.AC-300.name',
+			images: {
+				large: './assets/AC-300/images/large.png',
+				small: './assets/AC-300/images/small.png',
+			},
+			icon: './assets/AC-300/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AC-300/icon.svg',
+							},
+						],
+					},
+					generic_program: {
+						svg: './assets/AC-300/pair.svg',
+					},
+				},
+			},
+		},
+		'AC-1000': {
+			extends: ['AC-300N', 'socket'],
+			name: 'devices.AC-1000.name',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AC-300/icon.svg',
+							},
+						],
+					},
+				},
+			},
+		},
+		'AC-3500': {
+			extends: 'AC-1000',
+			name: 'devices.AC-3500.name',
+		},
 		'AGDR-300': {
 			extends: 'dimmer',
 			name: 'devices.AGDR-300.name',
@@ -1005,6 +1194,28 @@ $('<div>').append(
 					},
 					generic_program: {
 						svg: './assets/AGDR-300/pair.svg',
+					},
+				},
+			},
+		},
+		'AGDR-3500': {
+			extends: ['AGDR-300', 'socket'],
+			name: 'devices.AGDR-3500.name',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AGDR-300/icon.svg',
+							},
+						],
 					},
 				},
 			},
@@ -1119,6 +1330,12 @@ $('<div>').append(
 				},
 			},
 		},
+		'AFR-060': {
+			extends: 'AFR-100',
+			name: 'devices.AFR-060.name',
+			capabilities: ['onoff'],
+			driver: './drivers/kaku/kaku.js',
+		},
 		'ASUN-650': {
 			extends: 'blinds',
 			name: 'devices.ASUN-650.name',
@@ -1145,6 +1362,47 @@ $('<div>').append(
 					},
 					generic_imitate: {
 						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ASUN-650/pairbutton.svg',
+					},
+					generic_test_switch: {
+						svg: './assets/ASUN-650/test.svg',
+						svgHeight: '60vh',
+					},
+					generic_test_switch_2: {
+						svg: './assets/ASUN-650/test.svg',
+						svgHeight: '60vh',
+					},
+				},
+			},
+		},
+		'SUN-650': {
+			extends: 'old_blinds',
+			name: 'devices.SUN-650.name',
+			images: {
+				large: './assets/SUN-650/images/large.jpg',
+				small: './assets/SUN-650/images/small.jpg',
+			},
+			icon: './assets/ASUN-650/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/YCT-102/icon.svg',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/ASUN-650/pairbutton.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/YCT-102/pair.svg',
 					},
 					generic_program: {
 						svg: './assets/ASUN-650/pairbutton.svg',
@@ -1280,26 +1538,25 @@ $('<div>').append(
 				},
 			},
 		},
-		// TODO enable when homey client device selector ui is fixed
-		// 'KCT-101': {
-		// 	extends: ['tiny_remote', 'kaku_old'],
-		// 	name: 'devices.KCT-101.name',
-		// 	images: {
-		// 		large: './assets/KCT-101/images/large.png',
-		// 		small: './assets/KCT-101/images/small.png',
-		// 	},
-		// 	icon: './assets/KCT-101/icon.svg',
-		// 	pair: {
-		// 		viewOptions: {
-		// 			generic_imitate: {
-		// 				svg: './assets/KCT-101/pair.svg',
-		// 			},
-		// 			generic_test_remote: {
-		// 				svg: './assets/KCT-101/test.svg',
-		// 			},
-		// 		},
-		// 	},
-		// },
+		'KCT-101': {
+			extends: ['tiny_remote', 'kaku_old'],
+			name: 'devices.KCT-101.name',
+			images: {
+				large: './assets/KCT-101/images/large.jpg',
+				small: './assets/KCT-101/images/small.jpg',
+			},
+			icon: './assets/KCT-101/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/KCT-101/pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/KCT-101/test.svg',
+					},
+				},
+			},
+		},
 		// TODO needs new pair ui
 		// 'PAR-1000': {
 		//

@@ -31,7 +31,8 @@ module.exports = class Signal extends EventEmitter {
 
 		this.signal.on('payload', payloadData => { // Start listening to payload event
 			if (!this.manualDebounceFlag && !this.signal.manualDebounceFlag) {
-				const payload = Array.from(payloadData).map(Number); // Copy array to prevent mutability issues with multiple drivers
+				// Copy array to prevent mutability issues with multiple drivers
+				const payload = Array.from(payloadData).map(Number);
 				this.emit('payload', payload);
 				// Only continue if the received data is valid
 				if (!this.debounceTimeout > 0 || this.debounce(payload)) {

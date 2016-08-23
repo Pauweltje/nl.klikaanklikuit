@@ -41,7 +41,7 @@ const config = {
 			template: '../lib/pair/imitate.html',
 			options: {
 				title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-				body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+				body: 'deviceClasses.socket.views.generic_imitate.body',
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/APA2-2300R/pair.svg',

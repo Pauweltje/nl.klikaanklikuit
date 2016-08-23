@@ -1,6 +1,7 @@
 'use strict';
 
 const DefaultDriver = require('../../../drivers/lib/driver');
+const globalIdList = new Set();
 
 module.exports = class Kaku extends DefaultDriver {
 	constructor(config) {
@@ -8,6 +9,37 @@ module.exports = class Kaku extends DefaultDriver {
 		this.on('frame', this.updateState.bind(this));
 		this.on('new_state', this.updateRealtime.bind(this));
 		this.on('new_pairing_device', device => this.updateState(device.data));
+	}
+
+	add(device) {
+		globalIdList.add(this.getDeviceId(device));
+		return super.add(device);
+	}
+
+	codewheelsToData(codewheelIndexes) {
+		if (codewheelIndexes.length === 2) {
+			const unitWithChannel = `000${codewheelIndexes[1].toString(2)}`.slice(-4);
+			const data = {
+				address: `000${codewheelIndexes[0].toString(2)}`.slice(-4),
+				channel: unitWithChannel.substr(0, 2),
+				unit: unitWithChannel.substr(2, 2),
+				undef: [0, 1, 1],
+				state: 0,
+			};
+			data.id = `${data.address}:${data.channel}:${data.unit}`;
+			return data;
+		} else if (codewheelIndexes.length === 1) {
+			const data = {
+				address: `000${Math.floor(codewheelIndexes[0] / 3).toString(2)}`.slice(-4),
+				channel: '00',
+				unit: `0${Math.floor(codewheelIndexes[0] % 3).toString(2)}`.slice(-2),
+				undef: [0, 1, 1],
+				state: 0,
+			};
+			data.id = `${data.address}:${data.channel}:${data.unit}`;
+			return data;
+		}
+		return null;
 	}
 
 	generateData() {
@@ -19,6 +51,13 @@ module.exports = class Kaku extends DefaultDriver {
 			state: 0,
 		};
 		data.id = `${data.address}:${data.channel}:${data.unit}`;
+		if (globalIdList.has(data.id) && globalIdList.size < 200) {
+			return this.generateData();
+		}
+		data.codewheelIndexes = [
+			parseInt(data.address, 2),
+			parseInt(data.channel + data.unit, 2),
+		];
 		return data;
 	}
 

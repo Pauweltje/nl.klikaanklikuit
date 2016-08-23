@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	class: 'sensor',
+	driver: '../../433_generator/drivers/kaku/contact_sensor.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{
@@ -56,13 +56,9 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	images: {
-		large: '../../433_generator/assets/AMST-606/images/large.png',
-		small: '../../433_generator/assets/AMST-606/images/small.png'
-	},
 	id: 'AMST-606',
-	driver: '../../433_generator/drivers/kaku/contact_sensor.js',
 	signal: 'kakulong',
+	class: 'sensor',
 	conditions: [{
 		id: 'AMST-606:state',
 		title: 'devices.AMST-606.conditions.state.title',
@@ -72,6 +68,10 @@ const config = {
 			filter: 'driver_id=AMST-606'
 		}]
 	}],
+	images: {
+		large: '../../433_generator/assets/AMST-606/images/large.png',
+		small: '../../433_generator/assets/AMST-606/images/small.png'
+	},
 	name: 'devices.AMST-606.name',
 	icon: '../../433_generator/assets/AMST-606/icon.svg',
 	capabilities: ['alarm_contact']

@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "compatibility": ">=0.9",
   "category": [
     "appliances",
@@ -58,67 +58,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=AWST-8800"
-          }
-        ]
-      },
-      {
-        "id": "PA3-1000R:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "00",
-                "label": {
-                  "en": "Button 1\u0000",
-                  "nl": "Knop 1\u0000"
-                }
-              },
-              {
-                "id": "01",
-                "label": {
-                  "en": "Button 2\u0000",
-                  "nl": "Knop 2\u0000"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Button 3\u0000",
-                  "nl": "Knop 3\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=PA3-1000R"
           }
         ]
       },
@@ -282,6 +221,67 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=YCT-102"
+          }
+        ]
+      },
+      {
+        "id": "PA3-1000R:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "00",
+                "label": {
+                  "en": "Button 1\u0000",
+                  "nl": "Knop 1\u0000"
+                }
+              },
+              {
+                "id": "01",
+                "label": {
+                  "en": "Button 2\u0000",
+                  "nl": "Knop 2\u0000"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Button 3\u0000",
+                  "nl": "Knop 3\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=PA3-1000R"
           }
         ]
       },
@@ -684,6 +684,40 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=WST-8800"
+          }
+        ]
+      },
+      {
+        "id": "KCT-101:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=KCT-101"
           }
         ]
       },
@@ -1649,17 +1683,17 @@
       ]
     },
     {
-      "id": "AC-300",
+      "id": "PAR-1000",
       "name": {
-        "en": "AC-XXX"
+        "en": "PAR-1000"
       },
       "class": "socket",
       "capabilities": [
         "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/AC-300/images/large.png",
-        "small": "./433_generator/assets/AC-300/images/small.png"
+        "large": "./433_generator/assets/PAR-1000/images/large.jpg",
+        "small": "./433_generator/assets/PAR-1000/images/small.jpg"
       },
       "pair": [
         {
@@ -1688,7 +1722,7 @@
           "template": "choose_slave"
         },
         {
-          "id": "generic_program",
+          "id": "generic_codewheel",
           "navigation": {
             "prev": "generic_choice",
             "next": "generic_test_switch"
@@ -1697,7 +1731,275 @@
         {
           "id": "generic_test_switch",
           "navigation": {
-            "prev": "generic_program",
+            "prev": "generic_codewheel",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-300",
+      "name": {
+        "en": "YC-400"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/YC-400/images/large.jpg",
+        "small": "./433_generator/assets/YC-400/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_codewheel",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_codewheel",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "YC-412",
+      "name": {
+        "en": "YC-412"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/YC-400/images/large.jpg",
+        "small": "./433_generator/assets/YC-400/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_codewheel",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_codewheel",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "YC-1000",
+      "name": {
+        "en": "YC-1000"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/YC-400/images/large.jpg",
+        "small": "./433_generator/assets/YC-400/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_codewheel",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_codewheel",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "YC-3500",
+      "name": {
+        "en": "YC-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/YC-400/images/large.jpg",
+        "small": "./433_generator/assets/YC-400/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_codewheel",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_codewheel",
             "next": "generic_choose_slave"
           }
         },
@@ -1718,7 +2020,7 @@
     {
       "id": "ACD-200",
       "name": {
-        "en": "ACD-XXX"
+        "en": "ACD-200"
       },
       "class": "socket",
       "capabilities": [
@@ -1784,14 +2086,485 @@
       ]
     },
     {
-      "id": "AGDR-300",
+      "id": "ACD-300",
       "name": {
-        "en": "AGDR-XXX"
+        "en": "ACD-300"
       },
       "class": "socket",
       "capabilities": [
         "onoff",
         "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACD-200/images/large.png",
+        "small": "./433_generator/assets/ACD-200/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACD-1000",
+      "name": {
+        "en": "ACD-1000"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACD-200/images/large.png",
+        "small": "./433_generator/assets/ACD-200/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACD-3500",
+      "name": {
+        "en": "ACD-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACD-200/images/large.png",
+        "small": "./433_generator/assets/ACD-200/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-300N",
+      "name": {
+        "en": "AC-300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-1000",
+      "name": {
+        "en": "AC-1000"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-3500",
+      "name": {
+        "en": "AC-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-300",
+      "name": {
+        "en": "AGDR-300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-3500",
+      "name": {
+        "en": "AGDR-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
       ],
       "images": {
         "large": "./433_generator/assets/AGDR-300/images/large.jpg",
@@ -2038,6 +2811,57 @@
       ]
     },
     {
+      "id": "AFR-060",
+      "name": {
+        "en": "AFR-060"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AFR-100/images/large.jpg",
+        "small": "./433_generator/assets/AFR-100/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "ASUN-650",
       "name": {
         "en": "ASUN-650"
@@ -2115,6 +2939,93 @@
           "id": "generic_test_switch",
           "navigation": {
             "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "SUN-650",
+      "name": {
+        "en": "SUN-650"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/SUN-650/images/large.jpg",
+        "small": "./433_generator/assets/SUN-650/images/small.jpg"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Invert up/down signal",
+                "nl": "Inverteer omhoog/omlaag signaal"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No",
+                    "nl": "Nee"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Yes",
+                    "nl": "Ja"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_codewheel",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_codewheel",
             "next": "generic_done"
           }
         },
@@ -2342,6 +3253,35 @@
       ]
     },
     {
+      "id": "KCT-101",
+      "name": {
+        "en": "KCT-101"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/KCT-101/images/large.jpg",
+        "small": "./433_generator/assets/KCT-101/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "switch",
       "name": {
         "en": "[Deprecated] Socket",
@@ -2515,34 +3455,6 @@
   ],
   "signals": {
     "433": {
-      "kaku": {
-        "sof": [
-          210,
-          2724
-        ],
-        "eof": [
-          210
-        ],
-        "words": [
-          [
-            210,
-            320,
-            210,
-            1320
-          ],
-          [
-            210,
-            1320,
-            210,
-            320
-          ]
-        ],
-        "interval": 10150,
-        "sensitivity": 0.9,
-        "repetitions": 10,
-        "minimalLength": 32,
-        "maximalLength": 32
-      },
       "kakuold": {
         "sof": [],
         "eof": [
@@ -2573,6 +3485,34 @@
         "sensitivity": 0.7,
         "minimalLength": 12,
         "maximalLength": 12
+      },
+      "kaku": {
+        "sof": [
+          210,
+          2724
+        ],
+        "eof": [
+          210
+        ],
+        "words": [
+          [
+            210,
+            320,
+            210,
+            1320
+          ],
+          [
+            210,
+            1320,
+            210,
+            320
+          ]
+        ],
+        "interval": 10150,
+        "sensitivity": 0.9,
+        "repetitions": 10,
+        "minimalLength": 32,
+        "maximalLength": 32
       },
       "kakudim": {
         "sof": [

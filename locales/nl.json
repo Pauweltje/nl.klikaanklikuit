@@ -47,7 +47,11 @@
 			"views": {
 				"generic_choice": {
 					"title": "Kopieer je afstansbediening of programmeer met Homey\u0000",
-					"body": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je het apparaat wil programmeren met een nieuw signaal van Homey.\u0000"
+					"body": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je het apparaat wil programmeren met een nieuw signaal van Homey.\u0000",
+					"buttons": {
+						"generic_imitate": "Kopieer je afstandsbediening\u0000",
+						"generic_program": "Genereer een nieuw signaal\u0000"
+					}
 				}
 			}
 		},
@@ -65,7 +69,8 @@
 					"body": "Gebruik je afstandsbediening of de bovenstaande knop om je contactdoos te testen. Klik op volgende om verder te gaan.\u0000"
 				},
 				"generic_program": {
-					"title": "Zet de contactdoos in programmeer modus\u0000"
+					"title": "Zet de contactdoos in programmeer modus\u0000",
+					"body": "Houd de programmeer knop van je contactdoos een paar seconden ingehouden om hem in programeer modus te zetten. Klik daarna op volgende.\u0000"
 				}
 			}
 		},
@@ -73,14 +78,14 @@
 			"views": {
 				"generic_program": {
 					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden, het lampje op de contactdoos moet gaan knipperen wanneer de knop losgelaten wordt. Klik daarna op volgende."
+				},
+				"generic_imitate": {
+					"body": "Druk op de knop van de afstandsbediening waarmee het apparaat gekoppeld is.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
 				}
 			}
 		},
 		"blinds": {
 			"views": {
-				"generic_imitate": {
-					"body": "Druk op de omhoog/omlaag knop van de afstandsbediening die met de zonnewering gekoppeld is."
-				},
 				"generic_test_switch": {
 					"title": "Test de zonnewering",
 					"body": "Gebruik de bovenstaande knoppen om de zonnewering te testen. Klik op volgende om verder te gaan."
@@ -89,7 +94,10 @@
 					"body": "Gebruik je afstandsbediening of de bovenstaande knoppen om de zonnewering te testen. Klik op volgende om verder te gaan."
 				},
 				"generic_program": {
-					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende."
+					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
+				},
+				"generic_imitate": {
+					"body": null
 				}
 			},
 			"settings": {
@@ -131,6 +139,16 @@
 					"body": "Haal de contactdoos uit het stopcontact voor een aantal seconden en plaats hem terug in het stopcontact. Het rode lampje zou nu moeten knipperen. Wanneer het apparaat in koppelmodus is klik op volgende."
 				}
 			}
+		},
+		"generic_codewheel_switch": {
+			"views": {
+				"generic_choice": {
+					"body": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je handmatig de lettercodeshijf wil instellen.\u0000",
+					"buttons": {
+						"generic_codewheel": "Handmatig lettercodeshijf instellen\u0000"
+					}
+				}
+			}
 		}
 	},
 	"views": {
@@ -151,7 +169,12 @@
 			"title": "Kopieer het signaal van je afstandsbediening\u0000"
 		},
 		"generic_program": {
-			"title": "Programmeer je apparaat met Homey\u0000"
+			"title": "Programmeer je apparaat met Homey\u0000",
+			"body": "Zet je apparaat in programmeer modus en klik op volgende om je apparaat met Homey te verbinden.\u0000"
+		},
+		"generic_codewheel": {
+			"title": "Configureer de apparaatcode\u0000",
+			"body": "Klik op de karakters op de bovenstaande lettercodeshijf of pas de lettercodeshijf op je apparaat aan zodat deze gelijk aan elkaar zijn, klik daarna op volgende.\u0000"
 		}
 	},
 	"433_generator": {
@@ -345,6 +368,49 @@
 		},
 		"AC-300": {
 			"name": null
+		},
+		"KCT-101": {
+			"name": null
+		},
+		"YC-400": {
+			"name": null
+		},
+		"SUN-650": {
+			"name": null
+		},
+		"ACD-3500": {
+			"name": null
+		},
+		"AC-3500": {
+			"name": null
+		},
+		"ACD-1000": {
+			"name": null
+		},
+		"AC-1000": {
+			"name": null
+		},
+		"AGDR-3500": {
+			"name": null
+		},
+		"ACD-300": {
+			"name": null
+		},
+		"YC-412": {
+			"name": null
+		},
+		"YC-1000": {
+			"name": null
+		},
+		"YC-3500": {
+			"name": null
+		},
+		"PAR-1000": {
+			"name": null
+		},
+		"AFR-060": {
+			"name": null
 		}
-	}
+	},
+	"AFR-060": null
 }

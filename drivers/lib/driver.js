@@ -184,6 +184,7 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	send(device, data, callback) {
+		callback = typeof callback === 'function' ? callback : () => null;
 		data = Object.assign({}, this.getDevice(device, true) || device.data || device, data);
 		this.emit('before_send', data);
 
@@ -228,6 +229,13 @@ module.exports = class Driver extends EventEmitter {
 		} else {
 			callback(null, device);
 		}
+	}
+
+	// TODO document that this function should be overwritten
+	codewheelsToData(codewheelIndexes) { // Convert user set bitswitches to usable data object
+		throw new Error(
+			`codewheelsToData(codewheelIndexes) should be overwritten by own driver for device ${this.config.id}`
+		);
 	}
 
 	// TODO document that this function should be overwritten
@@ -280,6 +288,15 @@ module.exports = class Driver extends EventEmitter {
 			if (!data) return callback(new Error('433_generator.error.invalid_dipswitch'));
 
 			this.pairingDevice = this.generateDevice(Object.assign({ dipswitches: dipswitches }, data));
+			this.emit('new_pairing_device', this.pairingDevice);
+			return callback(null, this.pairingDevice);
+		});
+
+		socket.on('set_device_codewheels', (codewheelIndexes, callback) => {
+			const data = this.codewheelsToData(codewheelIndexes.slice(0));
+			if (!data) return callback(new Error('433_generator.error.invalid_codewheelIndexes'));
+
+			this.pairingDevice = this.generateDevice(Object.assign({ codewheelIndexes }, data));
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});

@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	driver: '../../433_generator/drivers/kaku/dimmer.js',
+	capabilities: ['onoff', 'dim'],
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -138,14 +138,14 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff', 'dim'],
-	id: 'AFR-100',
-	signal: 'kakudim',
-	class: 'light',
 	images: {
 		large: '../../433_generator/assets/AFR-100/images/large.jpg',
 		small: '../../433_generator/assets/AFR-100/images/small.jpg'
 	},
+	id: 'AFR-100',
+	class: 'light',
+	driver: '../../433_generator/drivers/kaku/dimmer.js',
+	signal: 'kakudim',
 	alternativeSignal: 'kaku',
 	name: 'devices.AFR-100.name',
 	icon: '../../433_generator/assets/AFR-100/icon.svg'

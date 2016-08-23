@@ -42,7 +42,6 @@
 	generateDipswitches(options.dipswitchList, $dipswitchElem, false);
 
 	Homey.emit('get_device', function (err, device) {
-		console.log('got device', device);
 		if (device && device.data && device.data.dipswitches) {
 			setDipswitchArray(device.data.dipswitches, $dipswitchElem);
 		} else {
