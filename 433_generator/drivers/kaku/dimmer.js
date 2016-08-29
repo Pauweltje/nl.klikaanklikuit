@@ -84,6 +84,16 @@ module.exports = class Dimmer extends Kaku {
 	getExports() {
 		const exports = super.getExports();
 		exports.capabilities = exports.capabilities || {};
+		exports.capabilities.onoff = {
+			get: (device, callback) => callback(null, Boolean(Number(this.getState(device).state))),
+			set: (device, state, callback) => {
+				let dim = this.getState(device).dim;
+				if (dim === undefined) {
+					dim = 1;
+				}
+				this.send(device, state ? { dim: dim } : { state: 0 }, () => callback(null, state));
+			},
+		};
 		exports.capabilities.dim = {
 			get: (device, callback) => {
 				const state = this.getState(device);
