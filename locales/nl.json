@@ -13,6 +13,10 @@
 				"generic_test_remote": {
 					"title": "Test je wandschakelaar\u0000",
 					"body": "Druk op een willekeurige knop op je wandschakelaar of op de knoppen in het bovenstaande plaatje om het signaal te testen. Klik op volgende om verder te gaan\u0000"
+				},
+				"generic_imitate": {
+					"title": "Identificeer je wandschakelaar\u0000",
+					"body": "Klik op een willekeurige knop op je wandschakelaar om hem te koppelen.\u0000"
 				}
 			}
 		},
@@ -97,7 +101,7 @@
 					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
 				},
 				"generic_imitate": {
-					"body": null
+					"body": "Druk op de omhoog/omlaag knop van de afstandsbediening waarmee de zonnewering gekoppeld is.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
 				}
 			},
 			"settings": {
@@ -147,6 +151,31 @@
 					"buttons": {
 						"generic_codewheel": "Handmatig lettercodeshijf instellen\u0000"
 					}
+				}
+			}
+		},
+		"build_in": {
+			"views": {
+				"generic_imitate": {
+					"body": "Druk op de knop van de afstandsbediening waarmee het apparaat gekoppeld is."
+				},
+				"generic_test_switch": {
+					"title": "Test je apparaat",
+					"body": "Gebruik de bovenstaande knop om het apparaat te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_test_switch_2": {
+					"body": "Gebruik je afstandsbediening of de bovenstaande knop om het apparaat te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_program": {
+					"title": "Zet het apparaat in programmeer modus",
+					"body": "Houd de programmeer knop van het apparaat een paar seconden ingehouden om hem in programeer modus te zetten. Klik daarna op volgende."
+				}
+			}
+		},
+		"old_blinds": {
+			"views": {
+				"generic_imitate": {
+					"body": "Druk op de omhoog/omlaag knop van de afstandsbediening waarmee de zonnewering gekoppeld is."
 				}
 			}
 		}
@@ -227,7 +256,8 @@
 		"error": {
 			"device_exists": "Apparaat is al gekoppeld met Homey.\u0000",
 			"no_device": "Er is geen apparaat ingesteld. Sluit de pairing wizard en probeer opnieuw.\u0000",
-			"no_settings": "Geen instelling object. Probeer aub opnieuw.\u0000"
+			"no_settings": "Geen instelling object. Probeer aub opnieuw.\u0000",
+			"invalid_device": "Het apparaat dat is aangemaakt is incorrect. Probeer aub opnieuw.\u0000"
 		}
 	},
 	"devices": {
@@ -410,7 +440,42 @@
 		},
 		"AFR-060": {
 			"name": null
+		},
+		"SUN-500": {
+			"name": null
+		},
+		"AWMT-003": {
+			"name": null
+		},
+		"ACM-300": {
+			"name": null
+		},
+		"ACM-250": {
+			"name": null
+		},
+		"AWMR-210": {
+			"name": null
+		},
+		"AWMD-250": {
+			"name": null
+		},
+		"AWMT-230": {
+			"name": null
+		},
+		"ACM-1000": {
+			"name": null
+		},
+		"AWMR-230": {
+			"name": null
+		},
+		"AILD-3500": {
+			"name": null
+		},
+		"AWS-3500": {
+			"name": null
+		},
+		"AILD-250": {
+			"name": null
 		}
-	},
-	"AFR-060": null
+	}
 }

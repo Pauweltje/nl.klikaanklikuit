@@ -22,7 +22,7 @@ const config = {
 				}, {
 					name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
 					view: 'generic_codewheel',
-					svg: '../../433_generator/assets/ASUN-650/pairbutton.svg'
+					svg: '../../433_generator/assets/SUN-500/icon.svg'
 				}],
 				prepend: [],
 				append: [],
@@ -38,7 +38,7 @@ const config = {
 		}, {
 			template: '../lib/pair/imitate.html',
 			options: {
-				body: 'deviceClasses.blinds.views.generic_imitate.body',
+				body: 'deviceClasses.old_blinds.views.generic_imitate.body',
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/YCT-102/pair.svg',
@@ -158,8 +158,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/SUN-650/images/large.jpg',
-		small: '../../433_generator/assets/SUN-650/images/small.jpg'
+		large: '../../433_generator/assets/SUN-500/images/large.jpg',
+		small: '../../433_generator/assets/SUN-500/images/small.jpg'
 	},
 	id: 'SUN-650',
 	driver: '../../433_generator/drivers/kakuold/blinds.js',
@@ -182,8 +182,8 @@ const config = {
 			}]
 		}]
 	}],
-	name: 'devices.SUN-650.name',
-	icon: '../../433_generator/assets/ASUN-650/icon.svg'
+	name: 'devices.SUN-500.name',
+	icon: '../../433_generator/assets/SUN-500/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

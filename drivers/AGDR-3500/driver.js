@@ -1,8 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	icon: '../../433_generator/assets/AGDR-300/icon.svg',
-	driver: '../../433_generator/drivers/kaku/kaku.js',
+	capabilities: ['onoff'],
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -163,16 +162,17 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff'],
-	id: 'AGDR-3500',
-	signal: 'kaku',
-	class: 'socket',
-	alternativeSignal: 'kaku',
-	name: 'devices.AGDR-3500.name',
 	images: {
 		large: '../../433_generator/assets/AGDR-300/images/large.jpg',
 		small: '../../433_generator/assets/AGDR-300/images/small.jpg'
-	}
+	},
+	id: 'AGDR-3500',
+	class: 'socket',
+	driver: '../../433_generator/drivers/kaku/kaku.js',
+	signal: 'kaku',
+	alternativeSignal: 'kaku',
+	name: 'devices.AGDR-3500.name',
+	icon: '../../433_generator/assets/AGDR-300/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

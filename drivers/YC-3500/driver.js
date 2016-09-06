@@ -1,7 +1,10 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	icon: '../../433_generator/assets/YC-400/icon.svg',
+	images: {
+		large: '../../433_generator/assets/YC-400/images/large.jpg',
+		small: '../../433_generator/assets/YC-400/images/small.jpg'
+	},
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',
@@ -183,10 +186,7 @@ const config = {
 	signal: 'kakuold',
 	class: 'socket',
 	name: 'devices.YC-3500.name',
-	images: {
-		large: '../../433_generator/assets/YC-400/images/large.jpg',
-		small: '../../433_generator/assets/YC-400/images/small.jpg'
-	}
+	icon: '../../433_generator/assets/YC-400/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

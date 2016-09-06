@@ -372,6 +372,42 @@ module.exports = {
 				},
 			},
 		},
+		generic_dipswitch_switch: {
+			extends: 'generic_switch',
+			class: 'socket',
+			pair: {
+				viewOrder: [
+					'generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_info',
+					'generic_dipswitch',
+					'generic_test_switch',
+					'generic_done',
+				],
+				viewOptions: {
+					generic_choice: {
+						title: 'deviceClasses.generic_dipswitch_socket.views.generic_choice.title',
+						body: 'deviceClasses.generic_dipswitch_socket.views.generic_choice.body',
+						buttons: [
+							{
+								name: 'deviceClasses.generic_dipswitch_socket.views.generic_choice.buttons.generic_imitate',
+								view: 'generic_imitate',
+							},
+							{
+								name: 'deviceClasses.generic_dipswitch_socket.views.generic_choice.buttons.generic_dipswitch',
+								view: 'generic_info',
+							},
+						],
+					},
+					generic_info: {
+						title: 'deviceClasses.generic_dipswitch_socket.views.generic_info.title',
+						body: 'deviceClasses.generic_dipswitch_socket.views.generic_info.body',
+						previous: 'generic_choice',
+					},
+				},
+			},
+		},
 		generic_dipswitch_socket: {
 			extends: 'generic_socket',
 			class: 'socket',

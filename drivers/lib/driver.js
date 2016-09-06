@@ -202,7 +202,7 @@ module.exports = class Driver extends EventEmitter {
 			return callback(true);
 		}
 		this.emit('send', data);
-		return this.signal.send(frame).then(result => {
+		return this.signal.send(frame, data.repeatCount, data.repeatInterval).then(result => {
 			if (callback) callback(null, result);
 			this.emit('after_send', data);
 		}).catch(err => {
@@ -278,7 +278,12 @@ module.exports = class Driver extends EventEmitter {
 			if (this.getDevice(data)) {
 				return callback(new Error('433_generator.error.device_exists'));
 			}
-			this.pairingDevice = this.generateDevice(data);
+			const device = this.generateDevice(data);
+			if (!device) {
+				return callback(new Error('433_generator.error.invalid_device'));
+			}
+
+			this.pairingDevice = device;
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -286,8 +291,12 @@ module.exports = class Driver extends EventEmitter {
 		socket.on('set_device_dipswitches', (dipswitches, callback) => {
 			const data = this.dipswitchesToData(dipswitches.slice(0));
 			if (!data) return callback(new Error('433_generator.error.invalid_dipswitch'));
+			const device = this.generateDevice(Object.assign({ dipswitches: dipswitches }, data));
+			if (!device) {
+				return callback(new Error('433_generator.error.invalid_device'));
+			}
 
-			this.pairingDevice = this.generateDevice(Object.assign({ dipswitches: dipswitches }, data));
+			this.pairingDevice = device;
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -295,8 +304,12 @@ module.exports = class Driver extends EventEmitter {
 		socket.on('set_device_codewheels', (codewheelIndexes, callback) => {
 			const data = this.codewheelsToData(codewheelIndexes.slice(0));
 			if (!data) return callback(new Error('433_generator.error.invalid_codewheelIndexes'));
+			const device = this.generateDevice(Object.assign({ codewheelIndexes }, data));
+			if (!device) {
+				return callback(new Error('433_generator.error.invalid_device'));
+			}
 
-			this.pairingDevice = this.generateDevice(Object.assign({ codewheelIndexes }, data));
+			this.pairingDevice = device;
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -304,9 +317,15 @@ module.exports = class Driver extends EventEmitter {
 		socket.on('get_device', (data, callback) => callback(null, this.pairingDevice));
 
 		socket.on('program', (data, callback) => {
+			let device;
 			do {
-				this.pairingDevice = this.generateDevice(this.generateData());
-			} while (this.get(this.pairingDevice));
+				device = this.generateDevice(this.generateData());
+			} while (this.get(device));
+			if (!device) {
+				return callback(new Error('433_generator.error.invalid_device'));
+			}
+
+			this.pairingDevice = device;
 			this.emit('new_pairing_device', this.pairingDevice);
 			callback(null, this.pairingDevice);
 		});

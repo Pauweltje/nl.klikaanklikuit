@@ -18,7 +18,7 @@ module.exports = class Doorbell extends Kaku {
 			this.toggleTimeout[deviceId] = setTimeout(
 				() =>	this.getDevice(deviceId, true) && this.emit(
 					'frame',
-					Object.assign({}, this.getLastFrame(deviceId) || this.getDevice(deviceId, true), { state: 0 })
+					Object.assign({}, this.getLastFrame(deviceId) || this.getDevice(deviceId, true), { state: 0, toggle: true })
 				),
 				4000
 			);
@@ -53,5 +53,12 @@ module.exports = class Doorbell extends Kaku {
 		};
 
 		return exports;
+	}
+
+	generateDevice(data) {
+		if (data.toggle) {
+			return null;
+		}
+		return super.generateDevice(data);
 	}
 };

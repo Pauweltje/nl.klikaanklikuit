@@ -1,8 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	icon: '../../433_generator/assets/YC-400/icon.svg',
-	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	capabilities: ['onoff'],
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -178,15 +177,16 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
-	capabilities: ['onoff'],
-	id: 'YC-412',
-	signal: 'kakuold',
-	class: 'socket',
-	name: 'devices.YC-412.name',
 	images: {
 		large: '../../433_generator/assets/YC-400/images/large.jpg',
 		small: '../../433_generator/assets/YC-400/images/small.jpg'
-	}
+	},
+	id: 'YC-412',
+	class: 'socket',
+	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	signal: 'kakuold',
+	name: 'devices.YC-412.name',
+	icon: '../../433_generator/assets/YC-400/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

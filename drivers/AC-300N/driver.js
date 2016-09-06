@@ -1,7 +1,8 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	capabilities: ['onoff', 'dim'],
+	icon: '../../433_generator/assets/AC-300/icon.svg',
+	driver: '../../433_generator/drivers/kaku/dimmer.js',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -162,17 +163,16 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	capabilities: ['onoff', 'dim'],
+	id: 'AC-300N',
+	signal: 'kakudim',
+	class: 'socket',
+	alternativeSignal: 'kaku',
+	name: 'devices.AC-300.name',
 	images: {
 		large: '../../433_generator/assets/AC-300/images/large.png',
 		small: '../../433_generator/assets/AC-300/images/small.png'
-	},
-	id: 'AC-300N',
-	class: 'socket',
-	driver: '../../433_generator/drivers/kaku/dimmer.js',
-	signal: 'kakudim',
-	alternativeSignal: 'kaku',
-	name: 'devices.AC-300.name',
-	icon: '../../433_generator/assets/AC-300/icon.svg'
+	}
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

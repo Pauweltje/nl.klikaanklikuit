@@ -1,8 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	icon: '../../433_generator/assets/AWST-6000/icon.svg',
-	driver: '../../433_generator/drivers/kaku/sensor.js',
+	class: 'sensor',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{
@@ -57,9 +56,13 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	images: {
+		large: '../../433_generator/assets/AWST-6000/images/large.png',
+		small: '../../433_generator/assets/AWST-6000/images/small.png'
+	},
 	id: 'AWST-6000',
+	driver: '../../433_generator/drivers/kaku/sensor.js',
 	signal: 'kaku',
-	class: 'sensor',
 	conditions: [{
 		id: 'AWST-6000:state',
 		title: 'devices.AWST-6000.conditions.state.title',
@@ -70,11 +73,8 @@ const config = {
 		}]
 	}],
 	name: 'devices.AWST-6000.name',
-	capabilities: ['alarm_motion'],
-	images: {
-		large: '../../433_generator/assets/AWST-6000/images/large.png',
-		small: '../../433_generator/assets/AWST-6000/images/small.png'
-	}
+	icon: '../../433_generator/assets/AWST-6000/icon.svg',
+	capabilities: ['alarm_motion']
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

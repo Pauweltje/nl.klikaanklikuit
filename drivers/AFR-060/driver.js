@@ -1,7 +1,8 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	capabilities: ['onoff'],
+	icon: '../../433_generator/assets/AFR-100/icon.svg',
+	driver: '../../433_generator/drivers/kaku/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -138,17 +139,16 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	capabilities: ['onoff'],
+	id: 'AFR-060',
+	signal: 'kakudim',
+	class: 'light',
+	alternativeSignal: 'kaku',
+	name: 'devices.AFR-060.name',
 	images: {
 		large: '../../433_generator/assets/AFR-100/images/large.jpg',
 		small: '../../433_generator/assets/AFR-100/images/small.jpg'
-	},
-	id: 'AFR-060',
-	class: 'light',
-	driver: '../../433_generator/drivers/kaku/kaku.js',
-	signal: 'kakudim',
-	alternativeSignal: 'kaku',
-	name: 'devices.AFR-060.name',
-	icon: '../../433_generator/assets/AFR-100/icon.svg'
+	}
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

@@ -13,6 +13,10 @@
 				"generic_test_remote": {
 					"title": "Test your wall switch\u0000",
 					"body": "Press a random button on your wall switch or click the buttons in the image above to test the signal. Press next to continue.\u0000"
+				},
+				"generic_imitate": {
+					"title": "Identify your wall switch\u0000",
+					"body": "Press a random button on your wall switch to pair it.\u0000"
 				}
 			}
 		},
@@ -87,7 +91,7 @@
 		"blinds": {
 			"views": {
 				"generic_imitate": {
-					"body": "Press the up/down button that is paired to your blinds<p class=\"notice\">(Note. For this device Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
+					"body": "Press the up/down button that is paired to your blinds.<p class=\"notice\">(Note. For this device Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your blinds",
@@ -95,9 +99,6 @@
 				},
 				"generic_test_switch_2": {
 					"body": "Use your remote or the buttons above to test your blinds. Press next to continue."
-				},
-				"generic_program": {
-					"body": "deviceClasses.blinds.views.generic_program.body"
 				}
 			},
 			"settings": {
@@ -147,6 +148,31 @@
 					"buttons": {
 						"generic_codewheel": "Manually set codewheels\u0000"
 					}
+				}
+			}
+		},
+		"build_in": {
+			"views": {
+				"generic_imitate": {
+					"body": "Press the button that is paired to your device."
+				},
+				"generic_program": {
+					"title": "Put the device in pairing mode",
+					"body": "Press and hold the program button on your device for a few seconds to put it in pairing mode, then click next."
+				},
+				"generic_test_switch": {
+					"title": "Test your device",
+					"body": "Use the switch above to test your device. Press next to continue."
+				},
+				"generic_test_switch_2": {
+					"body": "Use your remote or the switch above to test your device. Press next to continue."
+				}
+			}
+		},
+		"old_blinds": {
+			"views": {
+				"generic_imitate": {
+					"body": "Press the up/down button that is paired to your blinds."
 				}
 			}
 		}
@@ -322,8 +348,8 @@
 		"YC-400": {
 			"name": "YC-400"
 		},
-		"SUN-650": {
-			"name": "SUN-650"
+		"SUN-500": {
+			"name": "SUN-500"
 		},
 		"ACD-3500": {
 			"name": "ACD-3500"
@@ -357,6 +383,39 @@
 		},
 		"AFR-060": {
 			"name": "AFR-060"
+		},
+		"AWMT-003": {
+			"name": "AWMT-003"
+		},
+		"ACM-300": {
+			"name": "ACM-300"
+		},
+		"ACM-250": {
+			"name": "ACM-250"
+		},
+		"AWMR-210": {
+			"name": "AWMR-210"
+		},
+		"AWMD-250": {
+			"name": "AWMD-250"
+		},
+		"AWMT-230": {
+			"name": "AWMT-230"
+		},
+		"ACM-1000": {
+			"name": "ACM-1000"
+		},
+		"AWMR-230": {
+			"name": "AWMR-230"
+		},
+		"AILD-3500": {
+			"name": "AILD-3500"
+		},
+		"AWS-3500": {
+			"name": "AWS-3500"
+		},
+		"AILD-250": {
+			"name": "AILD-250"
 		}
 	},
 	"433_generator": {
@@ -409,7 +468,8 @@
 		"error": {
 			"device_exists": "This device is already paired with Homey.\u0000",
 			"no_device": "No device set to pair. Please close the pairing wizard and try again.\u0000",
-			"no_settings": "No settings object. Please try again.\u0000"
+			"no_settings": "No settings object. Please try again.\u0000",
+			"invalid_device": "The device that was created is invalid. Please try again.\u0000"
 		}
 	}
 }

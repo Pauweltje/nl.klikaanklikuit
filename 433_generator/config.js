@@ -242,7 +242,7 @@ module.exports = {
 			// ],
 		},
 		wall_switch: {
-			extends: ['generic_wall_switch', 'remote'],
+			extends: ['generic_wall_switch'],
 			driver: './drivers/kaku/wall_switch',
 			pair: {
 				viewOptions: {
@@ -354,6 +354,7 @@ $('<div>').append(
 			driver: './drivers/kaku/doorbell.js',
 			class: 'doorbell',
 			capabilities: ['alarm_generic'],
+			debounceTimeout: 4000,
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -456,9 +457,6 @@ $('<div>').append(
 							},
 						],
 					},
-					generic_program: {
-						body: 'deviceClasses.blinds.views.generic_program.body',
-					},
 					generic_imitate: {
 						body: 'deviceClasses.blinds.views.generic_imitate.body',
 					},
@@ -540,6 +538,9 @@ $('<div>').append(
 							},
 						],
 					},
+					generic_imitate: {
+						body: 'deviceClasses.old_blinds.views.generic_imitate.body',
+					},
 					generic_codewheel: {
 						codewheelList: [
 							{
@@ -596,6 +597,27 @@ $('<div>').append(
 								quadrants: ['A', 'B', 'C', 'D'],
 							},
 						],
+					},
+				},
+			},
+		},
+		build_in: {
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						body: 'deviceClasses.build_in.views.generic_imitate.body',
+					},
+					generic_program: {
+						title: 'deviceClasses.build_in.views.generic_program.title',
+						body: 'deviceClasses.build_in.views.generic_program.body',
+					},
+					generic_test_switch: {
+						title: 'deviceClasses.build_in.views.generic_test_switch.title',
+						body: 'deviceClasses.build_in.views.generic_test_switch.body',
+					},
+					generic_test_switch_2: {
+						title: 'deviceClasses.build_in.views.generic_test_switch.title',
+						body: 'deviceClasses.build_in.views.generic_test_switch_2.body',
 					},
 				},
 			},
@@ -782,6 +804,23 @@ $('<div>').append(
 				},
 			},
 		},
+		'AWMT-230': {
+			extends: 'AWST-8802',
+			name: 'devices.AWMT-230.name',
+			icon: './assets/AWMT-230/icon.svg',
+			images: {
+				large: './assets/AWMT-230/images/large.jpg',
+				small: './assets/AWMT-230/images/small.jpg',
+			},
+		},
+		'AWMT-003': {
+			extends: 'AWMT-230',
+			name: 'devices.AWMT-003.name',
+			images: {
+				large: './assets/AWMT-003/images/large.jpg',
+				small: './assets/AWMT-003/images/small.jpg',
+			},
+		},
 		'ACDB-7000C': {
 			extends: 'doorbell',
 			name: 'devices.ACDB-7000C.name',
@@ -790,7 +829,6 @@ $('<div>').append(
 				small: './assets/ACDB-7000C/images/small.png',
 			},
 			icon: './assets/ACDB-7000C/icon.svg',
-			debounceTimeout: 3000,
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -830,7 +868,6 @@ $('<div>').append(
 				small: './assets/ACDB-6600/images/small.jpg',
 			},
 			icon: './assets/ACDB-6600/icon.svg',
-			debounceTimeout: 3000,
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -1108,6 +1145,273 @@ $('<div>').append(
 			extends: 'ACD-1000',
 			name: 'devices.ACD-3500.name',
 		},
+		'AWS-3500': {
+			extends: ['socket', 'build_in'],
+			name: 'devices.AWS-3500.name',
+			icon: './assets/AWS-3500/icon.svg',
+			images: {
+				large: './assets/AWS-3500/images/large.png',
+				small: './assets/AWS-3500/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AWS-3500/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AWS-3500/pair.svg',
+					},
+				},
+			},
+		},
+		'AWMR-230': {
+			extends: ['socket', 'build_in'],
+			name: 'devices.AWMR-230.name',
+			icon: './assets/AWMR-210/icon.svg',
+			images: {
+				large: './assets/AWMR-210/images/large.png',
+				small: './assets/AWMR-210/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AWMR-210/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AWMR-210/pair.svg',
+					},
+				},
+			},
+		},
+		'AWMR-210': {
+			extends: ['dimmer', 'build_in'],
+			name: 'devices.AWMR-210.name',
+			icon: './assets/AWMR-210/icon.svg',
+			images: {
+				large: './assets/AWMR-210/images/large.png',
+				small: './assets/AWMR-210/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AWMR-210/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AWMR-210/pair.svg',
+					},
+				},
+			},
+		},
+		'AWMD-250': {
+			extends: 'AWMR-210',
+			name: 'devices.AWMD-250.name',
+		},
+		'ACM-250': {
+			extends: ['dimmer', 'build_in'],
+			name: 'devices.ACM-250.name',
+			icon: './assets/ACM-250/icon.svg',
+			images: {
+				large: './assets/ACM-250/images/large.png',
+				small: './assets/ACM-250/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-250/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-250/pair.svg',
+					},
+				},
+			},
+		},
+		'ACM-300': {
+			extends: 'ACM-250',
+			name: 'devices.ACM-300.name',
+			icon: './assets/ACM-300/icon.svg',
+			images: {
+				large: './assets/ACM-300/images/large.png',
+				small: './assets/ACM-300/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-300/pair.svg',
+							},
+						],
+					},
+					generic_program: {
+						svg: './assets/ACM-300/pair.svg',
+					},
+				},
+			},
+		},
+		'ACM-1000': {
+			extends: ['socket', 'build_in'],
+			name: 'devices.ACM-1000.name',
+			icon: './assets/ACM-300/icon.svg',
+			images: {
+				large: './assets/ACM-300/images/large.png',
+				small: './assets/ACM-300/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-300/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-300/pair.svg',
+					},
+				},
+			},
+		},
+		'AILD-250': {
+			extends: ['dimmer', 'build_in'],
+			name: 'devices.AILD-250.name',
+			icon: './assets/AILD-250/icon.svg',
+			images: {
+				large: './assets/AILD-250/images/large.png',
+				small: './assets/AILD-250/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AILD-250/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AILD-250/pair.svg',
+					},
+				},
+			},
+		},
+		'AILS-3500': {
+			extends: ['socket', 'build_in'],
+			name: 'devices.AILD-3500.name',
+			icon: './assets/AILD-250/icon.svg',
+			images: {
+				large: './assets/AILD-250/images/large.png',
+				small: './assets/AILD-250/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AILD-250/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AILD-250/pair.svg',
+					},
+				},
+			},
+		},
+		// TODO ACM-100
+		// TODO AWMR-300
 		// This is the AC-300 implementation using the new kaku signal
 		'AC-300N': {
 			extends: 'ACD-200',
@@ -1377,14 +1681,15 @@ $('<div>').append(
 				},
 			},
 		},
+		// Should have been SUN-500 but has already been deployed with wrong ID so SUN-500 === SUN-650
 		'SUN-650': {
 			extends: 'old_blinds',
-			name: 'devices.SUN-650.name',
+			name: 'devices.SUN-500.name',
 			images: {
-				large: './assets/SUN-650/images/large.jpg',
-				small: './assets/SUN-650/images/small.jpg',
+				large: './assets/SUN-500/images/large.jpg',
+				small: './assets/SUN-500/images/small.jpg',
 			},
-			icon: './assets/ASUN-650/icon.svg',
+			icon: './assets/SUN-500/icon.svg',
 			pair: {
 				viewOptions: {
 					generic_choice: {
@@ -1397,15 +1702,12 @@ $('<div>').append(
 							{
 								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
 								view: 'generic_codewheel',
-								svg: './assets/ASUN-650/pairbutton.svg',
+								svg: './assets/SUN-500/icon.svg',
 							},
 						],
 					},
 					generic_imitate: {
 						svg: './assets/YCT-102/pair.svg',
-					},
-					generic_program: {
-						svg: './assets/ASUN-650/pairbutton.svg',
 					},
 					generic_test_switch: {
 						svg: './assets/ASUN-650/test.svg',

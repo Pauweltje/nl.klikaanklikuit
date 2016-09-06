@@ -59,7 +59,7 @@ module.exports = class Signal extends EventEmitter {
 		}
 	}
 
-	send(payload) {
+	send(payload, repeatCount) {
 		return new Promise((resolve, reject) => {
 			const frameBuffer = new Buffer(payload);
 			this.signal.tx(frameBuffer, (err, result) => { // Send the buffer to device
@@ -67,10 +67,15 @@ module.exports = class Signal extends EventEmitter {
 					Homey.log(`[Signal ${this.signalKey}] sending payload failed:`, err);
 					reject(err);
 				} else {
-					// FIXME TODO send payload in wallswitch test
 					Homey.log(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
 					this.signal.emit('payload_send', payload);
 					resolve(result);
+					for (; repeatCount > 0; repeatCount--) {
+						this.signal.tx(
+							frameBuffer,
+							() => Homey.log(`[Signal ${this.signalKey}] repeated payload:`, payload.join(''))
+						)
+					}
 				}
 			});
 		}).catch(err => {
@@ -78,6 +83,12 @@ module.exports = class Signal extends EventEmitter {
 			this.emit('error', err);
 			throw err;
 		});
+	}
+
+	tx(payload, callback) {
+		callback = callback || () => null;
+		const frameBuffer = new Buffer(payload);
+		this.signal.tx(frameBuffer, callback);
 	}
 
 	debounce(payload) {

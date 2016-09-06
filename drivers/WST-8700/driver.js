@@ -7,8 +7,8 @@ const config = {
 		views: [{
 			template: '../lib/pair/imitate.html',
 			options: {
-				title: 'deviceClasses.generic_remote.views.generic_imitate.title',
-				body: 'deviceClasses.generic_remote.views.generic_imitate.body',
+				title: 'deviceClasses.generic_wall_switch.views.generic_imitate.title',
+				body: 'deviceClasses.generic_wall_switch.views.generic_imitate.body',
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/WST-8700/switch_pair.svg',

@@ -1,7 +1,10 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	icon: '../../433_generator/assets/APIR-2150/icon.svg',
+	images: {
+		large: '../../433_generator/assets/APIR-2150/images/large.png',
+		small: '../../433_generator/assets/APIR-2150/images/small.png'
+	},
 	driver: '../../433_generator/drivers/kaku/sensor.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
@@ -71,10 +74,7 @@ const config = {
 	}],
 	name: 'devices.APIR-2150.name',
 	capabilities: ['alarm_motion'],
-	images: {
-		large: '../../433_generator/assets/APIR-2150/images/large.png',
-		small: '../../433_generator/assets/APIR-2150/images/small.png'
-	}
+	icon: '../../433_generator/assets/APIR-2150/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

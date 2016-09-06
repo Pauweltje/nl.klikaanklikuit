@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "compatibility": ">=0.9",
   "category": [
     "appliances",
@@ -28,7 +28,122 @@
   "flow": {
     "triggers": [
       {
-        "id": "AWST-8800:received",
+        "id": "AWMT-003:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left Button\u0000",
+                  "nl": "Linker Knop\u0000"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Right Button\u0000",
+                  "nl": "Rechter Knop\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AWMT-003"
+          }
+        ]
+      },
+      {
+        "id": "APA2-2300R:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "00",
+                "label": {
+                  "en": "Button 1\u0000",
+                  "nl": "Knop 1\u0000"
+                }
+              },
+              {
+                "id": "01",
+                "label": {
+                  "en": "Button 2\u0000",
+                  "nl": "Knop 2\u0000"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "Group Button\u0000",
+                  "nl": "Groep Knop\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=APA2-2300R"
+          }
+        ]
+      },
+      {
+        "id": "KCT-510:received",
         "title": {
           "en": "Button is pressed\u0000",
           "nl": "Knop is ingedrukt\u0000"
@@ -57,7 +172,103 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=AWST-8800"
+            "filter": "driver_id=KCT-510"
+          }
+        ]
+      },
+      {
+        "id": "WST-8800:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=WST-8800"
+          }
+        ]
+      },
+      {
+        "id": "ACDB-7000C:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel gaat af"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ACDB-7000C"
+          }
+        ]
+      },
+      {
+        "id": "ACDB-6600:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel gaat af"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ACDB-6600"
+          }
+        ]
+      },
+      {
+        "id": "AKCT-510:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AKCT-510"
           }
         ]
       },
@@ -112,6 +323,223 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=AWST-8802"
+          }
+        ]
+      },
+      {
+        "id": "WST-8700:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=WST-8700"
+          }
+        ]
+      },
+      {
+        "id": "AWMT-230:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left Button\u0000",
+                  "nl": "Linker Knop\u0000"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Right Button\u0000",
+                  "nl": "Rechter Knop\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AWMT-230"
+          }
+        ]
+      },
+      {
+        "id": "KCT-101:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=KCT-101"
+          }
+        ]
+      },
+      {
+        "id": "AWST-8800:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AWST-8800"
+          }
+        ]
+      },
+      {
+        "id": "PA3-1000R:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "00",
+                "label": {
+                  "en": "Button 1\u0000",
+                  "nl": "Knop 1\u0000"
+                }
+              },
+              {
+                "id": "01",
+                "label": {
+                  "en": "Button 2\u0000",
+                  "nl": "Knop 2\u0000"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Button 3\u0000",
+                  "nl": "Knop 3\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=PA3-1000R"
           }
         ]
       },
@@ -225,101 +653,6 @@
         ]
       },
       {
-        "id": "PA3-1000R:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "00",
-                "label": {
-                  "en": "Button 1\u0000",
-                  "nl": "Knop 1\u0000"
-                }
-              },
-              {
-                "id": "01",
-                "label": {
-                  "en": "Button 2\u0000",
-                  "nl": "Knop 2\u0000"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Button 3\u0000",
-                  "nl": "Knop 3\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=PA3-1000R"
-          }
-        ]
-      },
-      {
-        "id": "WST-8700:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=WST-8700"
-          }
-        ]
-      },
-      {
         "id": "AYCT-102:received",
         "title": {
           "en": "Button is pressed\u0000",
@@ -429,34 +762,6 @@
         ]
       },
       {
-        "id": "ACDB-7000C:received",
-        "title": {
-          "en": "Doorbell is pressed",
-          "nl": "Deurbel gaat af"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=ACDB-7000C"
-          }
-        ]
-      },
-      {
-        "id": "ACDB-6600:received",
-        "title": {
-          "en": "Doorbell is pressed",
-          "nl": "Deurbel gaat af"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=ACDB-6600"
-          }
-        ]
-      },
-      {
         "id": "APA3-1500R:received",
         "title": {
           "en": "Button is pressed\u0000",
@@ -521,203 +826,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=APA3-1500R"
-          }
-        ]
-      },
-      {
-        "id": "APA2-2300R:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "00",
-                "label": {
-                  "en": "Button 1\u0000",
-                  "nl": "Knop 1\u0000"
-                }
-              },
-              {
-                "id": "01",
-                "label": {
-                  "en": "Button 2\u0000",
-                  "nl": "Knop 2\u0000"
-                }
-              },
-              {
-                "id": "g",
-                "label": {
-                  "en": "Group Button\u0000",
-                  "nl": "Groep Knop\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=APA2-2300R"
-          }
-        ]
-      },
-      {
-        "id": "KCT-510:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=KCT-510"
-          }
-        ]
-      },
-      {
-        "id": "AKCT-510:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=AKCT-510"
-          }
-        ]
-      },
-      {
-        "id": "WST-8800:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=WST-8800"
-          }
-        ]
-      },
-      {
-        "id": "KCT-101:received",
-        "title": {
-          "en": "Button is pressed\u0000",
-          "nl": "Knop is ingedrukt\u0000"
-        },
-        "args": [
-          {
-            "name": "state",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "On\u0000",
-                  "nl": "Aan\u0000"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Off\u0000",
-                  "nl": "Uit\u0000"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=KCT-101"
           }
         ]
       },
@@ -1032,7 +1140,7 @@
     ],
     "conditions": [
       {
-        "id": "AWST-6000:state",
+        "id": "APIR-2150:state",
         "title": {
           "en": "Sensor detects !{{motion|no motion}}",
           "nl": "Sensor detecteert !{{beweging|geen beweging}}"
@@ -1041,7 +1149,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=AWST-6000"
+            "filter": "driver_id=APIR-2150"
           }
         ]
       },
@@ -1060,6 +1168,20 @@
         ]
       },
       {
+        "id": "AWST-6000:state",
+        "title": {
+          "en": "Sensor detects !{{motion|no motion}}",
+          "nl": "Sensor detecteert !{{beweging|geen beweging}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=AWST-6000"
+          }
+        ]
+      },
+      {
         "id": "AMST-606:state",
         "title": {
           "en": "Sensor has !{{no contact|contact}}",
@@ -1070,20 +1192,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=AMST-606"
-          }
-        ]
-      },
-      {
-        "id": "APIR-2150:state",
-        "title": {
-          "en": "Sensor detects !{{motion|no motion}}",
-          "nl": "Sensor detecteert !{{beweging|geen beweging}}"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=APIR-2150"
           }
         ]
       },
@@ -1401,6 +1509,136 @@
       "images": {
         "large": "./433_generator/assets/AWST-8800/images/large.png",
         "small": "./433_generator/assets/AWST-8800/images/small.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Rotate wall switch",
+                "nl": "Roteer wandschakelaar"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Right Side Up",
+                    "nl": "Rechtop"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Upside Down",
+                    "nl": "Ondersteboven"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AWMT-230",
+      "name": {
+        "en": "AWMT-230"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/AWMT-230/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-230/images/small.jpg"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Rotate wall switch",
+                "nl": "Roteer wandschakelaar"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Right Side Up",
+                    "nl": "Rechtop"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Upside Down",
+                    "nl": "Ondersteboven"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AWMT-003",
+      "name": {
+        "en": "AWMT-003"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/AWMT-003/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-003/images/small.jpg"
       },
       "settings": [
         {
@@ -2288,6 +2526,614 @@
       ]
     },
     {
+      "id": "AWS-3500",
+      "name": {
+        "en": "AWS-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AWS-3500/images/large.png",
+        "small": "./433_generator/assets/AWS-3500/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AWMR-230",
+      "name": {
+        "en": "AWMR-230"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AWMR-210/images/large.png",
+        "small": "./433_generator/assets/AWMR-210/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AWMR-210",
+      "name": {
+        "en": "AWMR-210"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AWMR-210/images/large.png",
+        "small": "./433_generator/assets/AWMR-210/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AWMD-250",
+      "name": {
+        "en": "AWMD-250"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AWMR-210/images/large.png",
+        "small": "./433_generator/assets/AWMR-210/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-250",
+      "name": {
+        "en": "ACM-250"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-250/images/large.png",
+        "small": "./433_generator/assets/ACM-250/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-300",
+      "name": {
+        "en": "ACM-300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-300/images/large.png",
+        "small": "./433_generator/assets/ACM-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-1000",
+      "name": {
+        "en": "ACM-1000"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-300/images/large.png",
+        "small": "./433_generator/assets/ACM-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AILD-250",
+      "name": {
+        "en": "AILD-250"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AILD-250/images/large.png",
+        "small": "./433_generator/assets/AILD-250/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AILS-3500",
+      "name": {
+        "en": "AILD-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AILD-250/images/large.png",
+        "small": "./433_generator/assets/AILD-250/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "AC-300N",
       "name": {
         "en": "AC-300"
@@ -2951,15 +3797,15 @@
     {
       "id": "SUN-650",
       "name": {
-        "en": "SUN-650"
+        "en": "SUN-500"
       },
       "class": "windowcoverings",
       "capabilities": [
         "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/SUN-650/images/large.jpg",
-        "small": "./433_generator/assets/SUN-650/images/small.jpg"
+        "large": "./433_generator/assets/SUN-500/images/large.jpg",
+        "small": "./433_generator/assets/SUN-500/images/small.jpg"
       },
       "settings": [
         {

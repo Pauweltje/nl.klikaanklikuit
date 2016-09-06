@@ -68,7 +68,9 @@ function nextView(){
 			found = true;
 			Homey.emit('set_device', data, function (err, device) {
 				if (err) {
-					Homey.alert(__(err.message || err));
+					if((err.message || err) !== '433_generator.error.invalid_device') {
+						Homey.alert(__(err.message || err));
+					}
 					found = false;
 					return;
 				}

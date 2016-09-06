@@ -154,6 +154,7 @@ const config = {
 	driver: '../../433_generator/drivers/kaku/doorbell.js',
 	signal: 'kaku',
 	class: 'doorbell',
+	debounceTimeout: 4000,
 	triggers: [{
 		id: 'ACDB-6600:received',
 		title: 'deviceClasses.doorbell.triggers.received.title',
@@ -173,8 +174,7 @@ const config = {
 		}]
 	}],
 	name: 'devices.ACDB-6600.name',
-	icon: '../../433_generator/assets/ACDB-6600/icon.svg',
-	debounceTimeout: 3000
+	icon: '../../433_generator/assets/ACDB-6600/icon.svg'
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);
