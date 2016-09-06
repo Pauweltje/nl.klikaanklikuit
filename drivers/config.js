@@ -3,7 +3,7 @@
 module.exports = {
 	devices: {
 		'SUN-650': {
-			capabilities: ['onoff'],
+			capabilities: ['windowcoverings_state'],
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -16,7 +16,7 @@ module.exports = {
 					template: './lib/pair/choice.html',
 					options: {
 						title: 'deviceClasses.generic_switch.views.generic_choice.title',
-						body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+						body: 'deviceClasses.generic_switch.views.generic_choice.body',
 						buttons: [{
 							name: 'views.generic_choice.buttons.copy',
 							view: 'generic_imitate',

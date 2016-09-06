@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	capabilities: ['onoff'],
+	capabilities: ['windowcoverings_state'],
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -14,7 +14,7 @@ const config = {
 			template: '../lib/pair/choice.html',
 			options: {
 				title: 'deviceClasses.generic_switch.views.generic_choice.title',
-				body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+				body: 'deviceClasses.generic_switch.views.generic_choice.body',
 				buttons: [{
 					name: 'views.generic_choice.buttons.copy',
 					view: 'generic_imitate',

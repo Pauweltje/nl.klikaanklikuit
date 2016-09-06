@@ -522,9 +522,17 @@ $('<div>').append(
 			],
 		},
 		old_blinds: {
-			extends: ['blinds', 'generic_codewheel_switch', 'kaku_old'],
+			extends: ['generic_codewheel_switch', 'blinds', 'kaku_old'],
 			driver: './drivers/kakuold/blinds.js',
 			pair: {
+				viewOrder: [
+					'generic_choice',
+					'generic_imitate',
+					'generic_test_switch_2',
+					'generic_codewheel',
+					'generic_test_switch',
+					'generic_done',
+				],
 				viewOptions: {
 					generic_choice: {
 						buttons: [
