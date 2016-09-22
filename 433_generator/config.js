@@ -36,11 +36,11 @@ module.exports = {
 			driver: './drivers/kaku/kaku.js',
 			signal: {
 				id: 'kaku',
-				sof: [210, 2724], // Start of frame
-				eof: [210], // End of frame
+				sof: [225, 2774], // Start of frame
+				eof: [236], // End of frame
 				words: [
-					[210, 320, 210, 1320],	// 0
-					[210, 1320, 210, 320],	// 1
+					[240, 308, 240, 1348],	// 0
+					[240, 1338, 240, 320],	// 1
 				],
 				interval: 10150, // Time between two messages
 				sensitivity: 0.9,
@@ -55,12 +55,12 @@ module.exports = {
 			capabilities: ['onoff', 'dim'],
 			signal: {
 				id: 'kakudim',
-				sof: [210, 2724], // Start of frame
-				eof: [210], // End of frame
+				sof: [225, 2774], // Start of frame
+				eof: [236], // End of frame
 				words: [
-					[210, 320, 210, 1320],	// 0
-					[210, 1320, 210, 320],	// 1
-					[210, 320, 210, 320],  // 2 <-- used for dim
+					[240, 308, 240, 1348],	// 0
+					[240, 1338, 240, 320],	// 1
+					[240, 308, 240, 308],  // 2 <-- used for dim
 				],
 				interval: 10150, // Time between two messages
 				sensitivity: 0.9,

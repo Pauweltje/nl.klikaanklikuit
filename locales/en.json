@@ -1,25 +1,5 @@
 {
 	"deviceClasses": {
-		"generic_remote": {
-			"views": {
-				"generic_imitate": {
-					"title": "Identify your remote\u0000",
-					"body": "Click a button on your remote to pair it.\u0000"
-				}
-			}
-		},
-		"generic_wall_switch": {
-			"views": {
-				"generic_test_remote": {
-					"title": "Test your wall switch\u0000",
-					"body": "Press a random button on your wall switch or click the buttons in the image above to test the signal. Press next to continue.\u0000"
-				},
-				"generic_imitate": {
-					"title": "Identify your wall switch\u0000",
-					"body": "Press a random button on your wall switch to pair it.\u0000"
-				}
-			}
-		},
 		"wall_switch": {
 			"settings": {
 				"groups": {
@@ -47,44 +27,13 @@
 				}
 			}
 		},
-		"generic_switch": {
-			"views": {
-				"generic_choice": {
-					"title": "Copy signal from remote or pair device with Homey\u0000",
-					"body": "Choose if you want to copy an existing signal from a paired remote or if you want to generate a new signal to pair this device.\u0000",
-					"buttons": {
-						"generic_imitate": "Copy a paired remote\u0000",
-						"generic_program": "Generate a new signal\u0000"
-					}
-				}
-			}
-		},
-		"generic_socket": {
-			"views": {
-				"generic_imitate": {
-					"title": "Copy your remote signal\u0000",
-					"body": "Press the button that is paired to your socket.\u0000"
-				},
-				"generic_test_switch": {
-					"title": "Test your socket\u0000",
-					"body": "Use the switch above to test your socket. Press next to continue.\u0000"
-				},
-				"generic_test_switch_2": {
-					"body": "Use your remote or the switch above to test your socket. Press next to continue.\u0000"
-				},
-				"generic_program": {
-					"title": "Put the socket in pairing mode\u0000",
-					"body": "Press and hold the program button on your socket for a few seconds to put it in pairing mode, then click next.\u0000"
-				}
-			}
-		},
 		"socket": {
 			"views": {
 				"generic_imitate": {
 					"body": "Press the button that is paired to your socket.<p class=\"notice\">(Note. Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
 				},
 				"generic_program": {
-					"body": "Press and hold the program button on your socket for a few seconds, the light on your socket should start blinking when you release the button. When it is in pairing mode click next."
+					"body": "Press and hold the program button on your socket for a few seconds, the light on your socket should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				}
 			}
 		},
@@ -141,16 +90,6 @@
 				}
 			}
 		},
-		"generic_codewheel_switch": {
-			"views": {
-				"generic_choice": {
-					"body": "Choose if you want to copy an existing signal from a paired remote or if you want manually set the codewheels to pair this device.\u0000",
-					"buttons": {
-						"generic_codewheel": "Manually set codewheels\u0000"
-					}
-				}
-			}
-		},
 		"build_in": {
 			"views": {
 				"generic_imitate": {
@@ -158,7 +97,7 @@
 				},
 				"generic_program": {
 					"title": "Put the device in pairing mode",
-					"body": "Press and hold the program button on your device for a few seconds to put it in pairing mode, then click next."
+					"body": "Press and hold the program button on your device for a few seconds to put it in pairing mode, then click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your device",
@@ -175,32 +114,62 @@
 					"body": "Press the up/down button that is paired to your blinds."
 				}
 			}
-		}
-	},
-	"views": {
-		"generic_done": {
-			"title": "Adding device!\u0000"
 		},
-		"generic_test_remote": {
-			"title": "Test your remote\u0000",
-			"body": "Press a random button on your remote or click the button in the image above to test the signal. Press next to continue.\u0000"
-		},
-		"generic_choice": {
-			"buttons": {
-				"copy": "Copy a remote\u0000",
-				"generate": "Generate signal\u0000"
+		"generic_switch": {
+			"views": {
+				"generic_choice": {
+					"title": "Copy signal from remote or pair device with Homey\u0000",
+					"body": "Choose if you want to copy an existing signal from a paired remote or if you want to generate a new signal to pair this device.\u0000"
+				}
 			}
 		},
-		"generic_imitate": {
-			"title": "Copy your remote signal\u0000"
+		"generic_codewheel_switch": {
+			"views": {
+				"generic_choice": {
+					"buttons": {
+						"generic_codewheel": "Manually set codewheels\u0000"
+					},
+					"body": "Choose if you want to copy an existing signal from a paired remote or if you want manually set the codewheels to pair this device.\u0000"
+				}
+			}
 		},
-		"generic_program": {
-			"title": "Pair your device with Homey\u0000",
-			"body": "Put your device in pairing mode, then click next to pair your device with Homey.\u0000"
+		"generic_socket": {
+			"views": {
+				"generic_imitate": {
+					"title": "Copy your remote signal\u0000",
+					"body": "Press the button that is paired to your socket.\u0000"
+				},
+				"generic_test_switch": {
+					"title": "Test your socket\u0000",
+					"body": "Use the switch above to test your socket. Press next to continue.\u0000"
+				},
+				"generic_test_switch_2": {
+					"body": "Use your remote or the switch above to test your socket. Press next to continue.\u0000"
+				},
+				"generic_program": {
+					"title": "Put the socket in pairing mode\u0000"
+				}
+			}
 		},
-		"generic_codewheel": {
-			"title": "Configure your device code\u0000",
-			"body": "Click the characters on the code wheel above or configure the wheels on the device so they match, then click next.\u0000"
+		"generic_wall_switch": {
+			"views": {
+				"generic_imitate": {
+					"title": "Identify your wall switch\u0000",
+					"body": "Press a random button on your wall switch to pair it.\u0000"
+				},
+				"generic_test_remote": {
+					"title": "Test your wall switch\u0000",
+					"body": "Press a random button on your wall switch or click the buttons in the image above to test the signal. Press next to continue.\u0000"
+				}
+			}
+		},
+		"generic_remote": {
+			"views": {
+				"generic_imitate": {
+					"title": "Identify your remote\u0000",
+					"body": "Click a button on your remote to pair it.\u0000"
+				}
+			}
 		}
 	},
 	"devices": {
@@ -267,7 +236,7 @@
 					"body": "Press the button that is paired to your fitting."
 				},
 				"generic_program": {
-					"body": "Press and hold the program button on your fitting for a few seconds, the light on your fitting should start blinking when you release the button. When it is in pairing mode click next."
+					"body": "Press and hold the program button on your fitting for a few seconds, the light on your fitting should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your fitting",
@@ -488,6 +457,32 @@
 			"no_device": "No device set to pair. Please close the pairing wizard and try again.\u0000",
 			"no_settings": "No settings object. Please try again.\u0000",
 			"invalid_device": "The device that was created is invalid. Please try again.\u0000"
+		}
+	},
+	"views": {
+		"generic_choice": {
+			"buttons": {
+				"copy": "Copy a remote\u0000",
+				"generate": "Generate signal\u0000"
+			}
+		},
+		"generic_imitate": {
+			"title": "Copy your remote signal\u0000"
+		},
+		"generic_codewheel": {
+			"title": "Configure your device code\u0000",
+			"body": "Click the characters on the code wheel above or configure the wheels on the device so they match, then click next.\u0000"
+		},
+		"generic_done": {
+			"title": "Adding device!\u0000"
+		},
+		"generic_program": {
+			"title": "Pair your device with Homey\u0000",
+			"body": "Put your device in pairing mode, then click next to pair your device with Homey.\u0000"
+		},
+		"generic_test_remote": {
+			"title": "Test your remote\u0000",
+			"body": "Press a random button on your remote or click the button in the image above to test the signal. Press next to continue.\u0000"
 		}
 	}
 }
