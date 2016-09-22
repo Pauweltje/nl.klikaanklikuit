@@ -1648,6 +1648,49 @@ $('<div>').append(
 			capabilities: ['onoff'],
 			driver: './drivers/kaku/kaku.js',
 		},
+		'ALED-2709': {
+			extends: 'AFR-100',
+			name: 'devices.ALED-2709.name',
+			images: {
+				large: './assets/ALED-2709/images/large.jpg',
+				small: './assets/ALED-2709/images/small.jpg',
+			},
+			icon: './assets/ALED-2709/icon.svg',
+			driver: './drivers/kaku/new_dimmer.js',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ALED-2709/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+						body: 'devices.ALED-2709.views.generic_imitate.body',
+					},
+					generic_program: {
+						svg: './assets/ALED-2709/icon.svg',
+						body: 'devices.ALED-2709.views.generic_program.body',
+					},
+					generic_test_switch: {
+						title: 'devices.ALED-2709.views.generic_test_switch.title',
+						body: 'devices.ALED-2709.views.generic_test_switch.body',
+					},
+					generic_test_switch_2: {
+						body: 'devices.ALED-2709.views.generic_test_switch_2.body',
+					},
+				},
+			},
+		},
 		'ASUN-650': {
 			extends: 'blinds',
 			name: 'devices.ASUN-650.name',

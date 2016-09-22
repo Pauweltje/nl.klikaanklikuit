@@ -4,6 +4,8 @@ const EventEmitter = require('events').EventEmitter;
 const SignalManager = Homey.wireless('433').Signal;
 
 const signals = new Map();
+const registerLock = new Map();
+const registerPromises = new Map();
 
 module.exports = class Signal extends EventEmitter {
 	constructor(signalKey, parser, debounceTime) {
@@ -15,17 +17,13 @@ module.exports = class Signal extends EventEmitter {
 
 		if (!signals.has(signalKey)) {
 			const signal = new SignalManager(signalKey);
-			Homey.log(`[Signal ${signalKey}] registered signal`);
-
-			signal.register(err => { // Register signal
-				if (err) this.emit('error', err);
-			});
 
 			signal.setMaxListeners(100);
 
 			signal.on('payload', payload => Homey.log(`[Signal ${signalKey}] payload:`, payload.join('')));
 
 			signals.set(signalKey, signal);
+			registerLock.set(signalKey, new Set());
 		}
 		this.signal = signals.get(signalKey);
 
@@ -47,6 +45,44 @@ module.exports = class Signal extends EventEmitter {
 		this.signal.on('payload_send', this.emit.bind(this, 'payload_send'));
 	}
 
+	register(callback) {
+		callback = typeof callback === 'function' ? callback : (() => null);
+		if (registerLock.get(this.signalKey).size === 0) {
+			Homey.log(`[Signal ${this.signalKey}] registered signal`);
+
+			registerPromises.set(this.signalKey, new Promise((resolve, reject) => {
+				this.signal.register(err => { // Register signal
+					if (err) {
+						Homey.log(`[Signal ${this.signalKey}] signal register error`, err);
+						this.emit('error', err);
+						reject(err);
+					} else {
+						resolve();
+					}
+				});
+			}));
+		}
+		registerLock.get(this.signalKey).add(this);
+		return registerPromises.get(this.signalKey)
+			.then(() => callback(null, true))
+			.catch(err => {
+				callback(err);
+				throw err;
+			});
+	}
+
+	unregister() {
+		return; // FIXME reenable when registering/unregistering works correctly
+		registerLock.get(this.signalKey).delete(this);
+		if (registerLock.get(this.signalKey).size === 0) {
+			Homey.log(`[Signal ${this.signalKey}] unregistered signal`);
+
+			this.signal.unregister(err => {
+				if (err) this.emit('error', err);
+			});
+		}
+	}
+
 	manualDebounce(timeout, allListeners) {
 		if (allListeners) {
 			this.signal.manualDebounceFlag = true;
@@ -59,7 +95,7 @@ module.exports = class Signal extends EventEmitter {
 		}
 	}
 
-	send(payload, repeatCount) {
+	send(payload) {
 		return new Promise((resolve, reject) => {
 			const frameBuffer = new Buffer(payload);
 			this.signal.tx(frameBuffer, (err, result) => { // Send the buffer to device
@@ -70,12 +106,6 @@ module.exports = class Signal extends EventEmitter {
 					Homey.log(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
 					this.signal.emit('payload_send', payload);
 					resolve(result);
-					for (; repeatCount > 0; repeatCount--) {
-						this.signal.tx(
-							frameBuffer,
-							() => Homey.log(`[Signal ${this.signalKey}] repeated payload:`, payload.join(''))
-						)
-					}
 				}
 			});
 		}).catch(err => {

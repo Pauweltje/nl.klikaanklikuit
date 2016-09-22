@@ -71,6 +71,7 @@ module.exports = class Driver extends EventEmitter {
 		this.setState(id, state || {});
 		this.setLastFrame(id, lastFrame || Object.assign({}, device.data));
 		this.getSettingsExt(id, (err, settings) => this.updateSettings(id, settings));
+		this.registerSignal();
 		this.emit('added', Object.assign({ id }, this.getDevice(id)));
 	}
 
@@ -172,6 +173,7 @@ module.exports = class Driver extends EventEmitter {
 		this.state.delete(id);
 		this.lastFrame.delete(id);
 		this.settings.delete(id);
+		this.unregisterSignal();
 		this.emit('deleted', target);
 	}
 
@@ -184,6 +186,7 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	send(device, data, callback) {
+		this.registerSignal();
 		callback = typeof callback === 'function' ? callback : () => null;
 		data = Object.assign({}, this.getDevice(device, true) || device.data || device, data);
 		this.emit('before_send', data);
@@ -202,12 +205,14 @@ module.exports = class Driver extends EventEmitter {
 			return callback(true);
 		}
 		this.emit('send', data);
-		return this.signal.send(frame, data.repeatCount, data.repeatInterval).then(result => {
+		return this.signal.send(frame).then(result => {
 			if (callback) callback(null, result);
 			this.emit('after_send', data);
+			this.unregisterSignal();
 		}).catch(err => {
 			if (callback) callback(err);
 			this.emit('error', err);
+			this.unregisterSignal();
 			throw err;
 		});
 	}
@@ -259,6 +264,7 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	pair(socket) { // Pair sequence
+		this.registerSignal();
 		this.isPairing = true;
 		let receivedListener;
 
@@ -406,8 +412,21 @@ module.exports = class Driver extends EventEmitter {
 			this.pairingDevice = null;
 			this.state.delete('_pairingDevice');
 			this.lastFrame.delete('_pairingDevice');
+			this.unregisterSignal();
 			callback();
 		});
+	}
+
+	registerSignal(callback) {
+		return this.signal.register(callback);
+	}
+
+	unregisterSignal() {
+		if (!this.isPairing && this.devices.size === 0) {
+			this.signal.unregister();
+			return true;
+		}
+		return false;
 	}
 
 	handleReceivedTrigger(device, data) {

@@ -416,6 +416,24 @@
 		},
 		"AILD-250": {
 			"name": "AILD-250"
+		},
+		"ALED-2709": {
+			"name": "ALED-2709",
+			"views": {
+				"generic_imitate": {
+					"body": "Press the button that is paired to your lamp."
+				},
+				"generic_program": {
+					"body": "Turn the power to the light on and off 3 times, or turn the light on and off with your remote 5 times, within 15 seconds to put the lamp in pairing mode. The lamp should now be blinking. Then click next."
+				},
+				"generic_test_switch": {
+					"title": "Test your lamp",
+					"body": "Use the switch above to test your lamp. Press next to continue."
+				},
+				"generic_test_switch_2": {
+					"body": "Use your remote or the switch above to test your lamp. Press next to continue."
+				}
+			}
 		}
 	},
 	"433_generator": {

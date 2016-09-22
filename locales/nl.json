@@ -130,7 +130,7 @@
 			},
 			"triggers": {
 				"received": {
-					"title": "Deurbel gaat af"
+					"title": "Deurbel knop is ingedrukt"
 				},
 				"send": {
 					"title": "Laat deurbel afgaan"
@@ -476,6 +476,24 @@
 		},
 		"AILD-250": {
 			"name": null
+		},
+		"ALED-2709": {
+			"name": null,
+			"views": {
+				"generic_imitate": {
+					"body": "Druk op de knop die gekoppeld is met de lamp."
+				},
+				"generic_program": {
+					"body": "Zet de stroom van de lamp 3 keer aan en uit, of gebruik de afstandsbediening om de lamp 5 keer aan en uit te zetten, binnen 15 seconden om de lamp in pair modus te zetten. De lamp zou nu moeten knipperen. Klik vervolgens op volgende."
+				},
+				"generic_test_switch": {
+					"title": "Test de lamp",
+					"body": "Gebruik de bovenstaande schakelaar om de lamp te testen. Klik op volgende om verder te gaan."
+				},
+				"generic_test_switch_2": {
+					"body": "Gebruik de afstandsbediening of de bovenstaande schakelaar om de lamp te testen. Klik op volgende om verder te gaan."
+				}
+			}
 		}
 	}
 }

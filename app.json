@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "compatibility": ">=0.9",
   "category": [
     "appliances",
@@ -214,7 +214,7 @@
         "id": "ACDB-7000C:received",
         "title": {
           "en": "Doorbell is pressed",
-          "nl": "Deurbel gaat af"
+          "nl": "Deurbel knop is ingedrukt"
         },
         "args": [
           {
@@ -228,7 +228,7 @@
         "id": "ACDB-6600:received",
         "title": {
           "en": "Doorbell is pressed",
-          "nl": "Deurbel gaat af"
+          "nl": "Deurbel knop is ingedrukt"
         },
         "args": [
           {
@@ -3668,6 +3668,58 @@
       "images": {
         "large": "./433_generator/assets/AFR-100/images/large.jpg",
         "small": "./433_generator/assets/AFR-100/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-2709",
+      "name": {
+        "en": "ALED-2709"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-2709/images/large.jpg",
+        "small": "./433_generator/assets/ALED-2709/images/small.jpg"
       },
       "pair": [
         {
