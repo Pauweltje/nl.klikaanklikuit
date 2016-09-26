@@ -1927,8 +1927,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'socket',
-			capabilities: ['onoff'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'dimmer',
@@ -1940,8 +1940,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'socket',
-			capabilities: ['onoff', 'dim'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'blinds',
@@ -1953,19 +1953,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'windowcoverings',
-			capabilities: ['windowcoverings_state'],
-			settings: [
-				{
-					id: 'invert',
-					type: 'checkbox',
-					value: false,
-					label: {
-						en: 'Invert directions',
-						nl: 'Keer de richtingen om',
-					},
-				},
-			],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'remote',
@@ -2016,8 +2005,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'sensor',
-			capabilities: ['alarm_night'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'motionSensor',
@@ -2029,8 +2018,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'sensor',
-			capabilities: ['alarm_motion'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'contactSensor',
@@ -2042,8 +2031,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'sensor',
-			capabilities: ['alarm_contact'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'kakuOldSwitch',
@@ -2055,8 +2044,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'socket',
-			capabilities: ['onoff'],
+			class: 'other',
+			capabilities: [],
 		},
 		{
 			id: 'kakuOldRemote',
@@ -2068,223 +2057,8 @@ $('<div>').append(
 				large: './assets/deprecated/images/large.png',
 				small: './assets/deprecated/images/small.png',
 			},
-			class: 'remote',
-			capabilities: ['onoff'],
-		},
-	],
-	triggers: [
-		{
-			id: 'remote',
-			title: {
-				en: '[Deprecated] The following button is being pressed:',
-				nl: '[Verouderd] De volgende knop wordt ingedrukt:',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=remote',
-					placeholder: { en: 'Which remote?', nl: 'Welke afstandbediening?' },
-				},
-				{
-					name: 'channel',
-					type: 'dropdown',
-					values: [
-						{ id: '00', label: { en: 'Channel: I', nl: 'Kanaal I' } },
-						{ id: '01', label: { en: 'Channel: II', nl: 'Kanaal II' } },
-						{ id: '10', label: { en: 'Channel: III', nl: 'Kanaal III' } },
-						{ id: '11', label: { en: 'Channel: IV', nl: 'Kanaal IV' } },
-					],
-				},
-				{
-					name: 'unit',
-					type: 'dropdown',
-					values: [
-						{ id: '00', label: { en: 'Button: 1', nl: 'Knop 1' } },
-						{ id: '01', label: { en: 'Button: 2', nl: 'Knop 2' } },
-						{ id: '10', label: { en: 'Button: 3', nl: 'Knop 3' } },
-						{ id: '11', label: { en: 'Button: 4', nl: 'Knop 4' } },
-						{ id: '22', label: { en: 'Button: G', nl: 'Knop G' } },
-					],
-				},
-				{
-					name: 'state',
-					type: 'dropdown',
-					values: [
-						{ id: '1', label: { en: 'On', nl: 'Aan' } },
-						{ id: '0', label: { en: 'Off', nl: 'Uit' } },
-					],
-				},
-			],
-		},
-		{
-			id: 'doorbell',
-			title: {
-				en: '[Deprecated] The doorbell is pressed',
-				nl: '[Verouderd] De deurbel wordt ingedrukt',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=doorbell',
-					placeholder: { en: 'Which remote?', nl: 'Welke afstandbediening?' },
-				},
-			],
-		},
-		{
-			id: 'wallSwitch',
-			title: {
-				en: '[Deprecated] Wallswitch is switched on',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=wallSwitch',
-					placeholder: { en: 'Which wallswitch?', nl: 'Welke wandschakelaar?' },
-				},
-				{
-					name: 'unit',
-					type: 'dropdown',
-					values: [
-						{ id: '01', label: { en: 'Single', nl: 'Enkel' } },
-						{ id: '10', label: { en: 'Left', nl: 'Links' } },
-						{ id: '11', label: { en: 'Right', nl: 'Rechts' } },
-					],
-				},
-				{
-					name: 'state',
-					type: 'dropdown',
-					values: [
-						{ id: '1', label: { en: 'On', nl: 'Aan' } },
-						{ id: '0', label: { en: 'Off', nl: 'Uit' } },
-					],
-				},
-			],
-		},
-		{
-			id: 'oldRemote',
-			title: {
-				en: '[Deprecated] The following button is being pressed:',
-				nl: '[Verouderd] De volgende knop wordt ingedrukt:',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=kakuOldRemote',
-					placeholder: { en: 'Which remote?', nl: 'Welke afstandbediening?' },
-				},
-				{
-					name: 'channel',
-					type: 'dropdown',
-					values: [
-						{ id: '00', label: { en: 'Channel: I', nl: 'Kanaal I' } },
-						{ id: '01', label: { en: 'Channel: II', nl: 'Kanaal II' } },
-						{ id: '10', label: { en: 'Channel: III', nl: 'Kanaal III' } },
-						{ id: '11', label: { en: 'Channel: IV', nl: 'Kanaal IV' } },
-					],
-				},
-				{
-					name: 'unit',
-					type: 'dropdown',
-					values: [
-						{ id: '00', label: { en: 'Button: 1', nl: 'Knop 1' } },
-						{ id: '01', label: { en: 'Button: 2', nl: 'Knop 2' } },
-						{ id: '10', label: { en: 'Button: 3', nl: 'Knop 3' } },
-						{ id: '11', label: { en: 'Button: 4', nl: 'Knop 4' } },
-						{ id: '22', label: { en: 'Button: G', nl: 'Knop G' } },
-					],
-				},
-				{
-					name: 'state',
-					type: 'dropdown',
-					values: [
-						{ id: '1', label: { en: 'On', nl: 'Aan' } },
-						{ id: '0', label: { en: 'Off', nl: 'Uit' } },
-					],
-				},
-			],
-		},
-	],
-	conditions: [
-		{
-			id: 'motionSensorOn',
-			title: {
-				en: '[Deprecated] !{{Motion|No motion}} detected',
-				nl: '[Verouderd] !{{Beweging|Geen beweging}} gedetecteerd',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=motionSensor',
-					placeholder: { en: 'Which sensor?', nl: 'Welke sensor?' },
-				},
-			],
-		},
-		{
-			id: 'nightSensorOn',
-			title: {
-				en: '[Deprecated] !{{Darkness|Light}} detected',
-				nl: '[Verouderd] !{{Geen licht|Licht}} gedetecteerd',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=nightSensor',
-					placeholder: { en: 'Which sensor?', nl: 'Welke sensor?' },
-				},
-			],
-		},
-		{
-			id: 'contactSensorOn',
-			title: {
-				en: '[Deprecated] Contact sensor !{{open|closed}}',
-				nl: '[Verouderd] Contakt sensor !{{geopend|gesloten}}',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=contactSensor',
-					placeholder: { en: 'Which sensor?', nl: 'Welke sensor?' },
-				},
-			],
-		},
-	],
-	actions: [
-		{
-			id: 'windowcoveringUp',
-			title: {
-				en: '[Deprecated] Open the blinds',
-				nl: '[Verouderd] Open het zonnescherm',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=blinds',
-					placeholder: { en: 'Which blinds?', nl: 'Welk zonnescherm?' },
-				},
-			],
-		},
-		{
-			id: 'windowcoveringDown',
-			title: {
-				en: '[Deprecated] Close the blinds',
-				nl: '[Verouderd] Sluit het zonnescherm',
-			},
-			args: [
-				{
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=blinds',
-					placeholder: { en: 'Which blinds?', nl: 'Welk zonnescherm?' },
-				},
-			],
+			class: 'other',
+			capabilities: [],
 		},
 	],
 };

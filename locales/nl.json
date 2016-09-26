@@ -495,5 +495,6 @@
 				}
 			}
 		}
-	}
+	},
+	"depricated": "Deze driver is verouderd. Verwijder aub dit apparaat en voeg hem opnieuw toe in de pair wizard."
 }

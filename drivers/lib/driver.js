@@ -186,34 +186,37 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	send(device, data, callback) {
-		this.registerSignal();
-		callback = typeof callback === 'function' ? callback : () => null;
-		data = Object.assign({}, this.getDevice(device, true) || device.data || device, data);
-		this.emit('before_send', data);
+		return new Promise((resolve, reject) => {
+			this.registerSignal();
+			callback = typeof callback === 'function' ? callback : () => null;
+			data = Object.assign({}, this.getDevice(device, true) || device.data || device, data);
+			this.emit('before_send', data);
 
-		const payload = this.dataToPayload(data);
-		if (!payload) return callback(true);
-		const frame = payload.map(Number);
-		const dataCheck = this.payloadToData(frame);
-		if (
-			frame.find(isNaN) || !dataCheck ||
-			dataCheck.constructor !== Object || !dataCheck.id ||
-			dataCheck.id !== this.getDeviceId(device)
-		) {
-			this.emit('error', `Incorrect frame from dataToPayload(${JSON.stringify(data)}) => ${frame} => ${
-				JSON.stringify(dataCheck)}`);
-			return callback(true);
-		}
-		this.emit('send', data);
-		return this.signal.send(frame).then(result => {
-			if (callback) callback(null, result);
-			this.emit('after_send', data);
-			this.unregisterSignal();
-		}).catch(err => {
-			if (callback) callback(err);
-			this.emit('error', err);
-			this.unregisterSignal();
-			throw err;
+			const payload = this.dataToPayload(data);
+			if (!payload) return callback(true);
+			const frame = payload.map(Number);
+			const dataCheck = this.payloadToData(frame);
+			if (
+				frame.find(isNaN) || !dataCheck ||
+				dataCheck.constructor !== Object || !dataCheck.id ||
+				dataCheck.id !== this.getDeviceId(device)
+			) {
+				this.emit('error', `Incorrect frame from dataToPayload(${JSON.stringify(data)}) => ${frame} => ${
+					JSON.stringify(dataCheck)}`);
+				reject();
+				return callback(true);
+			}
+			this.emit('send', data);
+			resolve(this.signal.send(frame).then(result => {
+				if (callback) callback(null, result);
+				this.emit('after_send', data);
+				this.unregisterSignal();
+			}).catch(err => {
+				if (callback) callback(err);
+				this.emit('error', err);
+				this.unregisterSignal();
+				throw err;
+			}));
 		});
 	}
 
@@ -261,6 +264,24 @@ module.exports = class Driver extends EventEmitter {
 	// TODO document that this function should be overwritten
 	generateData() {
 		throw new Error(`generateData() should be overwritten by own driver for device ${this.config.id}`);
+	}
+
+	sendProgramSignal(device, callback){
+		const exports = this.getExports();
+		if (exports.capabilities) {
+			Object.keys(exports.capabilities).forEach(capability => {
+				if (exports.capabilities[capability].get && exports.capabilities[capability].set) {
+					exports.capabilities[capability].get(device, (err, result) => {
+						if (typeof result === 'boolean') {
+							exports.capabilities[capability].set(device, !result, callback);
+						}
+					});
+				}
+			});
+		} else {
+			callback(new Error('Device does not have boolean capability'));
+		}
+		callback(null, true);
 	}
 
 	pair(socket) { // Pair sequence
@@ -336,6 +357,13 @@ module.exports = class Driver extends EventEmitter {
 			callback(null, this.pairingDevice);
 		});
 
+		socket.on('program_send', (data, callback) => {
+			if (this.pairingDevice && this.pairingDevice.data) {
+				return this.sendProgramSignal(this.pairingDevice.data, callback);
+			}
+			return callback(new Error('433_generator.error.no_device'));
+		});
+
 		socket.on('test', (data, callback) => {
 			callback(!this.pairingDevice, this.pairingDevice);
 		});
@@ -348,7 +376,10 @@ module.exports = class Driver extends EventEmitter {
 		});
 
 		socket.on('send', (data, callback) => {
-			this.send(this.pairingDevice.data, data).then(callback.bind(false)).catch(callback);
+			if (this.pairingDevice && this.pairingDevice.data) {
+				this.send(this.pairingDevice.data, data).then(callback.bind(false)).catch(callback);
+			}
+			return callback(new Error('433_generator.error.no_device'));
 		});
 
 		socket.on('set_settings', (data, callback) => {

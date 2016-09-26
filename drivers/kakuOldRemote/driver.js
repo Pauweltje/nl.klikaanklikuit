@@ -1,3 +1,6 @@
-"use strict";
-var kakuOld = require('../deprecated/kakuOld.js');
-module.exports = kakuOld.createDriver('oldRemote');
+module.exports = self = {
+	init: function (devices, callback) {
+		devices.forEach(device => self.setUnavailable(device, __('deprecated')));
+		callback();
+	},
+};

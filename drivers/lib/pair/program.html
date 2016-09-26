@@ -6,13 +6,32 @@
 </div>
 
 <script>
-	var idPrefix = '[data-id="' + options.id + '"] ';
-	$(idPrefix + '#body > span').html(__(options.body));
-	var $imageContainer = $(idPrefix + '#image-container');
+	var $container = $('[data-id="' + options.id + '"] ');
+	$container.find('#body > span').html(__(options.body));
+	var $imageContainer = $container.find('#image-container');
 	$imageContainer.css('width', options.svgWidth).css('height', options.svgHeight);
 
 	$imageContainer.html(options.svg);
 	$imageContainer.highlight();
+
+	if (!$container.find('.view-navigation-next.dummy').length) {
+		var $nextButton = $container.find('.view-navigation-next');
+		var $nextButtonDummy = $nextButton.clone().addClass('dummy');
+		$nextButton.hide();
+		$nextButton.parent().append($nextButtonDummy);
+
+		$nextButtonDummy.on('click', function (e) {
+			Homey.emit('program_send', function (err) {
+				if (err){
+					Homey.alert(__(err.message || err));
+					return;
+				}
+				$nextButtonDummy.siblings('.view-navigation-next').click();
+			});
+			e.stopPropagation();
+			return false;
+		});
+	}
 
 	Homey.emit('program', function(err, device){
 		const dataKey = JSON.stringify(device.data);

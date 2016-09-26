@@ -484,5 +484,6 @@
 			"title": "Test your remote\u0000",
 			"body": "Press a random button on your remote or click the button in the image above to test the signal. Press next to continue.\u0000"
 		}
-	}
+	},
+	"deprecated": "This driver is deprecated. Please remove this device and pair it again in the pair wizard."
 }

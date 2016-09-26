@@ -155,7 +155,7 @@ module.exports = {
 					default: 'views.generic_test_switch.body',
 				},
 				sendToggleOnInit: {
-					default: true,
+					default: false,
 				},
 			},
 			prepend: [
