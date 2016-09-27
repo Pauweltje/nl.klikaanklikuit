@@ -10,6 +10,10 @@ module.exports = class WallSwitch extends Remote {
 				args.unit = '11';
 			} else if (args.unit === '11') {
 				args.unit = '10';
+			} else if (args.unit === '00') {
+				args.unit = '01';
+			} else if (args.unit === '01') {
+				args.unit = '00';
 			}
 		}
 		super.onTriggerReceived(callback, args, state);
@@ -22,6 +26,10 @@ module.exports = class WallSwitch extends Remote {
 				args.unit = '11';
 			} else if (args.unit === '11') {
 				args.unit = '10';
+			} else if (args.unit === '00') {
+				args.unit = '01';
+			} else if (args.unit === '01') {
+				args.unit = '00';
 			}
 		}
 		super.onActionSend(callback, args);

@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "compatibility": ">=0.10",
   "category": [
     "appliances",
@@ -39,14 +39,14 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "10",
+                "id": "00",
                 "label": {
                   "en": "Left Button\u0000",
                   "nl": "Linker Knop\u0000"
                 }
               },
               {
-                "id": "11",
+                "id": "01",
                 "label": {
                   "en": "Right Button\u0000",
                   "nl": "Rechter Knop\u0000"
@@ -372,14 +372,14 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "10",
+                "id": "00",
                 "label": {
                   "en": "Left Button\u0000",
                   "nl": "Linker Knop\u0000"
                 }
               },
               {
-                "id": "11",
+                "id": "01",
                 "label": {
                   "en": "Right Button\u0000",
                   "nl": "Rechter Knop\u0000"
@@ -1167,15 +1167,15 @@
       ]
     },
     {
-      "id": "AWMT-230",
+      "id": "AWMT-003",
       "name": {
-        "en": "AWMT-230"
+        "en": "AWMT-003"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/AWMT-230/images/large.jpg",
-        "small": "./433_generator/assets/AWMT-230/images/small.jpg"
+        "large": "./433_generator/assets/AWMT-003/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-003/images/small.jpg"
       },
       "settings": [
         {
@@ -1232,15 +1232,15 @@
       ]
     },
     {
-      "id": "AWMT-003",
+      "id": "AWMT-230",
       "name": {
-        "en": "AWMT-003"
+        "en": "AWMT-230"
       },
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/AWMT-003/images/large.jpg",
-        "small": "./433_generator/assets/AWMT-003/images/small.jpg"
+        "large": "./433_generator/assets/AWMT-230/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-230/images/small.jpg"
       },
       "settings": [
         {

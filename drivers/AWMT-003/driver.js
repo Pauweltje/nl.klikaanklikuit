@@ -1,10 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	images: {
-		large: '../../433_generator/assets/AWMT-003/images/large.jpg',
-		small: '../../433_generator/assets/AWMT-003/images/small.jpg'
-	},
+	icon: '../../433_generator/assets/AWMT-003/icon.svg',
 	triggers: [{
 		id: 'AWMT-003:received',
 		title: '433_generator.generic.button_pressed',
@@ -12,10 +9,10 @@ const config = {
 			name: 'unit',
 			type: 'dropdown',
 			values: [{
-				id: '10',
+				id: '00',
 				label: '433_generator.generic.buttons.left'
 			}, {
-				id: '11',
+				id: '01',
 				label: '433_generator.generic.buttons.right'
 			}]
 		}, {
@@ -44,7 +41,7 @@ const config = {
 				body: 'deviceClasses.generic_wall_switch.views.generic_imitate.body',
 				prepend: [],
 				append: [],
-				svg: '../../433_generator/assets/AWST-8802/switch_pair.svg',
+				svg: '../../433_generator/assets/AWMT-003/switch_pair.svg',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
 				initWithDeviceData: false,
@@ -66,7 +63,7 @@ const config = {
 				append: [{
 					scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 				}],
-				svg: '../../433_generator/assets/AWST-8802/switch.svg',
+				svg: '../../433_generator/assets/AWMT-003/switch.svg',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
 				initWithDeviceData: false,
@@ -112,7 +109,10 @@ const config = {
 			}]
 		}]
 	}],
-	icon: '../../433_generator/assets/AWMT-230/icon.svg'
+	images: {
+		large: '../../433_generator/assets/AWMT-003/images/large.jpg',
+		small: '../../433_generator/assets/AWMT-003/images/small.jpg'
+	}
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

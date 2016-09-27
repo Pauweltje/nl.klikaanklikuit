@@ -856,10 +856,7 @@ module.exports = {
 			}
 		},
 		'AWMT-003': {
-			images: {
-				large: '../433_generator/assets/AWMT-003/images/large.jpg',
-				small: '../433_generator/assets/AWMT-003/images/small.jpg'
-			},
+			icon: '../433_generator/assets/AWMT-003/icon.svg',
 			triggers: [{
 				id: 'AWMT-003:received',
 				title: '433_generator.generic.button_pressed',
@@ -867,10 +864,10 @@ module.exports = {
 					name: 'unit',
 					type: 'dropdown',
 					values: [{
-						id: '10',
+						id: '00',
 						label: '433_generator.generic.buttons.left'
 					}, {
-						id: '11',
+						id: '01',
 						label: '433_generator.generic.buttons.right'
 					}]
 				}, {
@@ -899,7 +896,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_imitate.body',
 						prepend: [],
 						append: [],
-						svg: '../433_generator/assets/AWST-8802/switch_pair.svg',
+						svg: '../433_generator/assets/AWMT-003/switch_pair.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -921,7 +918,7 @@ module.exports = {
 						append: [{
 							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
-						svg: '../433_generator/assets/AWST-8802/switch.svg',
+						svg: '../433_generator/assets/AWMT-003/switch.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -967,7 +964,10 @@ module.exports = {
 					}]
 				}]
 			}],
-			icon: '../433_generator/assets/AWMT-230/icon.svg'
+			images: {
+				large: '../433_generator/assets/AWMT-003/images/large.jpg',
+				small: '../433_generator/assets/AWMT-003/images/small.jpg'
+			}
 		},
 		'AC-1000': {
 			images: {
@@ -3990,6 +3990,37 @@ module.exports = {
 			capabilities: ['alarm_night']
 		},
 		'AWMT-230': {
+			icon: '../433_generator/assets/AWMT-230/icon.svg',
+			triggers: [{
+				id: 'AWMT-230:received',
+				title: '433_generator.generic.button_pressed',
+				args: [{
+					name: 'unit',
+					type: 'dropdown',
+					values: [{
+						id: '00',
+						label: '433_generator.generic.buttons.left'
+					}, {
+						id: '01',
+						label: '433_generator.generic.buttons.right'
+					}]
+				}, {
+					name: 'state',
+					type: 'dropdown',
+					values: [{
+						id: '1',
+						label: '433_generator.generic.on'
+					}, {
+						id: '0',
+						label: '433_generator.generic.off'
+					}]
+				}, {
+					name: 'device',
+					type: 'device',
+					filter: 'driver_id=AWMT-230'
+				}]
+			}],
+			driver: '../433_generator/drivers/kaku/wall_switch.js',
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -3999,7 +4030,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_imitate.body',
 						prepend: [],
 						append: [],
-						svg: '../433_generator/assets/AWST-8802/switch_pair.svg',
+						svg: '../433_generator/assets/AWMT-003/switch_pair.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -4021,7 +4052,7 @@ module.exports = {
 						append: [{
 							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tHomey.emit(\'set_settings\', { rotated: this.checked ? \'180\' : \'0\'}, function(){\n\t\t\t\tHomey.emit(\'settings_change\');\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
-						svg: '../433_generator/assets/AWST-8802/switch.svg',
+						svg: '../433_generator/assets/AWMT-003/switch.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -4046,43 +4077,10 @@ module.exports = {
 					id: 'generic_done'
 				}]
 			},
-			images: {
-				large: '../433_generator/assets/AWMT-230/images/large.jpg',
-				small: '../433_generator/assets/AWMT-230/images/small.jpg'
-			},
 			id: 'AWMT-230',
-			driver: '../433_generator/drivers/kaku/wall_switch.js',
 			signal: 'kaku',
-			triggers: [{
-				id: 'AWMT-230:received',
-				title: '433_generator.generic.button_pressed',
-				args: [{
-					name: 'unit',
-					type: 'dropdown',
-					values: [{
-						id: '10',
-						label: '433_generator.generic.buttons.left'
-					}, {
-						id: '11',
-						label: '433_generator.generic.buttons.right'
-					}]
-				}, {
-					name: 'state',
-					type: 'dropdown',
-					values: [{
-						id: '1',
-						label: '433_generator.generic.on'
-					}, {
-						id: '0',
-						label: '433_generator.generic.off'
-					}]
-				}, {
-					name: 'device',
-					type: 'device',
-					filter: 'driver_id=AWMT-230'
-				}]
-			}],
 			class: 'other',
+			name: 'devices.AWMT-230.name',
 			settings: [{
 				type: 'group',
 				label: 'deviceClasses.wall_switch.settings.groups.general',
@@ -4100,8 +4098,10 @@ module.exports = {
 					}]
 				}]
 			}],
-			name: 'devices.AWMT-230.name',
-			icon: '../433_generator/assets/AWMT-230/icon.svg'
+			images: {
+				large: '../433_generator/assets/AWMT-230/images/large.jpg',
+				small: '../433_generator/assets/AWMT-230/images/small.jpg'
+			}
 		},
 		'ACM-1000': {
 			capabilities: ['onoff'],

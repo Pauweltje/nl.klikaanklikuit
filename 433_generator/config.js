@@ -812,21 +812,56 @@ $('<div>').append(
 				},
 			},
 		},
-		'AWMT-230': {
+		'AWMT-003': {
 			extends: 'AWST-8802',
+			name: 'devices.AWMT-003.name',
+			images: {
+				large: './assets/AWMT-003/images/large.jpg',
+				small: './assets/AWMT-003/images/small.jpg',
+			},
+			icon: './assets/AWMT-003/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/AWMT-003/switch_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/AWMT-003/switch.svg',
+					},
+				},
+			},
+			triggers: [
+				{
+					id: 'received',
+					title: '433_generator.generic.button_pressed',
+					args: [
+						{
+							name: 'unit',
+							type: 'dropdown',
+							values: [
+								{ id: '00', label: '433_generator.generic.buttons.left' },
+								{ id: '01', label: '433_generator.generic.buttons.right' },
+							],
+						},
+						{
+							name: 'state',
+							type: 'dropdown',
+							values: [
+								{ id: '1', label: '433_generator.generic.on' },
+								{ id: '0', label: '433_generator.generic.off' },
+							],
+						},
+					],
+				},
+			],
+		},
+		'AWMT-230': {
+			extends: 'AWMT-003',
 			name: 'devices.AWMT-230.name',
 			icon: './assets/AWMT-230/icon.svg',
 			images: {
 				large: './assets/AWMT-230/images/large.jpg',
 				small: './assets/AWMT-230/images/small.jpg',
-			},
-		},
-		'AWMT-003': {
-			extends: 'AWMT-230',
-			name: 'devices.AWMT-003.name',
-			images: {
-				large: './assets/AWMT-003/images/large.jpg',
-				small: './assets/AWMT-003/images/small.jpg',
 			},
 		},
 		'ACDB-7000C': {
