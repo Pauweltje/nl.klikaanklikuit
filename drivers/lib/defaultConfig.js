@@ -157,6 +157,9 @@ module.exports = {
 				sendToggleOnInit: {
 					default: false,
 				},
+				initWithDeviceData: {
+					default: true,
+				},
 			},
 			prepend: [
 				'../../assets/433_generator/css/styles.css',

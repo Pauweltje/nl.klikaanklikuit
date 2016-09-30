@@ -72,7 +72,6 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	unregister() {
-		return; // FIXME reenable when registering/unregistering works correctly
 		registerLock.get(this.signalKey).delete(this);
 		if (registerLock.get(this.signalKey).size === 0) {
 			Homey.log(`[Signal ${this.signalKey}] unregistered signal`);
@@ -116,7 +115,7 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	tx(payload, callback) {
-		callback = callback || () => null;
+		callback = callback || (() => null);
 		const frameBuffer = new Buffer(payload);
 		this.signal.tx(frameBuffer, callback);
 	}

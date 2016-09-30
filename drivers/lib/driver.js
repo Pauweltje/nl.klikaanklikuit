@@ -266,7 +266,7 @@ module.exports = class Driver extends EventEmitter {
 		throw new Error(`generateData() should be overwritten by own driver for device ${this.config.id}`);
 	}
 
-	sendProgramSignal(device, callback){
+	sendProgramSignal(device, callback) {
 		const exports = this.getExports();
 		if (exports.capabilities) {
 			Object.keys(exports.capabilities).forEach(capability => {
@@ -365,7 +365,15 @@ module.exports = class Driver extends EventEmitter {
 		});
 
 		socket.on('test', (data, callback) => {
-			callback(!this.pairingDevice, this.pairingDevice);
+			callback(
+				!this.pairingDevice,
+				this.pairingDevice ?
+					Object.assign(
+						this.pairingDevice,
+						{ data: Object.assign(this.pairingDevice.data, this.getLastFrame(this.pairingDevice)) || {} }
+					) :
+					null
+			);
 		});
 
 		socket.on('done', (data, callback) => {

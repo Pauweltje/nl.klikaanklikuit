@@ -360,12 +360,12 @@
 		"AMST-606": {
 			"views": {
 				"generic_imitate": {
-					"body": "Koppel de contactsensor",
-					"title": "Houd beide delen van de contactsensor bij elkaar en haal deze weer van elkaar af."
+					"title": "Koppel de contactsensor",
+					"body": "Houd beide delen van de contactsensor bij elkaar en haal deze weer van elkaar af."
 				},
 				"generic_test_remote": {
-					"body": "Test de contactsensor",
-					"title": "Gebruik de contactsensor om het signaal te testen. Klik op volgende om verder te gaan."
+					"title": "Test de contactsensor",
+					"body": "Gebruik de contactsensor om het signaal te testen. Klik op volgende om verder te gaan."
 				}
 			},
 			"conditions": {

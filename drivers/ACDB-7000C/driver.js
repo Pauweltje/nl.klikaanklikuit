@@ -116,7 +116,7 @@ const config = {
 				svg: '../../433_generator/assets/ACDB-7000C/bell.svg',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
-				initWithDeviceData: false,
+				initWithDeviceData: true,
 				previous: true,
 				next: true,
 				sendToggleOnInit: false,

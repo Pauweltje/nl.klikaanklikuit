@@ -100,10 +100,11 @@ jQuery(function ($) {
 		elems.each(function () {
 			var $elem = $(this);
 			var attrValue = ($elem.attr(attr) || '')
-				.replace(value, '')
-				.replace(notValue, '')
-				.replace(notValue.replace(value, ''), '')
-				.trim();
+				.split(' ')
+				.filter(function (elemClass) {
+					return elemClass !== value && elemClass !== notValue;
+				})
+				.join(' ');
 			if (
 				Object.keys(state).reduce(function (prevResult, curr) {
 					return prevResult &&

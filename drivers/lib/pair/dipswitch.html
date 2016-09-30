@@ -28,11 +28,17 @@
 					Homey.alert(__(err.message || err));
 					return;
 				}
-				const dataKey = JSON.stringify(device.data);
-				window.selected_devices = [ dataKey ];
-				window.found_devices = {};
-				window.found_devices[dataKey] = device;
-				$nextButtonDummy.siblings('.view-navigation-next').click();
+				Homey.emit('program_send', function (err) {
+					if (err){
+						Homey.alert(__(err.message || err));
+						return;
+					}
+					const dataKey = JSON.stringify(device.data);
+					window.selected_devices = [ dataKey ];
+					window.found_devices = {};
+					window.found_devices[dataKey] = device;
+					$nextButtonDummy.siblings('.view-navigation-next').click();
+				});
 			});
 			e.stopPropagation();
 			return false;

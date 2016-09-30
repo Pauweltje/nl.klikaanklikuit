@@ -131,7 +131,7 @@ const config = {
 				svg: '../../433_generator/assets/ASUN-650/test.svg',
 				svgHeight: '60vh',
 				svgWidth: '80vw',
-				initWithDeviceData: false,
+				initWithDeviceData: true,
 				previous: true,
 				next: true,
 				sendToggleOnInit: false

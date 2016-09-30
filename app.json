@@ -1,7 +1,7 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.6.0",
-  "compatibility": ">=0.10",
+  "version": "2.6.1",
+  "compatibility": ">=0.10.1",
   "category": [
     "appliances",
     "lights",

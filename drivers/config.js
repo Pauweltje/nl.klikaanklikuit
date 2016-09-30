@@ -133,7 +133,7 @@ module.exports = {
 						svg: '../433_generator/assets/ASUN-650/test.svg',
 						svgHeight: '60vh',
 						svgWidth: '80vw',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -316,7 +316,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -487,7 +487,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -651,7 +651,7 @@ module.exports = {
 						svg: '../433_generator/assets/ASUN-650/test.svg',
 						svgHeight: '60vh',
 						svgWidth: '80vw',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -818,7 +818,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -1098,7 +1098,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -1269,7 +1269,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -1442,7 +1442,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -1980,7 +1980,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -2153,7 +2153,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -2326,7 +2326,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -2491,7 +2491,7 @@ module.exports = {
 						svg: '../433_generator/assets/ACDB-7000C/bell.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false,
@@ -2667,7 +2667,7 @@ module.exports = {
 						svg: '../433_generator/assets/ACDB-7000C/bell.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false,
@@ -2871,7 +2871,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -3041,7 +3041,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -3299,7 +3299,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -3473,7 +3473,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -3865,7 +3865,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -4228,7 +4228,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -4401,7 +4401,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -4674,7 +4674,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -5042,7 +5042,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -5421,7 +5421,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -5703,7 +5703,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -5891,7 +5891,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -6051,7 +6051,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -6215,7 +6215,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -6388,7 +6388,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -6738,7 +6738,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -6909,7 +6909,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -7082,7 +7082,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
@@ -7256,7 +7256,7 @@ module.exports = {
 						svg: './../assets/433_generator/images/light.svg',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
-						initWithDeviceData: false,
+						initWithDeviceData: true,
 						previous: true,
 						next: true,
 						sendToggleOnInit: false
