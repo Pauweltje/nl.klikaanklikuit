@@ -1,6 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/wall_switch.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],

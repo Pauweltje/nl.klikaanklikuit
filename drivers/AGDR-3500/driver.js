@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'AGDR-3500',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	signal: 'kaku',
 	alternativeSignal: 'kaku',

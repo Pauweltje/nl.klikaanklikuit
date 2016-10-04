@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'ACM-1000',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	signal: 'kaku',
 	name: 'devices.ACM-1000.name',

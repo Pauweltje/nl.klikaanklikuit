@@ -151,10 +151,10 @@ const config = {
 		small: '../../433_generator/assets/ACDB-7000C/images/small.png'
 	},
 	id: 'ACDB-7000C',
+	debounceTimeout: 1000,
 	driver: '../../433_generator/drivers/kaku/doorbell.js',
 	signal: 'kaku',
 	class: 'doorbell',
-	debounceTimeout: 4000,
 	triggers: [{
 		id: 'ACDB-7000C:received',
 		title: 'deviceClasses.doorbell.triggers.received.title',

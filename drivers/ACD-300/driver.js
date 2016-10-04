@@ -2,6 +2,7 @@
 /* eslint-disable */
 const config = {
 	icon: '../../433_generator/assets/ACD-200/socket.svg',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/dimmer.js',
 	pair: {
 		viewOrder: ['generic_choice',

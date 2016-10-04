@@ -115,6 +115,7 @@ const config = {
 			filter: 'driver_id=AYCT-102'
 		}]
 	}],
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/remote',
 	signal: 'kaku',
 	name: 'devices.AYCT-102.name',

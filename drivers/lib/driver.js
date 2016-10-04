@@ -33,7 +33,7 @@ module.exports = class Driver extends EventEmitter {
 			exports.setSettings(this.getDevice(device), settings, callback)
 		) || (callback && callback(new Error('device id does not exist')));
 
-		this.signal = new Signal(this.config.signal, this.payloadToData.bind(this), this.config.debounceTimeout || 1000);
+		this.signal = new Signal(this.config.signal, this.payloadToData.bind(this), this.config.debounceTimeout || 500);
 
 		connectedDevices.forEach(this.add.bind(this));
 
@@ -469,10 +469,11 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	handleReceivedTrigger(device, data) {
-		// if(data.id === device.id) TODO check if performance increase
-		Homey.manager('flow').triggerDevice(`${this.config.id}:received`, null, data, this.getDevice(device), err => {
-			if (err) Homey.error('Trigger error', err);
-		});
+		if (data.id === device.id) { // TODO check if performance increase // FIXME did it work?
+			Homey.manager('flow').triggerDevice(`${this.config.id}:received`, null, data, this.getDevice(device), err => {
+				if (err) Homey.error('Trigger error', err);
+			});
+		}
 	}
 
 	onTriggerReceived(callback, args, state) {
@@ -524,7 +525,12 @@ module.exports = class Driver extends EventEmitter {
 		if (isNaN(number) || number % 1 !== 0) {
 			this.emit('error', `[Error] inputNumber (${inputNumber}) is a non-integer value`);
 		}
-		return '0'.repeat(length).concat(number.toString(2)).substr(length * -1).split('').map(Number);
+		return '0'
+			.repeat(length)
+			.concat(number.toString(2))
+			.substr(length * -1)
+			.split('')
+			.map(Number);
 	}
 
 	bitArrayXOR(arrayA, arrayB) {

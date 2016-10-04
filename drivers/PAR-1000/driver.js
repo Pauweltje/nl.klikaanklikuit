@@ -165,6 +165,7 @@ const config = {
 	},
 	id: 'PAR-1000',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kakuold/codewheel.js',
 	signal: 'kakuold',
 	name: 'devices.PAR-1000.name',

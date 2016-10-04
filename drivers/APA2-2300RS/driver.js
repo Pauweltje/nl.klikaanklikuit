@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'APA2-2300RS',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	signal: 'kaku',
 	name: 'devices.APA2-2300RS.name',

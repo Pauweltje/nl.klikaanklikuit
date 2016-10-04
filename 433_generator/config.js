@@ -4,6 +4,7 @@ module.exports = {
 	views: {},
 	deviceClasses: {
 		defaults: {
+			debounceTimeout: 300,
 			pair: {
 				viewOptions: {
 					generic_done: {
@@ -354,7 +355,7 @@ $('<div>').append(
 			driver: './drivers/kaku/doorbell.js',
 			class: 'doorbell',
 			capabilities: ['alarm_generic'],
-			debounceTimeout: 4000,
+			debounceTimeout: 1000,
 			pair: {
 				viewOptions: {
 					generic_choice: {

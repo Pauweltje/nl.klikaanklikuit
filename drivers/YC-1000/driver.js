@@ -183,6 +183,7 @@ const config = {
 	},
 	id: 'YC-1000',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
 	signal: 'kakuold',
 	name: 'devices.YC-1000.name',

@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'AILS-3500',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	signal: 'kaku',
 	name: 'devices.AILD-3500.name',

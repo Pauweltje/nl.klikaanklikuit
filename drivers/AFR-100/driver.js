@@ -144,6 +144,7 @@ const config = {
 	},
 	id: 'AFR-100',
 	class: 'light',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/dimmer.js',
 	signal: 'kakudim',
 	alternativeSignal: 'kaku',

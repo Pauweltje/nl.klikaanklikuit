@@ -162,6 +162,7 @@ const config = {
 		small: '../../433_generator/assets/SUN-500/images/small.jpg'
 	},
 	id: 'SUN-650',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kakuold/blinds.js',
 	signal: 'kakuold',
 	class: 'windowcoverings',

@@ -2,6 +2,7 @@
 /* eslint-disable */
 const config = {
 	icon: '../../433_generator/assets/AC-300/icon.svg',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',

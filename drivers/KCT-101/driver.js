@@ -80,6 +80,7 @@ const config = {
 			filter: 'driver_id=KCT-101'
 		}]
 	}],
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
 	signal: 'kakuold',
 	name: 'devices.KCT-101.name',

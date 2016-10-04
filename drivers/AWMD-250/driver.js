@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'AWMD-250',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/dimmer.js',
 	signal: 'kakudim',
 	alternativeSignal: 'kaku',

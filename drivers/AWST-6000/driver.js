@@ -61,6 +61,7 @@ const config = {
 		small: '../../433_generator/assets/AWST-6000/images/small.png'
 	},
 	id: 'AWST-6000',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/sensor.js',
 	signal: 'kaku',
 	conditions: [{

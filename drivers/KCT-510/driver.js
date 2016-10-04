@@ -1,6 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
+	debounceTimeout: 300,
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{

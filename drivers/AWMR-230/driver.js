@@ -168,6 +168,7 @@ const config = {
 	},
 	id: 'AWMR-230',
 	class: 'socket',
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	signal: 'kaku',
 	name: 'devices.AWMR-230.name',

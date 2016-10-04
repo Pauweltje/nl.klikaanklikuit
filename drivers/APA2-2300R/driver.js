@@ -93,6 +93,7 @@ const config = {
 			filter: 'driver_id=APA2-2300R'
 		}]
 	}],
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/remote_valueline',
 	signal: 'kaku',
 	name: 'devices.APA2-2300R.name',

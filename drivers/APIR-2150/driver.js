@@ -5,6 +5,7 @@ const config = {
 		large: '../../433_generator/assets/APIR-2150/images/large.png',
 		small: '../../433_generator/assets/APIR-2150/images/small.png'
 	},
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/sensor.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],

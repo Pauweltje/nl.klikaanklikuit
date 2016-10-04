@@ -96,6 +96,7 @@ const config = {
 			filter: 'driver_id=APA3-1500R'
 		}]
 	}],
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/remote',
 	signal: 'kaku',
 	name: 'devices.APA3-1500R.name',

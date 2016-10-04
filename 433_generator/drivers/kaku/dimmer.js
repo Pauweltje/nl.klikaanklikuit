@@ -70,6 +70,13 @@ module.exports = class Dimmer extends Kaku {
 		return null;
 	}
 
+	updateState(frame) {
+		if (frame.dim === undefined || frame.dim === null) {
+			delete frame.dim;
+		}
+		this.setState(frame.id, Object.assign({}, this.getState(frame.id), frame));
+	}
+
 	updateRealtime(device, state, oldState) {
 		super.updateRealtime(device, state, oldState);
 		if (state.dim === undefined || state.dim === null) {
@@ -90,16 +97,17 @@ module.exports = class Dimmer extends Kaku {
 			get: (device, callback) => callback(null, Boolean(Number(this.getState(device).state))),
 			set: (device, state, callback) => {
 				setTimeout(() => {
+					console.log('check');
 					// enforce that change brightness flow only sends dim signal
 					// This is done by delaying onoff command and checking if dim has been called <50ms before/after onoff
-					if (sendLock) return callback(null, true);
+					if (sendLock) return console.log('BLOCKED') & callback(null, true);
 
 					let dim = this.getState(device).dim;
 					if (dim === undefined) {
 						dim = 1;
 					}
-					this.send(device, state ? { dim: dim } : { state: 0 }, () => callback(null, state));
-				}, 50);
+					this.send(device, state ? { dim: dim } : { state: 0, dim: undefined }, () => callback(null, state));
+				}, 100);
 			},
 		};
 		exports.capabilities.dim = {
@@ -108,9 +116,10 @@ module.exports = class Dimmer extends Kaku {
 				callback(null, typeof state.dim === 'number' ? state.dim : Number(state.state));
 			},
 			set: (device, state, callback) => {
-				sendLock = true;
+				console.log('set dim', state);
+				sendLock = Date.now();
 				clearTimeout(sendLockTimeout);
-				sendLockTimeout = setTimeout(() => sendLock = false, 100);
+				sendLockTimeout = setTimeout(() => console.log('sendlocktimeout', sendLock = false), 200);
 				this.send(device, { dim: state }, () => callback(null, state));
 			},
 		};

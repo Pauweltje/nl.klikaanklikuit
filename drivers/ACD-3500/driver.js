@@ -5,6 +5,7 @@ const config = {
 		large: '../../433_generator/assets/ACD-200/images/large.png',
 		small: '../../433_generator/assets/ACD-200/images/small.png'
 	},
+	debounceTimeout: 300,
 	driver: '../../433_generator/drivers/kaku/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',
