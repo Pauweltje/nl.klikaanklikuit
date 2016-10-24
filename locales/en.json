@@ -23,7 +23,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor is !{{triggered|not triggered}}"
+					"title": "[Deprecated] Sensor is !{{triggered|not triggered}}"
 				}
 			}
 		},
@@ -188,7 +188,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor detects !{{motion|no motion}}"
+					"title": "[Deprecated] Sensor detects !{{motion|no motion}}"
 				}
 			}
 		},
@@ -204,7 +204,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor detects !{{night|day}}"
+					"title": "[Deprecated] Sensor detects !{{night|day}}"
 				}
 			}
 		},
@@ -283,7 +283,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor has !{{no contact|contact}}"
+					"title": "[Deprecated] Sensor has !{{no contact|contact}}"
 				}
 			}
 		},

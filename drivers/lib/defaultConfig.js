@@ -3,6 +3,73 @@
 module.exports = {
 	driver: './driver',
 	views: {
+		list_devices: {
+			template: './pair/default/list_devices.html',
+			options: {
+				loading_title: {
+					required: false,
+				},
+				loading_footer: {
+					required: false,
+				},
+				title: {
+					required: false,
+				},
+				footer: {
+					required: false,
+				},
+				next: true,
+				previous: true,
+			},
+			append: [
+				'../../assets/433_generator/js/default/list_devices.js',
+				'../../assets/433_generator/css/default/list_devices.css',
+			],
+		},
+		list_devices_singular: {
+			template: './pair/default/list_devices_singular.html',
+			options: {
+				loading_title: {
+					required: false,
+				},
+				loading_footer: {
+					required: false,
+				},
+				title: {
+					required: false,
+				},
+				footer: {
+					required: false,
+				},
+				next: true,
+				previous: true,
+			},
+			append: [
+				'../../assets/433_generator/js/default/list_devices.js',
+				'../../assets/433_generator/css/default/list_devices.css',
+			],
+		},
+		add_devices: {
+			template: './pair/default/add_devices.html',
+			options: {
+				next: false,
+				previous: false,
+			},
+		},
+		choose_slave: {
+			template: './pair/default/choose_slave.html',
+			options: {
+				next: true,
+				previous: true,
+			},
+		},
+		done: {
+			template: './pair/default/done.html',
+			options: {
+				next: false,
+				previous: false,
+			},
+		},
 		generic_info: {
 			template: './pair/info.html',
 			options: {

@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "compatibility": ">=0.10.1",
   "category": [
     "appliances",
@@ -877,7 +877,7 @@
         "id": "AMST-606:state",
         "title": {
           "en": "Sensor has !{{no contact|contact}}",
-          "nl": "Sensor heeft {{geen contact|contact}}"
+          "nl": "Sensor heeft !{{geen contact|contact}}"
         },
         "args": [
           {
@@ -3982,7 +3982,7 @@
         ],
         "interval": 10150,
         "sensitivity": 0.9,
-        "repetitions": 10,
+        "repetitions": 20,
         "minimalLength": 32,
         "maximalLength": 32
       },
@@ -4016,7 +4016,7 @@
         ],
         "interval": 10150,
         "sensitivity": 0.9,
-        "repetitions": 10,
+        "repetitions": 20,
         "minimalLength": 32,
         "maximalLength": 36
       },

@@ -43,7 +43,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor gaat !{{af|niet af}}"
+					"title": "[Verouderd] Sensor gaat !{{af|niet af}}"
 				}
 			}
 		},
@@ -275,7 +275,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor detecteert !{{beweging|geen beweging}}"
+					"title": "[Verouderd] Sensor detecteert !{{beweging|geen beweging}}"
 				}
 			},
 			"name": null
@@ -352,7 +352,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor detecteert !{{nacht|dag}}"
+					"title": "[Verouderd] Sensor detecteert !{{nacht|dag}}"
 				}
 			},
 			"name": null
@@ -370,7 +370,7 @@
 			},
 			"conditions": {
 				"state": {
-					"title": "Sensor heeft {{geen contact|contact}}"
+					"title": "[Verouderd] Sensor heeft !{{geen contact|contact}}"
 				}
 			},
 			"name": null

@@ -2,6 +2,7 @@
 
 const Dimmer = require('./dimmer');
 
+// TODO deprecate?
 module.exports = class NewDimmer extends Dimmer {
 
 	getExports() {

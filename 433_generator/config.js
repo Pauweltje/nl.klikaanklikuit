@@ -45,7 +45,7 @@ module.exports = {
 				],
 				interval: 10150, // Time between two messages
 				sensitivity: 0.9,
-				repetitions: 10,
+				repetitions: 20,
 				minimalLength: 32,
 				maximalLength: 32,
 			},
@@ -65,7 +65,7 @@ module.exports = {
 				],
 				interval: 10150, // Time between two messages
 				sensitivity: 0.9,
-				repetitions: 10,
+				repetitions: 20,
 				minimalLength: 32,
 				maximalLength: 36,
 			},
