@@ -1,7 +1,8 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	capabilities: ['onoff'],
+	debounceTimeout: 300,
+	driver: '../../433_generator/drivers/kaku/kaku.js',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',
@@ -99,7 +100,7 @@ const config = {
 				prepend: [],
 				append: [],
 				title: 'deviceClasses.generic_socket.views.generic_program.title',
-				body: 'deviceClasses.socket.views.generic_program.body',
+				body: 'deviceClasses.simple_socket.views.generic_program.body',
 				svg: '../../433_generator/assets/ACD-200/socket.svg',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
@@ -162,15 +163,14 @@ const config = {
 			id: 'generic_done'
 		}]
 	},
+	capabilities: ['onoff'],
+	id: 'APA2-2300RS',
+	signal: 'kaku',
+	class: 'socket',
 	images: {
 		large: '../../433_generator/assets/APA2-2300RS/images/large.jpg',
 		small: '../../433_generator/assets/APA2-2300RS/images/small.jpg'
 	},
-	id: 'APA2-2300RS',
-	class: 'socket',
-	debounceTimeout: 300,
-	driver: '../../433_generator/drivers/kaku/kaku.js',
-	signal: 'kaku',
 	name: 'devices.APA2-2300RS.name',
 	icon: '../../433_generator/assets/ACD-200/socket.svg'
 };

@@ -94,6 +94,13 @@ module.exports = {
 		simple_socket: {
 			extends: ['socket'],
 			pair: {
+				// Disabled since during testing simple sockets only worked with the address of the shipped remote
+				// viewOrder: [
+				// 	'generic_imitate',
+				// 	'generic_test_switch_2',
+				// 	'generic_choose_slave_2',
+				// 	'generic_done',
+				// ],
 				viewOptions: {
 					generic_program: {
 						body: 'deviceClasses.simple_socket.views.generic_program.body',
@@ -1602,7 +1609,7 @@ $('<div>').append(
 			},
 		},
 		'APA2-2300RS': {
-			extends: 'socket',
+			extends: ['simple_socket'],
 			name: 'devices.APA2-2300RS.name',
 			images: {
 				large: './assets/APA2-2300RS/images/large.jpg',

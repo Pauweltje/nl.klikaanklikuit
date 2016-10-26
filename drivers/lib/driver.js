@@ -311,6 +311,7 @@ module.exports = class Driver extends EventEmitter {
 			}
 
 			this.pairingDevice = device;
+			this.setLastFrame(device, data);
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -324,6 +325,7 @@ module.exports = class Driver extends EventEmitter {
 			}
 
 			this.pairingDevice = device;
+			this.setLastFrame(device, data);
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -337,6 +339,7 @@ module.exports = class Driver extends EventEmitter {
 			}
 
 			this.pairingDevice = device;
+			this.setLastFrame(device, data);
 			this.emit('new_pairing_device', this.pairingDevice);
 			return callback(null, this.pairingDevice);
 		});
@@ -353,6 +356,7 @@ module.exports = class Driver extends EventEmitter {
 			}
 
 			this.pairingDevice = device;
+			this.setLastFrame(device, data);
 			this.emit('new_pairing_device', this.pairingDevice);
 			callback(null, this.pairingDevice);
 		});
@@ -369,8 +373,9 @@ module.exports = class Driver extends EventEmitter {
 				!this.pairingDevice,
 				this.pairingDevice ?
 					Object.assign(
+						{},
 						this.pairingDevice,
-						{ data: Object.assign(this.pairingDevice.data, this.getLastFrame(this.pairingDevice)) || {} }
+						{ data: Object.assign({}, this.pairingDevice.data, this.getLastFrame(this.pairingDevice)) || {} }
 					) :
 					null
 			);

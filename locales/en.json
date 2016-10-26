@@ -86,7 +86,7 @@
 		"simple_socket": {
 			"views": {
 				"generic_program": {
-					"body": "Unplug the socket for a couple of seconds and plug it back in, the light should now be blinking. When it is in pairing mode click next."
+					"body": "Unplug the socket for a couple of seconds and plug it back in, the light should now be blinking. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience diffuculties pairing try to reset your device by putting it in pairing mode and holding the group button on the remote for 5 seconds. All addresses should now be cleared from the socket.)</p>"
 				}
 			}
 		},

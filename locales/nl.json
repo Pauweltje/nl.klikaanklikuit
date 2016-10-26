@@ -140,7 +140,7 @@
 		"simple_socket": {
 			"views": {
 				"generic_program": {
-					"body": "Haal de contactdoos uit het stopcontact voor een aantal seconden en plaats hem terug in het stopcontact. Het rode lampje zou nu moeten knipperen. Wanneer het apparaat in koppelmodus is klik op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door de programmeer knop 10 seconden in te houden tot het lampje gaat knipperen en vervolgens de programmeer nog 1 keer in te drukken.)</p>"
+					"body": "Haal de contactdoos uit het stopcontact voor een aantal seconden en plaats hem terug in het stopcontact. Het rode lampje zou nu moeten knipperen. Wanneer het apparaat in koppelmodus is klik op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door hem in pairing modus te zetten en vervolgens de groep knop op de afstandsbediening 5 seconden in te houden. Alle addressen zullen nu van de contactdoos verwijderd moeten zijn.)</p>"
 				}
 			}
 		},

@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "compatibility": ">=0.10.1",
   "category": [
     "appliances",
@@ -834,8 +834,8 @@
       {
         "id": "APIR-2150:state",
         "title": {
-          "en": "Sensor detects !{{motion|no motion}}",
-          "nl": "Sensor detecteert !{{beweging|geen beweging}}"
+          "en": "[Deprecated] Sensor detects !{{motion|no motion}}",
+          "nl": "[Verouderd] Sensor detecteert !{{beweging|geen beweging}}"
         },
         "args": [
           {
@@ -848,8 +848,8 @@
       {
         "id": "ABST-604:state",
         "title": {
-          "en": "Sensor detects !{{night|day}}",
-          "nl": "Sensor detecteert !{{nacht|dag}}"
+          "en": "[Deprecated] Sensor detects !{{night|day}}",
+          "nl": "[Verouderd] Sensor detecteert !{{nacht|dag}}"
         },
         "args": [
           {
@@ -862,8 +862,8 @@
       {
         "id": "AWST-6000:state",
         "title": {
-          "en": "Sensor detects !{{motion|no motion}}",
-          "nl": "Sensor detecteert !{{beweging|geen beweging}}"
+          "en": "[Deprecated] Sensor detects !{{motion|no motion}}",
+          "nl": "[Verouderd] Sensor detecteert !{{beweging|geen beweging}}"
         },
         "args": [
           {
@@ -876,8 +876,8 @@
       {
         "id": "AMST-606:state",
         "title": {
-          "en": "Sensor has !{{no contact|contact}}",
-          "nl": "Sensor heeft !{{geen contact|contact}}"
+          "en": "[Deprecated] Sensor has !{{no contact|contact}}",
+          "nl": "[Verouderd] Sensor heeft !{{geen contact|contact}}"
         },
         "args": [
           {
