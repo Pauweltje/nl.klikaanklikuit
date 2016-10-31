@@ -58,7 +58,7 @@ module.exports = class Signal extends EventEmitter {
 		this.signal.on('payload_send', this.emit.bind(this, 'payload_send'));
 	}
 
-	register(callback) {
+	register(callback, key) {
 		callback = typeof callback === 'function' ? callback : (() => null);
 		if (registerLock.get(this.signalKey).size === 0) {
 			Homey.log(`[Signal ${this.signalKey}] registered signal`);
@@ -75,7 +75,7 @@ module.exports = class Signal extends EventEmitter {
 				});
 			}));
 		}
-		registerLock.get(this.signalKey).add(this);
+		registerLock.get(this.signalKey).add(key || this);
 		return registerPromises.get(this.signalKey)
 			.then(() => callback(null, true))
 			.catch(err => {
@@ -84,14 +84,16 @@ module.exports = class Signal extends EventEmitter {
 			});
 	}
 
-	unregister() {
-		registerLock.get(this.signalKey).delete(this);
-		if (registerLock.get(this.signalKey).size === 0) {
-			Homey.log(`[Signal ${this.signalKey}] unregistered signal`);
+	unregister(key) {
+		if (registerLock.get(this.signalKey).size > 0) {
+			registerLock.get(this.signalKey).delete(key || this);
+			if (registerLock.get(this.signalKey).size === 0) {
+				Homey.log(`[Signal ${this.signalKey}] unregistered signal`);
 
-			this.signal.unregister(err => {
-				if (err) this.emit('error', err);
-			});
+				this.signal.unregister(err => {
+					if (err) this.emit('error', err);
+				});
+			}
 		}
 	}
 
@@ -108,24 +110,31 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	send(payload) {
-		return new Promise((resolve, reject) => {
-
-			const frameBuffer = new Buffer(payload);
-			this.signal.tx(frameBuffer, (err, result) => { // Send the buffer to device
-				if (err) { // Print error if there is one
-					Homey.log(`[Signal ${this.signalKey}] sending payload failed:`, err);
-					reject(err);
-				} else {
-					Homey.log(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
-					this.signal.emit('payload_send', payload);
-					resolve(result);
-				}
+		let registerLockKey = Math.random();
+		while (registerLock.get(this.signalKey).has(registerLockKey)) {
+			registerLockKey = Math.random();
+		}
+		return this.register(null, registerLockKey).then(() => {
+			return new Promise((resolve, reject) => {
+				const frameBuffer = new Buffer(payload);
+				this.signal.tx(frameBuffer, (err, result) => { // Send the buffer to device
+					if (err) { // Print error if there is one
+						Homey.log(`[Signal ${this.signalKey}] sending payload failed:`, err);
+						reject(err);
+					} else {
+						Homey.log(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
+						this.signal.emit('payload_send', payload);
+						resolve(result);
+					}
+				});
 			});
-		}).catch(err => {
-			Homey.error(`[Signal ${this.signalKey}] tx error:`, err);
-			this.emit('error', err);
-			throw err;
-		});
+		}).then(() => this.unregister(registerLockKey))
+			.catch(err => {
+				this.unregister(registerLockKey);
+				Homey.error(`[Signal ${this.signalKey}] tx error:`, err);
+				this.emit('error', err);
+				throw err;
+			});
 	}
 
 	pauseDebouncers() {

@@ -33,6 +33,7 @@ jQuery(function ($) {
 			if (device && device.data && device.data.id && device.data.id !== data.id) {
 				return;
 			}
+			console.log('Received frame', data);
 			setState(svg, data);
 		});
 

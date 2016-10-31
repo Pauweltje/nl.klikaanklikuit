@@ -35,23 +35,4 @@ module.exports = class WallSwitch extends Remote {
 		super.onActionSend(callback, args);
 	}
 
-	pair(socket) {
-		super.pair(socket);
-
-		socket.on('settings_change', (data, callback) => {
-			if (!this.pairingDevice) {
-				return callback(new Error('433_generator.error.no_device'));
-			}
-			this.emit(
-				'frame',
-				Object.assign(
-					{ id: this.pairingDevice.data.id },
-					this.getSettings(this.pairingDevice),
-					this.getState(this.pairingDevice)
-				)
-			);
-			return callback(null, true);
-		});
-	}
-
 };

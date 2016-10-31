@@ -1,8 +1,8 @@
 <div class="centered-container">
 	<div id="image-container"></div>
 	<div id="body"><span class="content"></span></div>
-	<div class="foundAnimation" id="foundBackground" style="display:none;"></div>
-	<i class="fa fa-check-circle foundAnimation" id="found" style="display:none;" aria-hidden="true"></i>
+	<div class="programAnimation" id="sendProgramSignalBackground" style="display:none;"></div>
+	<i class="loading fa fa-cog fa-spin programAnimation" id="sendProgramSignalSpinner" style="display:none;"></i>
 </div>
 
 <script>
@@ -10,6 +10,7 @@
 	$container.find('#body > span').html(__(options.body));
 	var $imageContainer = $container.find('#image-container');
 	$imageContainer.css('width', options.svgWidth).css('height', options.svgHeight);
+	var $programElems = $container.find('.programAnimation');
 
 	$imageContainer.html(options.svg);
 	$imageContainer.highlight();
@@ -21,12 +22,14 @@
 		$nextButton.parent().append($nextButtonDummy);
 
 		$nextButtonDummy.on('click', function (e) {
+			$programElems.show();
 			Homey.emit('program_send', function (err) {
 				if (err){
 					Homey.alert(__(err.message || err));
 					return;
 				}
 				$nextButtonDummy.siblings('.view-navigation-next').click();
+				$programElems.hide();
 			});
 			e.stopPropagation();
 			return false;
@@ -40,3 +43,25 @@
 		window.found_devices[dataKey] = device;
 	});
 </script>
+
+<style>
+	#sendProgramSignalSpinner {
+		z-index: 2;
+		position: absolute;
+		top: 25vh;
+		left: 38vw;
+		font-size: 9vh;
+		opacity: 1;
+	}
+
+	#sendProgramSignalBackground {
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		background-color: #FFF;
+		opacity: 0.8;
+	}
+</style>

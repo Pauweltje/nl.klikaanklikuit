@@ -6,8 +6,12 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.6.6
+Fixed icon for AWMT-003<br/>
+Fixed bug where rotating/inverting controls in pair wizard could not be undone
+
 ####v2.6.5
-Fixed bug where copying a remote button, going back, and copying a different button would still use the signal from the first button press.
+Fixed bug where copying a remote button, going back, and copying a different button would still use the signal from the first button press.<br/>
 Added instructions to reset the memory of the APA2-2300R and APA3-1500R
 
 ####v2.6.4 
