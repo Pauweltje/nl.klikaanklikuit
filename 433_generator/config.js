@@ -260,8 +260,9 @@ module.exports = {
 $('<div>').append(
 	$('<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">')
 		.on('change', function(){ 
-			Homey.emit('set_settings', { rotated: this.checked ? '180' : '0'}, function(){
-				Homey.emit('frame', { rotated: this.checked ? '180' : '0'});
+			var newSettings = { rotated: this.checked ? '180' : '0'};
+			Homey.emit('set_settings', newSettings, function(){
+				Homey.highlight(newSettings);
 			})
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
@@ -476,8 +477,9 @@ $('<div>').append(
 $('<div>').append(
 	$('<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">')
 		.on('change', function(){ 
-			Homey.emit('set_settings', { rotated: this.checked ? '180' : '0'}, function(){
-				Homey.emit('frame', { rotated: this.checked ? '180' : '0'});
+			var newSettings = { rotated: this.checked ? '180' : '0'};
+			Homey.emit('set_settings', newSettings, function(){
+				Homey.highlight(newSettings);
 			})
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
@@ -493,8 +495,9 @@ $('<div>').append(
 $('<div>').append(
 	$('<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">')
 		.on('change', function(){ 
-			Homey.emit('set_settings', { rotated: this.checked ? '180' : '0'}, function(){
-				Homey.emit('frame', { rotated: this.checked ? '180' : '0'});
+			var newSettings = { rotated: this.checked ? '180' : '0'};
+			Homey.emit('set_settings', newSettings, function(){
+				Homey.highlight(newSettings);
 			})
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')

@@ -24,13 +24,21 @@ jQuery(function ($) {
 		if (svg.parent().is('.no-animation')) {
 			return;
 		}
+
+		Homey.highlight = function(data) {
+			if(data){
+				console.log('Highlight data', data);
+				setState(svg, data);
+			}
+		};
+
 		if (svg.data('highlight-inited')) {
 			return;
 		}
 		svg.data('highlight-inited', true);
 
 		Homey.on('frame', function (data) {
-			if (device && device.data && device.data.id && device.data.id !== data.id) {
+			if (!data || !data.skipIdCheck && device && device.data && device.data.id && device.data.id !== data.id) {
 				return;
 			}
 			console.log('Received frame', data);
