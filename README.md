@@ -6,6 +6,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.6.7
+Fixed animation when clicking the rotate control checkbox for wall switches and blinds
+
 ####v2.6.6
 Fixed icon for AWMT-003<br/>
 Fixed bug where rotating/inverting controls in pair wizard could not be undone
