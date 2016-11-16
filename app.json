@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.6.7",
+  "version": "2.7.0",
   "compatibility": ">=0.10.1",
   "category": [
     "appliances",
@@ -1411,6 +1411,77 @@
         "large": "./433_generator/assets/AWST-6000/images/large.png",
         "small": "./433_generator/assets/AWST-6000/images/small.png"
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings",
+            "nl": "Geadvanceerde instellingen"
+          },
+          "children": [
+            {
+              "id": "timeout",
+              "type": "dropdown",
+              "value": "0",
+              "label": {
+                "en": "Force stop motion after",
+                "nl": "Forceer stop beweging na"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "never",
+                    "nl": "nooit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "1 Minute",
+                    "nl": "1 Minuut"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "2 Minutes",
+                    "nl": "2 Minuten"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "5 Minutes",
+                    "nl": "5 Minuten"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "10 Minutes",
+                    "nl": "10 Minuten"
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "15 Minutes",
+                    "nl": "15 Minuten"
+                  }
+                },
+                {
+                  "id": "30",
+                  "label": {
+                    "en": "30 Minutes",
+                    "nl": "30 Minuten"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "pair": [
         {
           "id": "generic_imitate",
@@ -1442,6 +1513,77 @@
         "large": "./433_generator/assets/APIR-2150/images/large.png",
         "small": "./433_generator/assets/APIR-2150/images/small.png"
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings",
+            "nl": "Geadvanceerde instellingen"
+          },
+          "children": [
+            {
+              "id": "timeout",
+              "type": "dropdown",
+              "value": "0",
+              "label": {
+                "en": "Force stop motion after",
+                "nl": "Forceer stop beweging na"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "never",
+                    "nl": "nooit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "1 Minute",
+                    "nl": "1 Minuut"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "2 Minutes",
+                    "nl": "2 Minuten"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "5 Minutes",
+                    "nl": "5 Minuten"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "10 Minutes",
+                    "nl": "10 Minuten"
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "15 Minutes",
+                    "nl": "15 Minuten"
+                  }
+                },
+                {
+                  "id": "30",
+                  "label": {
+                    "en": "30 Minutes",
+                    "nl": "30 Minuten"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "pair": [
         {
           "id": "generic_imitate",

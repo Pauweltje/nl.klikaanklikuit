@@ -278,7 +278,22 @@
 					"title": "[Verouderd] Sensor detecteert !{{beweging|geen beweging}}"
 				}
 			},
-			"name": null
+			"name": null,
+			"settings": {
+				"groups": {
+					"advanced": "Geadvanceerde instellingen"
+				},
+				"timeout": {
+					"0": "nooit",
+					"1": "1 Minuut",
+					"2": "2 Minuten",
+					"5": "5 Minuten",
+					"10": "10 Minuten",
+					"15": "15 Minuten",
+					"30": "30 Minuten",
+					"label": "Forceer stop beweging na"
+				}
+			}
 		},
 		"PA3-1000R": {
 			"name": null

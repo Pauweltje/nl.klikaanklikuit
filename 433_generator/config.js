@@ -641,6 +641,72 @@ $('<div>').append(
 				},
 			},
 		},
+		motion_sensor: {
+			driver: './drivers/kaku/motion_sensor.js',
+			capabilities: ['alarm_motion'],
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/AWST-6000/pair.svg',
+						title: 'devices.AWST-6000.views.generic_imitate.title',
+					},
+					generic_test_remote: {
+						svg: './assets/AWST-6000/test.svg',
+						title: 'devices.AWST-6000.views.generic_test_remote.title',
+					},
+				},
+			},
+			conditions: [
+				{
+					id: 'state',
+					title: 'devices.AWST-6000.conditions.state.title',
+				},
+			],
+			settings: [
+				{
+					type: 'group',
+					label: 'devices.AWST-6000.settings.groups.advanced',
+					children: [
+						{
+							id: 'timeout',
+							type: 'dropdown',
+							value: '0',
+							label: 'devices.AWST-6000.settings.timeout.label',
+							values: [
+								{
+									id: '0',
+									label: 'devices.AWST-6000.settings.timeout.0',
+								},
+								{
+									id: '1',
+									label: 'devices.AWST-6000.settings.timeout.1',
+								},
+								{
+									id: '2',
+									label: 'devices.AWST-6000.settings.timeout.2',
+								},
+								{
+									id: '5',
+									label: 'devices.AWST-6000.settings.timeout.5',
+								},
+								{
+									id: '10',
+									label: 'devices.AWST-6000.settings.timeout.10',
+								},
+								{
+									id: '15',
+									label: 'devices.AWST-6000.settings.timeout.15',
+								},
+								{
+									id: '30',
+									label: 'devices.AWST-6000.settings.timeout.30',
+								},
+							],
+						},
+					],
+				},
+			],
+		}
 	},
 	devices: {
 		'AYCT-102': {
@@ -954,32 +1020,13 @@ $('<div>').append(
 			},
 		},
 		'AWST-6000': {
-			extends: 'ABST-604',
+			extends: ['ABST-604', 'motion_sensor'],
 			name: 'devices.AWST-6000.name',
 			images: {
 				large: './assets/AWST-6000/images/large.png',
 				small: './assets/AWST-6000/images/small.png',
 			},
 			icon: './assets/AWST-6000/icon.svg',
-			capabilities: ['alarm_motion'],
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
-					},
-					generic_test_remote: {
-						svg: './assets/AWST-6000/test.svg',
-						title: 'devices.AWST-6000.views.generic_test_remote.title',
-					},
-				},
-			},
-			conditions: [
-				{
-					id: 'state',
-					title: 'devices.AWST-6000.conditions.state.title',
-				},
-			],
 		},
 		'APIR-2150': {
 			extends: 'AWST-6000',
@@ -989,15 +1036,6 @@ $('<div>').append(
 				small: './assets/APIR-2150/images/small.png',
 			},
 			icon: './assets/APIR-2150/icon.svg',
-			capabilities: ['alarm_motion'],
-			pair: {
-				viewOptions: {
-					generic_imitate: {
-						svg: './assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
-					},
-				},
-			},
 		},
 		'ABST-604': {
 			extends: 'sensor',

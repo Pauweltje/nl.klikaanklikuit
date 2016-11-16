@@ -62,7 +62,7 @@ const config = {
 	},
 	id: 'AWST-6000',
 	debounceTimeout: 300,
-	driver: '../../433_generator/drivers/kaku/sensor.js',
+	driver: '../../433_generator/drivers/kaku/motion_sensor.js',
 	signal: 'kaku',
 	conditions: [{
 		id: 'AWST-6000:state',
@@ -75,7 +75,39 @@ const config = {
 	}],
 	name: 'devices.AWST-6000.name',
 	icon: '../../433_generator/assets/AWST-6000/icon.svg',
-	capabilities: ['alarm_motion']
+	capabilities: ['alarm_motion'],
+	settings: [{
+		type: 'group',
+		label: 'devices.AWST-6000.settings.groups.advanced',
+		children: [{
+			id: 'timeout',
+			type: 'dropdown',
+			value: '0',
+			label: 'devices.AWST-6000.settings.timeout.label',
+			values: [{
+				id: '0',
+				label: 'devices.AWST-6000.settings.timeout.0'
+			}, {
+				id: '1',
+				label: 'devices.AWST-6000.settings.timeout.1'
+			}, {
+				id: '2',
+				label: 'devices.AWST-6000.settings.timeout.2'
+			}, {
+				id: '5',
+				label: 'devices.AWST-6000.settings.timeout.5'
+			}, {
+				id: '10',
+				label: 'devices.AWST-6000.settings.timeout.10'
+			}, {
+				id: '15',
+				label: 'devices.AWST-6000.settings.timeout.15'
+			}, {
+				id: '30',
+				label: 'devices.AWST-6000.settings.timeout.30'
+			}]
+		}]
+	}]
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);

@@ -6,6 +6,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.7.0
+Added setting to motion sensors to force the state to false after a certain timeout. If you do not experience issues where the motion sensor would not reset to "no motion detected" you should not change this setting.
+
 ####v2.6.7
 Fixed animation when clicking the rotate control checkbox for wall switches and blinds
 

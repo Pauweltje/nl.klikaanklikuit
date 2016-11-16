@@ -190,6 +190,21 @@
 				"state": {
 					"title": "[Deprecated] Sensor detects !{{motion|no motion}}"
 				}
+			},
+			"settings": {
+				"groups": {
+					"advanced": "Advanced settings"
+				},
+				"timeout": {
+					"0": "never",
+					"1": "1 Minute",
+					"2": "2 Minutes",
+					"5": "5 Minutes",
+					"10": "10 Minutes",
+					"15": "15 Minutes",
+					"30": "30 Minutes",
+					"label": "Force stop motion after"
+				}
 			}
 		},
 		"ABST-604": {

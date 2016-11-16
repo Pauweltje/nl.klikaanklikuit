@@ -1,12 +1,43 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	images: {
-		large: '../../433_generator/assets/APIR-2150/images/large.png',
-		small: '../../433_generator/assets/APIR-2150/images/small.png'
-	},
 	debounceTimeout: 300,
-	driver: '../../433_generator/drivers/kaku/sensor.js',
+	driver: '../../433_generator/drivers/kaku/motion_sensor.js',
+	capabilities: ['alarm_motion'],
+	signal: 'kaku',
+	settings: [{
+		type: 'group',
+		label: 'devices.AWST-6000.settings.groups.advanced',
+		children: [{
+			id: 'timeout',
+			type: 'dropdown',
+			value: '0',
+			label: 'devices.AWST-6000.settings.timeout.label',
+			values: [{
+				id: '0',
+				label: 'devices.AWST-6000.settings.timeout.0'
+			}, {
+				id: '1',
+				label: 'devices.AWST-6000.settings.timeout.1'
+			}, {
+				id: '2',
+				label: 'devices.AWST-6000.settings.timeout.2'
+			}, {
+				id: '5',
+				label: 'devices.AWST-6000.settings.timeout.5'
+			}, {
+				id: '10',
+				label: 'devices.AWST-6000.settings.timeout.10'
+			}, {
+				id: '15',
+				label: 'devices.AWST-6000.settings.timeout.15'
+			}, {
+				id: '30',
+				label: 'devices.AWST-6000.settings.timeout.30'
+			}]
+		}]
+	}],
+	icon: '../../433_generator/assets/APIR-2150/icon.svg',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{
@@ -62,7 +93,7 @@ const config = {
 		}]
 	},
 	id: 'APIR-2150',
-	signal: 'kaku',
+	name: 'devices.APIR-2150.name',
 	class: 'sensor',
 	conditions: [{
 		id: 'APIR-2150:state',
@@ -73,9 +104,10 @@ const config = {
 			filter: 'driver_id=APIR-2150'
 		}]
 	}],
-	name: 'devices.APIR-2150.name',
-	capabilities: ['alarm_motion'],
-	icon: '../../433_generator/assets/APIR-2150/icon.svg'
+	images: {
+		large: '../../433_generator/assets/APIR-2150/images/large.png',
+		small: '../../433_generator/assets/APIR-2150/images/small.png'
+	}
 };
 const Driver = require(config.driver);
 const driver = new Driver(config);
