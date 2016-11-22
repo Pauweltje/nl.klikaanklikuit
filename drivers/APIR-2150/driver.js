@@ -7,33 +7,33 @@ const config = {
 	signal: 'kaku',
 	settings: [{
 		type: 'group',
-		label: 'devices.AWST-6000.settings.groups.advanced',
+		label: 'deviceClasses.motion_sensor.settings.groups.advanced',
 		children: [{
 			id: 'timeout',
 			type: 'dropdown',
 			value: '0',
-			label: 'devices.AWST-6000.settings.timeout.label',
+			label: 'deviceClasses.motion_sensor.settings.timeout.label',
 			values: [{
 				id: '0',
-				label: 'devices.AWST-6000.settings.timeout.0'
+				label: 'deviceClasses.motion_sensor.settings.timeout.0'
 			}, {
 				id: '1',
-				label: 'devices.AWST-6000.settings.timeout.1'
+				label: 'deviceClasses.motion_sensor.settings.timeout.1'
 			}, {
 				id: '2',
-				label: 'devices.AWST-6000.settings.timeout.2'
+				label: 'deviceClasses.motion_sensor.settings.timeout.2'
 			}, {
 				id: '5',
-				label: 'devices.AWST-6000.settings.timeout.5'
+				label: 'deviceClasses.motion_sensor.settings.timeout.5'
 			}, {
 				id: '10',
-				label: 'devices.AWST-6000.settings.timeout.10'
+				label: 'deviceClasses.motion_sensor.settings.timeout.10'
 			}, {
 				id: '15',
-				label: 'devices.AWST-6000.settings.timeout.15'
+				label: 'deviceClasses.motion_sensor.settings.timeout.15'
 			}, {
 				id: '30',
-				label: 'devices.AWST-6000.settings.timeout.30'
+				label: 'deviceClasses.motion_sensor.settings.timeout.30'
 			}]
 		}]
 	}],
@@ -47,7 +47,7 @@ const config = {
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/AWST-6000/pair.svg',
-				title: 'devices.AWST-6000.views.generic_imitate.title',
+				title: 'deviceClasses.motion_sensor.views.generic_imitate.title',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
 				initWithDeviceData: false,
@@ -68,7 +68,7 @@ const config = {
 				prepend: [],
 				append: [],
 				svg: '../../433_generator/assets/AWST-6000/test.svg',
-				title: 'devices.AWST-6000.views.generic_test_remote.title',
+				title: 'deviceClasses.motion_sensor.views.generic_test_remote.title',
 				svgWidth: '80vw',
 				svgHeight: '70vh',
 				previous: true,
@@ -97,7 +97,7 @@ const config = {
 	class: 'sensor',
 	conditions: [{
 		id: 'APIR-2150:state',
-		title: 'devices.AWST-6000.conditions.state.title',
+		title: 'deviceClasses.motion_sensor.conditions.state.title',
 		args: [{
 			name: 'device',
 			type: 'device',

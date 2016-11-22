@@ -12,7 +12,7 @@
 	$imageContainer.html(options.svg);
 	Homey.emit('test', function (err, device) {
 		if (err) {
-			Homey.alert(__(err.message || err));
+			Homey.alert(err.message && err.message.indexOf(' ') === -1 && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 			return;
 		}
 

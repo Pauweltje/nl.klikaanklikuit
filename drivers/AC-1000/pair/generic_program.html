@@ -79,7 +79,7 @@ function nextView(){
 			$programElems.show();
 			Homey.emit('program_send', function (err) {
 				if (err){
-					Homey.alert(__(err.message || err));
+					Homey.alert(err.message && err.message.indexOf(' ') === -1 && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 					return;
 				}
 				$nextButtonDummy.siblings('.view-navigation-next').click();

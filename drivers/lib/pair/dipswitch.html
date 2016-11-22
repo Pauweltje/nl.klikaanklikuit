@@ -25,12 +25,12 @@
 		$nextButtonDummy.on('click', function (e) {
 			Homey.emit('assert_device', function (err, device) {
 				if (err){
-					Homey.alert(__(err.message || err));
+					Homey.alert(err.message && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 					return;
 				}
 				Homey.emit('program_send', function (err) {
 					if (err){
-						Homey.alert(__(err.message || err));
+						Homey.alert(err.message && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 						return;
 					}
 					const dataKey = JSON.stringify(device.data);

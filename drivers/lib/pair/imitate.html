@@ -21,7 +21,7 @@
 			Homey.emit('set_device', data, function (err, device) {
 				if (err) {
 					if((err.message || err) !== '433_generator.error.invalid_device') {
-						Homey.alert(__(err.message || err));
+						Homey.alert(err.message && err.message.indexOf(' ') === -1 && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 					}
 					found = false;
 					return;

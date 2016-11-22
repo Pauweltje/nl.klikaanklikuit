@@ -115,6 +115,36 @@
 				}
 			}
 		},
+		"motion_sensor": {
+			"views": {
+				"generic_imitate": {
+					"title": "Pair your motion sensor"
+				},
+				"generic_test_remote": {
+					"title": "Test your motion sensor"
+				}
+			},
+			"conditions": {
+				"state": {
+					"title": "[Deprecated] Sensor detects !{{motion|no motion}}"
+				}
+			},
+			"settings": {
+				"groups": {
+					"advanced": "Advanced settings"
+				},
+				"timeout": {
+					"0": "never",
+					"1": "1 Minute",
+					"2": "2 Minutes",
+					"5": "5 Minutes",
+					"10": "10 Minutes",
+					"15": "15 Minutes",
+					"30": "30 Minutes",
+					"label": "Force stop motion after"
+				}
+			}
+		},
 		"generic_switch": {
 			"views": {
 				"generic_choice": {
@@ -177,35 +207,7 @@
 			"name": "AWST-8800"
 		},
 		"AWST-6000": {
-			"name": "AWST-6000",
-			"views": {
-				"generic_imitate": {
-					"title": "Pair your motion sensor"
-				},
-				"generic_test_remote": {
-					"title": "Test your motion sensor"
-				}
-			},
-			"conditions": {
-				"state": {
-					"title": "[Deprecated] Sensor detects !{{motion|no motion}}"
-				}
-			},
-			"settings": {
-				"groups": {
-					"advanced": "Advanced settings"
-				},
-				"timeout": {
-					"0": "never",
-					"1": "1 Minute",
-					"2": "2 Minutes",
-					"5": "5 Minutes",
-					"10": "10 Minutes",
-					"15": "15 Minutes",
-					"30": "30 Minutes",
-					"label": "Force stop motion after"
-				}
-			}
+			"name": "AWST-6000"
 		},
 		"ABST-604": {
 			"name": "ABST-604",

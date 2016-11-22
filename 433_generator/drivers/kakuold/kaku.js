@@ -18,11 +18,11 @@ module.exports = class Kaku extends DefaultDriver {
 
 	codewheelsToData(codewheelIndexes) {
 		if (codewheelIndexes.length === 2) {
-			const unitWithChannel = `000${codewheelIndexes[1].toString(2)}`.slice(-4);
+			const unitWithChannel = `000${codewheelIndexes[1].toString(2)}`.slice(-4).split('').reverse().join('');
 			const data = {
-				address: `000${codewheelIndexes[0].toString(2)}`.slice(-4),
-				channel: unitWithChannel.substr(0, 2),
-				unit: unitWithChannel.substr(2, 2),
+				address: `${codewheelIndexes[0].toString(2).split('').reverse().join('')}000`.slice(0, 4),
+				channel: unitWithChannel.substr(2, 2),
+				unit: unitWithChannel.substr(0, 2),
 				undef: [0, 1, 1],
 				state: 0,
 			};
@@ -30,9 +30,9 @@ module.exports = class Kaku extends DefaultDriver {
 			return data;
 		} else if (codewheelIndexes.length === 1) {
 			const data = {
-				address: `000${Math.floor(codewheelIndexes[0] / 3).toString(2)}`.slice(-4),
+				address: `${Math.floor(codewheelIndexes[0] / 3).toString(2)}000`.slice(0, 4),
 				channel: '00',
-				unit: `0${Math.floor(codewheelIndexes[0] % 3).toString(2)}`.slice(-2),
+				unit: `${Math.floor(codewheelIndexes[0] % 3).toString(2)}0`.slice(0, 2),
 				undef: [0, 1, 1],
 				state: 0,
 			};

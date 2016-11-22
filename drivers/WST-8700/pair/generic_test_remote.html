@@ -60,7 +60,7 @@ function nextView(){
 	$imageContainer.html(options.svg);
 	Homey.emit('test', function(err, device){
 		if(err){
-			Homey.alert(__(err.message || err));
+			Homey.alert(err.message && err.message.indexOf(' ') === -1 && __(err.message) !== err.message ? __(err.message) : JSON.stringify(err));
 			return;
 		}
 		$imageContainer.highlight(device, options.initWithDeviceData ? device.data : false);
@@ -75,7 +75,7 @@ $('<div>').append(
 			var newSettings = { rotated: this.checked ? '180' : '0'};
 			Homey.emit('set_settings', newSettings, function(){
 				Homey.highlight(newSettings);
-			})
+			});
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
 		.html(__('deviceClasses.wall_switch.settings.rotated.label'))

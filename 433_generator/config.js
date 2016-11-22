@@ -263,7 +263,7 @@ $('<div>').append(
 			var newSettings = { rotated: this.checked ? '180' : '0'};
 			Homey.emit('set_settings', newSettings, function(){
 				Homey.highlight(newSettings);
-			})
+			});
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
 		.html(__('deviceClasses.wall_switch.settings.rotated.label'))
@@ -480,7 +480,7 @@ $('<div>').append(
 			var newSettings = { rotated: this.checked ? '180' : '0'};
 			Homey.emit('set_settings', newSettings, function(){
 				Homey.highlight(newSettings);
-			})
+			});
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
 		.html(__('deviceClasses.blinds.settings.rotated.label'))
@@ -498,7 +498,7 @@ $('<div>').append(
 			var newSettings = { rotated: this.checked ? '180' : '0'};
 			Homey.emit('set_settings', newSettings, function(){
 				Homey.highlight(newSettings);
-			})
+			});
 		}),
 	$('<label for="invert-checkbox" style="padding: 0 1em;">')
 		.html(__('deviceClasses.blinds.settings.rotated.label'))
@@ -648,65 +648,65 @@ $('<div>').append(
 				viewOptions: {
 					generic_imitate: {
 						svg: './assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
+						title: 'deviceClasses.motion_sensor.views.generic_imitate.title',
 					},
 					generic_test_remote: {
 						svg: './assets/AWST-6000/test.svg',
-						title: 'devices.AWST-6000.views.generic_test_remote.title',
+						title: 'deviceClasses.motion_sensor.views.generic_test_remote.title',
 					},
 				},
 			},
 			conditions: [
 				{
 					id: 'state',
-					title: 'devices.AWST-6000.conditions.state.title',
+					title: 'deviceClasses.motion_sensor.conditions.state.title',
 				},
 			],
 			settings: [
 				{
 					type: 'group',
-					label: 'devices.AWST-6000.settings.groups.advanced',
+					label: 'deviceClasses.motion_sensor.settings.groups.advanced',
 					children: [
 						{
 							id: 'timeout',
 							type: 'dropdown',
 							value: '0',
-							label: 'devices.AWST-6000.settings.timeout.label',
+							label: 'deviceClasses.motion_sensor.settings.timeout.label',
 							values: [
 								{
 									id: '0',
-									label: 'devices.AWST-6000.settings.timeout.0',
+									label: 'deviceClasses.motion_sensor.settings.timeout.0',
 								},
 								{
 									id: '1',
-									label: 'devices.AWST-6000.settings.timeout.1',
+									label: 'deviceClasses.motion_sensor.settings.timeout.1',
 								},
 								{
 									id: '2',
-									label: 'devices.AWST-6000.settings.timeout.2',
+									label: 'deviceClasses.motion_sensor.settings.timeout.2',
 								},
 								{
 									id: '5',
-									label: 'devices.AWST-6000.settings.timeout.5',
+									label: 'deviceClasses.motion_sensor.settings.timeout.5',
 								},
 								{
 									id: '10',
-									label: 'devices.AWST-6000.settings.timeout.10',
+									label: 'deviceClasses.motion_sensor.settings.timeout.10',
 								},
 								{
 									id: '15',
-									label: 'devices.AWST-6000.settings.timeout.15',
+									label: 'deviceClasses.motion_sensor.settings.timeout.15',
 								},
 								{
 									id: '30',
-									label: 'devices.AWST-6000.settings.timeout.30',
+									label: 'deviceClasses.motion_sensor.settings.timeout.30',
 								},
 							],
 						},
 					],
 				},
 			],
-		}
+		},
 	},
 	devices: {
 		'AYCT-102': {
@@ -1845,12 +1845,10 @@ $('<div>').append(
 						svg: './assets/YCT-102/pair.svg',
 					},
 					generic_test_switch: {
-						svg: './assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
+						svg: './assets/SUN-500/test.svg',
 					},
 					generic_test_switch_2: {
-						svg: './assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
+						svg: './assets/SUN-500/test.svg',
 					},
 				},
 			},

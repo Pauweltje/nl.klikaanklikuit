@@ -65,13 +65,13 @@ module.exports = {
 						sendToggleOnInit: false,
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch_2"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch_2"] .centered-container > #image-container\')'
 						}],
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch_2.body',
-						svg: '../433_generator/assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
+						svg: '../433_generator/assets/SUN-500/test.svg',
 						svgWidth: '80vw',
+						svgHeight: '70vh',
 						previous: true
 					},
 					prepend: ['./../assets/433_generator/css/styles.css',
@@ -127,12 +127,12 @@ module.exports = {
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch.body',
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch"] .centered-container > #image-container\')'
 						}],
 						prepend: [],
-						svg: '../433_generator/assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
+						svg: '../433_generator/assets/SUN-500/test.svg',
 						svgWidth: '80vw',
+						svgHeight: '70vh',
 						initWithDeviceData: true,
 						previous: true,
 						next: true,
@@ -601,7 +601,7 @@ module.exports = {
 						sendToggleOnInit: false,
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch_2"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch_2"] .centered-container > #image-container\')'
 						}],
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch_2.body',
@@ -648,7 +648,7 @@ module.exports = {
 						title: 'deviceClasses.blinds.views.generic_test_switch.title',
 						body: 'deviceClasses.blinds.views.generic_test_switch.body',
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.blinds.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_switch"] .centered-container > #image-container\')'
 						}],
 						prepend: [],
 						svg: '../433_generator/assets/ASUN-650/test.svg',
@@ -922,7 +922,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/AWMT-003/switch.svg',
 						svgWidth: '80vw',
@@ -1606,33 +1606,33 @@ module.exports = {
 			signal: 'kaku',
 			settings: [{
 				type: 'group',
-				label: 'devices.AWST-6000.settings.groups.advanced',
+				label: 'deviceClasses.motion_sensor.settings.groups.advanced',
 				children: [{
 					id: 'timeout',
 					type: 'dropdown',
 					value: '0',
-					label: 'devices.AWST-6000.settings.timeout.label',
+					label: 'deviceClasses.motion_sensor.settings.timeout.label',
 					values: [{
 						id: '0',
-						label: 'devices.AWST-6000.settings.timeout.0'
+						label: 'deviceClasses.motion_sensor.settings.timeout.0'
 					}, {
 						id: '1',
-						label: 'devices.AWST-6000.settings.timeout.1'
+						label: 'deviceClasses.motion_sensor.settings.timeout.1'
 					}, {
 						id: '2',
-						label: 'devices.AWST-6000.settings.timeout.2'
+						label: 'deviceClasses.motion_sensor.settings.timeout.2'
 					}, {
 						id: '5',
-						label: 'devices.AWST-6000.settings.timeout.5'
+						label: 'deviceClasses.motion_sensor.settings.timeout.5'
 					}, {
 						id: '10',
-						label: 'devices.AWST-6000.settings.timeout.10'
+						label: 'deviceClasses.motion_sensor.settings.timeout.10'
 					}, {
 						id: '15',
-						label: 'devices.AWST-6000.settings.timeout.15'
+						label: 'deviceClasses.motion_sensor.settings.timeout.15'
 					}, {
 						id: '30',
-						label: 'devices.AWST-6000.settings.timeout.30'
+						label: 'deviceClasses.motion_sensor.settings.timeout.30'
 					}]
 				}]
 			}],
@@ -1646,7 +1646,7 @@ module.exports = {
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
+						title: 'deviceClasses.motion_sensor.views.generic_imitate.title',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -1667,7 +1667,7 @@ module.exports = {
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AWST-6000/test.svg',
-						title: 'devices.AWST-6000.views.generic_test_remote.title',
+						title: 'deviceClasses.motion_sensor.views.generic_test_remote.title',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						previous: true,
@@ -1696,7 +1696,7 @@ module.exports = {
 			class: 'sensor',
 			conditions: [{
 				id: 'APIR-2150:state',
-				title: 'devices.AWST-6000.conditions.state.title',
+				title: 'deviceClasses.motion_sensor.conditions.state.title',
 				args: [{
 					name: 'device',
 					type: 'device',
@@ -1826,7 +1826,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/WST-8800/switch.svg',
 						svgWidth: '80vw',
@@ -3606,7 +3606,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/AWST-8802/switch.svg',
 						svgWidth: '80vw',
@@ -3722,7 +3722,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/WST-8700/switch.svg',
 						svgWidth: '80vw',
@@ -4108,7 +4108,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/AWMT-003/switch.svg',
 						svgWidth: '80vw',
@@ -4816,7 +4816,7 @@ module.exports = {
 						body: 'deviceClasses.generic_wall_switch.views.generic_test_remote.body',
 						prepend: [],
 						append: [{
-							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t})\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
+							scripts: '\n$(\'<div>\').append(\n\t$(\'<input id="invert-checkbox" type="checkbox" style="position: relative; bottom: 1px; vertical-align: middle;">\')\n\t\t.on(\'change\', function(){ \n\t\t\tvar newSettings = { rotated: this.checked ? \'180\' : \'0\'};\n\t\t\tHomey.emit(\'set_settings\', newSettings, function(){\n\t\t\t\tHomey.highlight(newSettings);\n\t\t\t});\n\t\t}),\n\t$(\'<label for="invert-checkbox" style="padding: 0 1em;">\')\n\t\t.html(__(\'deviceClasses.wall_switch.settings.rotated.label\'))\n).insertAfter(\'[data-id="generic_test_remote"] .centered-container > #image-container\')'
 						}],
 						svg: '../433_generator/assets/AWST-8800/switch.svg',
 						svgWidth: '80vw',
@@ -4900,7 +4900,7 @@ module.exports = {
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AWST-6000/pair.svg',
-						title: 'devices.AWST-6000.views.generic_imitate.title',
+						title: 'deviceClasses.motion_sensor.views.generic_imitate.title',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						initWithDeviceData: false,
@@ -4921,7 +4921,7 @@ module.exports = {
 						prepend: [],
 						append: [],
 						svg: '../433_generator/assets/AWST-6000/test.svg',
-						title: 'devices.AWST-6000.views.generic_test_remote.title',
+						title: 'deviceClasses.motion_sensor.views.generic_test_remote.title',
 						svgWidth: '80vw',
 						svgHeight: '70vh',
 						previous: true,
@@ -4955,7 +4955,7 @@ module.exports = {
 			signal: 'kaku',
 			conditions: [{
 				id: 'AWST-6000:state',
-				title: 'devices.AWST-6000.conditions.state.title',
+				title: 'deviceClasses.motion_sensor.conditions.state.title',
 				args: [{
 					name: 'device',
 					type: 'device',
@@ -4967,33 +4967,33 @@ module.exports = {
 			capabilities: ['alarm_motion'],
 			settings: [{
 				type: 'group',
-				label: 'devices.AWST-6000.settings.groups.advanced',
+				label: 'deviceClasses.motion_sensor.settings.groups.advanced',
 				children: [{
 					id: 'timeout',
 					type: 'dropdown',
 					value: '0',
-					label: 'devices.AWST-6000.settings.timeout.label',
+					label: 'deviceClasses.motion_sensor.settings.timeout.label',
 					values: [{
 						id: '0',
-						label: 'devices.AWST-6000.settings.timeout.0'
+						label: 'deviceClasses.motion_sensor.settings.timeout.0'
 					}, {
 						id: '1',
-						label: 'devices.AWST-6000.settings.timeout.1'
+						label: 'deviceClasses.motion_sensor.settings.timeout.1'
 					}, {
 						id: '2',
-						label: 'devices.AWST-6000.settings.timeout.2'
+						label: 'deviceClasses.motion_sensor.settings.timeout.2'
 					}, {
 						id: '5',
-						label: 'devices.AWST-6000.settings.timeout.5'
+						label: 'deviceClasses.motion_sensor.settings.timeout.5'
 					}, {
 						id: '10',
-						label: 'devices.AWST-6000.settings.timeout.10'
+						label: 'deviceClasses.motion_sensor.settings.timeout.10'
 					}, {
 						id: '15',
-						label: 'devices.AWST-6000.settings.timeout.15'
+						label: 'deviceClasses.motion_sensor.settings.timeout.15'
 					}, {
 						id: '30',
-						label: 'devices.AWST-6000.settings.timeout.30'
+						label: 'deviceClasses.motion_sensor.settings.timeout.30'
 					}]
 				}]
 			}]
