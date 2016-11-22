@@ -1807,11 +1807,9 @@ $('<div>').append(
 					},
 					generic_test_switch: {
 						svg: './assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
 					},
 					generic_test_switch_2: {
 						svg: './assets/ASUN-650/test.svg',
-						svgHeight: '60vh',
 					},
 				},
 			},
@@ -1845,10 +1843,10 @@ $('<div>').append(
 						svg: './assets/YCT-102/pair.svg',
 					},
 					generic_test_switch: {
-						svg: './assets/SUN-500/test.svg',
+						svg: './assets/ASUN-650/test.svg',
 					},
 					generic_test_switch_2: {
-						svg: './assets/SUN-500/test.svg',
+						svg: './assets/ASUN-650/test.svg',
 					},
 				},
 			},
