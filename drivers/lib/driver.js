@@ -26,6 +26,7 @@ module.exports = class Driver extends EventEmitter {
 		this.realtime = (device, cap, val) => this.getDevice(device) && exports.realtime(this.getDevice(device), cap, val);
 		this.setAvailable = device => this.getDevice(device) && exports.setAvailable(this.getDevice(device));
 		this.setUnavailable = (device, message) => this.getDevice(device) && exports.setUnavailable(this.getDevice(device), message);
+		this.getName = (device, callback) => this.getDevice(device) && exports.getName(this.getDevice(device), callback);
 		this.getSettingsExt = (device, callback) => (this.getDevice(device) &&
 			exports.getSettings(this.getDevice(device), callback)
 		) || (callback && callback(new Error('device id does not exist')));
@@ -387,7 +388,6 @@ module.exports = class Driver extends EventEmitter {
 		});
 
 		socket.on('send', (data, callback) => {
-			console.log('sending', typeof data, data, (this.pairingDevice && this.pairingDevice.data));
 			if (this.pairingDevice && this.pairingDevice.data) {
 				this.send(this.pairingDevice.data, data).then(callback.bind(false)).catch(callback);
 			}
@@ -485,7 +485,7 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	handleReceivedTrigger(device, data) {
-		if (data.id === device.id) { // TODO check if performance increase // FIXME did it work?
+		if (data.id === device.id) {
 			Homey.manager('flow').triggerDevice(`${this.config.id}:received`, null, data, this.getDevice(device), err => {
 				if (err) Homey.error('Trigger error', err);
 			});
@@ -577,7 +577,7 @@ module.exports = class Driver extends EventEmitter {
 				callback(null, newSettings);
 			}
 		} else if (id) {
-			this.setSettingsExt(this.getDevice(device), settings, callback);
+			this.setSettingsExt(device, Object.assign(this.settings.get(id) || {}, settings), callback);
 		}
 		this.settings.set(id, Object.assign(this.settings.get(id) || {}, settings));
 	}

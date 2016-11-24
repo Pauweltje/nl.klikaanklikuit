@@ -33,7 +33,7 @@
 					"body": "Press the button that is paired to your socket.<p class=\"notice\">(Note. Homey only supports transmitters of which the product code starts with an A. If you use an old remote for this device please let Homey generate a new signal for the device)</p>"
 				},
 				"generic_program": {
-					"body": "Press and hold the program button on your socket for a few seconds, the light on your socket should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
+					"body": "Press the program button on your socket, the light on your socket should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				}
 			}
 		},
@@ -97,7 +97,7 @@
 				},
 				"generic_program": {
 					"title": "Put the device in pairing mode",
-					"body": "Press and hold the program button on your device for a few seconds to put it in pairing mode, then click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
+					"body": "Press the program button on your device to put it in pairing mode, then click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your device",
@@ -253,7 +253,7 @@
 					"body": "Press the button that is paired to your fitting."
 				},
 				"generic_program": {
-					"body": "Press and hold the program button on your fitting for a few seconds, the light on your fitting should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
+					"body": "Press the program button on your fitting, the light on your fitting should start blinking when you release the button. When it is in pairing mode click next.<p class=\"notice\">(Note. If you experience difficulties pairing try to reset your device by holding the program button for 10 seconds when it is blinking and then pressing the program button once.)</p>"
 				},
 				"generic_test_switch": {
 					"title": "Test your fitting",

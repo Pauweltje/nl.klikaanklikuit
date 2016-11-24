@@ -74,14 +74,14 @@
 				},
 				"generic_program": {
 					"title": "Zet de contactdoos in programmeer modus\u0000",
-					"body": "Houd de programmeer knop van je contactdoos een paar seconden ingehouden om hem in programeer modus te zetten. Klik daarna op volgende.\u0000"
+					"body": "Druk op de programmeer knop van je contactdoos om hem in programeer modus te zetten. Klik daarna op volgende.\u0000"
 				}
 			}
 		},
 		"socket": {
 			"views": {
 				"generic_program": {
-					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden, het lampje op de contactdoos moet gaan knipperen wanneer de knop losgelaten wordt. Klik daarna op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door de programmeer knop 10 seconden in te houden tot het lampje gaat knipperen en vervolgens de programmeer nog 1 keer in te drukken.)</p>"
+					"body": "Druk op de programmeer knop, het lampje op de contactdoos moet gaan knipperen wanneer de knop losgelaten wordt. Klik daarna op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door de programmeer knop 10 seconden in te houden tot het lampje gaat knipperen en vervolgens de programmeer nog 1 keer in te drukken.)</p>"
 				},
 				"generic_imitate": {
 					"body": "Druk op de knop van de afstandsbediening waarmee het apparaat gekoppeld is.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
@@ -98,7 +98,7 @@
 					"body": "Gebruik je afstandsbediening of de bovenstaande knoppen om de zonnewering te testen. Klik op volgende om verder te gaan."
 				},
 				"generic_program": {
-					"body": "Houd de programmeer knop ingedrukt voor een aantal seconden. Klik daarna op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door de programmeer knop 10 seconden in te houden tot het lampje gaat knipperen en vervolgens de programmeer nog 1 keer in te drukken.)</p>"
+					"body": "Druk op de programmeer knop van de zonnewering. Klik daarna op volgende.<p class=\"notice\">(Let op. Als je problemen ondervind bij het koppelen van je apparaat probeer het apparaat te resetten door de programmeer knop 10 seconden in te houden tot het lampje gaat knipperen en vervolgens de programmeer nog 1 keer in te drukken.)</p>"
 				},
 				"generic_imitate": {
 					"body": "Druk op de omhoog/omlaag knop van de afstandsbediening waarmee de zonnewering gekoppeld is.<p class=\"notice\">(Let op. Homey ondersteund voor dit apparaat alleen afstandsbedieningen waarvan de productcode begint met een A. Als u een oude afstandsbediening gebruikt laat Homey dan zelf een nieuw signaal genereren voor het apparaat)</p>"
@@ -168,7 +168,7 @@
 				},
 				"generic_program": {
 					"title": "Zet het apparaat in programmeer modus",
-					"body": "Houd de programmeer knop van het apparaat een paar seconden ingehouden om hem in programeer modus te zetten. Klik daarna op volgende."
+					"body": "Druk op de programmeer knop van het apparaat om hem in programeer modus te zetten. Klik daarna op volgende."
 				}
 			}
 		},
@@ -324,7 +324,7 @@
 					"body": "Druk op de knop die gekoppeld is met de fitting."
 				},
 				"generic_program": {
-					"body": "Houd de programmeer knop van de fitting ingedrukt voor een paar seconden. Het lampje op de fitting hoort te gaan knipperen wanneer het knopje losgelaten wordt. Klik op volgende wanneer de fitting in programmeer modus zit."
+					"body": "Druk op de programmeer knop van de fitting. Het lampje op de fitting hoort te gaan knipperen wanneer het knopje losgelaten wordt. Klik op volgende wanneer de fitting in programmeer modus zit."
 				},
 				"generic_test_switch": {
 					"title": "Test de fitting",

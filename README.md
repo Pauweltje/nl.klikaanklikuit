@@ -6,6 +6,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.7.2
+Updated translation strings to instruct the user to just press the program button instead of holding it to put the device in programming mode.
+
 ####v2.7.0
 Added setting to motion sensors to force the state to false after a certain timeout. If you do not experience issues where the motion sensor would not reset to "no motion detected" you should not change this setting.
 
