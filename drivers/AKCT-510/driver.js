@@ -2,6 +2,10 @@
 /* eslint-disable */
 const config = {
 	debounceTimeout: 300,
+	images: {
+		large: '../../433_generator/assets/AKCT-510/images/large.jpg',
+		small: '../../433_generator/assets/AKCT-510/images/small.jpg'
+	},
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 		views: [{
@@ -48,17 +52,13 @@ const config = {
 			template: '../lib/pair/done.html',
 			options: {
 				title: 'views.generic_done.title',
-				prepend: [],
-				append: []
+				prepend: '',
+				append: ''
 			},
 			prepend: [],
 			append: [],
 			id: 'generic_done'
 		}]
-	},
-	images: {
-		large: '../../433_generator/assets/AKCT-510/images/large.jpg',
-		small: '../../433_generator/assets/AKCT-510/images/small.jpg'
 	},
 	id: 'AKCT-510',
 	driver: '../../433_generator/drivers/kaku/kaku.js',

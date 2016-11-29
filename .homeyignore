@@ -2,3 +2,4 @@
 .git
 *@backup*
 433_generator/assets/*/images/
+env.json

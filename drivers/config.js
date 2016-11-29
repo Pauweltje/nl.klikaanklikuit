@@ -151,8 +151,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -347,8 +347,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -519,8 +519,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -672,8 +672,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -841,8 +841,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -941,8 +941,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1134,8 +1134,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1306,8 +1306,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1479,8 +1479,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1548,8 +1548,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1683,8 +1683,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -1710,6 +1710,10 @@ module.exports = {
 		},
 		'KCT-510': {
 			debounceTimeout: 300,
+			images: {
+				large: '../433_generator/assets/KCT-510/images/large.jpg',
+				small: '../433_generator/assets/KCT-510/images/small.jpg'
+			},
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -1756,17 +1760,13 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
 					id: 'generic_done'
 				}]
-			},
-			images: {
-				large: '../433_generator/assets/KCT-510/images/large.jpg',
-				small: '../433_generator/assets/KCT-510/images/small.jpg'
 			},
 			id: 'KCT-510',
 			driver: '../433_generator/drivers/kakuold/kaku.js',
@@ -1845,8 +1845,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2055,8 +2055,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2229,8 +2229,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2402,8 +2402,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2561,8 +2561,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2737,8 +2737,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -2949,8 +2949,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -3120,8 +3120,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -3141,6 +3141,10 @@ module.exports = {
 		},
 		'AKCT-510': {
 			debounceTimeout: 300,
+			images: {
+				large: '../433_generator/assets/AKCT-510/images/large.jpg',
+				small: '../433_generator/assets/AKCT-510/images/small.jpg'
+			},
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -3187,17 +3191,13 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
 					id: 'generic_done'
 				}]
-			},
-			images: {
-				large: '../433_generator/assets/AKCT-510/images/large.jpg',
-				small: '../433_generator/assets/AKCT-510/images/small.jpg'
 			},
 			id: 'AKCT-510',
 			driver: '../433_generator/drivers/kaku/kaku.js',
@@ -3379,8 +3379,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -3554,8 +3554,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -3577,6 +3577,10 @@ module.exports = {
 		},
 		'AWST-8802': {
 			debounceTimeout: 300,
+			images: {
+				large: '../433_generator/assets/AWST-8802/images/large.jpg',
+				small: '../433_generator/assets/AWST-8802/images/small.jpg'
+			},
 			pair: {
 				viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],
 				views: [{
@@ -3625,17 +3629,13 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
 					id: 'generic_done'
 				}]
-			},
-			images: {
-				large: '../433_generator/assets/AWST-8802/images/large.jpg',
-				small: '../433_generator/assets/AWST-8802/images/small.jpg'
 			},
 			id: 'AWST-8802',
 			driver: '../433_generator/drivers/kaku/wall_switch.js',
@@ -3741,8 +3741,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -3950,8 +3950,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4017,8 +4017,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4127,8 +4127,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4315,8 +4315,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4489,8 +4489,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4557,8 +4557,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4764,8 +4764,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4835,8 +4835,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -4937,8 +4937,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5167,8 +5167,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5235,8 +5235,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5334,8 +5334,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5539,8 +5539,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5606,8 +5606,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -5833,8 +5833,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6022,8 +6022,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6172,8 +6172,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6349,8 +6349,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6522,8 +6522,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6590,8 +6590,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6693,8 +6693,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -6875,8 +6875,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -7047,8 +7047,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -7221,8 +7221,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],
@@ -7396,8 +7396,8 @@ module.exports = {
 					template: './lib/pair/done.html',
 					options: {
 						title: 'views.generic_done.title',
-						prepend: [],
-						append: []
+						prepend: '',
+						append: ''
 					},
 					prepend: [],
 					append: [],

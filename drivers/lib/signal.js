@@ -8,8 +8,20 @@ const registerLock = new Map();
 const registerPromises = new Map();
 
 module.exports = class Signal extends EventEmitter {
-	constructor(signalKey, parser, debounceTime) {
+	constructor(signalKey, parser, debounceTime, logger) {
 		super();
+		this.logger = logger || {
+				log: (() => null),
+				silly: (() => null),
+				verbose: (() => null),
+				info: (() => null),
+				warn: (() => null),
+				error: (() => null),
+			};
+		this.logger.silly(
+			'Signal:constructor(signalKey, parser, debounceTime, logger)',
+			signalKey, parser, debounceTime, logger
+		);
 		this.payloadParser = parser || (payload => ({ payload: SignalManager.bitArrayToString(payload) }));
 		this.debounceTimeout = Number(debounceTime) || 500;
 		this.signalKey = signalKey;
@@ -31,8 +43,10 @@ module.exports = class Signal extends EventEmitter {
 			this.signal.debouncers.set(this.debounceTimeout, new Map());
 			this.debounceBuffer = this.signal.debouncers.get(this.debounceTimeout);
 			this.signal.on('payload', payload => {
+				const payloadStr = payload.join('');
+				this.logger.debug(`[Signal ${signalKey} ~${this.debounceTimeout}] raw payload:`, payloadStr);
 				if (this.debounce(payload)) {
-					Homey.log(`[Signal ${signalKey} ~${this.debounceTimeout}] payload:`, payload.join(''));
+					this.logger.info(`[Signal ${signalKey} ~${this.debounceTimeout}] payload:`, payloadStr);
 					this.signal.emit(`debounce_payload_${this.debounceTimeout}`, payload);
 				}
 			});
@@ -52,21 +66,22 @@ module.exports = class Signal extends EventEmitter {
 					this.emit('data', data);
 				}
 			} else {
-				Homey.log(`[Signal ${this.signalKey}] Manually debounced payload:`, payloadData.join(''));
+				this.logger.verbose(`[Signal ${this.signalKey}] Manually debounced payload:`, payloadData.join(''));
 			}
 		});
 		this.signal.on('payload_send', this.emit.bind(this, 'payload_send'));
 	}
 
 	register(callback, key) {
+		this.logger.silly('Signal:register(callback, key)', callback, key);
 		callback = typeof callback === 'function' ? callback : (() => null);
 		if (registerLock.get(this.signalKey).size === 0) {
-			Homey.log(`[Signal ${this.signalKey}] registered signal`);
+			this.logger.info(`[Signal ${this.signalKey}] registered signal`);
 
 			registerPromises.set(this.signalKey, new Promise((resolve, reject) => {
 				this.signal.register(err => { // Register signal
 					if (err) {
-						Homey.log(`[Signal ${this.signalKey}] signal register error`, err);
+						this.logger.warn(`[Signal ${this.signalKey}] signal register error`, err);
 						this.emit('error', err);
 						reject(err);
 					} else {
@@ -85,10 +100,11 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	unregister(key) {
+		this.logger.silly('Signal:unregister()');
 		if (registerLock.get(this.signalKey).size > 0) {
 			registerLock.get(this.signalKey).delete(key || this);
 			if (registerLock.get(this.signalKey).size === 0) {
-				Homey.log(`[Signal ${this.signalKey}] unregistered signal`);
+				this.logger.info(`[Signal ${this.signalKey}] unregistered signal`);
 
 				this.signal.unregister(err => {
 					if (err) this.emit('error', err);
@@ -98,6 +114,7 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	manualDebounce(timeout, allListeners) {
+		this.logger.silly('Signal:manualDebounce(timeout, allListeners)', timeout, allListeners);
 		if (allListeners) {
 			this.signal.manualDebounceFlag = true;
 			clearTimeout(this.signal.manualDebounceTimeout);
@@ -110,6 +127,7 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	send(payload) {
+		this.logger.silly('Signal:send(payload)', payload);
 		let registerLockKey = Math.random();
 		while (registerLock.get(this.signalKey).has(registerLockKey)) {
 			registerLockKey = Math.random();
@@ -119,10 +137,10 @@ module.exports = class Signal extends EventEmitter {
 				const frameBuffer = new Buffer(payload);
 				this.signal.tx(frameBuffer, (err, result) => { // Send the buffer to device
 					if (err) { // Print error if there is one
-						Homey.log(`[Signal ${this.signalKey}] sending payload failed:`, err);
+						this.logger.warn(`[Signal ${this.signalKey}] sending payload failed:`, err);
 						reject(err);
 					} else {
-						Homey.log(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
+						this.logger.info(`[Signal ${this.signalKey}] send payload:`, payload.join(''));
 						this.signal.emit('payload_send', payload);
 						resolve(result);
 					}
@@ -131,13 +149,14 @@ module.exports = class Signal extends EventEmitter {
 		}).then(() => this.unregister(registerLockKey))
 			.catch(err => {
 				this.unregister(registerLockKey);
-				Homey.error(`[Signal ${this.signalKey}] tx error:`, err);
+				this.logger.warn(`[Signal ${this.signalKey}] tx error:`, err);
 				this.emit('error', err);
 				throw err;
 			});
 	}
 
 	pauseDebouncers() {
+		this.logger.silly('Signal:pauseDebouncers()');
 		this.signal.debouncers.forEach(debounceBuffer => {
 			debounceBuffer.forEach(debouncer => {
 				debouncer.pause();
@@ -146,6 +165,7 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	resumeDebouncers() {
+		this.logger.silly('Signal:resumeDebouncers()');
 		this.signal.debouncers.forEach(debounceBuffer => {
 			debounceBuffer.forEach(debouncer => {
 				debouncer.resume();
@@ -154,12 +174,14 @@ module.exports = class Signal extends EventEmitter {
 	}
 
 	tx(payload, callback) {
+		this.logger.silly('Signal:tx(payload, callback)', payload, callback);
 		callback = callback || (() => null);
 		const frameBuffer = new Buffer(payload);
 		this.signal.tx(frameBuffer, callback);
 	}
 
 	debounce(payload) {
+		this.logger.silly('Signal:debounce(payload)', payload);
 		if (this.debounceTimeout <= 0) return payload;
 
 		const payloadString = payload.join('');

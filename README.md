@@ -2,9 +2,10 @@
 
 Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
-**_The deprecated KaKu drivers are disabled as of Homey v0.10.0. Please remove all devices still using the old drivers and add them again in the pair wizard._**
-
 ##What's new
+
+####v2.8.0
+Added logging and error reporting
 
 ####v2.7.2
 Updated translation strings to instruct the user to just press the program button instead of holding it to put the device in programming mode.

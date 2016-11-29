@@ -64,6 +64,7 @@ function nextView(){
 
 	var found = false;
 	Homey.on('frame', function (data) {
+		console.log('GOT FRAME', data);
 		if(!found) {
 			found = true;
 			Homey.emit('set_device', data, function (err, device) {

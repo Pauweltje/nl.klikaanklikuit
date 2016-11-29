@@ -5,13 +5,6 @@ module.exports = {
 	deviceClasses: {
 		defaults: {
 			debounceTimeout: 300,
-			pair: {
-				viewOptions: {
-					generic_done: {
-						title: 'views.generic_done.title',
-					},
-				},
-			},
 		},
 		kaku_old: {
 			extends: 'defaults',

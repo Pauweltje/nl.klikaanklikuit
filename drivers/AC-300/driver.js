@@ -169,8 +169,8 @@ const config = {
 			template: '../lib/pair/done.html',
 			options: {
 				title: 'views.generic_done.title',
-				prepend: [],
-				append: []
+				prepend: '',
+				append: ''
 			},
 			prepend: [],
 			append: [],
