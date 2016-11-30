@@ -497,7 +497,7 @@ module.exports = class Driver extends EventEmitter {
 		socket.on('set_device_codewheels', (codewheelIndexes, callback) => {
 			this.logger.verbose(
 				'Driver:pair->set_device_codewheels(codewheelIndexes, callback)+this.pairingDevice',
-				dipswitches, callback, this.pairingDevice
+				codewheelIndexes, callback, this.pairingDevice
 			);
 			const data = this.codewheelsToData(codewheelIndexes.slice(0));
 			if (!data) return callback(new Error('433_generator.error.invalid_codewheelIndexes'));
