@@ -47,9 +47,9 @@ module.exports = class Driver extends EventEmitter {
 				}
 				if (this.captureLevel <= logLevelId) {
 					if (logLevelId === 6 && args[0] instanceof Error) {
-						this.captureException(args[0], { level: sentryLevelMap.get(logLevelId) });
+						this.logger.captureException(args[0], { level: sentryLevelMap.get(logLevelId) });
 					} else {
-						this.captureMessage(Array.prototype.join.call(args, ' '), { level: sentryLevelMap.get(logLevelId) });
+						this.logger.captureMessage(Array.prototype.join.call(args, ' '), { level: sentryLevelMap.get(logLevelId) });
 					}
 				}
 			}).bind(this),
