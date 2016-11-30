@@ -13,6 +13,7 @@ module.exports = class Signal extends EventEmitter {
 		this.logger = logger || {
 				log: (() => null),
 				silly: (() => null),
+				debug: (() => null),
 				verbose: (() => null),
 				info: (() => null),
 				warn: (() => null),
