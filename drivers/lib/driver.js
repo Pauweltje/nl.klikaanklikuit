@@ -703,10 +703,6 @@ module.exports = class Driver extends EventEmitter {
 
 	onTriggerReceived(callback, args, state) {
 		this.logger.silly('Driver:onTriggerReceived(callback, args, state)', callback, args, state);
-		if (args.device) {
-			args.id = args.device.id;
-			delete args.device;
-		}
 		callback(null, Object.keys(args).reduce(
 			(result, curr) => result && String(args[curr]) === String(state[curr]),
 			true

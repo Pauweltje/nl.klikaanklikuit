@@ -4,6 +4,10 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.8.4
+Fixed icons for certain devices<br/>
+Fixed a bug where the app would crash when opening and closing the pair wizard fast
+
 ####v2.8.0
 Added logging and error reporting
 

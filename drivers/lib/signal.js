@@ -107,8 +107,10 @@ module.exports = class Signal extends EventEmitter {
 			if (registerLock.get(this.signalKey).size === 0) {
 				this.logger.info(`[Signal ${this.signalKey}] unregistered signal`);
 
-				this.signal.unregister(err => {
-					if (err) this.emit('error', err);
+				registerPromises.get(this.signalKey).then(() => {
+					this.signal.unregister(err => {
+						if (err) this.emit('error', err);
+					});
 				});
 			}
 		}
