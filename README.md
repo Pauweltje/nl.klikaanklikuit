@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.8.5
+Fixed button highlighting in pair wizard for PA3-1000R
+
 ####v2.8.4
 Fixed icons for certain devices<br/>
 Fixed a bug where the app would crash when opening and closing the pair wizard fast
