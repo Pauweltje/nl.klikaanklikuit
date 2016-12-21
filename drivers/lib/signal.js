@@ -6,6 +6,7 @@ const SignalManager = Homey.wireless('433').Signal;
 const signals = new Map();
 const registerLock = new Map();
 const registerPromises = new Map();
+const unRegisterPromises = new Map();
 
 module.exports = class Signal extends EventEmitter {
 	constructor(signalKey, parser, debounceTime, logger) {
@@ -78,20 +79,21 @@ module.exports = class Signal extends EventEmitter {
 		callback = typeof callback === 'function' ? callback : (() => null);
 		if (registerLock.get(this.signalKey).size === 0) {
 			this.logger.info(`[Signal ${this.signalKey}] registered signal`);
+			registerLock.get(this.signalKey).add(key || this);
 
-			registerPromises.set(this.signalKey, new Promise((resolve, reject) => {
-				this.signal.register(err => { // Register signal
-					if (err) {
-						this.logger.warn(`[Signal ${this.signalKey}] signal register error`, err);
-						this.emit('error', err);
-						reject(err);
-					} else {
+			registerPromises.set(this.signalKey, new Promise(resolve => {
+				(unRegisterPromises.get(this.signalKey) || Promise.resolve()).then(() => {
+					this.signal.register(err => { // Register signal
+						// Log errors but other than that just ignore them
+						if (err) this.logger.error(err, { extra: { registerLock, registerPromises } });
 						resolve();
-					}
+					});
 				});
 			}));
+		} else {
+			registerLock.get(this.signalKey).add(key || this);
 		}
-		registerLock.get(this.signalKey).add(key || this);
+
 		return registerPromises.get(this.signalKey)
 			.then(() => callback(null, true))
 			.catch(err => {
@@ -104,13 +106,20 @@ module.exports = class Signal extends EventEmitter {
 		this.logger.silly('Signal:unregister()');
 		if (registerLock.get(this.signalKey).size > 0) {
 			registerLock.get(this.signalKey).delete(key || this);
-			if (registerLock.get(this.signalKey).size === 0) {
+			if (registerLock.get(this.signalKey).size === 0 && !unRegisterPromises.get(this.signalKey)) {
 				this.logger.info(`[Signal ${this.signalKey}] unregistered signal`);
 
-				registerPromises.get(this.signalKey).then(() => {
-					this.signal.unregister(err => {
-						if (err) this.emit('error', err);
-					});
+				(registerPromises.get(this.signalKey) || Promise.resolve()).then(() => {
+					if (registerLock.get(this.signalKey).size === 0) {
+						unRegisterPromises.set(this.signalKey, new Promise(resolve =>
+							this.signal.unregister(err => {
+								// Log errors but other than that just ignore them
+								if (err) this.logger.error(err, { extra: { registerLock, registerPromises } });
+								unRegisterPromises.delete(this.signalKey);
+								resolve();
+							})
+						));
+					}
 				});
 			}
 		}
@@ -152,7 +161,7 @@ module.exports = class Signal extends EventEmitter {
 		}).then(() => this.unregister(registerLockKey))
 			.catch(err => {
 				this.unregister(registerLockKey);
-				this.logger.warn(`[Signal ${this.signalKey}] tx error:`, err);
+				this.logger.error(err, { extra: { registerLock, registerPromises } });
 				this.emit('error', err);
 				throw err;
 			});

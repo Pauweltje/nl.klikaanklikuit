@@ -47,7 +47,10 @@ module.exports = class Driver extends EventEmitter {
 				}
 				if (this.captureLevel <= logLevelId) {
 					if (logLevelId === 6 && args[0] instanceof Error) {
-						this.logger.captureException(args[0], { level: sentryLevelMap.get(logLevelId) });
+						this.logger.captureException(
+							args[0],
+							Object.assign({ level: sentryLevelMap.get(logLevelId) }, typeof args[1] === 'object' ? args[1] : null)
+						);
 					} else {
 						this.logger.captureMessage(Array.prototype.join.call(args, ' '), { level: sentryLevelMap.get(logLevelId) });
 					}
@@ -437,8 +440,8 @@ module.exports = class Driver extends EventEmitter {
 	pair(socket) { // Pair sequence
 		this.logger.verbose('Driver:pair(socket)', socket);
 		this.logger.info('opening pair wizard');
-		this.registerSignal();
 		this.isPairing = true;
+		this.registerSignal();
 		const receivedListener = (frame) => {
 			this.logger.verbose('emitting frame to pairing wizard', frame);
 			socket.emit('frame', frame);
