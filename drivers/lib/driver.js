@@ -377,7 +377,7 @@ module.exports = class Driver extends EventEmitter {
 		this.logger.silly('Driver:generateDevice(data)', data);
 		return {
 			name: __(this.config.name),
-			data: Object.assign({}, data, { driver_id: this.config.id }),
+			data: Object.assign({ overridden: false }, data, { driver_id: this.config.id }),
 		};
 	}
 
@@ -579,7 +579,7 @@ module.exports = class Driver extends EventEmitter {
 			if (!(data && data.constructor === Object)) {
 				return callback(new Error('Data must be an object!'), this.pairingDevice.data);
 			}
-			const newPairingDeviceData = Object.assign({}, this.pairingDevice.data, data);
+			const newPairingDeviceData = Object.assign({}, this.pairingDevice.data, data, { overridden: true });
 			const payload = this.dataToPayload(newPairingDeviceData);
 			if (!payload) {
 				return callback(
