@@ -147,7 +147,7 @@ const config = {
 		small: '../../433_generator/assets/ASUN-650/images/small.png'
 	},
 	id: 'ASUN-650',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/blinds.js',
 	signal: 'kaku',
 	class: 'windowcoverings',

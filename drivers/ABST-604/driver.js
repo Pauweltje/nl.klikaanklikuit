@@ -61,7 +61,7 @@ const config = {
 		small: '../../433_generator/assets/ABST-604/images/small.png'
 	},
 	id: 'ABST-604',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/sensor.js',
 	signal: 'kaku',
 	conditions: [{

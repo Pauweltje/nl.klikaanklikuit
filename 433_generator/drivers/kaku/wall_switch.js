@@ -4,7 +4,7 @@ const Remote = require('./remote');
 
 module.exports = class WallSwitch extends Remote {
 	onTriggerReceived(callback, args, state) {
-		const settings = this.getSettings(args.device);
+		const settings = this.getSettings(state.device);
 		if (settings.rotated === '180') {
 			if (args.unit === '10') {
 				args.unit = '11';
@@ -20,7 +20,7 @@ module.exports = class WallSwitch extends Remote {
 	}
 
 	onActionSend(callback, args) {
-		const settings = this.getSettings(args.device);
+		const settings = this.getSettings(state.device);
 		if (settings.rotated === '180') {
 			if (args.unit === '10') {
 				args.unit = '11';

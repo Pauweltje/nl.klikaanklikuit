@@ -2,7 +2,7 @@
 /* eslint-disable */
 const config = {
 	icon: '../../433_generator/assets/AWMT-230/icon.svg',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	triggers: [{
 		id: 'AWMT-230:received',
 		title: '433_generator.generic.button_pressed',

@@ -93,7 +93,7 @@ const config = {
 			filter: 'driver_id=PA3-1000R'
 		}]
 	}],
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kakuold/remote',
 	signal: 'kakuold',
 	name: 'devices.PA3-1000R.name',

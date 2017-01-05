@@ -537,7 +537,7 @@ module.exports = class Driver extends EventEmitter {
 			);
 			let device;
 			do {
-				device = this.generateDevice(this.generateData());
+				device = this.generateDevice(Object.assign(this.generateData(), { generated: true }));
 			} while (this.get(device));
 			if (!device) {
 				return callback(new Error('433_generator.error.invalid_device'));
@@ -737,10 +737,17 @@ module.exports = class Driver extends EventEmitter {
 
 	handleReceivedTrigger(device, data) {
 		this.logger.silly('Driver:handleReceivedTrigger(device, data)', device, data);
+		console.log('out', data.id, device.id);
 		if (data.id === device.id) {
-			Homey.manager('flow').triggerDevice(`${this.config.id}:received`, null, data, this.getDevice(device), err => {
-				if (err) Homey.error('Trigger error', err);
-			});
+			console.log('in');
+			Homey.manager('flow').triggerDevice(
+				`${this.config.id}:received`,
+				null,
+				Object.assign({}, { device: device }, data),
+				this.getDevice(device), err => {
+					if (err) Homey.error('Trigger error', err);
+				}
+			);
 		}
 	}
 
@@ -826,7 +833,7 @@ module.exports = class Driver extends EventEmitter {
 		return arrayA.map((val, index) => val !== arrayB[index] ? 1 : 0);
 	}
 
-	generateRandomBitString(length){
+	generateRandomBitString(length) {
 		return new Array(length)
 			.fill(null)
 			.map(() => Math.round(Math.random()))

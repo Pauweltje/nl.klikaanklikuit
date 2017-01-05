@@ -2,7 +2,7 @@
 /* eslint-disable */
 const config = {
 	icon: '../../433_generator/assets/ALED-2709/icon.svg',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/new_dimmer.js',
 	pair: {
 		viewOrder: ['generic_choice',

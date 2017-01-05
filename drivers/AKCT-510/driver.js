@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	images: {
 		large: '../../433_generator/assets/AKCT-510/images/large.jpg',
 		small: '../../433_generator/assets/AKCT-510/images/small.jpg'

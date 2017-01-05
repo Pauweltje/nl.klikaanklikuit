@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/contact_sensor.js',
 	pair: {
 		viewOrder: ['generic_imitate', 'generic_test_remote', 'generic_done'],

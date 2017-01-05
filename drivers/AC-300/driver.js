@@ -183,7 +183,7 @@ const config = {
 	},
 	id: 'AC-300',
 	class: 'socket',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kakuold/kaku.js',
 	signal: 'kakuold',
 	name: 'devices.YC-400.name',

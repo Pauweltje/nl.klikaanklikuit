@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/motion_sensor.js',
 	capabilities: ['alarm_motion'],
 	signal: 'kaku',

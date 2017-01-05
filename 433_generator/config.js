@@ -4,7 +4,7 @@ module.exports = {
 	views: {},
 	deviceClasses: {
 		defaults: {
-			debounceTimeout: 300,
+			debounceTimeout: 500,
 		},
 		kaku_old: {
 			extends: 'defaults',

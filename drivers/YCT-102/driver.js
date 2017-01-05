@@ -115,7 +115,7 @@ const config = {
 			filter: 'driver_id=YCT-102'
 		}]
 	}],
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kakuold/remote',
 	signal: 'kakuold',
 	name: 'devices.YCT-102.name',

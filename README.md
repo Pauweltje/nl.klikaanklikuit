@@ -5,6 +5,10 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 ##What's new
 
 ####v2.8.11
+Fixed bug where rotating the wall switch in setting would not swap left/right in flows. Notice that this might affect your current flows!<br/>
+Increased debounce timeout from 300ms to 500ms to prevent events from triggering multiple times.
+
+####v2.8.11
 Fixed bug where <0.5% of the random signals that would be generated for a device were invalid and would crash the app 
 
 ####v2.8.5

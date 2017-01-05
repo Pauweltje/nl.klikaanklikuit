@@ -168,7 +168,7 @@ const config = {
 	},
 	id: 'AGDR-300',
 	class: 'socket',
-	debounceTimeout: 300,
+	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/dimmer.js',
 	signal: 'kakudim',
 	alternativeSignal: 'kaku',
