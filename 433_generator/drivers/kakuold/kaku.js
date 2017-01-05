@@ -44,9 +44,9 @@ module.exports = class Kaku extends DefaultDriver {
 
 	generateData() {
 		const data = {
-			address: Math.random().toString(2).substr(2, 4),
-			channel: Math.random().toString(2).substr(2, 2),
-			unit: Math.random().toString(2).substr(2, 2),
+			address: this.generateRandomBitString(4),
+			channel: this.generateRandomBitString(2),
+			unit: this.generateRandomBitString(2),
 			undef: [0, 1, 1],
 			state: 0,
 		};

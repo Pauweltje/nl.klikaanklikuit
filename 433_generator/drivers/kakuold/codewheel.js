@@ -5,9 +5,9 @@ const Kaku = require('./kaku');
 module.exports = class Codewheel extends Kaku {
 	generateData() {
 		const data = {
-			address: `00${Math.random().toString(2).substr(2, 2)}`,
+			address: `00${this.generateRandomBitString(2)}`,
 			channel: '00',
-			unit: `${Math.round(Math.random())}${Math.round(Math.random())}`,
+			unit: this.generateRandomBitString(2),
 			undef: [0, 1, 1],
 			state: 0,
 		};

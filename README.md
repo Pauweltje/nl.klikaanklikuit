@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v2.8.11
+Fixed bug where <0.5% of the random signals that would be generated for a device were invalid and would crash the app 
+
 ####v2.8.5
 Fixed button highlighting in pair wizard for PA3-1000R
 

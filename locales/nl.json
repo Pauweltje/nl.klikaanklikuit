@@ -287,7 +287,7 @@
 			"device_exists": "Apparaat is al gekoppeld met Homey.\u0000",
 			"no_device": "Er is geen apparaat ingesteld. Sluit de pairing wizard en probeer opnieuw.\u0000",
 			"no_settings": "Geen instelling object. Probeer aub opnieuw.\u0000",
-			"invalid_device": "Het apparaat dat is aangemaakt is incorrect. Probeer aub opnieuw.\u0000"
+			"invalid_device": "Het apparaat dat is aangemaakt is incorrect. Verwijder dit apparaat en probeer opnieuw.\u0000"
 		}
 	},
 	"devices": {
