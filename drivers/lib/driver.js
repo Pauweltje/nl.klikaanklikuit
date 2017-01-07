@@ -679,6 +679,9 @@ module.exports = class Driver extends EventEmitter {
 			this.logger.verbose(
 				'Driver:pair->toggle(data, callback)+this.pairingDevice', data, callback, this.pairingDevice
 			);
+			if (!this.pairingDevice) {
+				return callback(new Error('433_generator.error.no_device'));
+			}
 			if (exports.capabilities) {
 				Object.keys(exports.capabilities).forEach(capability => {
 					if (exports.capabilities[capability].get && exports.capabilities[capability].set) {
