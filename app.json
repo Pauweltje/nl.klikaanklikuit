@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.9.1z",
+  "version": "2.10.0",
   "compatibility": ">=0.10.1",
   "category": [
     "appliances",
@@ -78,6 +78,158 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=AWMT-003"
+          }
+        ]
+      },
+      {
+        "id": "TMT-502:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unitchannel",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0000",
+                "label": {
+                  "en": "Unit 1\u0000",
+                  "nl": "Unit 1\u0000"
+                }
+              },
+              {
+                "id": "1000",
+                "label": {
+                  "en": "Unit 2\u0000",
+                  "nl": "Unit 2\u0000"
+                }
+              },
+              {
+                "id": "0100",
+                "label": {
+                  "en": "Unit 3\u0000",
+                  "nl": "Unit 3\u0000"
+                }
+              },
+              {
+                "id": "1100",
+                "label": {
+                  "en": "Unit 4\u0000",
+                  "nl": "Unit 4\u0000"
+                }
+              },
+              {
+                "id": "0010",
+                "label": {
+                  "en": "Unit 5\u0000",
+                  "nl": "Unit 5\u0000"
+                }
+              },
+              {
+                "id": "1010",
+                "label": {
+                  "en": "Unit 6\u0000",
+                  "nl": "Unit 6\u0000"
+                }
+              },
+              {
+                "id": "0110",
+                "label": {
+                  "en": "Unit 7\u0000",
+                  "nl": "Unit 7\u0000"
+                }
+              },
+              {
+                "id": "1110",
+                "label": {
+                  "en": "Unit 8\u0000",
+                  "nl": "Unit 8\u0000"
+                }
+              },
+              {
+                "id": "0001",
+                "label": {
+                  "en": "Unit 9\u0000",
+                  "nl": "Unit 9\u0000"
+                }
+              },
+              {
+                "id": "1001",
+                "label": {
+                  "en": "Unit 10\u0000",
+                  "nl": "Unit 10\u0000"
+                }
+              },
+              {
+                "id": "0101",
+                "label": {
+                  "en": "Unit 11\u0000",
+                  "nl": "Unit 11\u0000"
+                }
+              },
+              {
+                "id": "1101",
+                "label": {
+                  "en": "Unit 12\u0000",
+                  "nl": "Unit 12\u0000"
+                }
+              },
+              {
+                "id": "0011",
+                "label": {
+                  "en": "Unit 13\u0000",
+                  "nl": "Unit 13\u0000"
+                }
+              },
+              {
+                "id": "1011",
+                "label": {
+                  "en": "Unit 14\u0000",
+                  "nl": "Unit 14\u0000"
+                }
+              },
+              {
+                "id": "0111",
+                "label": {
+                  "en": "Unit 15\u0000",
+                  "nl": "Unit 15\u0000"
+                }
+              },
+              {
+                "id": "1111",
+                "label": {
+                  "en": "Unit 16\u0000",
+                  "nl": "Unit 16\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=TMT-502"
           }
         ]
       },
@@ -415,12 +567,53 @@
         ]
       },
       {
-        "id": "KCT-101:received",
+        "id": "AYCT-202:received",
         "title": {
           "en": "Button is pressed\u0000",
           "nl": "Knop is ingedrukt\u0000"
         },
         "args": [
+          {
+            "name": "channel",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "00",
+                "label": {
+                  "en": "Button 1\u0000",
+                  "nl": "Knop 1\u0000"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Button 2\u0000",
+                  "nl": "Knop 2\u0000"
+                }
+              },
+              {
+                "id": "01",
+                "label": {
+                  "en": "Button 3\u0000",
+                  "nl": "Knop 3\u0000"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Button 4\u0000",
+                  "nl": "Knop 4\u0000"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "Group Button\u0000",
+                  "nl": "Groep Knop\u0000"
+                }
+              }
+            ]
+          },
           {
             "name": "state",
             "type": "dropdown",
@@ -438,13 +631,25 @@
                   "en": "Off\u0000",
                   "nl": "Uit\u0000"
                 }
+              },
+              {
+                "id": "dimup",
+                "label": {
+                  "en": "deviceClass.kaku_dimming_remote.generic.dimup"
+                }
+              },
+              {
+                "id": "dimdown",
+                "label": {
+                  "en": "deviceClass.kaku_dimming_remote.generic.dimdown"
+                }
               }
             ]
           },
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=KCT-101"
+            "filter": "driver_id=AYCT-202"
           }
         ]
       },
@@ -479,6 +684,40 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=AWST-8800"
+          }
+        ]
+      },
+      {
+        "id": "KCT-101:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=KCT-101"
           }
         ]
       },
@@ -649,6 +888,158 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=YCT-102"
+          }
+        ]
+      },
+      {
+        "id": "ATMT-502:received",
+        "title": {
+          "en": "Button is pressed\u0000",
+          "nl": "Knop is ingedrukt\u0000"
+        },
+        "args": [
+          {
+            "name": "unitchannel",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0000",
+                "label": {
+                  "en": "Unit 1\u0000",
+                  "nl": "Unit 1\u0000"
+                }
+              },
+              {
+                "id": "1000",
+                "label": {
+                  "en": "Unit 2\u0000",
+                  "nl": "Unit 2\u0000"
+                }
+              },
+              {
+                "id": "0100",
+                "label": {
+                  "en": "Unit 3\u0000",
+                  "nl": "Unit 3\u0000"
+                }
+              },
+              {
+                "id": "1100",
+                "label": {
+                  "en": "Unit 4\u0000",
+                  "nl": "Unit 4\u0000"
+                }
+              },
+              {
+                "id": "0010",
+                "label": {
+                  "en": "Unit 5\u0000",
+                  "nl": "Unit 5\u0000"
+                }
+              },
+              {
+                "id": "1010",
+                "label": {
+                  "en": "Unit 6\u0000",
+                  "nl": "Unit 6\u0000"
+                }
+              },
+              {
+                "id": "0110",
+                "label": {
+                  "en": "Unit 7\u0000",
+                  "nl": "Unit 7\u0000"
+                }
+              },
+              {
+                "id": "1110",
+                "label": {
+                  "en": "Unit 8\u0000",
+                  "nl": "Unit 8\u0000"
+                }
+              },
+              {
+                "id": "0001",
+                "label": {
+                  "en": "Unit 9\u0000",
+                  "nl": "Unit 9\u0000"
+                }
+              },
+              {
+                "id": "1001",
+                "label": {
+                  "en": "Unit 10\u0000",
+                  "nl": "Unit 10\u0000"
+                }
+              },
+              {
+                "id": "0101",
+                "label": {
+                  "en": "Unit 11\u0000",
+                  "nl": "Unit 11\u0000"
+                }
+              },
+              {
+                "id": "1101",
+                "label": {
+                  "en": "Unit 12\u0000",
+                  "nl": "Unit 12\u0000"
+                }
+              },
+              {
+                "id": "0011",
+                "label": {
+                  "en": "Unit 13\u0000",
+                  "nl": "Unit 13\u0000"
+                }
+              },
+              {
+                "id": "1011",
+                "label": {
+                  "en": "Unit 14\u0000",
+                  "nl": "Unit 14\u0000"
+                }
+              },
+              {
+                "id": "0111",
+                "label": {
+                  "en": "Unit 15\u0000",
+                  "nl": "Unit 15\u0000"
+                }
+              },
+              {
+                "id": "1111",
+                "label": {
+                  "en": "Unit 16\u0000",
+                  "nl": "Unit 16\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On\u0000",
+                  "nl": "Aan\u0000"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off\u0000",
+                  "nl": "Uit\u0000"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ATMT-502"
           }
         ]
       },
@@ -930,6 +1321,64 @@
       "images": {
         "large": "./433_generator/assets/AYCT-102/images/large.jpg",
         "small": "./433_generator/assets/AYCT-102/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AYCT-202",
+      "name": {
+        "en": "devices.AYCT-202.name"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/AYCT-202/images/large.jpg",
+        "small": "./433_generator/assets/AYCT-202/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ATMT-502",
+      "name": {
+        "en": "devices.ATMT-502.name"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/ATMT-502/images/large.png",
+        "small": "./433_generator/assets/ATMT-502/images/small.png"
       },
       "pair": [
         {
@@ -2404,6 +2853,73 @@
       ]
     },
     {
+      "id": "AWMR-300",
+      "name": {
+        "en": "devices.AWMR-300.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AWMR-300/images/large.png",
+        "small": "./433_generator/assets/AWMR-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "AWMR-210",
       "name": {
         "en": "AWMR-210"
@@ -2484,6 +3000,74 @@
       "images": {
         "large": "./433_generator/assets/AWMR-210/images/large.png",
         "small": "./433_generator/assets/AWMR-210/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-100",
+      "name": {
+        "en": "devices.ACM-100.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-100/images/large.png",
+        "small": "./433_generator/assets/ACM-100/images/small.png"
       },
       "pair": [
         {
@@ -2687,6 +3271,209 @@
       "images": {
         "large": "./433_generator/assets/ACM-300/images/large.png",
         "small": "./433_generator/assets/ACM-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-2300H",
+      "name": {
+        "en": "devices.ACM-2300H.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-2300H/images/large.png",
+        "small": "./433_generator/assets/ACM-2300H/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-LV24",
+      "name": {
+        "en": "devices.ACM-LV24.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-LV24/images/large.png",
+        "small": "./433_generator/assets/ACM-LV24/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ACM-LV10",
+      "name": {
+        "en": "devices.ACM-LV10.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ACM-LV10/images/large.png",
+        "small": "./433_generator/assets/ACM-LV10/images/small.png"
       },
       "pair": [
         {
@@ -3024,6 +3811,74 @@
       "images": {
         "large": "./433_generator/assets/AC-300/images/large.png",
         "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-200",
+      "name": {
+        "en": "devices.AGDR-200.name"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
       },
       "pair": [
         {
@@ -3504,6 +4359,162 @@
       ]
     },
     {
+      "id": "ALED-2009",
+      "name": {
+        "en": "devices.ALED-2009.name"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-2009/images/large.jpg",
+        "small": "./433_generator/assets/ALED-2009/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-G2706",
+      "name": {
+        "en": "devices.ALED-G2706.name"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-G2706/images/large.jpg",
+        "small": "./433_generator/assets/ALED-G2706/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-MR2705",
+      "name": {
+        "en": "devices.ALED-MR2705.name"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-MR2705/images/large.jpg",
+        "small": "./433_generator/assets/ALED-MR2705/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "ASUN-650",
       "name": {
         "en": "ASUN-650"
@@ -3687,6 +4698,35 @@
       "images": {
         "large": "./433_generator/assets/YCT-102/images/large.png",
         "small": "./433_generator/assets/YCT-102/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_remote",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "TMT-502",
+      "name": {
+        "en": "devices.TMT-502.name"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "./433_generator/assets/TMT-502/images/large.png",
+        "small": "./433_generator/assets/TMT-502/images/small.png"
       },
       "pair": [
         {

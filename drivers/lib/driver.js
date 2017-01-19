@@ -361,9 +361,15 @@ module.exports = class Driver extends EventEmitter {
 				this.setUnavailable(device, __('433_generator.error.invalid_device'));
 				return callback(true);
 			}
+			if (typeof options.beforeSendData === 'function') {
+				options.beforeSendData(data, frame);
+			}
 			this.emit('send', data);
 			resolve((options.signal || this.signal).send(frame).then(result => {
 				if (callback) callback(null, result);
+				if (typeof options.afterSendData === 'function') {
+					options.afterSendData(data);
+				}
 				this.emit('after_send', data);
 			}).catch(err => {
 				this.logger.error(err);
@@ -740,9 +746,7 @@ module.exports = class Driver extends EventEmitter {
 
 	handleReceivedTrigger(device, data) {
 		this.logger.silly('Driver:handleReceivedTrigger(device, data)', device, data);
-		console.log('out', data.id, device.id);
 		if (data.id === device.id) {
-			console.log('in');
 			Homey.manager('flow').triggerDevice(
 				`${this.config.id}:received`,
 				null,

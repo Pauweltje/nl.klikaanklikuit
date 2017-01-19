@@ -43,10 +43,8 @@ module.exports = {
 				maximalLength: 32,
 			},
 		},
-		dimmer: {
-			extends: ['socket'],
-			driver: './drivers/kaku/dimmer.js',
-			capabilities: ['onoff', 'dim'],
+		kaku_dim: {
+			extends: 'defaults',
 			signal: {
 				id: 'kakudim',
 				sof: [225, 2774], // Start of frame
@@ -62,6 +60,11 @@ module.exports = {
 				minimalLength: 32,
 				maximalLength: 36,
 			},
+		},
+		dimmer: {
+			extends: ['socket', 'kaku_dim'],
+			driver: './drivers/kaku/dimmer.js',
+			capabilities: ['onoff', 'dim'],
 			alternativeSignal: 'kaku',
 		},
 		socket: {
@@ -202,9 +205,83 @@ module.exports = {
 			extends: ['remote', 'kaku'],
 			driver: './drivers/kaku/remote',
 		},
+		kaku_dimming_remote: {
+			extends: ['kaku_remote', 'kaku_dim'],
+			driver: './drivers/kaku/dimming_remote',
+			triggers: [
+				{
+					id: 'received',
+					title: '433_generator.generic.button_pressed',
+					args: [
+						{
+							name: 'channel',
+							type: 'dropdown',
+							values: [
+								{ id: '00', label: '433_generator.generic.buttons.1' },
+								{ id: '10', label: '433_generator.generic.buttons.2' },
+								{ id: '01', label: '433_generator.generic.buttons.3' },
+								{ id: '11', label: '433_generator.generic.buttons.4' },
+								{ id: 'g', label: '433_generator.generic.buttons.G' },
+							],
+						},
+						{
+							name: 'state',
+							type: 'dropdown',
+							values: [
+								{ id: '1', label: '433_generator.generic.on' },
+								{ id: '0', label: '433_generator.generic.off' },
+								{ id: 'dimup', label: 'deviceClass.kaku_dimming_remote.generic.dimup' },
+								{ id: 'dimdown', label: 'deviceClass.kaku_dimming_remote.generic.dimdown' },
+							],
+						},
+					],
+				},
+			],
+		},
 		kaku_remote_old: {
 			extends: ['remote', 'kaku_old'],
 			driver: './drivers/kakuold/remote',
+		},
+		timer_remote: {
+			driver: './drivers/kaku/timer_remote',
+			triggers: [
+				{
+					id: 'received',
+					title: '433_generator.generic.button_pressed',
+					args: [
+						{
+							name: 'unitchannel',
+							type: 'dropdown',
+							values: [
+								{ id: '0000', label: '433_generator.generic.units.1' },
+								{ id: '1000', label: '433_generator.generic.units.2' },
+								{ id: '0100', label: '433_generator.generic.units.3' },
+								{ id: '1100', label: '433_generator.generic.units.4' },
+								{ id: '0010', label: '433_generator.generic.units.5' },
+								{ id: '1010', label: '433_generator.generic.units.6' },
+								{ id: '0110', label: '433_generator.generic.units.7' },
+								{ id: '1110', label: '433_generator.generic.units.8' },
+								{ id: '0001', label: '433_generator.generic.units.9' },
+								{ id: '1001', label: '433_generator.generic.units.10' },
+								{ id: '0101', label: '433_generator.generic.units.11' },
+								{ id: '1101', label: '433_generator.generic.units.12' },
+								{ id: '0011', label: '433_generator.generic.units.13' },
+								{ id: '1011', label: '433_generator.generic.units.14' },
+								{ id: '0111', label: '433_generator.generic.units.15' },
+								{ id: '1111', label: '433_generator.generic.units.16' },
+							],
+						},
+						{
+							name: 'state',
+							type: 'dropdown',
+							values: [
+								{ id: '1', label: '433_generator.generic.on' },
+								{ id: '0', label: '433_generator.generic.off' },
+							],
+						},
+					],
+				},
+			],
 		},
 		wall_switch_single: {
 			extends: ['wall_switch'],
@@ -717,6 +794,44 @@ $('<div>').append(
 					},
 					generic_test_remote: {
 						svg: './assets/AYCT-102/remote.svg',
+					},
+				},
+			},
+		},
+		'AYCT-202': {
+			extends: 'kaku_dimming_remote',
+			name: 'devices.AYCT-202.name',
+			images: {
+				large: './assets/AYCT-202/images/large.jpg',
+				small: './assets/AYCT-202/images/small.jpg',
+			},
+			icon: './assets/AYCT-202/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/AYCT-202/remote_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/AYCT-202/remote.svg',
+					},
+				},
+			},
+		},
+		'ATMT-502': {
+			extends: ['kaku_remote', 'timer_remote'],
+			name: 'devices.ATMT-502.name',
+			images: {
+				large: './assets/ATMT-502/images/large.png',
+				small: './assets/ATMT-502/images/small.png',
+			},
+			icon: './assets/ATMT-502/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/ATMT-502/remote_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/ATMT-502/remote.svg',
 					},
 				},
 			},
@@ -1296,6 +1411,39 @@ $('<div>').append(
 				},
 			},
 		},
+		'AWMR-300': {
+			extends: ['AWMR-230'],
+			name: 'devices.AWMR-300.name',
+			icon: './assets/AWMR-300/icon.svg',
+			images: {
+				large: './assets/AWMR-300/images/large.png',
+				small: './assets/AWMR-300/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/AWMR-300/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/AWMR-300/icon.svg',
+					},
+				},
+			},
+		},
 		'AWMR-210': {
 			extends: ['dimmer', 'build_in'],
 			name: 'devices.AWMR-210.name',
@@ -1332,6 +1480,39 @@ $('<div>').append(
 		'AWMD-250': {
 			extends: 'AWMR-210',
 			name: 'devices.AWMD-250.name',
+		},
+		'ACM-100': {
+			extends: 'ACM-250',
+			name: 'devices.ACM-100.name',
+			icon: './assets/ACM-100/icon.svg',
+			images: {
+				large: './assets/ACM-100/images/large.png',
+				small: './assets/ACM-100/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-100/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-100/icon.svg',
+					},
+				},
+			},
 		},
 		'ACM-250': {
 			extends: ['dimmer', 'build_in'],
@@ -1425,6 +1606,105 @@ $('<div>').append(
 					},
 					generic_program: {
 						svg: './assets/ACM-300/pair.svg',
+					},
+				},
+			},
+		},
+		'ACM-2300H': {
+			extends: ['socket', 'build_in'],
+			name: 'devices.ACM-2300H.name',
+			icon: './assets/ACM-2300H/icon.svg',
+			images: {
+				large: './assets/ACM-2300H/images/large.png',
+				small: './assets/ACM-2300H/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-2300H/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-2300H/icon.svg',
+					},
+				},
+			},
+		},
+		'ACM-LV24': {
+			extends: 'ACM-100',
+			name: 'devices.ACM-LV24.name',
+			icon: './assets/ACM-LV24/icon.svg',
+			images: {
+				large: './assets/ACM-LV24/images/large.png',
+				small: './assets/ACM-LV24/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-LV24/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-LV24/icon.svg',
+					},
+				},
+			},
+		},
+		'ACM-LV10': {
+			extends: 'ACM-100',
+			name: 'devices.ACM-LV10.name',
+			icon: './assets/ACM-LV10/icon.svg',
+			images: {
+				large: './assets/ACM-LV10/images/large.png',
+				small: './assets/ACM-LV10/images/small.png',
+			},
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ACM-LV10/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/ACM-LV10/icon.svg',
 					},
 				},
 			},
@@ -1553,6 +1833,10 @@ $('<div>').append(
 		'AC-3500': {
 			extends: 'AC-1000',
 			name: 'devices.AC-3500.name',
+		},
+		'AGDR-200': {
+			extends: 'AGDR-300',
+			name: 'devices.AGDR-200.name',
 		},
 		'AGDR-300': {
 			extends: 'dimmer',
@@ -1768,6 +2052,106 @@ $('<div>').append(
 				},
 			},
 		},
+		'ALED-2009': {
+			extends: 'ALED-2709',
+			name: 'devices.ALED-2009.name',
+			images: {
+				large: './assets/ALED-2009/images/large.jpg',
+				small: './assets/ALED-2009/images/small.jpg',
+			},
+		},
+		'ALED-G2706': {
+			extends: 'ALED-2709',
+			name: 'devices.ALED-G2706.name',
+			images: {
+				large: './assets/ALED-G2706/images/large.jpg',
+				small: './assets/ALED-G2706/images/small.jpg',
+			},
+			icon: './assets/ALED-G2706/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ALED-G2706/icon.svg',
+							},
+						],
+					},
+					generic_program: {
+						svg: './assets/ALED-G2706/icon.svg',
+					},
+				},
+			},
+		},
+		'ALED-MR2705': {
+			extends: 'ALED-2709',
+			name: 'devices.ALED-MR2705.name',
+			images: {
+				large: './assets/ALED-MR2705/images/large.jpg',
+				small: './assets/ALED-MR2705/images/small.jpg',
+			},
+			icon: './assets/ALED-MR2705/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ALED-MR2705/icon.svg',
+							},
+						],
+					},
+					generic_program: {
+						svg: './assets/ALED-MR2705/icon.svg',
+					},
+				},
+			},
+		},
+		// TODO add when I have icons
+		// 'ALED-003': {
+		// 	extends: 'AFR-100',
+		// 	name: 'devices.ALED-003.name',
+		// 	images: {
+		// 		large: './assets/ALED-003/images/large.jpg',
+		// 		small: './assets/ALED-003/images/small.jpg',
+		// 	},
+		// 	icon: './assets/ALED-003/icon.svg',
+		// 	driver: './drivers/kaku/new_dimmer.js',
+		// 	pair: {
+		// 		viewOptions: {
+		// 			generic_choice: {
+		// 				buttons: [
+		// 					{
+		// 						name: 'views.generic_choice.buttons.copy',
+		// 						view: 'generic_imitate',
+		// 						svg: './assets/AYCT-102/remote.svg',
+		// 					},
+		// 					{
+		// 						name: 'views.generic_choice.buttons.generate',
+		// 						view: 'generic_program',
+		// 						svg: './assets/ALED-003/icon.svg',
+		// 					},
+		// 				],
+		// 			},
+		// 			generic_program: {
+		// 				svg: './assets/ALED-003/icon.svg',
+		// 			},
+		// 		},
+		// 	},
+		// },
 		'ASUN-650': {
 			extends: 'blinds',
 			name: 'devices.ASUN-650.name',
@@ -1859,6 +2243,26 @@ $('<div>').append(
 					},
 					generic_test_remote: {
 						svg: './assets/YCT-102/test.svg',
+					},
+				},
+			},
+		},
+		'TMT-502': {
+			extends: ['kaku_remote_old', 'timer_remote'],
+			driver: './drivers/kakuold/timer_remote',
+			name: 'devices.TMT-502.name',
+			images: {
+				large: './assets/TMT-502/images/large.png',
+				small: './assets/TMT-502/images/small.png',
+			},
+			icon: './assets/TMT-502/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/TMT-502/remote_pair.svg',
+					},
+					generic_test_remote: {
+						svg: './assets/TMT-502/remote.svg',
 					},
 				},
 			},

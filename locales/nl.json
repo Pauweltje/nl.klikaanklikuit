@@ -208,6 +208,18 @@
 					"label": "Forceer stop beweging na"
 				}
 			}
+		},
+		"kaku_dimming_remote": {
+			"generic": {
+				"triggers": {
+					"dimup": "Helderheid Omhoog",
+					"dimdown": "Helderheid Omlaag"
+				}
+			},
+			"triggers": {
+				"dimup": null,
+				"dimdown": null
+			}
 		}
 	},
 	"views": {
@@ -247,6 +259,17 @@
 				"3": "Knop 3\u0000",
 				"4": "Knop 4\u0000",
 				"5": "Knop 5\u0000",
+				"6": "Knop 6\u0000",
+				"7": "Knop 7\u0000",
+				"8": "Knop 8\u0000",
+				"9": "Knop 9\u0000",
+				"10": "Knop 10\u0000",
+				"11": "Knop 11\u0000",
+				"12": "Knop 12\u0000",
+				"13": "Knop 13\u0000",
+				"14": "Knop 14\u0000",
+				"15": "Knop 15\u0000",
+				"16": "Knop 16\u0000",
 				"G": "Groep Knop\u0000",
 				"left": "Linker Knop\u0000",
 				"right": "Rechter Knop\u0000",
@@ -258,7 +281,8 @@
 				"all": "All Knop\u0000",
 				"bright": "Fel Knop\u0000",
 				"dim": "Gedimt Knop\u0000",
-				"middle": "Middelste Knop\u0000"
+				"middle": "Middelste Knop\u0000",
+				"F": null
 			},
 			"channels": {
 				"1": "Kanaal 1\u0000",
@@ -275,13 +299,32 @@
 				"B": "Kanaal B\u0000",
 				"C": "Kanaal C\u0000",
 				"D": "Kanaal D\u0000",
-				"E": "Kanaal E\u0000"
+				"E": "Kanaal E\u0000",
+				"F": null
 			},
 			"left": "Links\u0000",
 			"middle": "Midden\u0000",
 			"right": "Rechts\u0000",
 			"up": "Up\u0000",
-			"down": "Down\u0000"
+			"down": "Down\u0000",
+			"units": {
+				"1": "Unit 1\u0000",
+				"2": "Unit 2\u0000",
+				"3": "Unit 3\u0000",
+				"4": "Unit 4\u0000",
+				"5": "Unit 5\u0000",
+				"6": "Unit 6\u0000",
+				"7": "Unit 7\u0000",
+				"8": "Unit 8\u0000",
+				"9": "Unit 9\u0000",
+				"10": "Unit 10\u0000",
+				"11": "Unit 11\u0000",
+				"12": "Unit 12\u0000",
+				"13": "Unit 13\u0000",
+				"14": "Unit 14\u0000",
+				"15": "Unit 15\u0000",
+				"16": "Unit 16\u0000"
+			}
 		},
 		"error": {
 			"device_exists": "Apparaat is al gekoppeld met Homey.\u0000",
@@ -511,7 +554,51 @@
 					"body": "Gebruik de afstandsbediening of de bovenstaande schakelaar om de lamp te testen. Klik op volgende om verder te gaan."
 				}
 			}
+		},
+		"AYCT-202": {
+			"name": null
+		},
+		"TMT-502": {
+			"name": null
+		},
+		"AGDR-200": {
+			"name": null
+		},
+		"ACM-100": {
+			"name": null
+		},
+		"ALED-2009": {
+			"name": null
+		},
+		"ACM-2300H": {
+			"name": null
+		},
+		"ALED-MR2705": {
+			"name": null
+		},
+		"AWMR-300": {
+			"name": null
+		},
+		"ALED-G2706": {
+			"name": null
+		},
+		"ACM-LV24": {
+			"name": null
+		},
+		"ACM-LV10": {
+			"name": null
+		},
+		"ATMT-502": {
+			"name": null
 		}
 	},
-	"depricated": "Deze driver is verouderd. Verwijder aub dit apparaat en voeg hem opnieuw toe in de pair wizard."
+	"depricated": "Deze driver is verouderd. Verwijder aub dit apparaat en voeg hem opnieuw toe in de pair wizard.",
+	"deviceClass": {
+		"kaku_dimming_remote": {
+			"generic": {
+				"dimup": null,
+				"dimdown": null
+			}
+		}
+	}
 }
