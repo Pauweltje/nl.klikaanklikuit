@@ -468,6 +468,17 @@
 		},
 		"ATMT-502": {
 			"name": "ATMT-502"
+		},
+		"ALED-003": {
+			"views": {
+				"generic_program": {
+					"body": "Remove the one battery from the lamp and insert it again to put it in pairing mode. The light should now slowly blink. Then click next."
+				}
+			},
+			"name": "ALED-003"
+		},
+		"APCR-2300": {
+			"name": "APCR-2300"
 		}
 	},
 	"433_generator": {

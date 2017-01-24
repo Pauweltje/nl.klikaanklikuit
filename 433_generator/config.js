@@ -1345,6 +1345,39 @@ $('<div>').append(
 			extends: 'ACD-1000',
 			name: 'devices.ACD-3500.name',
 		},
+		'APCR-2300': {
+			extends: 'ACD-1000',
+			name: 'devices.APCR-2300.name',
+			images: {
+				large: './assets/APCR-2300/images/large.png',
+				small: './assets/APCR-2300/images/small.png',
+			},
+			icon: './assets/APCR-2300/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/APCR-2300/pair.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/AYCT-102/remote_pair.svg',
+					},
+					generic_program: {
+						svg: './assets/APCR-2300/program.svg',
+					},
+				},
+			},
+		},
 		'AWS-3500': {
 			extends: ['socket', 'build_in'],
 			name: 'devices.AWS-3500.name',
@@ -2008,6 +2041,39 @@ $('<div>').append(
 			name: 'devices.AFR-060.name',
 			capabilities: ['onoff'],
 			driver: './drivers/kaku/kaku.js',
+		},
+		'ALED-003': {
+			extends: 'ALED-2709',
+			driver: './drivers/kaku/kaku',
+			capabilities: ['onoff'],
+			name: 'devices.ALED-003.name',
+			images: {
+				large: './assets/ALED-003/images/large.jpg',
+				small: './assets/ALED-003/images/small.jpg',
+			},
+			icon: './assets/ALED-003/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/AYCT-102/remote.svg',
+							},
+							{
+								name: 'views.generic_choice.buttons.generate',
+								view: 'generic_program',
+								svg: './assets/ALED-003/icon.svg',
+							},
+						],
+					},
+					generic_program: {
+						svg: './assets/ALED-003/icon.svg',
+						body: 'devices.ALED-003.views.generic_program.body',
+					},
+				},
+			},
 		},
 		'ALED-2709': {
 			extends: 'AFR-100',

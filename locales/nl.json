@@ -590,6 +590,17 @@
 		},
 		"ATMT-502": {
 			"name": null
+		},
+		"ALED-003": {
+			"views": {
+				"generic_program": {
+					"body": "Verwijder een batterij uit de lamp en stop deze terug om de lamp in programmeer modus te zetten. De lamp zal nu langzaam aan en uit gaan. Klik vervolgens op volgende."
+				}
+			},
+			"name": null
+		},
+		"APCR-2300": {
+			"name": null
 		}
 	},
 	"depricated": "Deze driver is verouderd. Verwijder aub dit apparaat en voeg hem opnieuw toe in de pair wizard.",

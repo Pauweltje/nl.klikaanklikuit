@@ -5,7 +5,7 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 ##What's new
 
 ####v2.10.0
-Added support for the following devices: AYCT-202, TMT-502, AGDR-200, ACM-100, ALED-2009, ACM-2300H, ALED-MR2705, AWMR-300, ALED-G2706, ACM-LV24, ACM-LV10, ATMT-502. Please report any bugs on github (github.com/athombv/homey/issues).
+Added support for the following devices: AYCT-202, TMT-502, ATMT-502, ALED-2009, ACM-2300H, ALED-MR2705, ALED-003, ALED-G2706, AWMR-300, ACM-100, ACM-LV24, ACM-LV10, AGDR-200 and APCR-2300. Please report any bugs on github (github.com/athombv/homey/issues).
 
 ####v2.9.1
 Fixed bug where clicking the group button on the YCT-102 remote during pairing would not work

@@ -1343,7 +1343,7 @@
     {
       "id": "AYCT-202",
       "name": {
-        "en": "devices.AYCT-202.name"
+        "en": "AYCT-202"
       },
       "class": "other",
       "capabilities": [],
@@ -1372,7 +1372,7 @@
     {
       "id": "ATMT-502",
       "name": {
-        "en": "devices.ATMT-502.name"
+        "en": "ATMT-502"
       },
       "class": "other",
       "capabilities": [],
@@ -2719,6 +2719,73 @@
       ]
     },
     {
+      "id": "APCR-2300",
+      "name": {
+        "en": "APCR-2300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/APCR-2300/images/large.png",
+        "small": "./433_generator/assets/APCR-2300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "AWS-3500",
       "name": {
         "en": "AWS-3500"
@@ -2855,7 +2922,7 @@
     {
       "id": "AWMR-300",
       "name": {
-        "en": "devices.AWMR-300.name"
+        "en": "AWMR-300"
       },
       "class": "socket",
       "capabilities": [
@@ -3058,7 +3125,7 @@
     {
       "id": "ACM-100",
       "name": {
-        "en": "devices.ACM-100.name"
+        "en": "ACM-100"
       },
       "class": "socket",
       "capabilities": [
@@ -3329,7 +3396,7 @@
     {
       "id": "ACM-2300H",
       "name": {
-        "en": "devices.ACM-2300H.name"
+        "en": "ACM-2300H"
       },
       "class": "socket",
       "capabilities": [
@@ -3396,7 +3463,7 @@
     {
       "id": "ACM-LV24",
       "name": {
-        "en": "devices.ACM-LV24.name"
+        "en": "ACM-LV24"
       },
       "class": "socket",
       "capabilities": [
@@ -3464,7 +3531,7 @@
     {
       "id": "ACM-LV10",
       "name": {
-        "en": "devices.ACM-LV10.name"
+        "en": "ACM-LV10"
       },
       "class": "socket",
       "capabilities": [
@@ -3869,7 +3936,7 @@
     {
       "id": "AGDR-200",
       "name": {
-        "en": "devices.AGDR-200.name"
+        "en": "AGDR-200"
       },
       "class": "socket",
       "capabilities": [
@@ -4307,6 +4374,57 @@
       ]
     },
     {
+      "id": "ALED-003",
+      "name": {
+        "en": "ALED-003"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-003/images/large.jpg",
+        "small": "./433_generator/assets/ALED-003/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "ALED-2709",
       "name": {
         "en": "ALED-2709"
@@ -4361,7 +4479,7 @@
     {
       "id": "ALED-2009",
       "name": {
-        "en": "devices.ALED-2009.name"
+        "en": "ALED-2009"
       },
       "class": "light",
       "capabilities": [
@@ -4413,7 +4531,7 @@
     {
       "id": "ALED-G2706",
       "name": {
-        "en": "devices.ALED-G2706.name"
+        "en": "ALED-G2706"
       },
       "class": "light",
       "capabilities": [
@@ -4465,7 +4583,7 @@
     {
       "id": "ALED-MR2705",
       "name": {
-        "en": "devices.ALED-MR2705.name"
+        "en": "ALED-MR2705"
       },
       "class": "light",
       "capabilities": [
@@ -4720,7 +4838,7 @@
     {
       "id": "TMT-502",
       "name": {
-        "en": "devices.TMT-502.name"
+        "en": "TMT-502"
       },
       "class": "other",
       "capabilities": [],
