@@ -1616,136 +1616,6 @@
       ]
     },
     {
-      "id": "AWMT-003",
-      "name": {
-        "en": "AWMT-003"
-      },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/AWMT-003/images/large.jpg",
-        "small": "./433_generator/assets/AWMT-003/images/small.jpg"
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "rotated",
-              "type": "radio",
-              "value": "0",
-              "label": {
-                "en": "Rotate wall switch",
-                "nl": "Roteer wandschakelaar"
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Right Side Up",
-                    "nl": "Rechtop"
-                  }
-                },
-                {
-                  "id": "180",
-                  "label": {
-                    "en": "Upside Down",
-                    "nl": "Ondersteboven"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AWMT-230",
-      "name": {
-        "en": "AWMT-230"
-      },
-      "class": "other",
-      "capabilities": [],
-      "images": {
-        "large": "./433_generator/assets/AWMT-230/images/large.jpg",
-        "small": "./433_generator/assets/AWMT-230/images/small.jpg"
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "rotated",
-              "type": "radio",
-              "value": "0",
-              "label": {
-                "en": "Rotate wall switch",
-                "nl": "Roteer wandschakelaar"
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Right Side Up",
-                    "nl": "Rechtop"
-                  }
-                },
-                {
-                  "id": "180",
-                  "label": {
-                    "en": "Upside Down",
-                    "nl": "Ondersteboven"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "pair": [
-        {
-          "id": "generic_imitate",
-          "navigation": {}
-        },
-        {
-          "id": "generic_test_remote",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
       "id": "ACDB-7000C",
       "name": {
         "en": "ACDB-7000C"
@@ -2114,65 +1984,63 @@
       ]
     },
     {
-      "id": "PAR-1000",
+      "id": "AWMT-003",
       "name": {
-        "en": "PAR-1000"
+        "en": "AWMT-003"
       },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
+      "class": "other",
+      "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/PAR-1000/images/large.jpg",
-        "small": "./433_generator/assets/PAR-1000/images/small.jpg"
+        "large": "./433_generator/assets/AWMT-003/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-003/images/small.jpg"
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Rotate wall switch",
+                "nl": "Roteer wandschakelaar"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Right Side Up",
+                    "nl": "Rechtop"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Upside Down",
+                    "nl": "Ondersteboven"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "pair": [
         {
-          "id": "generic_choice",
+          "id": "generic_imitate",
           "navigation": {}
         },
         {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
+          "id": "generic_test_remote",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
             "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
           }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
         },
         {
           "id": "generic_done",
@@ -2181,266 +2049,63 @@
       ]
     },
     {
-      "id": "AC-300",
+      "id": "AWMT-230",
       "name": {
-        "en": "YC-400"
+        "en": "AWMT-230"
       },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
+      "class": "other",
+      "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/YC-400/images/large.jpg",
-        "small": "./433_generator/assets/YC-400/images/small.jpg"
+        "large": "./433_generator/assets/AWMT-230/images/large.jpg",
+        "small": "./433_generator/assets/AWMT-230/images/small.jpg"
       },
-      "pair": [
+      "settings": [
         {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
           },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
+          "children": [
+            {
+              "id": "rotated",
+              "type": "radio",
+              "value": "0",
+              "label": {
+                "en": "Rotate wall switch",
+                "nl": "Roteer wandschakelaar"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Right Side Up",
+                    "nl": "Rechtop"
+                  }
+                },
+                {
+                  "id": "180",
+                  "label": {
+                    "en": "Upside Down",
+                    "nl": "Ondersteboven"
+                  }
+                }
+              ]
+            }
+          ]
         }
-      ]
-    },
-    {
-      "id": "YC-412",
-      "name": {
-        "en": "YC-412"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
       ],
-      "images": {
-        "large": "./433_generator/assets/YC-400/images/large.jpg",
-        "small": "./433_generator/assets/YC-400/images/small.jpg"
-      },
       "pair": [
         {
-          "id": "generic_choice",
+          "id": "generic_imitate",
           "navigation": {}
         },
         {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
+          "id": "generic_test_remote",
           "navigation": {
             "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
             "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
           }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "YC-1000",
-      "name": {
-        "en": "YC-1000"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/YC-400/images/large.jpg",
-        "small": "./433_generator/assets/YC-400/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "YC-3500",
-      "name": {
-        "en": "YC-3500"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/YC-400/images/large.jpg",
-        "small": "./433_generator/assets/YC-400/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
         },
         {
           "id": "generic_done",
@@ -2719,6 +2384,545 @@
       ]
     },
     {
+      "id": "AC-300N",
+      "name": {
+        "en": "AC-300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-1000",
+      "name": {
+        "en": "AC-1000"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AC-3500",
+      "name": {
+        "en": "AC-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AC-300/images/large.png",
+        "small": "./433_generator/assets/AC-300/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-200",
+      "name": {
+        "en": "AGDR-200"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-300",
+      "name": {
+        "en": "AGDR-300"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AGDR-3500",
+      "name": {
+        "en": "AGDR-3500"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
+        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "APA3-1500RS",
+      "name": {
+        "en": "APA3-1500R"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/APA3-1500RS/images/large.jpg",
+        "small": "./433_generator/assets/APA3-1500RS/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "APA2-2300RS",
+      "name": {
+        "en": "APA2-2300R"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/APA2-2300RS/images/large.jpg",
+        "small": "./433_generator/assets/APA2-2300RS/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_choose_slave_2"
+          }
+        },
+        {
+          "id": "generic_choose_slave_2",
+          "navigation": {
+            "prev": "generic_test_switch_2",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_choose_slave"
+          }
+        },
+        {
+          "id": "generic_choose_slave",
+          "navigation": {
+            "prev": "generic_test_switch",
+            "next": "generic_done"
+          },
+          "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
       "id": "APCR-2300",
       "name": {
         "en": "APCR-2300"
@@ -2778,6 +2982,368 @@
             "next": "generic_done"
           },
           "template": "choose_slave"
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AFR-100",
+      "name": {
+        "en": "AFR-100"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AFR-100/images/large.jpg",
+        "small": "./433_generator/assets/AFR-100/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "AFR-060",
+      "name": {
+        "en": "AFR-060"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/AFR-100/images/large.jpg",
+        "small": "./433_generator/assets/AFR-100/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-003",
+      "name": {
+        "en": "ALED-003"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-003/images/large.jpg",
+        "small": "./433_generator/assets/ALED-003/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-2709",
+      "name": {
+        "en": "ALED-2709"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-2709/images/large.jpg",
+        "small": "./433_generator/assets/ALED-2709/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-2009",
+      "name": {
+        "en": "ALED-2009"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-2009/images/large.jpg",
+        "small": "./433_generator/assets/ALED-2009/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-G2706",
+      "name": {
+        "en": "ALED-G2706"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-G2706/images/large.jpg",
+        "small": "./433_generator/assets/ALED-G2706/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "ALED-MR2705",
+      "name": {
+        "en": "ALED-MR2705"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "./433_generator/assets/ALED-MR2705/images/large.jpg",
+        "small": "./433_generator/assets/ALED-MR2705/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_switch_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_switch"
+          }
+        },
+        {
+          "id": "generic_test_switch",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
         },
         {
           "id": "generic_done",
@@ -3732,907 +4298,6 @@
       ]
     },
     {
-      "id": "AC-300N",
-      "name": {
-        "en": "AC-300"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AC-300/images/large.png",
-        "small": "./433_generator/assets/AC-300/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AC-1000",
-      "name": {
-        "en": "AC-1000"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AC-300/images/large.png",
-        "small": "./433_generator/assets/AC-300/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AC-3500",
-      "name": {
-        "en": "AC-3500"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AC-300/images/large.png",
-        "small": "./433_generator/assets/AC-300/images/small.png"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AGDR-200",
-      "name": {
-        "en": "AGDR-200"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
-        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AGDR-300",
-      "name": {
-        "en": "AGDR-300"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
-        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AGDR-3500",
-      "name": {
-        "en": "AGDR-3500"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AGDR-300/images/large.jpg",
-        "small": "./433_generator/assets/AGDR-300/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "APA3-1500RS",
-      "name": {
-        "en": "APA3-1500R"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/APA3-1500RS/images/large.jpg",
-        "small": "./433_generator/assets/APA3-1500RS/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "APA2-2300RS",
-      "name": {
-        "en": "APA2-2300R"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/APA2-2300RS/images/large.jpg",
-        "small": "./433_generator/assets/APA2-2300RS/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_choose_slave_2"
-          }
-        },
-        {
-          "id": "generic_choose_slave_2",
-          "navigation": {
-            "prev": "generic_test_switch_2",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_choose_slave"
-          }
-        },
-        {
-          "id": "generic_choose_slave",
-          "navigation": {
-            "prev": "generic_test_switch",
-            "next": "generic_done"
-          },
-          "template": "choose_slave"
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AFR-100",
-      "name": {
-        "en": "AFR-100"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AFR-100/images/large.jpg",
-        "small": "./433_generator/assets/AFR-100/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "AFR-060",
-      "name": {
-        "en": "AFR-060"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/AFR-100/images/large.jpg",
-        "small": "./433_generator/assets/AFR-100/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALED-003",
-      "name": {
-        "en": "ALED-003"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALED-003/images/large.jpg",
-        "small": "./433_generator/assets/ALED-003/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALED-2709",
-      "name": {
-        "en": "ALED-2709"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALED-2709/images/large.jpg",
-        "small": "./433_generator/assets/ALED-2709/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALED-2009",
-      "name": {
-        "en": "ALED-2009"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALED-2009/images/large.jpg",
-        "small": "./433_generator/assets/ALED-2009/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALED-G2706",
-      "name": {
-        "en": "ALED-G2706"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALED-G2706/images/large.jpg",
-        "small": "./433_generator/assets/ALED-G2706/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "ALED-MR2705",
-      "name": {
-        "en": "ALED-MR2705"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "images": {
-        "large": "./433_generator/assets/ALED-MR2705/images/large.jpg",
-        "small": "./433_generator/assets/ALED-MR2705/images/small.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_program",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
       "id": "ASUN-650",
       "name": {
         "en": "ASUN-650"
@@ -4710,93 +4375,6 @@
           "id": "generic_test_switch",
           "navigation": {
             "prev": "generic_program",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    },
-    {
-      "id": "SUN-650",
-      "name": {
-        "en": "SUN-500"
-      },
-      "class": "windowcoverings",
-      "capabilities": [
-        "windowcoverings_state"
-      ],
-      "images": {
-        "large": "./433_generator/assets/SUN-500/images/large.jpg",
-        "small": "./433_generator/assets/SUN-500/images/small.jpg"
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "rotated",
-              "type": "radio",
-              "value": "0",
-              "label": {
-                "en": "Invert up/down signal",
-                "nl": "Inverteer omhoog/omlaag signaal"
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "No",
-                    "nl": "Nee"
-                  }
-                },
-                {
-                  "id": "180",
-                  "label": {
-                    "en": "Yes",
-                    "nl": "Ja"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "pair": [
-        {
-          "id": "generic_choice",
-          "navigation": {}
-        },
-        {
-          "id": "generic_imitate",
-          "navigation": {
-            "prev": "generic_choice"
-          }
-        },
-        {
-          "id": "generic_test_switch_2",
-          "navigation": {
-            "prev": "generic_imitate",
-            "next": "generic_done"
-          }
-        },
-        {
-          "id": "generic_codewheel",
-          "navigation": {
-            "prev": "generic_choice",
-            "next": "generic_test_switch"
-          }
-        },
-        {
-          "id": "generic_test_switch",
-          "navigation": {
-            "prev": "generic_codewheel",
             "next": "generic_done"
           }
         },
@@ -5084,37 +4662,6 @@
   ],
   "signals": {
     "433": {
-      "kakuold": {
-        "sof": [],
-        "eof": [
-          312
-        ],
-        "words": [
-          [
-            312,
-            1090,
-            312,
-            1090
-          ],
-          [
-            312,
-            1090,
-            990,
-            400
-          ],
-          [
-            312,
-            1090,
-            312,
-            380
-          ]
-        ],
-        "interval": 11000,
-        "repetitions": 20,
-        "sensitivity": 0.7,
-        "minimalLength": 12,
-        "maximalLength": 12
-      },
       "kaku": {
         "sof": [
           225,
@@ -5176,6 +4723,37 @@
         "repetitions": 20,
         "minimalLength": 32,
         "maximalLength": 36
+      },
+      "kakuold": {
+        "sof": [],
+        "eof": [
+          312
+        ],
+        "words": [
+          [
+            312,
+            1090,
+            312,
+            1090
+          ],
+          [
+            312,
+            1090,
+            990,
+            400
+          ],
+          [
+            312,
+            1090,
+            312,
+            380
+          ]
+        ],
+        "interval": 11000,
+        "repetitions": 20,
+        "sensitivity": 0.7,
+        "minimalLength": 12,
+        "maximalLength": 12
       },
       "kakulong": {
         "sof": [
