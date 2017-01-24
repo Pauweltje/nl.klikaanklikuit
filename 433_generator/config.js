@@ -230,8 +230,8 @@ module.exports = {
 							values: [
 								{ id: '1', label: '433_generator.generic.on' },
 								{ id: '0', label: '433_generator.generic.off' },
-								{ id: 'dimup', label: 'deviceClass.kaku_dimming_remote.generic.dimup' },
-								{ id: 'dimdown', label: 'deviceClass.kaku_dimming_remote.generic.dimdown' },
+								{ id: 'dimup', label: 'deviceClassse.kaku_dimming_remote.generic.dimup' },
+								{ id: 'dimdown', label: 'deviceClasses.kaku_dimming_remote.generic.dimdown' },
 							],
 						},
 					],
@@ -821,8 +821,8 @@ $('<div>').append(
 			extends: ['kaku_remote', 'timer_remote'],
 			name: 'devices.ATMT-502.name',
 			images: {
-				large: './assets/ATMT-502/images/large.png',
-				small: './assets/ATMT-502/images/small.png',
+				large: './assets/ATMT-502/images/large.jpg',
+				small: './assets/ATMT-502/images/small.jpg',
 			},
 			icon: './assets/ATMT-502/icon.svg',
 			pair: {
@@ -1207,9 +1207,6 @@ $('<div>').append(
 				},
 			],
 		},
-		// TODO new icon
-		// TODO implement dim functionality
-		// This device is mistakingly using the old kaku signal and is therefore reused to be an YC-400
 		'PAR-1000': {
 			extends: ['old_socket', 'simple_codewheel'],
 			name: 'devices.PAR-1000.name',
@@ -1240,6 +1237,8 @@ $('<div>').append(
 				},
 			},
 		},
+		// TODO implement dim functionality
+		// This device is mistakingly using the old kaku signal and is therefore reused to be an YC-400
 		'AC-300': {
 			extends: 'old_socket',
 			name: 'devices.YC-400.name',
@@ -1349,8 +1348,8 @@ $('<div>').append(
 			extends: 'ACD-1000',
 			name: 'devices.APCR-2300.name',
 			images: {
-				large: './assets/APCR-2300/images/large.png',
-				small: './assets/APCR-2300/images/small.png',
+				large: './assets/APCR-2300/images/large.jpg',
+				small: './assets/APCR-2300/images/small.jpg',
 			},
 			icon: './assets/APCR-2300/icon.svg',
 			pair: {
@@ -1449,8 +1448,8 @@ $('<div>').append(
 			name: 'devices.AWMR-300.name',
 			icon: './assets/AWMR-300/icon.svg',
 			images: {
-				large: './assets/AWMR-300/images/large.png',
-				small: './assets/AWMR-300/images/small.png',
+				large: './assets/AWMR-300/images/large.jpg',
+				small: './assets/AWMR-300/images/small.jpg',
 			},
 			pair: {
 				viewOptions: {
@@ -1519,8 +1518,8 @@ $('<div>').append(
 			name: 'devices.ACM-100.name',
 			icon: './assets/ACM-100/icon.svg',
 			images: {
-				large: './assets/ACM-100/images/large.png',
-				small: './assets/ACM-100/images/small.png',
+				large: './assets/ACM-100/images/large.jpg',
+				small: './assets/ACM-100/images/small.jpg',
 			},
 			pair: {
 				viewOptions: {
@@ -1648,8 +1647,8 @@ $('<div>').append(
 			name: 'devices.ACM-2300H.name',
 			icon: './assets/ACM-2300H/icon.svg',
 			images: {
-				large: './assets/ACM-2300H/images/large.png',
-				small: './assets/ACM-2300H/images/small.png',
+				large: './assets/ACM-2300H/images/large.jpg',
+				small: './assets/ACM-2300H/images/small.jpg',
 			},
 			pair: {
 				viewOptions: {
@@ -1681,8 +1680,8 @@ $('<div>').append(
 			name: 'devices.ACM-LV24.name',
 			icon: './assets/ACM-LV24/icon.svg',
 			images: {
-				large: './assets/ACM-LV24/images/large.png',
-				small: './assets/ACM-LV24/images/small.png',
+				large: './assets/ACM-LV24/images/large.jpg',
+				small: './assets/ACM-LV24/images/small.jpg',
 			},
 			pair: {
 				viewOptions: {
@@ -1714,8 +1713,8 @@ $('<div>').append(
 			name: 'devices.ACM-LV10.name',
 			icon: './assets/ACM-LV10/icon.svg',
 			images: {
-				large: './assets/ACM-LV10/images/large.png',
-				small: './assets/ACM-LV10/images/small.png',
+				large: './assets/ACM-LV10/images/large.jpg',
+				small: './assets/ACM-LV10/images/small.jpg',
 			},
 			pair: {
 				viewOptions: {
@@ -2318,8 +2317,8 @@ $('<div>').append(
 			driver: './drivers/kakuold/timer_remote',
 			name: 'devices.TMT-502.name',
 			images: {
-				large: './assets/TMT-502/images/large.png',
-				small: './assets/TMT-502/images/small.png',
+				large: './assets/TMT-502/images/large.jpg',
+				small: './assets/TMT-502/images/small.jpg',
 			},
 			icon: './assets/TMT-502/icon.svg',
 			pair: {
@@ -2453,155 +2452,5 @@ $('<div>').append(
 				},
 			},
 		},
-		// TODO needs new pair ui
-		// 'PAR-1000': {
-		//
-		// }
 	},
-	// TODO remove these deprecated old drivers
-	drivers: [
-		{
-			id: 'switch',
-			name: {
-				en: '[Deprecated] Socket',
-				nl: '[Verouderd] Stopcontact',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'dimmer',
-			name: {
-				en: '[Deprecated] Dimmer',
-				nl: '[Verouderd] Dimmer',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'blinds',
-			name: {
-				en: '[Deprecated] Blinds',
-				nl: '[Verouderd] Zonwering',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'remote',
-			name: {
-				en: '[Deprecated] Remote',
-				nl: '[Verouderd] Afstandbediening',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'wallSwitch',
-			name: {
-				en: '[Deprecated] Wallswitch',
-				nl: '[Verouderd] Muurschakelaar',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'doorbell',
-			name: {
-				en: '[Deprecated] Doorbell',
-				nl: '[Verouderd] Deurbel',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'nightSensor',
-			name: {
-				en: '[Deprecated] Night sensor',
-				nl: '[Verouderd] Nacht sensor',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'motionSensor',
-			name: {
-				en: '[Deprecated] Motion sensor',
-				nl: '[Verouderd] Bewegings sensor',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'contactSensor',
-			name: {
-				en: '[Deprecated] Contact sensor',
-				nl: '[Verouderd] Contact sensor',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'kakuOldSwitch',
-			name: {
-				en: '[Deprecated] Old socket',
-				nl: '[Verouderd] Oud stopcontact',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-		{
-			id: 'kakuOldRemote',
-			name: {
-				en: '[Deprecated] Old remote',
-				nl: '[Verouderd] Oude afstandbediening',
-			},
-			images: {
-				large: './assets/deprecated/images/large.png',
-				small: './assets/deprecated/images/small.png',
-			},
-			class: 'other',
-			capabilities: [],
-		},
-	],
 };

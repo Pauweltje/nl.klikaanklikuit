@@ -35,10 +35,10 @@ const config = {
 				label: '433_generator.generic.off'
 			}, {
 				id: 'dimup',
-				label: 'deviceClass.kaku_dimming_remote.generic.dimup'
+				label: 'deviceClassse.kaku_dimming_remote.generic.dimup'
 			}, {
 				id: 'dimdown',
-				label: 'deviceClass.kaku_dimming_remote.generic.dimdown'
+				label: 'deviceClasses.kaku_dimming_remote.generic.dimdown'
 			}]
 		}, {
 			name: 'device',

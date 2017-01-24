@@ -163,8 +163,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/ACM-100/images/large.png',
-		small: '../../433_generator/assets/ACM-100/images/small.png'
+		large: '../../433_generator/assets/ACM-100/images/large.jpg',
+		small: '../../433_generator/assets/ACM-100/images/small.jpg'
 	},
 	id: 'ACM-100',
 	class: 'socket',

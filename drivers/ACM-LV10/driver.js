@@ -163,8 +163,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/ACM-LV10/images/large.png',
-		small: '../../433_generator/assets/ACM-LV10/images/small.png'
+		large: '../../433_generator/assets/ACM-LV10/images/large.jpg',
+		small: '../../433_generator/assets/ACM-LV10/images/small.jpg'
 	},
 	id: 'ACM-LV10',
 	class: 'socket',

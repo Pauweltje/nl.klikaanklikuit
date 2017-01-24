@@ -171,8 +171,8 @@ const config = {
 	alternativeSignal: 'kaku',
 	name: 'devices.ACM-LV24.name',
 	images: {
-		large: '../../433_generator/assets/ACM-LV24/images/large.png',
-		small: '../../433_generator/assets/ACM-LV24/images/small.png'
+		large: '../../433_generator/assets/ACM-LV24/images/large.jpg',
+		small: '../../433_generator/assets/ACM-LV24/images/small.jpg'
 	}
 };
 const Driver = require(config.driver);

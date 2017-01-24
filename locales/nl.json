@@ -214,7 +214,8 @@
 				"triggers": {
 					"dimup": "Helderheid Omhoog",
 					"dimdown": "Helderheid Omlaag"
-				}
+				},
+				"dimdown": null
 			},
 			"triggers": {
 				"dimup": null,
@@ -604,11 +605,10 @@
 		}
 	},
 	"depricated": "Deze driver is verouderd. Verwijder aub dit apparaat en voeg hem opnieuw toe in de pair wizard.",
-	"deviceClass": {
+	"deviceClassse": {
 		"kaku_dimming_remote": {
 			"generic": {
-				"dimup": null,
-				"dimdown": null
+				"dimup": null
 			}
 		}
 	}

@@ -206,7 +206,8 @@
 				"triggers": {
 					"dimup": "Increase Brightness",
 					"dimdown": "Decrease Brightness"
-				}
+				},
+				"dimdown": "deviceClasses.kaku_dimming_remote.generic.dimdown"
 			},
 			"triggers": {
 				"dimup": "deviceClasses.kaku_dimming_remote.triggers.dimup",
@@ -593,11 +594,10 @@
 		}
 	},
 	"deprecated": "This driver is deprecated. Please remove this device and pair it again in the pair wizard.",
-	"deviceClass": {
+	"deviceClassse": {
 		"kaku_dimming_remote": {
 			"generic": {
-				"dimup": "deviceClass.kaku_dimming_remote.generic.dimup",
-				"dimdown": "deviceClass.kaku_dimming_remote.generic.dimdown"
+				"dimup": "deviceClassse.kaku_dimming_remote.generic.dimup"
 			}
 		}
 	}

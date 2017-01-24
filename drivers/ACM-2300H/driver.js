@@ -163,8 +163,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/ACM-2300H/images/large.png',
-		small: '../../433_generator/assets/ACM-2300H/images/small.png'
+		large: '../../433_generator/assets/ACM-2300H/images/large.jpg',
+		small: '../../433_generator/assets/ACM-2300H/images/small.jpg'
 	},
 	id: 'ACM-2300H',
 	class: 'socket',

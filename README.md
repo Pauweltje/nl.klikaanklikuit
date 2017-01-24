@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v3.0.0
+Removed the old KaKu drivers (which are already disabled since july 2016) which requires users still using these drivers to re-pair those devices.
+
 ####v2.10.0
 Added support for the following devices: AYCT-202, TMT-502, ATMT-502, ALED-2009, ACM-2300H, ALED-MR2705, ALED-003, ALED-G2706, AWMR-300, ACM-100, ACM-LV24, ACM-LV10, AGDR-200 and APCR-2300. Please report any bugs on github (github.com/athombv/homey/issues).
 

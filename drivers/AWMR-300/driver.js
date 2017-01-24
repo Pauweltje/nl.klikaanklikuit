@@ -163,8 +163,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/AWMR-300/images/large.png',
-		small: '../../433_generator/assets/AWMR-300/images/small.png'
+		large: '../../433_generator/assets/AWMR-300/images/large.jpg',
+		small: '../../433_generator/assets/AWMR-300/images/small.jpg'
 	},
 	id: 'AWMR-300',
 	class: 'socket',

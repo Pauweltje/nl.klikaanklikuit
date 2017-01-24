@@ -2,8 +2,8 @@
 /* eslint-disable */
 const config = {
 	images: {
-		large: '../../433_generator/assets/APCR-2300/images/large.png',
-		small: '../../433_generator/assets/APCR-2300/images/small.png'
+		large: '../../433_generator/assets/APCR-2300/images/large.jpg',
+		small: '../../433_generator/assets/APCR-2300/images/small.jpg'
 	},
 	debounceTimeout: 500,
 	driver: '../../433_generator/drivers/kaku/kaku.js',

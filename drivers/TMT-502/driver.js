@@ -57,8 +57,8 @@ const config = {
 		}]
 	},
 	images: {
-		large: '../../433_generator/assets/TMT-502/images/large.png',
-		small: '../../433_generator/assets/TMT-502/images/small.png'
+		large: '../../433_generator/assets/TMT-502/images/large.jpg',
+		small: '../../433_generator/assets/TMT-502/images/small.jpg'
 	},
 	id: 'TMT-502',
 	triggers: [{

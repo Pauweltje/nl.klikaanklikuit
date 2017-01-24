@@ -1,7 +1,7 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "2.10.0",
-  "compatibility": ">=0.10.1",
+  "version": "3.0.0",
+  "compatibility": ">=1.0.0",
   "category": [
     "appliances",
     "lights",
@@ -635,13 +635,13 @@
               {
                 "id": "dimup",
                 "label": {
-                  "en": "deviceClass.kaku_dimming_remote.generic.dimup"
+                  "en": "deviceClassse.kaku_dimming_remote.generic.dimup"
                 }
               },
               {
                 "id": "dimdown",
                 "label": {
-                  "en": "deviceClass.kaku_dimming_remote.generic.dimdown"
+                  "en": "deviceClasses.kaku_dimming_remote.generic.dimdown"
                 }
               }
             ]
@@ -1377,8 +1377,8 @@
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/ATMT-502/images/large.png",
-        "small": "./433_generator/assets/ATMT-502/images/small.png"
+        "large": "./433_generator/assets/ATMT-502/images/large.jpg",
+        "small": "./433_generator/assets/ATMT-502/images/small.jpg"
       },
       "pair": [
         {
@@ -2728,8 +2728,8 @@
         "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/APCR-2300/images/large.png",
-        "small": "./433_generator/assets/APCR-2300/images/small.png"
+        "large": "./433_generator/assets/APCR-2300/images/large.jpg",
+        "small": "./433_generator/assets/APCR-2300/images/small.jpg"
       },
       "pair": [
         {
@@ -2929,8 +2929,8 @@
         "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/AWMR-300/images/large.png",
-        "small": "./433_generator/assets/AWMR-300/images/small.png"
+        "large": "./433_generator/assets/AWMR-300/images/large.jpg",
+        "small": "./433_generator/assets/AWMR-300/images/small.jpg"
       },
       "pair": [
         {
@@ -3133,8 +3133,8 @@
         "dim"
       ],
       "images": {
-        "large": "./433_generator/assets/ACM-100/images/large.png",
-        "small": "./433_generator/assets/ACM-100/images/small.png"
+        "large": "./433_generator/assets/ACM-100/images/large.jpg",
+        "small": "./433_generator/assets/ACM-100/images/small.jpg"
       },
       "pair": [
         {
@@ -3403,8 +3403,8 @@
         "onoff"
       ],
       "images": {
-        "large": "./433_generator/assets/ACM-2300H/images/large.png",
-        "small": "./433_generator/assets/ACM-2300H/images/small.png"
+        "large": "./433_generator/assets/ACM-2300H/images/large.jpg",
+        "small": "./433_generator/assets/ACM-2300H/images/small.jpg"
       },
       "pair": [
         {
@@ -3471,8 +3471,8 @@
         "dim"
       ],
       "images": {
-        "large": "./433_generator/assets/ACM-LV24/images/large.png",
-        "small": "./433_generator/assets/ACM-LV24/images/small.png"
+        "large": "./433_generator/assets/ACM-LV24/images/large.jpg",
+        "small": "./433_generator/assets/ACM-LV24/images/small.jpg"
       },
       "pair": [
         {
@@ -3539,8 +3539,8 @@
         "dim"
       ],
       "images": {
-        "large": "./433_generator/assets/ACM-LV10/images/large.png",
-        "small": "./433_generator/assets/ACM-LV10/images/small.png"
+        "large": "./433_generator/assets/ACM-LV10/images/large.jpg",
+        "small": "./433_generator/assets/ACM-LV10/images/small.jpg"
       },
       "pair": [
         {
@@ -4843,8 +4843,8 @@
       "class": "other",
       "capabilities": [],
       "images": {
-        "large": "./433_generator/assets/TMT-502/images/large.png",
-        "small": "./433_generator/assets/TMT-502/images/small.png"
+        "large": "./433_generator/assets/TMT-502/images/large.jpg",
+        "small": "./433_generator/assets/TMT-502/images/small.jpg"
       },
       "pair": [
         {
@@ -5080,149 +5080,6 @@
           "navigation": {}
         }
       ]
-    },
-    {
-      "id": "switch",
-      "name": {
-        "en": "[Deprecated] Socket",
-        "nl": "[Verouderd] Stopcontact"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "dimmer",
-      "name": {
-        "en": "[Deprecated] Dimmer",
-        "nl": "[Verouderd] Dimmer"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "blinds",
-      "name": {
-        "en": "[Deprecated] Blinds",
-        "nl": "[Verouderd] Zonwering"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "remote",
-      "name": {
-        "en": "[Deprecated] Remote",
-        "nl": "[Verouderd] Afstandbediening"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "wallSwitch",
-      "name": {
-        "en": "[Deprecated] Wallswitch",
-        "nl": "[Verouderd] Muurschakelaar"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "doorbell",
-      "name": {
-        "en": "[Deprecated] Doorbell",
-        "nl": "[Verouderd] Deurbel"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "nightSensor",
-      "name": {
-        "en": "[Deprecated] Night sensor",
-        "nl": "[Verouderd] Nacht sensor"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "motionSensor",
-      "name": {
-        "en": "[Deprecated] Motion sensor",
-        "nl": "[Verouderd] Bewegings sensor"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "contactSensor",
-      "name": {
-        "en": "[Deprecated] Contact sensor",
-        "nl": "[Verouderd] Contact sensor"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "kakuOldSwitch",
-      "name": {
-        "en": "[Deprecated] Old socket",
-        "nl": "[Verouderd] Oud stopcontact"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
-    },
-    {
-      "id": "kakuOldRemote",
-      "name": {
-        "en": "[Deprecated] Old remote",
-        "nl": "[Verouderd] Oude afstandbediening"
-      },
-      "images": {
-        "large": "./433_generator/assets/deprecated/images/large.png",
-        "small": "./433_generator/assets/deprecated/images/small.png"
-      },
-      "class": "other",
-      "capabilities": []
     }
   ],
   "signals": {

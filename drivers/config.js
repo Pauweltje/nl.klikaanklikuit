@@ -1032,8 +1032,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/TMT-502/images/large.png',
-				small: '../433_generator/assets/TMT-502/images/small.png'
+				large: '../433_generator/assets/TMT-502/images/large.jpg',
+				small: '../433_generator/assets/TMT-502/images/small.jpg'
 			},
 			id: 'TMT-502',
 			triggers: [{
@@ -2907,8 +2907,8 @@ module.exports = {
 			alternativeSignal: 'kaku',
 			name: 'devices.ACM-LV24.name',
 			images: {
-				large: '../433_generator/assets/ACM-LV24/images/large.png',
-				small: '../433_generator/assets/ACM-LV24/images/small.png'
+				large: '../433_generator/assets/ACM-LV24/images/large.jpg',
+				small: '../433_generator/assets/ACM-LV24/images/small.jpg'
 			}
 		},
 		'ACDB-7000C': {
@@ -3265,8 +3265,8 @@ module.exports = {
 		},
 		'APCR-2300': {
 			images: {
-				large: '../433_generator/assets/APCR-2300/images/large.png',
-				small: '../433_generator/assets/APCR-2300/images/small.png'
+				large: '../433_generator/assets/APCR-2300/images/large.jpg',
+				small: '../433_generator/assets/APCR-2300/images/small.jpg'
 			},
 			debounceTimeout: 500,
 			driver: '../433_generator/drivers/kaku/kaku.js',
@@ -4872,8 +4872,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/ACM-100/images/large.png',
-				small: '../433_generator/assets/ACM-100/images/small.png'
+				large: '../433_generator/assets/ACM-100/images/large.jpg',
+				small: '../433_generator/assets/ACM-100/images/small.jpg'
 			},
 			id: 'ACM-100',
 			class: 'socket',
@@ -5510,8 +5510,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/ACM-LV10/images/large.png',
-				small: '../433_generator/assets/ACM-LV10/images/small.png'
+				large: '../433_generator/assets/ACM-LV10/images/large.jpg',
+				small: '../433_generator/assets/ACM-LV10/images/small.jpg'
 			},
 			id: 'ACM-LV10',
 			class: 'socket',
@@ -5708,10 +5708,10 @@ module.exports = {
 						label: '433_generator.generic.off'
 					}, {
 						id: 'dimup',
-						label: 'deviceClass.kaku_dimming_remote.generic.dimup'
+						label: 'deviceClassse.kaku_dimming_remote.generic.dimup'
 					}, {
 						id: 'dimdown',
-						label: 'deviceClass.kaku_dimming_remote.generic.dimdown'
+						label: 'deviceClasses.kaku_dimming_remote.generic.dimdown'
 					}]
 				}, {
 					name: 'device',
@@ -6287,8 +6287,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/ACM-2300H/images/large.png',
-				small: '../433_generator/assets/ACM-2300H/images/small.png'
+				large: '../433_generator/assets/ACM-2300H/images/large.jpg',
+				small: '../433_generator/assets/ACM-2300H/images/small.jpg'
 			},
 			id: 'ACM-2300H',
 			class: 'socket',
@@ -7064,8 +7064,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/ATMT-502/images/large.png',
-				small: '../433_generator/assets/ATMT-502/images/small.png'
+				large: '../433_generator/assets/ATMT-502/images/large.jpg',
+				small: '../433_generator/assets/ATMT-502/images/small.jpg'
 			},
 			id: 'ATMT-502',
 			triggers: [{
@@ -8420,8 +8420,8 @@ module.exports = {
 				}]
 			},
 			images: {
-				large: '../433_generator/assets/AWMR-300/images/large.png',
-				small: '../433_generator/assets/AWMR-300/images/small.png'
+				large: '../433_generator/assets/AWMR-300/images/large.jpg',
+				small: '../433_generator/assets/AWMR-300/images/small.jpg'
 			},
 			id: 'AWMR-300',
 			class: 'socket',
