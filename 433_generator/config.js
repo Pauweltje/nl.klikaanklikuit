@@ -2307,114 +2307,114 @@ $('<div>').append(
 				},
 			},
 		},
-	},
-	'PAR-1000': {
-		extends: ['old_socket', 'simple_codewheel'],
-		name: 'devices.PAR-1000.name',
-		images: {
-			large: './assets/PAR-1000/images/large.jpg',
-			small: './assets/PAR-1000/images/small.jpg',
-		},
-		icon: './assets/PAR-1000/icon.svg',
-		pair: {
-			viewOptions: {
-				generic_choice: {
-					buttons: [
-						{
-							name: 'views.generic_choice.buttons.copy',
-							view: 'generic_imitate',
-							svg: './assets/PA3-1000R/icon.svg',
-						},
-						{
-							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
-							view: 'generic_codewheel',
-							svg: './assets/PAR-1000/icon.svg',
-						},
-					],
-				},
-				generic_imitate: {
-					svg: './assets/PA3-1000R/pair.svg',
+		'PAR-1000': {
+			extends: ['old_socket', 'simple_codewheel'],
+			name: 'devices.PAR-1000.name',
+			images: {
+				large: './assets/PAR-1000/images/large.jpg',
+				small: './assets/PAR-1000/images/small.jpg',
+			},
+			icon: './assets/PAR-1000/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/PA3-1000R/icon.svg',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/PAR-1000/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/PA3-1000R/pair.svg',
+					},
 				},
 			},
 		},
-	},
-	// TODO implement dim functionality
-	// This device is mistakingly using the old kaku signal and is therefore reused to be an YC-400
-	'AC-300': {
-		extends: 'old_socket',
-		name: 'devices.YC-400.name',
-		images: {
-			large: './assets/YC-400/images/large.jpg',
-			small: './assets/YC-400/images/small.jpg',
-		},
-		icon: './assets/YC-400/icon.svg',
-		pair: {
-			viewOptions: {
-				generic_choice: {
-					buttons: [
-						{
-							name: 'views.generic_choice.buttons.copy',
-							view: 'generic_imitate',
-							svg: './assets/YCT-102/icon.svg',
-						},
-						{
-							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
-							view: 'generic_codewheel',
-							svg: './assets/YC-400/icon.svg',
-						},
-					],
-				},
-				generic_imitate: {
-					svg: './assets/YCT-102/pair.svg',
+		// TODO implement dim functionality
+		// This device is mistakingly using the old kaku signal and is therefore reused to be an YC-400
+		'AC-300': {
+			extends: 'old_socket',
+			name: 'devices.YC-400.name',
+			images: {
+				large: './assets/YC-400/images/large.jpg',
+				small: './assets/YC-400/images/small.jpg',
+			},
+			icon: './assets/YC-400/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/YCT-102/icon.svg',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/YC-400/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/YCT-102/pair.svg',
+					},
 				},
 			},
 		},
-	},
-	'YC-412': {
-		extends: 'AC-300',
-		name: 'devices.YC-412.name',
-	},
-	'YC-1000': {
-		extends: 'YC-412',
-		name: 'devices.YC-1000.name',
-	},
-	'YC-3500': {
-		extends: 'YC-412',
-		name: 'devices.YC-3500.name',
-	},
-	// Should have been SUN-500 but has already been deployed with wrong ID so SUN-500 === SUN-650
-	'SUN-650': {
-		extends: 'old_blinds',
-		name: 'devices.SUN-500.name',
-		images: {
-			large: './assets/SUN-500/images/large.jpg',
-			small: './assets/SUN-500/images/small.jpg',
+		'YC-412': {
+			extends: 'AC-300',
+			name: 'devices.YC-412.name',
 		},
-		icon: './assets/SUN-500/icon.svg',
-		pair: {
-			viewOptions: {
-				generic_choice: {
-					buttons: [
-						{
-							name: 'views.generic_choice.buttons.copy',
-							view: 'generic_imitate',
-							svg: './assets/YCT-102/icon.svg',
-						},
-						{
-							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
-							view: 'generic_codewheel',
-							svg: './assets/SUN-500/icon.svg',
-						},
-					],
-				},
-				generic_imitate: {
-					svg: './assets/YCT-102/pair.svg',
-				},
-				generic_test_switch: {
-					svg: './assets/ASUN-650/test.svg',
-				},
-				generic_test_switch_2: {
-					svg: './assets/ASUN-650/test.svg',
+		'YC-1000': {
+			extends: 'YC-412',
+			name: 'devices.YC-1000.name',
+		},
+		'YC-3500': {
+			extends: 'YC-412',
+			name: 'devices.YC-3500.name',
+		},
+		// Should have been SUN-500 but has already been deployed with wrong ID so SUN-500 === SUN-650
+		'SUN-650': {
+			extends: 'old_blinds',
+			name: 'devices.SUN-500.name',
+			images: {
+				large: './assets/SUN-500/images/large.jpg',
+				small: './assets/SUN-500/images/small.jpg',
+			},
+			icon: './assets/SUN-500/icon.svg',
+			pair: {
+				viewOptions: {
+					generic_choice: {
+						buttons: [
+							{
+								name: 'views.generic_choice.buttons.copy',
+								view: 'generic_imitate',
+								svg: './assets/YCT-102/icon.svg',
+							},
+							{
+								name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+								view: 'generic_codewheel',
+								svg: './assets/SUN-500/icon.svg',
+							},
+						],
+					},
+					generic_imitate: {
+						svg: './assets/YCT-102/pair.svg',
+					},
+					generic_test_switch: {
+						svg: './assets/ASUN-650/test.svg',
+					},
+					generic_test_switch_2: {
+						svg: './assets/ASUN-650/test.svg',
+					},
 				},
 			},
 		},
