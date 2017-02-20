@@ -47,9 +47,12 @@ module.exports = class Signal extends EventEmitter {
 			this.signal.on('payload', payload => {
 				const payloadStr = payload.join('');
 				this.logger.debug(`[Signal ${signalKey} ~${this.debounceTimeout}] raw payload:`, payloadStr);
-				if (this.debounce(payload)) {
+				const debouncer = this.debounce(payload);
+				if (debouncer) {
+					debouncer.pause();
 					this.logger.info(`[Signal ${signalKey} ~${this.debounceTimeout}] payload:`, payloadStr);
 					this.signal.emit(`debounce_payload_${this.debounceTimeout}`, payload);
+					debouncer.reset();
 				}
 			});
 		} else {
@@ -198,19 +201,22 @@ module.exports = class Signal extends EventEmitter {
 
 		const payloadString = payload.join('');
 		if (!this.debounceBuffer.has(payloadString)) {
+			const debouncer = new Debouncer(this.debounceTimeout, () => this.debounceBuffer.delete(payloadString));
 			this.debounceBuffer.set(
 				payloadString,
-				new Debouncer(this.debounceTimeout, () => this.debounceBuffer.delete(payloadString))
+				debouncer
 			);
-			return payload;
+			return debouncer;
 		}
 		const debouncer = this.debounceBuffer.get(payloadString);
 		if (debouncer.state === Debouncer.FINISHED) {
 			debouncer.reset();
-			return payload;
+			return debouncer;
 		}
 
-		debouncer.reset();
+		if (debouncer.state !== Debouncer.PAUSED) {
+			debouncer.reset();
+		}
 		return null;
 	}
 };
@@ -223,12 +229,12 @@ class Debouncer {
 		this.idleTime = isNaN(idleTime) ? 10000 : Number(idleTime);
 
 		this._init();
-		this.start();
 	}
 
 	_init() {
 		this.time = this.origTime;
 		this.state = Debouncer.INITED;
+		this.start();
 	}
 
 	_setTimeout() {
@@ -298,6 +304,7 @@ class Debouncer {
 			this.startTime = Date.now();
 		} else if (this.state === Debouncer.PAUSED) {
 			this.time = this.origTime;
+			this.start();
 		}
 	}
 }

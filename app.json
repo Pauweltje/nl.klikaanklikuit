@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "compatibility": ">=1.0.0",
   "category": [
     "appliances",
@@ -635,13 +635,15 @@
               {
                 "id": "dimup",
                 "label": {
-                  "en": "deviceClassse.kaku_dimming_remote.generic.dimup"
+                  "en": "Increase Brightness",
+                  "nl": "Helderheid Omhoog"
                 }
               },
               {
                 "id": "dimdown",
                 "label": {
-                  "en": "deviceClasses.kaku_dimming_remote.generic.dimdown"
+                  "en": "Decrease Brightness",
+                  "nl": "Helderheid Omlaag"
                 }
               }
             ]

@@ -230,8 +230,8 @@ module.exports = {
 							values: [
 								{ id: '1', label: '433_generator.generic.on' },
 								{ id: '0', label: '433_generator.generic.off' },
-								{ id: 'dimup', label: 'deviceClassse.kaku_dimming_remote.generic.dimup' },
-								{ id: 'dimdown', label: 'deviceClasses.kaku_dimming_remote.generic.dimdown' },
+								{ id: 'dimup', label: 'deviceClasses.kaku_dimming_remote.generic.triggers.dimup' },
+								{ id: 'dimdown', label: 'deviceClasses.kaku_dimming_remote.generic.triggers.dimdown' },
 							],
 						},
 					],

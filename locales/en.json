@@ -206,12 +206,7 @@
 				"triggers": {
 					"dimup": "Increase Brightness",
 					"dimdown": "Decrease Brightness"
-				},
-				"dimdown": "deviceClasses.kaku_dimming_remote.generic.dimdown"
-			},
-			"triggers": {
-				"dimup": "deviceClasses.kaku_dimming_remote.triggers.dimup",
-				"dimdown": "deviceClasses.kaku_dimming_remote.triggers.dimdown"
+				}
 			}
 		}
 	},
@@ -593,12 +588,5 @@
 			"body": "Press a random button on your remote or click the button in the image above to test the signal. Press next to continue.\u0000"
 		}
 	},
-	"deprecated": "This driver is deprecated. Please remove this device and pair it again in the pair wizard.",
-	"deviceClassse": {
-		"kaku_dimming_remote": {
-			"generic": {
-				"dimup": "deviceClassse.kaku_dimming_remote.generic.dimup"
-			}
-		}
-	}
+	"deprecated": "This driver is deprecated. Please remove this device and pair it again in the pair wizard."
 }

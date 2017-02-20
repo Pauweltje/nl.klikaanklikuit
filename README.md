@@ -4,6 +4,10 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v3.0.1
+Fixed TMT-502 icon in pair wizard to reflect the correct buttons
+Fixed signal debouncer which would sometimes trigger flows multiple times if Homey was very busy
+
 ####v3.0.0
 Removed the old KaKu drivers (which are already disabled since july 2016) which requires users still using these drivers to re-pair those devices.
 
