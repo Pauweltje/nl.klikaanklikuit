@@ -4,13 +4,6 @@ const DefaultDriver = require('../../../drivers/lib/driver');
 const globalIdList = new Set();
 
 module.exports = class Kaku extends DefaultDriver {
-	constructor(config) {
-		super(config);
-		this.on('frame', this.updateState.bind(this));
-		this.on('new_state', this.updateRealtime.bind(this));
-		this.on('new_pairing_device', device => this.updateState(device.data));
-	}
-
 	add(device) {
 		globalIdList.add(this.getDeviceId(device));
 		return super.add(device);
@@ -109,25 +102,5 @@ module.exports = class Kaku extends DefaultDriver {
 			return address.concat(unit, channel, data.undef, Number(data.state));
 		}
 		return null;
-	}
-
-	updateState(frame) {
-		this.setState(frame.id, Object.assign({}, this.getState(frame.id), frame));
-	}
-
-	updateRealtime(device, state, oldState) {
-		if (Boolean(Number(state.state)) !== Boolean(Number(oldState.state))) {
-			this.realtime(device, 'onoff', Boolean(Number(state.state)));
-		}
-	}
-
-	getExports() {
-		const exports = super.getExports();
-		exports.capabilities = exports.capabilities || {};
-		exports.capabilities.onoff = {
-			get: (device, callback) => callback(null, Boolean(Number(this.getState(device).state))),
-			set: (device, state, callback) => this.send(device, { state: state ? 1 : 0 }, () => callback(null, state)),
-		};
-		return exports;
 	}
 };

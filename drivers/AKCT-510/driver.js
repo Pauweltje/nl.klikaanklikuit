@@ -61,7 +61,7 @@ const config = {
 		}]
 	},
 	id: 'AKCT-510',
-	driver: '../../433_generator/drivers/kaku/kaku.js',
+	driver: '../../433_generator/drivers/kaku/socket',
 	signal: 'kaku',
 	class: 'other',
 	triggers: [{

@@ -6,7 +6,7 @@ const config = {
 		small: '../../433_generator/assets/APCR-2300/images/small.jpg'
 	},
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kaku/kaku.js',
+	driver: '../../433_generator/drivers/kaku/socket',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',

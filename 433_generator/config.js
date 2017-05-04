@@ -27,7 +27,7 @@ module.exports = {
 		},
 		kaku: {
 			extends: 'defaults',
-			driver: './drivers/kaku/kaku.js',
+			driver: './drivers/kaku/socket',
 			signal: {
 				id: 'kaku',
 				sof: [225, 2774], // Start of frame
@@ -36,7 +36,7 @@ module.exports = {
 					[240, 308, 240, 1348],	// 0
 					[240, 1338, 240, 320],	// 1
 				],
-				interval: 10150, // Time between two messages
+				interval: 3094, // Time between two messages
 				sensitivity: 0.9,
 				repetitions: 20,
 				minimalLength: 32,
@@ -1533,11 +1533,11 @@ $('<div>').append(
 			extends: 'AFR-100',
 			name: 'devices.AFR-060.name',
 			capabilities: ['onoff'],
-			driver: './drivers/kaku/kaku.js',
+			driver: './drivers/kaku/socket',
 		},
 		'ALED-003': {
 			extends: 'ALED-2709',
-			driver: './drivers/kaku/kaku',
+			driver: './drivers/kaku/socket',
 			capabilities: ['onoff'],
 			name: 'devices.ALED-003.name',
 			images: {

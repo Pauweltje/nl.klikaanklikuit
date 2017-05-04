@@ -1,8 +1,8 @@
 'use strict';
 
-const Kaku = require('./kaku');
+const Socket = require('./socket');
 
-module.exports = class Codewheel extends Kaku {
+module.exports = class Codewheel extends Socket {
 	generateData() {
 		const data = {
 			address: `00${this.generateRandomBitString(2)}`,

@@ -1,8 +1,9 @@
 'use strict';
 
 const Kaku = require('./kaku');
+const Default = require('../../../drivers/lib/drivers/default');
 
-module.exports = class Blinds extends Kaku {
+module.exports = class Blinds extends mix(Kaku).with(Default) {
 	constructor(config) {
 		super(config);
 		this.stateTransition = {};

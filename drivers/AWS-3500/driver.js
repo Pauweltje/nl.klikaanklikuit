@@ -169,7 +169,7 @@ const config = {
 	id: 'AWS-3500',
 	class: 'socket',
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kaku/kaku.js',
+	driver: '../../433_generator/drivers/kaku/socket',
 	signal: 'kaku',
 	name: 'devices.AWS-3500.name',
 	icon: '../../433_generator/assets/AWS-3500/icon.svg'

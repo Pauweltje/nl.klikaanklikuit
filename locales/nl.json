@@ -50,7 +50,7 @@
 		"generic_switch": {
 			"views": {
 				"generic_choice": {
-					"title": "Kopieer je afstansbediening of programmeer met Homey\u0000",
+					"title": "Kopieer je afstandsbediening of programmeer met Homey\u0000",
 					"body": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je het apparaat wil programmeren met een nieuw signaal van Homey.\u0000",
 					"buttons": {
 						"generic_imitate": "Kopieer je afstandsbediening\u0000",
@@ -278,7 +278,7 @@
 				"bright": "Fel Knop\u0000",
 				"dim": "Gedimt Knop\u0000",
 				"middle": "Middelste Knop\u0000",
-				"F": null
+				"F": "Knop F\u0000"
 			},
 			"channels": {
 				"1": "Kanaal 1\u0000",
@@ -296,7 +296,7 @@
 				"C": "Kanaal C\u0000",
 				"D": "Kanaal D\u0000",
 				"E": "Kanaal E\u0000",
-				"F": null
+				"F": "Kanaal F\u0000"
 			},
 			"left": "Links\u0000",
 			"middle": "Midden\u0000",

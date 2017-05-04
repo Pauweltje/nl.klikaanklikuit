@@ -1,5 +1,9 @@
 'use strict';
 
+const mixWith = require('./mixwith/mixwith');
+global.mix = mixWith.mix;
+global.Mixin = mixWith.Mixin;
+
 const EventEmitter = require('events').EventEmitter;
 const Signal = require('./signal');
 const logLevelMap = new Map([['silly', 1], ['debug', 2], ['verbose', 3], ['info', 4], ['warn', 5], ['error', 6]]);
@@ -7,6 +11,37 @@ const sentryLevelMap = new Map([[1, 'debug'], [2, 'debug'], [3, 'debug'], [4, 'i
 const logLevelNameMap = new Map(
 	Array.from(logLevelMap.entries()).map(entry => [entry[1], entry[0][0].toUpperCase().concat(entry[0].slice(1))])
 );
+
+if (process.env.DEBUG === '1') {
+	const pjson = require('./package.json'); // eslint-disable-line
+	const http = require('http'); // eslint-disable-line
+
+	const options = {
+		hostname: 'registry.npmjs.org',
+		path: `/${pjson.name}/latest`,
+		method: 'GET',
+		headers: { 'Content-Type': 'application/json' },
+	};
+
+	const req = http.request(options, res => {
+		res.setEncoding('utf8');
+		res.on('data', dataString => {
+			try {
+				const data = JSON.parse(dataString);
+				if (data.version !== pjson.version) {
+					console.log(
+						`\x1b[33mA newer version of the 433 generator is available (${pjson.version} -> ${data.version}).\n` +
+						'Please run \'npm install -g homey-433\' and \'homey433 generate\' in your project folder to update!\x1b[0m'
+					);
+				}
+			} catch (e) {
+				return; // ignore
+			}
+		});
+	});
+	req.on('error', e => null);
+	req.end();
+}
 
 module.exports = class Driver extends EventEmitter {
 	constructor(driverConfig) {
@@ -377,6 +412,10 @@ module.exports = class Driver extends EventEmitter {
 				this.emit('error', err);
 				throw err;
 			}));
+		}).catch((e) => {
+			setTimeout(() => {
+				throw e;
+			});
 		});
 	}
 

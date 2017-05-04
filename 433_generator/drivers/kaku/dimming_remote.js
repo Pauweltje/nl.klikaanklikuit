@@ -1,8 +1,9 @@
 'use strict';
 
 const Kaku = require('./kaku');
+const Default = require('../../../drivers/lib/drivers/default');
 
-module.exports = class DimmingRemote extends Kaku {
+module.exports = class DimmingRemote extends mix(Kaku).with(Default) {
 
 	payloadToData(payload) { // Convert received data to usable variables
 		if (payload && payload.length === 32 && payload.indexOf(2) === -1) {

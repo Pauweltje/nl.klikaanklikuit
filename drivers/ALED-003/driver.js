@@ -6,7 +6,7 @@ const config = {
 		small: '../../433_generator/assets/ALED-003/images/small.jpg'
 	},
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kaku/kaku',
+	driver: '../../433_generator/drivers/kaku/socket',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',

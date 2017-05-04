@@ -169,7 +169,7 @@ const config = {
 	id: 'ACM-2300H',
 	class: 'socket',
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kaku/kaku.js',
+	driver: '../../433_generator/drivers/kaku/socket',
 	signal: 'kaku',
 	name: 'devices.ACM-2300H.name',
 	icon: '../../433_generator/assets/ACM-2300H/icon.svg'

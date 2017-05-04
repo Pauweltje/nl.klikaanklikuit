@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "compatibility": ">=1.0.0",
   "category": [
     "appliances",
@@ -5113,7 +5113,7 @@
         ],
         "interval": 11000,
         "repetitions": 20,
-        "sensitivity": 0.7,
+        "sensitivity": 0.5,
         "minimalLength": 12,
         "maximalLength": 12
       },
@@ -5139,8 +5139,8 @@
             320
           ]
         ],
-        "interval": 10150,
-        "sensitivity": 0.9,
+        "interval": 3094,
+        "sensitivity": 0.5,
         "repetitions": 20,
         "minimalLength": 32,
         "maximalLength": 32
@@ -5174,7 +5174,7 @@
           ]
         ],
         "interval": 10150,
-        "sensitivity": 0.9,
+        "sensitivity": 0.5,
         "repetitions": 20,
         "minimalLength": 32,
         "maximalLength": 36
@@ -5202,7 +5202,7 @@
           ]
         ],
         "interval": 10150,
-        "sensitivity": 0.9,
+        "sensitivity": 0.5,
         "repetitions": 10,
         "minimalLength": 32,
         "maximalLength": 36

@@ -194,7 +194,7 @@ module.exports = {
 				small: '../433_generator/assets/ACD-200/images/small.png'
 			},
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -366,7 +366,7 @@ module.exports = {
 		'AC-3500': {
 			icon: '../433_generator/assets/AC-300/icon.svg',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -712,7 +712,7 @@ module.exports = {
 		'AFR-060': {
 			icon: '../433_generator/assets/AFR-100/icon.svg',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -1119,7 +1119,7 @@ module.exports = {
 				small: '../433_generator/assets/AC-300/images/small.png'
 			},
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -2389,7 +2389,7 @@ module.exports = {
 		},
 		'APA2-2300RS': {
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -3269,7 +3269,7 @@ module.exports = {
 				small: '../433_generator/assets/APCR-2300/images/small.jpg'
 			},
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -3863,7 +3863,7 @@ module.exports = {
 				}]
 			},
 			id: 'AKCT-510',
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			class: 'other',
 			triggers: [{
@@ -4460,7 +4460,7 @@ module.exports = {
 		},
 		'APA3-1500RS': {
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -5168,7 +5168,7 @@ module.exports = {
 			id: 'ACM-1000',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.ACM-1000.name',
 			icon: '../433_generator/assets/ACM-300/icon.svg'
@@ -5342,7 +5342,7 @@ module.exports = {
 			id: 'AWMR-230',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.AWMR-230.name',
 			icon: '../433_generator/assets/AWMR-210/icon.svg'
@@ -5353,7 +5353,7 @@ module.exports = {
 				small: '../433_generator/assets/ALED-003/images/small.jpg'
 			},
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -6104,7 +6104,7 @@ module.exports = {
 			id: 'ACM-2300H',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.ACM-2300H.name',
 			icon: '../433_generator/assets/ACM-2300H/icon.svg'
@@ -7586,7 +7586,7 @@ module.exports = {
 			id: 'AILS-3500',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.AILD-3500.name',
 			icon: '../433_generator/assets/AILD-250/icon.svg'
@@ -8085,7 +8085,7 @@ module.exports = {
 		'ACD-1000': {
 			icon: '../433_generator/assets/ACD-200/socket.svg',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -8426,7 +8426,7 @@ module.exports = {
 			id: 'AWMR-300',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.AWMR-300.name',
 			icon: '../433_generator/assets/AWMR-300/icon.svg'
@@ -8600,7 +8600,7 @@ module.exports = {
 			id: 'AWS-3500',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			name: 'devices.AWS-3500.name',
 			icon: '../433_generator/assets/AWS-3500/icon.svg'
@@ -8953,7 +8953,7 @@ module.exports = {
 			id: 'AGDR-3500',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kaku/kaku.js',
+			driver: '../433_generator/drivers/kaku/socket',
 			signal: 'kaku',
 			alternativeSignal: 'kaku',
 			name: 'devices.AGDR-3500.name',

@@ -1,8 +1,9 @@
 'use strict';
 
 const Kaku = require('./kaku');
+const Default = require('../../../drivers/lib/drivers/default');
 
-module.exports = class Remote extends Kaku {
+module.exports = class Remote extends mix(Kaku).with(Default) {
 	payloadToData(payload) { // Convert received data to usable variables
 		const data = super.payloadToData(payload);
 		if (!data) return data;
