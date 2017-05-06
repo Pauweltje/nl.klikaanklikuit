@@ -36,7 +36,7 @@ module.exports = {
 					[240, 308, 240, 1348],	// 0
 					[240, 1338, 240, 320],	// 1
 				],
-				interval: 3094, // Time between two messages
+				interval: 10150, // Time between two messages
 				sensitivity: 0.9,
 				repetitions: 20,
 				minimalLength: 32,
