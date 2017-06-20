@@ -771,7 +771,12 @@ module.exports = class Driver extends EventEmitter {
 
 	registerSignal(callback) {
 		this.logger.verbose('Driver:registerSignal(callback)', callback);
-		return this.signal.register(callback);
+		return this.signal.register(callback).catch(err => {
+			this.devices.forEach(device =>
+				this.setUnavailable(device, __('433_generator.error.cannot_register_signal'))
+			);
+			return Promise.reject(err);
+		});
 	}
 
 	unregisterSignal() {

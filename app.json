@@ -1,6 +1,6 @@
 {
   "id": "nl.klikaanklikuit",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "compatibility": ">=1.0.0",
   "category": [
     "appliances",
@@ -5173,7 +5173,7 @@
             308
           ]
         ],
-        "interval": 10150,
+        "interval": 3094,
         "sensitivity": 0.5,
         "repetitions": 20,
         "minimalLength": 32,

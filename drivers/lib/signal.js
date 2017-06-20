@@ -84,11 +84,13 @@ module.exports = class Signal extends EventEmitter {
 			this.logger.info(`[Signal ${this.signalKey}] registered signal`);
 			registerLock.get(this.signalKey).add(key || this);
 
-			registerPromises.set(this.signalKey, new Promise(resolve => {
+			registerPromises.set(this.signalKey, new Promise((resolve, reject) => {
 				(unRegisterPromises.get(this.signalKey) || Promise.resolve()).then(() => {
 					this.signal.register(err => { // Register signal
-						// Log errors but other than that just ignore them
-						if (err) this.logger.error(err, { extra: { registerLock, registerPromises } });
+						if (err) {
+							this.logger.error(err, { extra: { registerLock, registerPromises } });
+							return reject(err);
+						}
 						resolve();
 					});
 				});
@@ -100,8 +102,9 @@ module.exports = class Signal extends EventEmitter {
 		return registerPromises.get(this.signalKey)
 			.then(() => callback(null, true))
 			.catch(err => {
+				registerLock.get(this.signalKey).delete(key || this);
 				callback(err);
-				throw err;
+				return Promise.reject(err);
 			});
 	}
 

@@ -20,7 +20,7 @@ module.exports = {
 				],
 				interval: 11000,
 				repetitions: 20,
-				sensitivity: 0.7,
+				sensitivity: 0.5,
 				minimalLength: 12,
 				maximalLength: 12,
 			},
@@ -36,8 +36,8 @@ module.exports = {
 					[240, 308, 240, 1348],	// 0
 					[240, 1338, 240, 320],	// 1
 				],
-				interval: 10150, // Time between two messages
-				sensitivity: 0.9,
+				interval: 3094, // Time between two messages
+				sensitivity: 0.5,
 				repetitions: 20,
 				minimalLength: 32,
 				maximalLength: 32,
@@ -54,8 +54,8 @@ module.exports = {
 					[240, 1338, 240, 320],	// 1
 					[240, 308, 240, 308],  // 2 <-- used for dim
 				],
-				interval: 10150, // Time between two messages
-				sensitivity: 0.9,
+				interval: 3094, // Time between two messages
+				sensitivity: 0.5,
 				repetitions: 20,
 				minimalLength: 32,
 				maximalLength: 36,

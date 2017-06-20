@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v3.1.0
+Homey Client v1.3.1 fixed a bug that occured when the microcontroller crashed. This fix only works after a PTP. This update now notifies the user when Homey is affected by this bug and requests the user to pull the power plug for 10 seconds which should fix this bug.
+
 ####v3.0.1
 Fixed TMT-502 icon in pair wizard to reflect the correct buttons
 Fixed signal debouncer which would sometimes trigger flows multiple times if Homey was very busy

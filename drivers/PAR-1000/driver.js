@@ -13,151 +13,161 @@ const config = {
 			'generic_done'
 		],
 		views: [{
-			template: '../lib/pair/choice.html',
-			options: {
-				title: 'deviceClasses.generic_switch.views.generic_choice.title',
-				body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
-				buttons: [{
-					name: 'views.generic_choice.buttons.copy',
-					view: 'generic_imitate',
-					svg: '../../433_generator/assets/PA3-1000R/icon.svg'
-				}, {
-					name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
-					view: 'generic_codewheel',
-					svg: '../../433_generator/assets/PAR-1000/icon.svg'
-				}],
+				template: '../lib/pair/choice.html',
+				options: {
+					title: 'deviceClasses.generic_switch.views.generic_choice.title',
+					body: 'deviceClasses.generic_codewheel_switch.views.generic_choice.body',
+					buttons: [{
+							name: 'views.generic_choice.buttons.copy',
+							view: 'generic_imitate',
+							svg: '../../433_generator/assets/PA3-1000R/icon.svg'
+						},
+						{
+							name: 'deviceClasses.generic_codewheel_switch.views.generic_choice.buttons.generic_codewheel',
+							view: 'generic_codewheel',
+							svg: '../../433_generator/assets/PAR-1000/icon.svg'
+						}
+					],
+					prepend: [],
+					append: [],
+					svgWidth: '80vw',
+					svgHeight: '65vh'
+				},
+				prepend: ['../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js'
+				],
+				append: [],
+				id: 'generic_choice'
+			},
+			{
+				template: '../lib/pair/imitate.html',
+				options: {
+					title: 'deviceClasses.generic_socket.views.generic_imitate.title',
+					body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+					prepend: [],
+					append: [],
+					svg: '../../433_generator/assets/PA3-1000R/pair.svg',
+					svgWidth: '80vw',
+					svgHeight: '70vh',
+					initWithDeviceData: false,
+					previous: true,
+					next: false
+				},
+				prepend: ['../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js'
+				],
+				append: [],
+				id: 'generic_imitate'
+			},
+			{
+				template: '../lib/pair/test_switch.html',
+				options: {
+					next: true,
+					initWithDeviceData: true,
+					sendToggleOnInit: false,
+					prepend: [],
+					append: [],
+					title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+					body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
+					svg: '../../assets/433_generator/images/light.svg',
+					svgWidth: '80vw',
+					svgHeight: '70vh',
+					previous: true
+				},
+				prepend: ['../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js',
+					'../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js'
+				],
+				append: [],
+				id: 'generic_test_switch_2'
+			},
+			{
+				template: 'choose_slave',
+				options: {
+					next: 'generic_done',
+					prepend: [],
+					append: [],
+					previous: true
+				},
 				prepend: [],
 				append: [],
-				svgWidth: '80vw',
-				svgHeight: '65vh'
+				id: 'generic_choose_slave_2'
 			},
-			prepend: ['../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js'
-			],
-			append: [],
-			id: 'generic_choice'
-		}, {
-			template: '../lib/pair/imitate.html',
-			options: {
-				title: 'deviceClasses.generic_socket.views.generic_imitate.title',
-				body: 'deviceClasses.generic_socket.views.generic_imitate.body',
+			{
+				template: '../lib/pair/codewheel.html',
+				options: {
+					previous: 'generic_choice',
+					prepend: [],
+					append: [],
+					codewheelList: [{
+						series: [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
+						mapOddToDot: false,
+						quadrants: ['A', 'B', 'C', 'D']
+					}],
+					title: 'views.generic_codewheel.title',
+					body: 'views.generic_codewheel.body',
+					next: true
+				},
+				prepend: ['../../assets/433_generator/css/codewheel.css',
+					'../../assets/433_generator/js/codewheel.js'
+				],
+				append: [],
+				id: 'generic_codewheel'
+			},
+			{
+				template: '../lib/pair/test_switch.html',
+				options: {
+					title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
+					body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
+					prepend: [],
+					append: [],
+					svg: '../../assets/433_generator/images/light.svg',
+					svgWidth: '80vw',
+					svgHeight: '70vh',
+					initWithDeviceData: true,
+					previous: true,
+					next: true,
+					sendToggleOnInit: false
+				},
+				prepend: ['../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js',
+					'../../assets/433_generator/css/styles.css',
+					'../../assets/433_generator/css/svg.css',
+					'../../assets/433_generator/js/svghighlighter.js'
+				],
+				append: [],
+				id: 'generic_test_switch'
+			},
+			{
+				template: 'choose_slave',
+				options: {
+					previous: true,
+					next: true,
+					prepend: '',
+					append: ''
+				},
 				prepend: [],
 				append: [],
-				svg: '../../433_generator/assets/PA3-1000R/pair.svg',
-				svgWidth: '80vw',
-				svgHeight: '70vh',
-				initWithDeviceData: false,
-				previous: true,
-				next: false
+				id: 'generic_choose_slave'
 			},
-			prepend: ['../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js'
-			],
-			append: [],
-			id: 'generic_imitate'
-		}, {
-			template: '../lib/pair/test_switch.html',
-			options: {
-				next: true,
-				initWithDeviceData: true,
-				sendToggleOnInit: false,
+			{
+				template: '../lib/pair/done.html',
+				options: {
+					title: 'views.generic_done.title',
+					prepend: '',
+					append: ''
+				},
 				prepend: [],
 				append: [],
-				title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
-				body: 'deviceClasses.generic_socket.views.generic_test_switch_2.body',
-				svg: '../../assets/433_generator/images/light.svg',
-				svgWidth: '80vw',
-				svgHeight: '70vh',
-				previous: true
-			},
-			prepend: ['../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js',
-				'../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js'
-			],
-			append: [],
-			id: 'generic_test_switch_2'
-		}, {
-			template: 'choose_slave',
-			options: {
-				next: 'generic_done',
-				prepend: [],
-				append: [],
-				previous: true
-			},
-			prepend: [],
-			append: [],
-			id: 'generic_choose_slave_2'
-		}, {
-			template: '../lib/pair/codewheel.html',
-			options: {
-				previous: 'generic_choice',
-				prepend: [],
-				append: [],
-				codewheelList: [{
-					series: [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
-					mapOddToDot: false,
-					quadrants: ['A', 'B', 'C', 'D']
-				}],
-				title: 'views.generic_codewheel.title',
-				body: 'views.generic_codewheel.body',
-				next: true
-			},
-			prepend: ['../../assets/433_generator/css/codewheel.css',
-				'../../assets/433_generator/js/codewheel.js'
-			],
-			append: [],
-			id: 'generic_codewheel'
-		}, {
-			template: '../lib/pair/test_switch.html',
-			options: {
-				title: 'deviceClasses.generic_socket.views.generic_test_switch.title',
-				body: 'deviceClasses.generic_socket.views.generic_test_switch.body',
-				prepend: [],
-				append: [],
-				svg: '../../assets/433_generator/images/light.svg',
-				svgWidth: '80vw',
-				svgHeight: '70vh',
-				initWithDeviceData: true,
-				previous: true,
-				next: true,
-				sendToggleOnInit: false
-			},
-			prepend: ['../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js',
-				'../../assets/433_generator/css/styles.css',
-				'../../assets/433_generator/css/svg.css',
-				'../../assets/433_generator/js/svghighlighter.js'
-			],
-			append: [],
-			id: 'generic_test_switch'
-		}, {
-			template: 'choose_slave',
-			options: {
-				previous: true,
-				next: true,
-				prepend: '',
-				append: ''
-			},
-			prepend: [],
-			append: [],
-			id: 'generic_choose_slave'
-		}, {
-			template: '../lib/pair/done.html',
-			options: {
-				title: 'views.generic_done.title',
-				prepend: '',
-				append: ''
-			},
-			prepend: [],
-			append: [],
-			id: 'generic_done'
-		}]
+				id: 'generic_done'
+			}
+		]
 	},
 	images: {
 		large: '../../433_generator/assets/PAR-1000/images/large.jpg',
