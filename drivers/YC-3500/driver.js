@@ -6,7 +6,7 @@ const config = {
 		small: '../../433_generator/assets/YC-400/images/small.jpg'
 	},
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	driver: '../../433_generator/drivers/kakuold/socket.js',
 	pair: {
 		viewOrder: ['generic_choice',
 			'generic_imitate',

@@ -196,7 +196,7 @@ const config = {
 	id: 'YC-412',
 	class: 'socket',
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	driver: '../../433_generator/drivers/kakuold/socket.js',
 	signal: 'kakuold',
 	name: 'devices.YC-412.name',
 	icon: '../../433_generator/assets/YC-400/icon.svg'

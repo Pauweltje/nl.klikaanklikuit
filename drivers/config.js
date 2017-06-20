@@ -2047,7 +2047,7 @@ module.exports = {
 				]
 			},
 			id: 'KCT-510',
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			signal: 'kakuold',
 			class: 'other',
 			triggers: [{
@@ -3673,7 +3673,7 @@ module.exports = {
 				small: '../433_generator/assets/YC-400/images/small.jpg'
 			},
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			pair: {
 				viewOrder: ['generic_choice',
 					'generic_imitate',
@@ -6710,7 +6710,7 @@ module.exports = {
 			id: 'AC-300',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			signal: 'kakuold',
 			name: 'devices.YC-400.name',
 			icon: '../433_generator/assets/YC-400/icon.svg'
@@ -6917,7 +6917,7 @@ module.exports = {
 				]
 			}],
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			signal: 'kakuold',
 			name: 'devices.KCT-101.name',
 			icon: '../433_generator/assets/KCT-101/icon.svg'
@@ -7237,7 +7237,7 @@ module.exports = {
 			id: 'YC-412',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			signal: 'kakuold',
 			name: 'devices.YC-412.name',
 			icon: '../433_generator/assets/YC-400/icon.svg'
@@ -8490,7 +8490,7 @@ module.exports = {
 			id: 'YC-1000',
 			class: 'socket',
 			debounceTimeout: 500,
-			driver: '../433_generator/drivers/kakuold/kaku.js',
+			driver: '../433_generator/drivers/kakuold/socket.js',
 			signal: 'kakuold',
 			name: 'devices.YC-1000.name',
 			icon: '../433_generator/assets/YC-400/icon.svg'

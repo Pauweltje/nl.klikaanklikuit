@@ -8,7 +8,7 @@ module.exports = {
 		},
 		kaku_old: {
 			extends: 'defaults',
-			driver: './drivers/kakuold/kaku.js',
+			driver: './drivers/kakuold/socket.js',
 			signal: {
 				id: 'kakuold',
 				sof: [],

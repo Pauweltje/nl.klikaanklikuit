@@ -64,7 +64,7 @@ const config = {
 		]
 	},
 	id: 'KCT-510',
-	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	driver: '../../433_generator/drivers/kakuold/socket.js',
 	signal: 'kakuold',
 	class: 'other',
 	triggers: [{

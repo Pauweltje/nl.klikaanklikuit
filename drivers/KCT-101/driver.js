@@ -88,7 +88,7 @@ const config = {
 		]
 	}],
 	debounceTimeout: 500,
-	driver: '../../433_generator/drivers/kakuold/kaku.js',
+	driver: '../../433_generator/drivers/kakuold/socket.js',
 	signal: 'kakuold',
 	name: 'devices.KCT-101.name',
 	icon: '../../433_generator/assets/KCT-101/icon.svg'
