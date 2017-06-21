@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v3.1.4
+There were several reports that the range of Homey was decreased in the last update. This update reverts a change back to how it was in v3.1.0 and this should fix these problems. 
+
 ####v3.1.3
 Fixed bug where the app would crash when old sockets (e.g. YC-400) were paired
 
