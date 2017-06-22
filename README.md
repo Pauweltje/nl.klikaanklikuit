@@ -4,6 +4,9 @@ Adds support for Trust / CoCo / KlikAanKlikUit devices.
 
 ##What's new
 
+####v3.1.5
+Fixed a bug in the codewheel selector for old kaku devices like the PAR-1000 which would make users unable to pair more than 2 devices on each channel (A-C)
+
 ####v3.1.4
 There were several reports that the range of Homey was decreased in the last update. This update reverts a change back to how it was in v3.1.0 and this should fix these problems. 
 
